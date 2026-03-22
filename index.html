@@ -326,7 +326,7 @@
         <a href="#preview" class="text-sm text-white/50 hover:text-white transition-colors">미리보기</a>
         <a href="#download" class="text-sm text-white/50 hover:text-white transition-colors">다운로드</a>
       </div>
-      <a href="#" onclick="downloadAsset('installer', event)" class="btn-primary px-5 py-2.5 rounded-xl bg-accent-500 hover:bg-accent-600 text-white text-sm font-semibold shadow-lg shadow-accent-500/25 hover:shadow-accent-500/40 transition-all">
+      <a href="#download" class="btn-primary px-5 py-2.5 rounded-xl bg-accent-500 hover:bg-accent-600 text-white text-sm font-semibold shadow-lg shadow-accent-500/25 hover:shadow-accent-500/40 transition-all">
         다운로드
       </a>
     </div>
@@ -900,23 +900,64 @@
 
       </div>
 
-      <!-- System requirements -->
-      <div class="reveal reveal-delay-2 glass rounded-xl p-6 max-w-md mx-auto">
-        <div class="text-xs text-white/30 mb-3">시스템 요구사항</div>
-        <div class="grid grid-cols-3 gap-4 text-center">
-          <div>
-            <svg class="w-5 h-5 text-white/20 mx-auto mb-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-            <div class="text-xs text-white/40">Windows 10+</div>
+      <!-- Download warning -->
+      <div class="reveal reveal-delay-3 mt-10 max-w-3xl mx-auto rounded-2xl border border-amber-400/20 p-6 md:p-8" style="background: rgba(251, 191, 36, 0.04);">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-8 h-8 rounded-xl bg-amber-400/15 flex items-center justify-center flex-shrink-0">
+            <svg class="w-4.5 h-4.5 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
           </div>
-          <div>
-            <svg class="w-5 h-5 text-white/20 mx-auto mb-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/></svg>
-            <div class="text-xs text-white/40">64bit</div>
-          </div>
-          <div>
-            <svg class="w-5 h-5 text-white/20 mx-auto mb-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
-            <div class="text-xs text-white/40">인터넷 연결</div>
+          <span class="text-sm text-amber-300/90 font-bold">다운로드 및 설치 시 안내</span>
+        </div>
+
+        <!-- 다운로드 경고 -->
+        <div class="mb-6">
+          <h4 class="text-sm text-white/70 font-semibold mb-2">다운로드 시 경고가 뜨나요?</h4>
+          <p class="text-sm text-white/50 leading-relaxed mb-3">
+            <span class="text-amber-300/80 font-semibold">"확인되지 않은 파일 다운로드"</span> 창이 나타나면 그대로 <span class="text-white/70 font-semibold">[확인되지 않은 파일 다운로드]</span>를 눌러주세요.
+            코드 서명 전이라 이렇게 뜨며 <span class="text-white/70 font-semibold">보안과는 무관</span>합니다.
+          </p>
+          <div class="space-y-3">
+            <div class="rounded-xl overflow-hidden border border-amber-400/15 shadow-lg shadow-black/20">
+              <img src="다운로드경고1.png" alt="다운로드 경고 1단계" class="w-full h-auto">
+            </div>
+            <div class="rounded-xl overflow-hidden border border-amber-400/15 shadow-lg shadow-black/20">
+              <img src="다운로드경고2.png" alt="다운로드 경고 2단계" class="w-full h-auto">
+            </div>
           </div>
         </div>
+
+        <!-- 구분선 -->
+        <div class="h-px bg-amber-400/10 my-5"></div>
+
+        <!-- 설치 경고 -->
+        <div>
+          <h4 class="text-sm text-white/70 font-semibold mb-2">설치할 때도 경고가 뜨나요?</h4>
+          <p class="text-sm text-white/50 leading-relaxed mb-3">
+            설치 파일 실행 시 <span class="text-amber-300/80 font-semibold">Windows 보안</span> 경고가 나타날 수 있습니다. 아래 순서대로 조치하시면 됩니다.
+          </p>
+          <div class="space-y-3 mb-4">
+            <div class="flex items-start gap-3 text-sm text-white/50">
+              <span class="flex-shrink-0 w-7 h-7 rounded-full bg-amber-400/15 border border-amber-400/25 flex items-center justify-center text-amber-300 text-xs font-bold mt-0.5">1</span>
+              <span class="leading-relaxed"><span class="text-white/70 font-semibold">"추가 정보"</span>를 클릭하세요</span>
+            </div>
+            <div class="flex items-start gap-3 text-sm text-white/50">
+              <span class="flex-shrink-0 w-7 h-7 rounded-full bg-amber-400/15 border border-amber-400/25 flex items-center justify-center text-amber-300 text-xs font-bold mt-0.5">2</span>
+              <span class="leading-relaxed">하단의 <span class="text-white/70 font-semibold">"실행"</span>을 클릭하면 설치가 시작됩니다</span>
+            </div>
+          </div>
+          <div class="space-y-3">
+            <div class="rounded-xl overflow-hidden border border-amber-400/15 shadow-lg shadow-black/20">
+              <img src="설치경고1.png" alt="설치 경고 1단계" class="w-full h-auto">
+            </div>
+            <div class="rounded-xl overflow-hidden border border-amber-400/15 shadow-lg shadow-black/20">
+              <img src="설치경고2.png" alt="설치 경고 2단계" class="w-full h-auto">
+            </div>
+          </div>
+        </div>
+
+        <p class="text-xs text-white/30 leading-relaxed mt-5">
+          * 코드 서명 완료 후에는 위 경고들이 더 이상 표시되지 않습니다.
+        </p>
       </div>
     </div>
   </section>
