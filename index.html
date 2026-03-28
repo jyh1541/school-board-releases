@@ -19,32 +19,45 @@
           },
           colors: {
             surface: {
-              50: '#f0f4ff',
-              100: '#e0e8ff',
-              800: '#0c0e1a',
-              900: '#080a14',
-              950: '#050610',
+              50: '#fef7fb',
+              100: '#fdf0f5',
+              200: '#fce4ef',
+              800: '#f9f0f5',
+              900: '#fff8fa',
+              950: '#ffffff',
             },
             accent: {
-              400: '#818cf8',
-              500: '#6366f1',
-              600: '#4f46e5',
+              300: '#f9a8d4',
+              400: '#f472b6',
+              500: '#ec4899',
+              600: '#db2777',
             },
             mint: {
-              400: '#34d399',
-              500: '#10b981',
+              300: '#86efac',
+              400: '#4ade80',
+              500: '#22c55e',
             },
             coral: {
+              300: '#fda4af',
               400: '#fb7185',
               500: '#f43f5e',
             },
             sky: {
+              300: '#7dd3fc',
               400: '#38bdf8',
               500: '#0ea5e9',
             },
             amber: {
+              300: '#fde68a',
               400: '#fbbf24',
               500: '#f59e0b',
+            },
+            spring: {
+              pink: '#fbb6ce',
+              green: '#bbf7d0',
+              yellow: '#fef08a',
+              lavender: '#ddd6fe',
+              peach: '#fed7aa',
             }
           },
           animation: {
@@ -79,15 +92,15 @@
     html { scroll-behavior: smooth; }
     body {
       font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-      background: #050610;
-      color: #e2e8f0;
+      background: linear-gradient(180deg, #fff5f9 0%, #f0fdf4 50%, #fffbeb 100%);
+      color: #374151;
       overflow-x: hidden;
     }
 
     ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: #080a14; }
-    ::-webkit-scrollbar-thumb { background: rgba(99, 102, 241, 0.4); border-radius: 3px; }
-    ::-webkit-scrollbar-thumb:hover { background: rgba(99, 102, 241, 0.6); }
+    ::-webkit-scrollbar-track { background: #fdf2f8; }
+    ::-webkit-scrollbar-thumb { background: rgba(236, 72, 153, 0.25); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(236, 72, 153, 0.4); }
 
     @keyframes float {
       0%, 100% { transform: translateY(0px) rotate(0deg); }
@@ -138,39 +151,39 @@
     }
 
     .glass {
-      background: rgba(15, 17, 30, 0.6);
+      background: rgba(255, 255, 255, 0.7);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(99, 102, 241, 0.08);
+      border: 1px solid rgba(236, 72, 153, 0.1);
     }
     .glass-strong {
-      background: rgba(15, 17, 30, 0.8);
+      background: rgba(255, 255, 255, 0.85);
       backdrop-filter: blur(30px);
       -webkit-backdrop-filter: blur(30px);
-      border: 1px solid rgba(99, 102, 241, 0.12);
+      border: 1px solid rgba(236, 72, 153, 0.15);
     }
 
     .gradient-text {
-      background: linear-gradient(135deg, #818cf8 0%, #38bdf8 50%, #34d399 100%);
+      background: linear-gradient(135deg, #ec4899 0%, #f472b6 30%, #f9a8d4 60%, #86efac 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
     .gradient-text-warm {
-      background: linear-gradient(135deg, #fbbf24 0%, #fb7185 50%, #818cf8 100%);
+      background: linear-gradient(135deg, #fbbf24 0%, #fb7185 50%, #ec4899 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
     .gradient-text-cool {
-      background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
+      background: linear-gradient(135deg, #86efac 0%, #7dd3fc 50%, #ddd6fe 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
 
     .shimmer-text {
-      background: linear-gradient(90deg, #818cf8 0%, #c084fc 25%, #38bdf8 50%, #c084fc 75%, #818cf8 100%);
+      background: linear-gradient(90deg, #ec4899 0%, #f9a8d4 25%, #86efac 50%, #f9a8d4 75%, #ec4899 100%);
       background-size: 200% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -187,7 +200,7 @@
       inset: -1px;
       border-radius: inherit;
       padding: 1px;
-      background: linear-gradient(135deg, rgba(99, 102, 241, 0.4), rgba(56, 189, 248, 0.2), rgba(52, 211, 153, 0.4));
+      background: linear-gradient(135deg, rgba(236, 72, 153, 0.3), rgba(74, 222, 128, 0.2), rgba(56, 189, 248, 0.3));
       -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
       -webkit-mask-composite: xor;
       mask-composite: exclude;
@@ -203,16 +216,16 @@
     }
     .feature-card:hover {
       transform: translateY(-8px) scale(1.02);
-      border-color: rgba(99, 102, 241, 0.25);
-      box-shadow: 0 25px 60px -15px rgba(99, 102, 241, 0.15), 0 0 0 1px rgba(99, 102, 241, 0.1);
+      border-color: rgba(236, 72, 153, 0.25);
+      box-shadow: 0 25px 60px -15px rgba(236, 72, 153, 0.12), 0 0 0 1px rgba(236, 72, 153, 0.08);
     }
 
     .hero-grid {
       position: absolute;
       inset: 0;
       background-image:
-        linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
+        linear-gradient(rgba(236, 72, 153, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(236, 72, 153, 0.04) 1px, transparent 1px);
       background-size: 60px 60px;
       animation: gridPulse 8s ease-in-out infinite;
       mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 30%, transparent 70%);
@@ -223,7 +236,7 @@
       inset: 0;
       pointer-events: none;
       z-index: 9999;
-      opacity: 0.015;
+      opacity: 0.008;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
       background-repeat: repeat;
       background-size: 256px 256px;
@@ -258,9 +271,9 @@
       border-radius: 12px;
       overflow: hidden;
       box-shadow:
-        0 0 0 1px rgba(99, 102, 241, 0.1),
-        0 25px 80px -20px rgba(0, 0, 0, 0.8),
-        0 0 120px -30px rgba(99, 102, 241, 0.15);
+        0 0 0 1px rgba(236, 72, 153, 0.1),
+        0 25px 80px -20px rgba(0, 0, 0, 0.12),
+        0 0 120px -30px rgba(236, 72, 153, 0.08);
     }
 
     .postit {
@@ -285,10 +298,10 @@
       position: absolute;
       inset: -4px;
       border-radius: 16px;
-      background: conic-gradient(from 0deg, #6366f1, #0ea5e9, #10b981, #f59e0b, #f43f5e, #6366f1);
+      background: conic-gradient(from 0deg, #ec4899, #f9a8d4, #86efac, #fde68a, #7dd3fc, #ec4899);
       z-index: -1;
       filter: blur(20px);
-      opacity: 0.5;
+      opacity: 0.4;
       animation: glow 3s ease-in-out infinite;
     }
 
@@ -298,7 +311,7 @@
 
     .section-divider {
       height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.2), transparent);
+      background: linear-gradient(90deg, transparent, rgba(236, 72, 153, 0.15), transparent);
     }
 
     @media (max-width: 768px) {
@@ -310,7 +323,7 @@
       position: fixed;
       inset: 0;
       z-index: 9999;
-      background: rgba(5, 6, 16, 0.92);
+      background: rgba(255, 245, 249, 0.92);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       display: flex;
@@ -330,7 +343,7 @@
       max-height: 90vh;
       object-fit: contain;
       border-radius: 12px;
-      box-shadow: 0 0 60px rgba(99, 102, 241, 0.15);
+      box-shadow: 0 0 60px rgba(236, 72, 153, 0.1);
       transform: scale(0.9);
       transition: transform 0.3s ease;
     }
@@ -344,9 +357,9 @@
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.1);
-      color: rgba(255,255,255,0.6);
+      background: rgba(236, 72, 153, 0.08);
+      border: 1px solid rgba(236, 72, 153, 0.15);
+      color: rgba(236, 72, 153, 0.6);
       font-size: 20px;
       display: flex;
       align-items: center;
@@ -355,33 +368,33 @@
       transition: all 0.2s;
     }
     .lightbox-close:hover {
-      background: rgba(255,255,255,0.15);
-      color: #fff;
+      background: rgba(236, 72, 153, 0.15);
+      color: #ec4899;
     }
     .lightbox-caption {
       position: absolute;
       bottom: 28px;
       left: 50%;
       transform: translateX(-50%);
-      color: rgba(255,255,255,0.5);
+      color: rgba(55, 65, 81, 0.5);
       font-size: 14px;
       font-weight: 500;
     }
     /* Browser tabs */
     .browser-tab {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.06);
-      color: rgba(255,255,255,0.35);
+      background: rgba(236, 72, 153, 0.04);
+      border: 1px solid rgba(236, 72, 153, 0.08);
+      color: rgba(55, 65, 81, 0.4);
       cursor: pointer;
     }
     .browser-tab:hover {
-      background: rgba(255,255,255,0.07);
-      color: rgba(255,255,255,0.55);
+      background: rgba(236, 72, 153, 0.08);
+      color: rgba(55, 65, 81, 0.6);
     }
     .browser-tab.active {
-      background: rgba(251, 191, 36, 0.1);
-      border-color: rgba(251, 191, 36, 0.2);
-      color: rgba(251, 191, 36, 0.9);
+      background: rgba(236, 72, 153, 0.1);
+      border-color: rgba(236, 72, 153, 0.2);
+      color: rgba(236, 72, 153, 0.9);
     }
   </style>
 </head>
@@ -392,19 +405,19 @@
   <nav id="nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
     <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
       <a href="#" class="flex items-center gap-3 group">
-        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-accent-500 to-sky-500 flex items-center justify-center shadow-lg shadow-accent-500/20 group-hover:shadow-accent-500/40 transition-shadow">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-accent-400 to-spring-green flex items-center justify-center shadow-lg shadow-accent-400/20 group-hover:shadow-accent-400/40 transition-shadow">
           <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M4 4h6v6H4z"/><path d="M14 4h6v6h-6z"/><path d="M4 14h6v6H4z"/><path d="M14 14h6v6h-6z"/>
           </svg>
         </div>
-        <span class="font-bold text-lg text-white/90 group-hover:text-white transition-colors">School Board</span>
+        <span class="font-bold text-lg text-gray-700 group-hover:text-gray-900 transition-colors">School Board</span>
       </a>
       <div class="hidden md:flex items-center gap-8">
-        <a href="#features" class="text-sm text-white/50 hover:text-white transition-colors">기능</a>
-        <a href="#preview" class="text-sm text-white/50 hover:text-white transition-colors">미리보기</a>
-        <a href="#download" class="text-sm text-white/50 hover:text-white transition-colors">다운로드</a>
+        <a href="#features" class="text-sm text-gray-400 hover:text-gray-700 transition-colors">기능</a>
+        <a href="#preview" class="text-sm text-gray-400 hover:text-gray-700 transition-colors">미리보기</a>
+        <a href="#download" class="text-sm text-gray-400 hover:text-gray-700 transition-colors">다운로드</a>
       </div>
-      <a href="#download" class="btn-primary px-5 py-2.5 rounded-xl bg-accent-500 hover:bg-accent-600 text-white text-sm font-semibold shadow-lg shadow-accent-500/25 hover:shadow-accent-500/40 transition-all">
+      <a href="#download" class="btn-primary px-5 py-2.5 rounded-xl bg-accent-400 hover:bg-accent-500 text-white text-sm font-semibold shadow-lg shadow-accent-400/25 hover:shadow-accent-400/40 transition-all">
         다운로드
       </a>
     </div>
@@ -415,37 +428,37 @@
     <div class="hero-grid"></div>
 
     <!-- Gradient orbs -->
-    <div class="absolute top-1/4 -left-32 w-96 h-96 bg-accent-500/20 rounded-full blur-[128px] animate-pulse-soft"></div>
-    <div class="absolute bottom-1/4 -right-32 w-96 h-96 bg-sky-500/15 rounded-full blur-[128px] animate-pulse-soft" style="animation-delay: 2s;"></div>
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-mint-500/5 rounded-full blur-[150px]"></div>
+    <div class="absolute top-1/4 -left-32 w-96 h-96 bg-accent-300/30 rounded-full blur-[128px] animate-pulse-soft"></div>
+    <div class="absolute bottom-1/4 -right-32 w-96 h-96 bg-mint-300/25 rounded-full blur-[128px] animate-pulse-soft" style="animation-delay: 2s;"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-spring-yellow/20 rounded-full blur-[150px]"></div>
 
     <div class="relative z-10 max-w-6xl mx-auto px-6 text-center">
       <!-- Badge -->
       <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8 animate-fade-in opacity-0" style="animation-fill-mode: forwards;">
         <span class="w-2 h-2 rounded-full bg-mint-400 animate-pulse"></span>
-        <span class="text-xs font-medium text-white/60">무료로 시작하세요</span>
+        <span class="text-xs font-medium text-gray-500">무료로 시작하세요</span>
       </div>
 
       <!-- Title -->
       <h1 class="hero-title text-6xl md:text-8xl font-black leading-[0.95] mb-6 animate-slide-up opacity-0" style="animation-fill-mode: forwards;">
-        <span class="text-white/90">선생님을 위한</span><br>
+        <span class="text-gray-800">선생님을 위한</span><br>
         <span class="gradient-text">올인원 위젯</span>
       </h1>
 
       <!-- Subtitle -->
-      <p class="text-lg md:text-xl text-white/40 max-w-2xl mx-auto mb-10 animate-slide-up-delay opacity-0 font-light leading-relaxed" style="animation-fill-mode: forwards;">
+      <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 animate-slide-up-delay opacity-0 font-light leading-relaxed" style="animation-fill-mode: forwards;">
         바탕화면 위에 올려두는 스마트 도우미.<br class="hidden md:block">
         시간표, 급식, 학사일정, 메모를 한눈에 관리하세요.
       </p>
 
       <!-- CTA Buttons -->
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-slide-up-delay2 opacity-0" style="animation-fill-mode: forwards;">
-        <a href="#download" class="download-glow btn-primary group flex items-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-accent-500 to-sky-500 hover:from-accent-400 hover:to-sky-400 text-white font-bold text-lg shadow-2xl shadow-accent-500/30 hover:shadow-accent-500/50 transition-all">
+        <a href="#download" class="download-glow btn-primary group flex items-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-accent-400 to-accent-500 hover:from-accent-300 hover:to-accent-400 text-white font-bold text-lg shadow-2xl shadow-accent-400/30 hover:shadow-accent-400/50 transition-all">
           <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           무료 다운로드
           <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
         </a>
-        <a href="#features" class="group flex items-center gap-3 px-8 py-4 rounded-2xl glass hover:bg-white/[0.04] text-white/70 hover:text-white font-medium transition-all">
+        <a href="#features" class="group flex items-center gap-3 px-8 py-4 rounded-2xl glass hover:bg-white/80 text-gray-500 hover:text-gray-700 font-medium transition-all">
           <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
           기능 살펴보기
         </a>
@@ -455,99 +468,99 @@
       <div class="relative max-w-4xl mx-auto animate-fade-in-delay opacity-0" style="animation-fill-mode: forwards; animation-delay: 0.6s;">
         <div class="mockup-window glass-strong rounded-2xl overflow-hidden">
           <!-- Window title bar -->
-          <div class="flex items-center gap-2 px-4 py-3 border-b border-white/5">
+          <div class="flex items-center gap-2 px-4 py-3 border-b border-gray-200/50">
             <div class="flex gap-1.5">
-              <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
-              <div class="w-3 h-3 rounded-full bg-amber-500/80"></div>
-              <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+              <div class="w-3 h-3 rounded-full bg-red-400/80"></div>
+              <div class="w-3 h-3 rounded-full bg-amber-400/80"></div>
+              <div class="w-3 h-3 rounded-full bg-green-400/80"></div>
             </div>
             <div class="flex-1 text-center">
-              <span class="text-xs text-white/30">School Board</span>
+              <span class="text-xs text-gray-400">School Board</span>
             </div>
           </div>
           <!-- Dashboard Screenshot -->
-          <div class="bg-surface-950/80">
+          <div class="bg-white/80">
             <img src="대시보드화면.png" alt="School Board 대시보드" class="w-full h-auto cursor-pointer" onclick="openLightbox(this.src, this.alt)">
           </div>
         </div>
         <!-- Reflection glow -->
-        <div class="absolute -bottom-20 left-1/2 -translate-x-1/2 w-3/4 h-40 bg-accent-500/10 blur-[80px] rounded-full"></div>
+        <div class="absolute -bottom-20 left-1/2 -translate-x-1/2 w-3/4 h-40 bg-accent-300/15 blur-[80px] rounded-full"></div>
       </div>
     </div>
 
     <!-- Scroll indicator -->
     <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-fade-in opacity-0" style="animation-fill-mode: forwards; animation-delay: 1.5s;">
-      <span class="text-xs text-white/20">스크롤</span>
-      <div class="w-5 h-8 rounded-full border border-white/10 flex items-start justify-center p-1">
-        <div class="w-1 h-2 rounded-full bg-white/30 animate-bounce"></div>
+      <span class="text-xs text-gray-300">스크롤</span>
+      <div class="w-5 h-8 rounded-full border border-gray-300 flex items-start justify-center p-1">
+        <div class="w-1 h-2 rounded-full bg-accent-300 animate-bounce"></div>
       </div>
     </div>
   </section>
 
   <!-- MARQUEE TAGS -->
-  <div class="relative py-8 overflow-hidden border-y border-white/5">
+  <div class="relative py-8 overflow-hidden border-y border-gray-200/30">
     <div class="tag-scroll">
       <div class="inline-flex gap-3 animate-marquee">
-        <span class="px-4 py-1.5 rounded-full glass text-xs text-white/30 whitespace-nowrap">NEIS 나이스 연동</span>
-        <span class="text-white/10">·</span>
-        <span class="px-4 py-1.5 rounded-full glass text-xs text-white/30 whitespace-nowrap">자동 업데이트</span>
-        <span class="text-white/10">·</span>
-        <span class="px-4 py-1.5 rounded-full glass text-xs text-white/30 whitespace-nowrap">20+ 테마</span>
-        <span class="text-white/10">·</span>
-        <span class="px-4 py-1.5 rounded-full glass text-xs text-white/30 whitespace-nowrap">프레임리스 위젯</span>
-        <span class="text-white/10">·</span>
-        <span class="px-4 py-1.5 rounded-full glass text-xs text-white/30 whitespace-nowrap">투명도 조절</span>
-        <span class="text-white/10">·</span>
-        <span class="px-4 py-1.5 rounded-full glass text-xs text-white/30 whitespace-nowrap">데이터 암호화</span>
-        <span class="text-white/10">·</span>
-        <span class="px-4 py-1.5 rounded-full glass text-xs text-white/30 whitespace-nowrap">엑셀 연동</span>
-        <span class="text-white/10">·</span>
-        <span class="px-4 py-1.5 rounded-full glass text-xs text-white/30 whitespace-nowrap">업무포털 자동 로그인</span>
-        <span class="text-white/10">·</span>
-        <span class="px-4 py-1.5 rounded-full glass text-xs text-white/30 whitespace-nowrap">구글 시트 연동</span>
-        <span class="text-white/10">·</span>
-        <span class="px-4 py-1.5 rounded-full glass text-xs text-white/30 whitespace-nowrap">포터블 지원</span>
-        <span class="text-white/10">·</span>
+        <span class="px-4 py-1.5 rounded-full glass text-xs text-gray-400 whitespace-nowrap">NEIS 나이스 연동</span>
+        <span class="text-gray-300">·</span>
+        <span class="px-4 py-1.5 rounded-full glass text-xs text-gray-400 whitespace-nowrap">자동 업데이트</span>
+        <span class="text-gray-300">·</span>
+        <span class="px-4 py-1.5 rounded-full glass text-xs text-gray-400 whitespace-nowrap">20+ 테마</span>
+        <span class="text-gray-300">·</span>
+        <span class="px-4 py-1.5 rounded-full glass text-xs text-gray-400 whitespace-nowrap">프레임리스 위젯</span>
+        <span class="text-gray-300">·</span>
+        <span class="px-4 py-1.5 rounded-full glass text-xs text-gray-400 whitespace-nowrap">투명도 조절</span>
+        <span class="text-gray-300">·</span>
+        <span class="px-4 py-1.5 rounded-full glass text-xs text-gray-400 whitespace-nowrap">데이터 암호화</span>
+        <span class="text-gray-300">·</span>
+        <span class="px-4 py-1.5 rounded-full glass text-xs text-gray-400 whitespace-nowrap">엑셀 연동</span>
+        <span class="text-gray-300">·</span>
+        <span class="px-4 py-1.5 rounded-full glass text-xs text-gray-400 whitespace-nowrap">업무포털 자동 로그인</span>
+        <span class="text-gray-300">·</span>
+        <span class="px-4 py-1.5 rounded-full glass text-xs text-gray-400 whitespace-nowrap">구글 시트 연동</span>
+        <span class="text-gray-300">·</span>
+        <span class="px-4 py-1.5 rounded-full glass text-xs text-gray-400 whitespace-nowrap">포터블 지원</span>
+        <span class="text-gray-300">·</span>
         <!-- Duplicate for seamless loop -->
-        <span class="px-4 py-1.5 rounded-full glass text-xs text-white/30 whitespace-nowrap">NEIS 나이스 연동</span>
-        <span class="text-white/10">·</span>
-        <span class="px-4 py-1.5 rounded-full glass text-xs text-white/30 whitespace-nowrap">자동 업데이트</span>
-        <span class="text-white/10">·</span>
-        <span class="px-4 py-1.5 rounded-full glass text-xs text-white/30 whitespace-nowrap">20+ 테마</span>
-        <span class="text-white/10">·</span>
-        <span class="px-4 py-1.5 rounded-full glass text-xs text-white/30 whitespace-nowrap">프레임리스 위젯</span>
-        <span class="text-white/10">·</span>
-        <span class="px-4 py-1.5 rounded-full glass text-xs text-white/30 whitespace-nowrap">투명도 조절</span>
-        <span class="text-white/10">·</span>
-        <span class="px-4 py-1.5 rounded-full glass text-xs text-white/30 whitespace-nowrap">데이터 암호화</span>
-        <span class="text-white/10">·</span>
-        <span class="px-4 py-1.5 rounded-full glass text-xs text-white/30 whitespace-nowrap">엑셀 연동</span>
-        <span class="text-white/10">·</span>
-        <span class="px-4 py-1.5 rounded-full glass text-xs text-white/30 whitespace-nowrap">업무포털 자동 로그인</span>
-        <span class="text-white/10">·</span>
-        <span class="px-4 py-1.5 rounded-full glass text-xs text-white/30 whitespace-nowrap">구글 시트 연동</span>
-        <span class="text-white/10">·</span>
-        <span class="px-4 py-1.5 rounded-full glass text-xs text-white/30 whitespace-nowrap">포터블 지원</span>
+        <span class="px-4 py-1.5 rounded-full glass text-xs text-gray-400 whitespace-nowrap">NEIS 나이스 연동</span>
+        <span class="text-gray-300">·</span>
+        <span class="px-4 py-1.5 rounded-full glass text-xs text-gray-400 whitespace-nowrap">자동 업데이트</span>
+        <span class="text-gray-300">·</span>
+        <span class="px-4 py-1.5 rounded-full glass text-xs text-gray-400 whitespace-nowrap">20+ 테마</span>
+        <span class="text-gray-300">·</span>
+        <span class="px-4 py-1.5 rounded-full glass text-xs text-gray-400 whitespace-nowrap">프레임리스 위젯</span>
+        <span class="text-gray-300">·</span>
+        <span class="px-4 py-1.5 rounded-full glass text-xs text-gray-400 whitespace-nowrap">투명도 조절</span>
+        <span class="text-gray-300">·</span>
+        <span class="px-4 py-1.5 rounded-full glass text-xs text-gray-400 whitespace-nowrap">데이터 암호화</span>
+        <span class="text-gray-300">·</span>
+        <span class="px-4 py-1.5 rounded-full glass text-xs text-gray-400 whitespace-nowrap">엑셀 연동</span>
+        <span class="text-gray-300">·</span>
+        <span class="px-4 py-1.5 rounded-full glass text-xs text-gray-400 whitespace-nowrap">업무포털 자동 로그인</span>
+        <span class="text-gray-300">·</span>
+        <span class="px-4 py-1.5 rounded-full glass text-xs text-gray-400 whitespace-nowrap">구글 시트 연동</span>
+        <span class="text-gray-300">·</span>
+        <span class="px-4 py-1.5 rounded-full glass text-xs text-gray-400 whitespace-nowrap">포터블 지원</span>
       </div>
     </div>
   </div>
 
   <!-- FEATURES -->
   <section id="features" class="relative py-28 md:py-40">
-    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-accent-500/5 rounded-full blur-[150px]"></div>
-    <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-mint-500/5 rounded-full blur-[120px]"></div>
+    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-accent-300/10 rounded-full blur-[150px]"></div>
+    <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-mint-300/10 rounded-full blur-[120px]"></div>
 
     <div class="max-w-7xl mx-auto px-6">
       <!-- Section header -->
       <div class="text-center mb-20 reveal">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass text-xs text-accent-400 mb-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass text-xs text-accent-500 mb-4">
           <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           핵심 기능
         </div>
-        <h2 class="text-4xl md:text-5xl font-black text-white/90 mb-4">
+        <h2 class="text-4xl md:text-5xl font-black text-gray-800 mb-4">
           교무실의 <span class="gradient-text">모든 것</span>
         </h2>
-        <p class="text-white/30 max-w-xl mx-auto">선생님이 학교에서 필요한 모든 도구를 하나의 위젯에 담았습니다.</p>
+        <p class="text-gray-400 max-w-xl mx-auto">선생님이 학교에서 필요한 모든 도구를 하나의 위젯에 담았습니다.</p>
       </div>
 
       <!-- Feature Grid -->
@@ -555,121 +568,121 @@
 
         <!-- Feature 1: Dashboard -->
         <div class="feature-card glow-border glass rounded-2xl p-7 reveal reveal-delay-1">
-          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-accent-500/20 to-sky-500/20 flex items-center justify-center mb-5">
-            <svg class="w-6 h-6 text-accent-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-accent-400/20 to-spring-lavender/30 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
           </div>
-          <h3 class="text-lg font-bold text-white/90 mb-2">대시보드</h3>
-          <p class="text-sm text-white/35 leading-relaxed">시계, 날씨, 시간표, 급식을 한 화면에. 벤토 그리드 레이아웃으로 위젯을 자유롭게 배치하세요.</p>
+          <h3 class="text-lg font-bold text-gray-800 mb-2">대시보드</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">시계, 날씨, 시간표, 급식을 한 화면에. 벤토 그리드 레이아웃으로 위젯을 자유롭게 배치하세요.</p>
           <div class="flex flex-wrap gap-1.5 mt-4">
-            <span class="px-2 py-0.5 rounded-md bg-white/5 text-[10px] text-white/30">드래그 배치</span>
-            <span class="px-2 py-0.5 rounded-md bg-white/5 text-[10px] text-white/30">위젯 크기 조절</span>
+            <span class="px-2 py-0.5 rounded-md bg-accent-400/10 text-[10px] text-accent-500">드래그 배치</span>
+            <span class="px-2 py-0.5 rounded-md bg-accent-400/10 text-[10px] text-accent-500">위젯 크기 조절</span>
           </div>
         </div>
 
         <!-- Feature 2: Timetable -->
         <div class="feature-card glow-border glass rounded-2xl p-7 reveal reveal-delay-2">
-          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-mint-500/20 to-emerald-500/20 flex items-center justify-center mb-5">
-            <svg class="w-6 h-6 text-mint-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg>
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-mint-400/20 to-emerald-400/20 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-mint-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg>
           </div>
-          <h3 class="text-lg font-bold text-white/90 mb-2">시간표</h3>
-          <p class="text-sm text-white/35 leading-relaxed">NEIS에서 자동으로 불러오거나 직접 입력하세요. 학반별, 교사별, 학생 개별 조회까지.</p>
+          <h3 class="text-lg font-bold text-gray-800 mb-2">시간표</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">NEIS에서 자동으로 불러오거나 직접 입력하세요. 학반별, 교사별, 학생 개별 조회까지.</p>
           <div class="flex flex-wrap gap-1.5 mt-4">
-            <span class="px-2 py-0.5 rounded-md bg-white/5 text-[10px] text-white/30">NEIS 연동</span>
-            <span class="px-2 py-0.5 rounded-md bg-white/5 text-[10px] text-white/30">교과별 조회</span>
+            <span class="px-2 py-0.5 rounded-md bg-mint-400/10 text-[10px] text-mint-500">NEIS 연동</span>
+            <span class="px-2 py-0.5 rounded-md bg-mint-400/10 text-[10px] text-mint-500">교과별 조회</span>
           </div>
         </div>
 
         <!-- Feature 3: Meals -->
         <div class="feature-card glow-border glass rounded-2xl p-7 reveal reveal-delay-3">
-          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center mb-5">
-            <svg class="w-6 h-6 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-400/20 to-orange-400/20 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
           </div>
-          <h3 class="text-lg font-bold text-white/90 mb-2">급식 정보</h3>
-          <p class="text-sm text-white/35 leading-relaxed">조·중·석식 3끼 모두 확인. 알레르기 정보도 함께 표시되어 안심하고 식사하세요.</p>
+          <h3 class="text-lg font-bold text-gray-800 mb-2">급식 정보</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">조·중·석식 3끼 모두 확인. 알레르기 정보도 함께 표시되어 안심하고 식사하세요.</p>
           <div class="flex flex-wrap gap-1.5 mt-4">
-            <span class="px-2 py-0.5 rounded-md bg-white/5 text-[10px] text-white/30">3식 제공</span>
-            <span class="px-2 py-0.5 rounded-md bg-white/5 text-[10px] text-white/30">알레르기 표시</span>
+            <span class="px-2 py-0.5 rounded-md bg-amber-400/10 text-[10px] text-amber-500">3식 제공</span>
+            <span class="px-2 py-0.5 rounded-md bg-amber-400/10 text-[10px] text-amber-500">알레르기 표시</span>
           </div>
         </div>
 
         <!-- Feature 4: Calendar -->
         <div class="feature-card glow-border glass rounded-2xl p-7 reveal reveal-delay-1">
-          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-coral-500/20 to-rose-500/20 flex items-center justify-center mb-5">
-            <svg class="w-6 h-6 text-coral-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-coral-400/20 to-rose-400/20 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-coral-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
           </div>
-          <h3 class="text-lg font-bold text-white/90 mb-2">일정 & D-Day</h3>
-          <p class="text-sm text-white/35 leading-relaxed">학사일정과 개인 할 일을 통합 관리. D-Day 카운터로 중요한 날짜를 놓치지 마세요.</p>
+          <h3 class="text-lg font-bold text-gray-800 mb-2">일정 & D-Day</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">학사일정과 개인 할 일을 통합 관리. D-Day 카운터로 중요한 날짜를 놓치지 마세요.</p>
           <div class="flex flex-wrap gap-1.5 mt-4">
-            <span class="px-2 py-0.5 rounded-md bg-white/5 text-[10px] text-white/30">학사일정 연동</span>
-            <span class="px-2 py-0.5 rounded-md bg-white/5 text-[10px] text-white/30">알림 설정</span>
+            <span class="px-2 py-0.5 rounded-md bg-coral-400/10 text-[10px] text-coral-500">학사일정 연동</span>
+            <span class="px-2 py-0.5 rounded-md bg-coral-400/10 text-[10px] text-coral-500">알림 설정</span>
           </div>
         </div>
 
         <!-- Feature 5: Memo -->
         <div class="feature-card glow-border glass rounded-2xl p-7 reveal reveal-delay-2 relative overflow-hidden">
           <!-- Decorative post-its -->
-          <div class="absolute -right-2 -top-2 w-16 h-16 rounded-xl bg-amber-300/10 rotate-12"></div>
-          <div class="absolute -right-6 -top-6 w-16 h-16 rounded-xl bg-pink-300/10 -rotate-6"></div>
+          <div class="absolute -right-2 -top-2 w-16 h-16 rounded-xl bg-spring-yellow/30 rotate-12"></div>
+          <div class="absolute -right-6 -top-6 w-16 h-16 rounded-xl bg-spring-pink/30 -rotate-6"></div>
 
           <div class="relative z-10">
-            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-yellow-500/20 to-amber-500/20 flex items-center justify-center mb-5">
-              <svg class="w-6 h-6 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-spring-yellow/30 to-amber-400/20 flex items-center justify-center mb-5">
+              <svg class="w-6 h-6 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
             </div>
-            <h3 class="text-lg font-bold text-white/90 mb-2">포스트잇 메모</h3>
-            <p class="text-sm text-white/35 leading-relaxed">자유 배치 보드에 드래그 앤 드롭. 리치 텍스트 편집, 6가지 파스텔 색상.</p>
+            <h3 class="text-lg font-bold text-gray-800 mb-2">포스트잇 메모</h3>
+            <p class="text-sm text-gray-400 leading-relaxed">자유 배치 보드에 드래그 앤 드롭. 리치 텍스트 편집, 6가지 파스텔 색상.</p>
             <div class="flex flex-wrap gap-1.5 mt-4">
-              <span class="px-2 py-0.5 rounded-md bg-white/5 text-[10px] text-white/30">드래그 배치</span>
-              <span class="px-2 py-0.5 rounded-md bg-white/5 text-[10px] text-white/30">리치 텍스트</span>
+              <span class="px-2 py-0.5 rounded-md bg-spring-yellow/20 text-[10px] text-amber-500">드래그 배치</span>
+              <span class="px-2 py-0.5 rounded-md bg-spring-yellow/20 text-[10px] text-amber-500">리치 텍스트</span>
             </div>
           </div>
         </div>
 
         <!-- Feature 6: Contacts -->
         <div class="feature-card glow-border glass rounded-2xl p-7 reveal reveal-delay-3">
-          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-sky-500/20 to-blue-500/20 flex items-center justify-center mb-5">
-            <svg class="w-6 h-6 text-sky-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-sky-400/20 to-blue-400/20 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-sky-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
-          <h3 class="text-lg font-bold text-white/90 mb-2">연락처</h3>
-          <p class="text-sm text-white/35 leading-relaxed">교사·학생 연락처를 분리 관리. 엑셀 붙여넣기, CSV 가져오기, 인쇄 기능까지.</p>
+          <h3 class="text-lg font-bold text-gray-800 mb-2">연락처</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">교사·학생 연락처를 분리 관리. 엑셀 붙여넣기, CSV 가져오기, 인쇄 기능까지.</p>
           <div class="flex flex-wrap gap-1.5 mt-4">
-            <span class="px-2 py-0.5 rounded-md bg-white/5 text-[10px] text-white/30">엑셀 연동</span>
-            <span class="px-2 py-0.5 rounded-md bg-white/5 text-[10px] text-white/30">인쇄 지원</span>
+            <span class="px-2 py-0.5 rounded-md bg-sky-400/10 text-[10px] text-sky-500">엑셀 연동</span>
+            <span class="px-2 py-0.5 rounded-md bg-sky-400/10 text-[10px] text-sky-500">인쇄 지원</span>
           </div>
         </div>
 
         <!-- Feature 7: Calculator -->
         <div class="feature-card glow-border glass rounded-2xl p-7 reveal reveal-delay-1">
-          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-purple-500/20 to-violet-500/20 flex items-center justify-center mb-5">
-            <svg class="w-6 h-6 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="8" y2="10.01"/><line x1="12" y1="10" x2="12" y2="10.01"/><line x1="16" y1="10" x2="16" y2="10.01"/><line x1="8" y1="14" x2="8" y2="14.01"/><line x1="12" y1="14" x2="12" y2="14.01"/><line x1="16" y1="14" x2="16" y2="14.01"/><line x1="8" y1="18" x2="8" y2="18.01"/><line x1="12" y1="18" x2="12" y2="18.01"/><line x1="16" y1="18" x2="16" y2="18.01"/></svg>
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-spring-lavender/30 to-purple-400/20 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-purple-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="8" y2="10.01"/><line x1="12" y1="10" x2="12" y2="10.01"/><line x1="16" y1="10" x2="16" y2="10.01"/><line x1="8" y1="14" x2="8" y2="14.01"/><line x1="12" y1="14" x2="12" y2="14.01"/><line x1="16" y1="14" x2="16" y2="14.01"/><line x1="8" y1="18" x2="8" y2="18.01"/><line x1="12" y1="18" x2="12" y2="18.01"/><line x1="16" y1="18" x2="16" y2="18.01"/></svg>
           </div>
-          <h3 class="text-lg font-bold text-white/90 mb-2">계산기</h3>
-          <p class="text-sm text-white/35 leading-relaxed">사칙연산부터 단위 변환, 등급 계산기까지. 배점 계산으로 시험 출제도 쉽게.</p>
+          <h3 class="text-lg font-bold text-gray-800 mb-2">계산기</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">사칙연산부터 단위 변환, 등급 계산기까지. 배점 계산으로 시험 출제도 쉽게.</p>
           <div class="flex flex-wrap gap-1.5 mt-4">
-            <span class="px-2 py-0.5 rounded-md bg-white/5 text-[10px] text-white/30">단위 변환</span>
-            <span class="px-2 py-0.5 rounded-md bg-white/5 text-[10px] text-white/30">등급 계산</span>
+            <span class="px-2 py-0.5 rounded-md bg-spring-lavender/20 text-[10px] text-purple-500">단위 변환</span>
+            <span class="px-2 py-0.5 rounded-md bg-spring-lavender/20 text-[10px] text-purple-500">등급 계산</span>
           </div>
         </div>
 
         <!-- Feature 8: Auto Login -->
         <div class="feature-card glow-border glass rounded-2xl p-7 reveal reveal-delay-2">
-          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-teal-500/20 flex items-center justify-center mb-5">
-            <svg class="w-6 h-6 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-mint-400/20 to-teal-400/20 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-emerald-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
           </div>
-          <h3 class="text-lg font-bold text-white/90 mb-2">업무포털 자동 로그인</h3>
-          <p class="text-sm text-white/35 leading-relaxed">나이스, K-에듀파인 자동 로그인. 인증서 선택부터 비밀번호 입력까지 원클릭.</p>
+          <h3 class="text-lg font-bold text-gray-800 mb-2">업무포털 자동 로그인</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">나이스, K-에듀파인 자동 로그인. 인증서 선택부터 비밀번호 입력까지 원클릭.</p>
           <div class="flex flex-wrap gap-1.5 mt-4">
-            <span class="px-2 py-0.5 rounded-md bg-white/5 text-[10px] text-white/30">나이스</span>
-            <span class="px-2 py-0.5 rounded-md bg-white/5 text-[10px] text-white/30">K-에듀파인</span>
+            <span class="px-2 py-0.5 rounded-md bg-mint-400/10 text-[10px] text-emerald-500">나이스</span>
+            <span class="px-2 py-0.5 rounded-md bg-mint-400/10 text-[10px] text-emerald-500">K-에듀파인</span>
           </div>
         </div>
 
         <!-- Feature 9: Themes -->
         <div class="feature-card glow-border glass rounded-2xl p-7 reveal reveal-delay-3">
-          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-pink-500/20 to-rose-500/20 flex items-center justify-center mb-5">
-            <svg class="w-6 h-6 text-pink-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="15.5" r="2.5"/><circle cx="8.5" cy="15.5" r="2.5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-spring-pink/30 to-rose-400/20 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="15.5" r="2.5"/><circle cx="8.5" cy="15.5" r="2.5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
           </div>
-          <h3 class="text-lg font-bold text-white/90 mb-2">20+ 테마</h3>
-          <p class="text-sm text-white/35 leading-relaxed">벚꽃부터 네온까지 20종 프리셋. 원하는 색상으로 커스텀 테마도 만들 수 있어요.</p>
+          <h3 class="text-lg font-bold text-gray-800 mb-2">20+ 테마</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">벚꽃부터 네온까지 20종 프리셋. 원하는 색상으로 커스텀 테마도 만들 수 있어요.</p>
           <div class="flex gap-1.5 mt-4">
             <div class="w-4 h-4 rounded-full bg-gradient-to-br from-pink-300 to-rose-400"></div>
             <div class="w-4 h-4 rounded-full bg-gradient-to-br from-sky-300 to-blue-500"></div>
@@ -689,18 +702,18 @@
 
   <!-- PREVIEW / HIGHLIGHTS -->
   <section id="preview" class="relative py-28 md:py-40 overflow-hidden">
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent-500/3 rounded-full blur-[200px]"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent-300/8 rounded-full blur-[200px]"></div>
 
     <div class="max-w-5xl mx-auto px-6">
       <div class="text-center mb-16 reveal">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass text-xs text-accent-400 mb-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass text-xs text-accent-500 mb-6">
           <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
           미리보기
         </div>
-        <h2 class="text-3xl md:text-5xl font-black text-white/90 mb-4">
+        <h2 class="text-3xl md:text-5xl font-black text-gray-800 mb-4">
           한눈에 보는 <span class="gradient-text">핵심 기능</span>
         </h2>
-        <p class="text-white/30 max-w-lg mx-auto">학교 업무에 필요한 모든 것을 하나의 앱에 담았습니다.</p>
+        <p class="text-gray-400 max-w-lg mx-auto">학교 업무에 필요한 모든 것을 하나의 앱에 담았습니다.</p>
       </div>
 
       <!-- Preview Cards -->
@@ -709,52 +722,52 @@
         <!-- 1. 대시보드 -->
         <div class="grid md:grid-cols-2 gap-8 md:gap-16 items-center reveal">
           <div class="order-2 md:order-1">
-            <div class="mockup-window glass-strong rounded-2xl overflow-hidden border border-white/5">
-              <div class="bg-surface-950/90 px-4 py-3 flex items-center gap-2 border-b border-white/5">
+            <div class="mockup-window glass-strong rounded-2xl overflow-hidden border border-gray-200/30">
+              <div class="bg-white/90 px-4 py-3 flex items-center gap-2 border-b border-gray-200/40">
                 <div class="flex gap-1.5">
-                  <div class="w-3 h-3 rounded-full bg-white/10"></div>
-                  <div class="w-3 h-3 rounded-full bg-white/10"></div>
-                  <div class="w-3 h-3 rounded-full bg-white/10"></div>
+                  <div class="w-3 h-3 rounded-full bg-accent-300/60"></div>
+                  <div class="w-3 h-3 rounded-full bg-amber-300/60"></div>
+                  <div class="w-3 h-3 rounded-full bg-mint-300/60"></div>
                 </div>
-                <div class="flex-1 text-center text-xs text-white/20">대시보드</div>
+                <div class="flex-1 text-center text-xs text-gray-400">대시보드</div>
               </div>
-              <div class="bg-surface-950/90 relative" style="aspect-ratio: 16/10;">
+              <div class="bg-white/80 relative" style="aspect-ratio: 16/10;">
                 <!-- TODO: 실제 스크린샷으로 교체 -->
                 <img src="대시보드화면.png" alt="대시보드" class="w-full h-full object-cover cursor-pointer" onclick="openLightbox(this.src, this.alt)">
               </div>
             </div>
           </div>
           <div class="order-1 md:order-2">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-500/10 text-xs text-accent-400 mb-4">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-400/10 text-xs text-accent-500 mb-4">
               <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
               대시보드
             </div>
-            <h3 class="text-2xl md:text-3xl font-black text-white/90 mb-4">오늘 하루를<br><span class="gradient-text">한눈에</span></h3>
-            <p class="text-white/35 leading-relaxed">시계, 급식, 시간표, 학사일정, 메모까지. 위젯 기반 대시보드에서 오늘 필요한 모든 정보를 한 화면에 확인하세요.</p>
+            <h3 class="text-2xl md:text-3xl font-black text-gray-800 mb-4">오늘 하루를<br><span class="gradient-text">한눈에</span></h3>
+            <p class="text-gray-400 leading-relaxed">시계, 급식, 시간표, 학사일정, 메모까지. 위젯 기반 대시보드에서 오늘 필요한 모든 정보를 한 화면에 확인하세요.</p>
           </div>
         </div>
 
         <!-- 2. 시간표 -->
         <div class="grid md:grid-cols-2 gap-8 md:gap-16 items-center reveal">
           <div>
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/10 text-xs text-sky-400 mb-4">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-400/10 text-xs text-sky-500 mb-4">
               <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
               시간표
             </div>
-            <h3 class="text-2xl md:text-3xl font-black text-white/90 mb-4">NEIS 연동<br><span class="shimmer-text">자동 시간표</span></h3>
-            <p class="text-white/35 leading-relaxed">학교 이름만 검색하면 시간표가 자동으로. API 키 없이 NEIS에서 바로 불러옵니다.</p>
+            <h3 class="text-2xl md:text-3xl font-black text-gray-800 mb-4">NEIS 연동<br><span class="shimmer-text">자동 시간표</span></h3>
+            <p class="text-gray-400 leading-relaxed">학교 이름만 검색하면 시간표가 자동으로. API 키 없이 NEIS에서 바로 불러옵니다.</p>
           </div>
           <div>
-            <div class="mockup-window glass-strong rounded-2xl overflow-hidden border border-white/5">
-              <div class="bg-surface-950/90 px-4 py-3 flex items-center gap-2 border-b border-white/5">
+            <div class="mockup-window glass-strong rounded-2xl overflow-hidden border border-gray-200/30">
+              <div class="bg-white/90 px-4 py-3 flex items-center gap-2 border-b border-gray-200/40">
                 <div class="flex gap-1.5">
-                  <div class="w-3 h-3 rounded-full bg-white/10"></div>
-                  <div class="w-3 h-3 rounded-full bg-white/10"></div>
-                  <div class="w-3 h-3 rounded-full bg-white/10"></div>
+                  <div class="w-3 h-3 rounded-full bg-accent-300/60"></div>
+                  <div class="w-3 h-3 rounded-full bg-amber-300/60"></div>
+                  <div class="w-3 h-3 rounded-full bg-mint-300/60"></div>
                 </div>
-                <div class="flex-1 text-center text-xs text-white/20">시간표</div>
+                <div class="flex-1 text-center text-xs text-gray-400">시간표</div>
               </div>
-              <div class="bg-surface-950/90 relative" style="aspect-ratio: 16/10;">
+              <div class="bg-white/80 relative" style="aspect-ratio: 16/10;">
                 <img src="시간표화면.png" alt="시간표" class="w-full h-full object-cover cursor-pointer" onclick="openLightbox(this.src, this.alt)">
               </div>
             </div>
@@ -764,51 +777,51 @@
         <!-- 3. 메모 -->
         <div class="grid md:grid-cols-2 gap-8 md:gap-16 items-center reveal">
           <div class="order-2 md:order-1">
-            <div class="mockup-window glass-strong rounded-2xl overflow-hidden border border-white/5">
-              <div class="bg-surface-950/90 px-4 py-3 flex items-center gap-2 border-b border-white/5">
+            <div class="mockup-window glass-strong rounded-2xl overflow-hidden border border-gray-200/30">
+              <div class="bg-white/90 px-4 py-3 flex items-center gap-2 border-b border-gray-200/40">
                 <div class="flex gap-1.5">
-                  <div class="w-3 h-3 rounded-full bg-white/10"></div>
-                  <div class="w-3 h-3 rounded-full bg-white/10"></div>
-                  <div class="w-3 h-3 rounded-full bg-white/10"></div>
+                  <div class="w-3 h-3 rounded-full bg-accent-300/60"></div>
+                  <div class="w-3 h-3 rounded-full bg-amber-300/60"></div>
+                  <div class="w-3 h-3 rounded-full bg-mint-300/60"></div>
                 </div>
-                <div class="flex-1 text-center text-xs text-white/20">메모</div>
+                <div class="flex-1 text-center text-xs text-gray-400">메모</div>
               </div>
-              <div class="bg-surface-950/90 relative" style="aspect-ratio: 16/10;">
+              <div class="bg-white/80 relative" style="aspect-ratio: 16/10;">
                 <img src="메모장화면.png" alt="메모" class="w-full h-full object-cover cursor-pointer" onclick="openLightbox(this.src, this.alt)">
               </div>
             </div>
           </div>
           <div class="order-1 md:order-2">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-mint-500/10 text-xs text-mint-400 mb-4">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-mint-400/10 text-xs text-mint-500 mb-4">
               <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
               메모
             </div>
-            <h3 class="text-2xl md:text-3xl font-black text-white/90 mb-4">간편하게<br><span class="gradient-text-cool">기록하세요</span></h3>
-            <p class="text-white/35 leading-relaxed">떠오르는 생각, 할 일, 업무 메모를 빠르게 기록하고 관리할 수 있습니다.</p>
+            <h3 class="text-2xl md:text-3xl font-black text-gray-800 mb-4">간편하게<br><span class="gradient-text-cool">기록하세요</span></h3>
+            <p class="text-gray-400 leading-relaxed">떠오르는 생각, 할 일, 업무 메모를 빠르게 기록하고 관리할 수 있습니다.</p>
           </div>
         </div>
 
         <!-- 4. 급식 -->
         <div class="grid md:grid-cols-2 gap-8 md:gap-16 items-center reveal">
           <div>
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 text-xs text-amber-400 mb-4">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/10 text-xs text-amber-500 mb-4">
               <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
               급식
             </div>
-            <h3 class="text-2xl md:text-3xl font-black text-white/90 mb-4">오늘 뭐 먹지?<br><span class="gradient-text-warm">급식 자동 확인</span></h3>
-            <p class="text-white/35 leading-relaxed">NEIS 연동으로 오늘의 급식 메뉴를 자동으로 확인. 알레르기 정보도 함께 표시됩니다.</p>
+            <h3 class="text-2xl md:text-3xl font-black text-gray-800 mb-4">오늘 뭐 먹지?<br><span class="gradient-text-warm">급식 자동 확인</span></h3>
+            <p class="text-gray-400 leading-relaxed">NEIS 연동으로 오늘의 급식 메뉴를 자동으로 확인. 알레르기 정보도 함께 표시됩니다.</p>
           </div>
           <div>
-            <div class="mockup-window glass-strong rounded-2xl overflow-hidden border border-white/5">
-              <div class="bg-surface-950/90 px-4 py-3 flex items-center gap-2 border-b border-white/5">
+            <div class="mockup-window glass-strong rounded-2xl overflow-hidden border border-gray-200/30">
+              <div class="bg-white/90 px-4 py-3 flex items-center gap-2 border-b border-gray-200/40">
                 <div class="flex gap-1.5">
-                  <div class="w-3 h-3 rounded-full bg-white/10"></div>
-                  <div class="w-3 h-3 rounded-full bg-white/10"></div>
-                  <div class="w-3 h-3 rounded-full bg-white/10"></div>
+                  <div class="w-3 h-3 rounded-full bg-accent-300/60"></div>
+                  <div class="w-3 h-3 rounded-full bg-amber-300/60"></div>
+                  <div class="w-3 h-3 rounded-full bg-mint-300/60"></div>
                 </div>
-                <div class="flex-1 text-center text-xs text-white/20">급식</div>
+                <div class="flex-1 text-center text-xs text-gray-400">급식</div>
               </div>
-              <div class="bg-surface-950/90 relative" style="aspect-ratio: 16/10;">
+              <div class="bg-white/80 relative" style="aspect-ratio: 16/10;">
                 <img src="급식화면.png" alt="급식" class="w-full h-full object-cover cursor-pointer" onclick="openLightbox(this.src, this.alt)">
               </div>
             </div>
@@ -818,51 +831,51 @@
         <!-- 5. 북마크 -->
         <div class="grid md:grid-cols-2 gap-8 md:gap-16 items-center reveal">
           <div class="order-2 md:order-1">
-            <div class="mockup-window glass-strong rounded-2xl overflow-hidden border border-white/5">
-              <div class="bg-surface-950/90 px-4 py-3 flex items-center gap-2 border-b border-white/5">
+            <div class="mockup-window glass-strong rounded-2xl overflow-hidden border border-gray-200/30">
+              <div class="bg-white/90 px-4 py-3 flex items-center gap-2 border-b border-gray-200/40">
                 <div class="flex gap-1.5">
-                  <div class="w-3 h-3 rounded-full bg-white/10"></div>
-                  <div class="w-3 h-3 rounded-full bg-white/10"></div>
-                  <div class="w-3 h-3 rounded-full bg-white/10"></div>
+                  <div class="w-3 h-3 rounded-full bg-accent-300/60"></div>
+                  <div class="w-3 h-3 rounded-full bg-amber-300/60"></div>
+                  <div class="w-3 h-3 rounded-full bg-mint-300/60"></div>
                 </div>
-                <div class="flex-1 text-center text-xs text-white/20">북마크</div>
+                <div class="flex-1 text-center text-xs text-gray-400">북마크</div>
               </div>
-              <div class="bg-surface-950/90 relative" style="aspect-ratio: 16/10;">
+              <div class="bg-white/80 relative" style="aspect-ratio: 16/10;">
                 <img src="북마크%20화면.png" alt="북마크" class="w-full h-full object-cover cursor-pointer" onclick="openLightbox(this.src, this.alt)">
               </div>
             </div>
           </div>
           <div class="order-1 md:order-2">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-coral-500/10 text-xs text-coral-400 mb-4">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-coral-400/10 text-xs text-coral-500 mb-4">
               <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
               북마크
             </div>
-            <h3 class="text-2xl md:text-3xl font-black text-white/90 mb-4">자주 쓰는 사이트를<br><span class="gradient-text-warm">빠르게 접근</span></h3>
-            <p class="text-white/35 leading-relaxed">NEIS, 교육포털, 학교 홈페이지 등 자주 사용하는 웹사이트를 북마크로 저장하고 한 번에 열어보세요.</p>
+            <h3 class="text-2xl md:text-3xl font-black text-gray-800 mb-4">자주 쓰는 사이트를<br><span class="gradient-text-warm">빠르게 접근</span></h3>
+            <p class="text-gray-400 leading-relaxed">NEIS, 교육포털, 학교 홈페이지 등 자주 사용하는 웹사이트를 북마크로 저장하고 한 번에 열어보세요.</p>
           </div>
         </div>
 
         <!-- 6. 업무자료 -->
         <div class="grid md:grid-cols-2 gap-8 md:gap-16 items-center reveal">
           <div>
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-500/10 text-xs text-accent-400 mb-4">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-400/10 text-xs text-accent-500 mb-4">
               <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
               업무자료
             </div>
-            <h3 class="text-2xl md:text-3xl font-black text-white/90 mb-4">학교 업무 문서를<br><span class="gradient-text">편리하게 관리</span></h3>
-            <p class="text-white/35 leading-relaxed">교재, 수업 자료, 공문 등 학교 업무에 필요한 파일을 카테고리별로 정리하고 빠르게 찾을 수 있습니다.</p>
+            <h3 class="text-2xl md:text-3xl font-black text-gray-800 mb-4">학교 업무 문서를<br><span class="gradient-text">편리하게 관리</span></h3>
+            <p class="text-gray-400 leading-relaxed">교재, 수업 자료, 공문 등 학교 업무에 필요한 파일을 카테고리별로 정리하고 빠르게 찾을 수 있습니다.</p>
           </div>
           <div>
-            <div class="mockup-window glass-strong rounded-2xl overflow-hidden border border-white/5">
-              <div class="bg-surface-950/90 px-4 py-3 flex items-center gap-2 border-b border-white/5">
+            <div class="mockup-window glass-strong rounded-2xl overflow-hidden border border-gray-200/30">
+              <div class="bg-white/90 px-4 py-3 flex items-center gap-2 border-b border-gray-200/40">
                 <div class="flex gap-1.5">
-                  <div class="w-3 h-3 rounded-full bg-white/10"></div>
-                  <div class="w-3 h-3 rounded-full bg-white/10"></div>
-                  <div class="w-3 h-3 rounded-full bg-white/10"></div>
+                  <div class="w-3 h-3 rounded-full bg-accent-300/60"></div>
+                  <div class="w-3 h-3 rounded-full bg-amber-300/60"></div>
+                  <div class="w-3 h-3 rounded-full bg-mint-300/60"></div>
                 </div>
-                <div class="flex-1 text-center text-xs text-white/20">업무자료</div>
+                <div class="flex-1 text-center text-xs text-gray-400">업무자료</div>
               </div>
-              <div class="bg-surface-950/90 relative" style="aspect-ratio: 16/10;">
+              <div class="bg-white/80 relative" style="aspect-ratio: 16/10;">
                 <img src="업무자료%20화면.png" alt="업무자료" class="w-full h-full object-cover cursor-pointer" onclick="openLightbox(this.src, this.alt)">
               </div>
             </div>
@@ -872,27 +885,27 @@
         <!-- 7. 연락처 -->
         <div class="grid md:grid-cols-2 gap-8 md:gap-16 items-center reveal">
           <div class="order-2 md:order-1">
-            <div class="mockup-window glass-strong rounded-2xl overflow-hidden border border-white/5">
-              <div class="bg-surface-950/90 px-4 py-3 flex items-center gap-2 border-b border-white/5">
+            <div class="mockup-window glass-strong rounded-2xl overflow-hidden border border-gray-200/30">
+              <div class="bg-white/90 px-4 py-3 flex items-center gap-2 border-b border-gray-200/40">
                 <div class="flex gap-1.5">
-                  <div class="w-3 h-3 rounded-full bg-white/10"></div>
-                  <div class="w-3 h-3 rounded-full bg-white/10"></div>
-                  <div class="w-3 h-3 rounded-full bg-white/10"></div>
+                  <div class="w-3 h-3 rounded-full bg-accent-300/60"></div>
+                  <div class="w-3 h-3 rounded-full bg-amber-300/60"></div>
+                  <div class="w-3 h-3 rounded-full bg-mint-300/60"></div>
                 </div>
-                <div class="flex-1 text-center text-xs text-white/20">연락처</div>
+                <div class="flex-1 text-center text-xs text-gray-400">연락처</div>
               </div>
-              <div class="bg-surface-950/90 relative" style="aspect-ratio: 16/10;">
+              <div class="bg-white/80 relative" style="aspect-ratio: 16/10;">
                 <img src="연락처%20화면.png" alt="연락처" class="w-full h-full object-cover cursor-pointer" onclick="openLightbox(this.src, this.alt)">
               </div>
             </div>
           </div>
           <div class="order-1 md:order-2">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/10 text-xs text-sky-400 mb-4">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-400/10 text-xs text-sky-500 mb-4">
               <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
               연락처
             </div>
-            <h3 class="text-2xl md:text-3xl font-black text-white/90 mb-4">교직원 연락처를<br><span class="shimmer-text">한 곳에</span></h3>
-            <p class="text-white/35 leading-relaxed">교장선생님, 교감선생님, 동료 교사들의 연락처를 한 곳에서 관리하세요. 검색과 그룹 분류도 지원합니다.</p>
+            <h3 class="text-2xl md:text-3xl font-black text-gray-800 mb-4">교직원 연락처를<br><span class="shimmer-text">한 곳에</span></h3>
+            <p class="text-gray-400 leading-relaxed">교장선생님, 교감선생님, 동료 교사들의 연락처를 한 곳에서 관리하세요. 검색과 그룹 분류도 지원합니다.</p>
           </div>
         </div>
 
@@ -909,19 +922,19 @@
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
         <div class="text-center reveal reveal-delay-1">
           <div class="stat-number text-4xl md:text-5xl font-black gradient-text mb-2" data-target="20">0</div>
-          <div class="text-sm text-white/25">프리셋 테마</div>
+          <div class="text-sm text-gray-400">프리셋 테마</div>
         </div>
         <div class="text-center reveal reveal-delay-2">
           <div class="stat-number text-4xl md:text-5xl font-black gradient-text-cool mb-2" data-target="12">0</div>
-          <div class="text-sm text-white/25">핵심 기능</div>
+          <div class="text-sm text-gray-400">핵심 기능</div>
         </div>
         <div class="text-center reveal reveal-delay-3">
           <div class="stat-number text-4xl md:text-5xl font-black gradient-text-warm mb-2">0</div>
-          <div class="text-sm text-white/25">API 키</div>
+          <div class="text-sm text-gray-400">API 키</div>
         </div>
         <div class="text-center reveal reveal-delay-4">
           <div class="stat-number text-4xl md:text-5xl font-black gradient-text mb-2" data-target="100">0</div>
-          <div class="text-sm text-white/25">% 무료</div>
+          <div class="text-sm text-gray-400">% 무료</div>
         </div>
       </div>
     </div>
@@ -932,62 +945,62 @@
 
   <!-- PRIVACY -->
   <section class="relative py-28 md:py-40 overflow-hidden">
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-mint-500/5 rounded-full blur-[180px]"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-mint-300/8 rounded-full blur-[180px]"></div>
 
     <div class="max-w-4xl mx-auto px-6">
       <div class="reveal">
-        <div class="glass-strong rounded-3xl p-10 md:p-16 border border-mint-500/10 relative overflow-hidden">
+        <div class="glass-strong rounded-3xl p-10 md:p-16 border border-mint-400/15 relative overflow-hidden">
           <!-- Background glow -->
-          <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] h-[300px] bg-mint-500/8 rounded-full blur-[100px] pointer-events-none"></div>
+          <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] h-[300px] bg-mint-300/10 rounded-full blur-[100px] pointer-events-none"></div>
 
           <div class="relative z-10 text-center">
             <!-- Shield icon -->
-            <div class="inline-flex items-center justify-center w-20 h-20 rounded-3xl bg-gradient-to-br from-mint-500/15 to-emerald-500/10 border border-mint-500/15 mb-8">
-              <svg class="w-10 h-10 text-mint-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <div class="inline-flex items-center justify-center w-20 h-20 rounded-3xl bg-gradient-to-br from-mint-400/15 to-emerald-400/10 border border-mint-400/15 mb-8">
+              <svg class="w-10 h-10 text-mint-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                 <path d="M9 12l2 2 4-4"/>
               </svg>
             </div>
 
-            <h2 class="text-3xl md:text-5xl font-black text-white/90 mb-6">
+            <h2 class="text-3xl md:text-5xl font-black text-gray-800 mb-6">
               데이터는 오직<br><span class="gradient-text">선생님의 컴퓨터에만</span>
             </h2>
 
-            <p class="text-lg md:text-xl text-white/50 max-w-2xl mx-auto mb-12 leading-relaxed">
+            <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed">
               어떠한 데이터도 외부 서버에 전송되거나 저장되지 않습니다.<br class="hidden md:block">
-              시간표, 메모, 연락처, 업무자료 — 모든 것이 <span class="text-mint-400 font-semibold">선생님의 PC 안에서만</span> 관리됩니다.
+              시간표, 메모, 연락처, 업무자료 — 모든 것이 <span class="text-mint-500 font-semibold">선생님의 PC 안에서만</span> 관리됩니다.
             </p>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-3xl mx-auto">
-              <div class="glass rounded-2xl p-6 border border-white/5">
-                <div class="w-11 h-11 rounded-xl bg-mint-500/10 border border-mint-500/10 flex items-center justify-center mx-auto mb-4">
-                  <svg class="w-5 h-5 text-mint-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <div class="glass rounded-2xl p-6 border border-gray-200/30">
+                <div class="w-11 h-11 rounded-xl bg-mint-400/10 border border-mint-400/10 flex items-center justify-center mx-auto mb-4">
+                  <svg class="w-5 h-5 text-mint-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                     <rect x="2" y="6" width="20" height="12" rx="2"/>
                     <path d="M12 12h.01M17 12h.01M7 12h.01"/>
                   </svg>
                 </div>
-                <h4 class="text-sm font-bold text-white/80 mb-1">외부 서버 없음</h4>
-                <p class="text-xs text-white/30 leading-relaxed">클라우드 서버 없이<br>온전히 로컬에서 동작</p>
+                <h4 class="text-sm font-bold text-gray-700 mb-1">외부 서버 없음</h4>
+                <p class="text-xs text-gray-400 leading-relaxed">클라우드 서버 없이<br>온전히 로컬에서 동작</p>
               </div>
 
-              <div class="glass rounded-2xl p-6 border border-white/5">
-                <div class="w-11 h-11 rounded-xl bg-mint-500/10 border border-mint-500/10 flex items-center justify-center mx-auto mb-4">
-                  <svg class="w-5 h-5 text-mint-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <div class="glass rounded-2xl p-6 border border-gray-200/30">
+                <div class="w-11 h-11 rounded-xl bg-mint-400/10 border border-mint-400/10 flex items-center justify-center mx-auto mb-4">
+                  <svg class="w-5 h-5 text-mint-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                   </svg>
                 </div>
-                <h4 class="text-sm font-bold text-white/80 mb-1">데이터 전송 없음</h4>
-                <p class="text-xs text-white/30 leading-relaxed">인터넷 연결 없어도<br>모든 기능 사용 가능</p>
+                <h4 class="text-sm font-bold text-gray-700 mb-1">데이터 전송 없음</h4>
+                <p class="text-xs text-gray-400 leading-relaxed">인터넷 연결 없어도<br>모든 기능 사용 가능</p>
               </div>
 
-              <div class="glass rounded-2xl p-6 border border-white/5">
-                <div class="w-11 h-11 rounded-xl bg-mint-500/10 border border-mint-500/10 flex items-center justify-center mx-auto mb-4">
-                  <svg class="w-5 h-5 text-mint-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <div class="glass rounded-2xl p-6 border border-gray-200/30">
+                <div class="w-11 h-11 rounded-xl bg-mint-400/10 border border-mint-400/10 flex items-center justify-center mx-auto mb-4">
+                  <svg class="w-5 h-5 text-mint-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/>
                   </svg>
                 </div>
-                <h4 class="text-sm font-bold text-white/80 mb-1">로그인 불필요</h4>
-                <p class="text-xs text-white/30 leading-relaxed">계정 생성 없이<br>설치 후 즉시 사용</p>
+                <h4 class="text-sm font-bold text-gray-700 mb-1">로그인 불필요</h4>
+                <p class="text-xs text-gray-400 leading-relaxed">계정 생성 없이<br>설치 후 즉시 사용</p>
               </div>
             </div>
           </div>
@@ -1001,24 +1014,24 @@
 
   <!-- DOWNLOAD -->
   <section id="download" class="relative py-28 md:py-40 overflow-hidden">
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent-500/5 rounded-full blur-[200px]"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent-300/8 rounded-full blur-[200px]"></div>
 
     <div class="max-w-4xl mx-auto px-6 text-center">
       <div class="reveal">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass text-xs text-accent-400 mb-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass text-xs text-accent-500 mb-6">
           <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           무료 다운로드
         </div>
 
-        <h2 class="text-4xl md:text-6xl font-black text-white/90 mb-4">
+        <h2 class="text-4xl md:text-6xl font-black text-gray-800 mb-4">
           지금 바로<br><span class="gradient-text">시작하세요</span>
         </h2>
-        <p class="text-white/30 max-w-lg mx-auto mb-10">Windows에 설치하고 학교 이름만 검색하면 끝. 복잡한 설정 없이 1분 안에 시작할 수 있어요.</p>
+        <p class="text-gray-400 max-w-lg mx-auto mb-10">Windows에 설치하고 학교 이름만 검색하면 끝. 복잡한 설정 없이 1분 안에 시작할 수 있어요.</p>
       </div>
 
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 reveal reveal-delay-1">
         <!-- Installer Download -->
-        <a id="btn-installer" href="#" onclick="downloadAsset('installer', event)" class="download-glow btn-primary group flex items-center gap-4 px-10 py-5 rounded-2xl bg-gradient-to-r from-accent-500 to-sky-500 hover:from-accent-400 hover:to-sky-400 text-white font-bold text-lg shadow-2xl shadow-accent-500/30 hover:shadow-accent-500/50 transition-all w-full sm:w-auto justify-center">
+        <a id="btn-installer" href="#" onclick="downloadAsset('installer', event)" class="download-glow btn-primary group flex items-center gap-4 px-10 py-5 rounded-2xl bg-gradient-to-r from-accent-400 to-accent-500 hover:from-accent-300 hover:to-accent-400 text-white font-bold text-lg shadow-2xl shadow-accent-400/30 hover:shadow-accent-400/50 transition-all w-full sm:w-auto justify-center">
           <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           <div class="text-left">
             <div class="text-sm font-medium opacity-70">Windows 인스톨러</div>
@@ -1028,7 +1041,7 @@
         </a>
 
         <!-- OneDrive Sub Download -->
-        <a href="https://1drv.ms/u/c/63cbfdc50072c77f/IQCUOMSaaJiiRabz_7bcdwqpAdNcAiuPEcedNsjSBPNsSiY?e=oTtpyf" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-4 px-10 py-5 rounded-2xl glass hover:bg-white/[0.04] text-white/70 hover:text-white font-medium transition-all border border-white/5 hover:border-white/10 w-full sm:w-auto justify-center">
+        <a href="https://1drv.ms/u/c/63cbfdc50072c77f/IQCUOMSaaJiiRabz_7bcdwqpAdNcAiuPEcedNsjSBPNsSiY?e=oTtpyf" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-4 px-10 py-5 rounded-2xl glass hover:bg-white/80 text-gray-500 hover:text-gray-700 font-medium transition-all border border-gray-200/30 hover:border-gray-300/40 w-full sm:w-auto justify-center">
           <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.7 2 6 4.7 6 7.5c0 .3 0 .5.1.8C3.6 8.8 2 10.8 2 13c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5 0-2.5-1.8-4.5-4.2-4.9C17.9 3.8 15.2 2 12 2z"/></svg>
           <div class="text-left">
             <div class="text-sm font-medium">클라우드 대체 다운로드</div>
@@ -1041,29 +1054,29 @@
 
       <!-- 라이선스 코드 -->
       <div class="mt-4 max-w-2xl mx-auto reveal reveal-delay-2">
-        <div class="rounded-xl border-2 border-dashed border-amber-400/40 bg-amber-400/10 px-6 py-5 text-center">
-          <div class="text-2XL text-amber-300/70 font-medium mb-2 tracking-wide">라이센스 키</div>
-          <div class="text-2xl md:text-3xl font-bold text-amber-300 tracking-[0.2em] font-mono select-all" style="text-shadow: 0 0 20px rgba(251, 191, 36, 0.3);">TEST-TEST-TEST-TEST</div>
+        <div class="rounded-xl border-2 border-dashed border-amber-400/40 bg-amber-300/10 px-6 py-5 text-center">
+          <div class="text-2XL text-amber-600/70 font-medium mb-2 tracking-wide">라이센스 키</div>
+          <div class="text-2xl md:text-3xl font-bold text-amber-600 tracking-[0.2em] font-mono select-all" style="text-shadow: 0 0 20px rgba(251, 191, 36, 0.15);">TEST-TEST-TEST-TEST</div>
         </div>
-        <p class="text-xs text-white/30 leading-relaxed mt-2 text-center">
+        <p class="text-xs text-gray-400 leading-relaxed mt-2 text-center">
           * 위 코드를 복사해서 설치 시 라이선스 입력란에 붙여넣기 해주세요.
         </p>
       </div>
 
       <!-- Download warning -->
-      <div class="reveal reveal-delay-3 mt-10 max-w-3xl mx-auto rounded-2xl border border-amber-400/20 p-6 md:p-8" style="background: rgba(251, 191, 36, 0.04);">
+      <div class="reveal reveal-delay-3 mt-10 max-w-3xl mx-auto rounded-2xl border border-amber-400/20 p-6 md:p-8" style="background: rgba(251, 191, 36, 0.06);">
         <div class="flex items-center gap-3 mb-5">
           <div class="w-8 h-8 rounded-xl bg-amber-400/15 flex items-center justify-center flex-shrink-0">
-            <svg class="w-4.5 h-4.5 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            <svg class="w-4.5 h-4.5 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
           </div>
-          <span class="text-sm text-amber-300/90 font-bold">다운로드 및 설치 시 안내</span>
+          <span class="text-sm text-amber-600 font-bold">다운로드 및 설치 시 안내</span>
         </div>
 
         <!-- 다운로드 경고 -->
         <div class="mb-6">
-          <h4 class="text-sm text-white/70 font-semibold mb-2">다운로드 시 경고가 뜨나요?</h4>
-          <p class="text-sm text-white/50 leading-relaxed mb-3">
-            코드 서명 전이라 브라우저에서 보안 경고가 나타날 수 있으며, <span class="text-white/70 font-semibold">실제 보안과는 무관</span>합니다.
+          <h4 class="text-sm text-gray-700 font-semibold mb-2">다운로드 시 경고가 뜨나요?</h4>
+          <p class="text-sm text-gray-400 leading-relaxed mb-3">
+            코드 서명 전이라 브라우저에서 보안 경고가 나타날 수 있으며, <span class="text-gray-600 font-semibold">실제 보안과는 무관</span>합니다.
           </p>
 
           <!-- 브라우저 탭 -->
@@ -1084,14 +1097,14 @@
 
           <!-- Chrome -->
           <div id="tab-chrome" class="browser-panel">
-            <p class="text-sm text-white/50 leading-relaxed mb-3">
-              <span class="text-amber-300/80 font-semibold">"확인되지 않은 파일 다운로드"</span> 창이 나타나면 그대로 <span class="text-white/70 font-semibold">[확인되지 않은 파일 다운로드]</span>를 눌러주세요.
+            <p class="text-sm text-gray-400 leading-relaxed mb-3">
+              <span class="text-amber-600/80 font-semibold">"확인되지 않은 파일 다운로드"</span> 창이 나타나면 그대로 <span class="text-gray-600 font-semibold">[확인되지 않은 파일 다운로드]</span>를 눌러주세요.
             </p>
             <div class="space-y-3">
-              <div class="rounded-xl overflow-hidden border border-amber-400/15 shadow-lg shadow-black/20">
+              <div class="rounded-xl overflow-hidden border border-amber-300/20 shadow-lg shadow-black/5">
                 <img src="다운로드경고1.png" alt="Chrome 다운로드 경고 1단계" class="w-full h-auto">
               </div>
-              <div class="rounded-xl overflow-hidden border border-amber-400/15 shadow-lg shadow-black/20">
+              <div class="rounded-xl overflow-hidden border border-amber-300/20 shadow-lg shadow-black/5">
                 <img src="다운로드경고2.png" alt="Chrome 다운로드 경고 2단계" class="w-full h-auto">
               </div>
             </div>
@@ -1099,17 +1112,17 @@
 
           <!-- Edge -->
           <div id="tab-edge" class="browser-panel hidden">
-            <p class="text-sm text-white/50 leading-relaxed mb-3">
-              <span class="text-amber-300/80 font-semibold">"파일을 안전하게 다운로드하시겠습니까?"</span> 창이 나타나면 <span class="text-white/70 font-semibold">[저장]</span>을 눌러주세요.
+            <p class="text-sm text-gray-400 leading-relaxed mb-3">
+              <span class="text-amber-600/80 font-semibold">"파일을 안전하게 다운로드하시겠습니까?"</span> 창이 나타나면 <span class="text-gray-600 font-semibold">[저장]</span>을 눌러주세요.
             </p>
             <div class="space-y-3">
-              <div class="rounded-xl overflow-hidden border border-amber-400/15 shadow-lg shadow-black/20">
+              <div class="rounded-xl overflow-hidden border border-amber-300/20 shadow-lg shadow-black/5">
                 <img src="다운로드경고(엣지)1.png" alt="Edge 다운로드 경고 1단계" class="w-full h-auto">
               </div>
-              <div class="rounded-xl overflow-hidden border border-amber-400/15 shadow-lg shadow-black/20">
+              <div class="rounded-xl overflow-hidden border border-amber-300/20 shadow-lg shadow-black/5">
                 <img src="다운로드경고(엣지)2.png" alt="Edge 다운로드 경고 2단계" class="w-full h-auto">
               </div>
-              <div class="rounded-xl overflow-hidden border border-amber-400/15 shadow-lg shadow-black/20">
+              <div class="rounded-xl overflow-hidden border border-amber-300/20 shadow-lg shadow-black/5">
                 <img src="다운로드경고(엣지)3.png" alt="Edge 다운로드 경고 3단계" class="w-full h-auto">
               </div>
             </div>
@@ -1117,35 +1130,35 @@
         </div>
 
         <!-- 구분선 -->
-        <div class="h-px bg-amber-400/10 my-5"></div>
+        <div class="h-px bg-amber-400/15 my-5"></div>
 
         <!-- 설치 경고 -->
         <div>
-          <h4 class="text-sm text-white/70 font-semibold mb-2">설치할 때도 경고가 뜨나요?</h4>
-          <p class="text-sm text-white/50 leading-relaxed mb-3">
-            설치 파일 실행 시 <span class="text-amber-300/80 font-semibold">Windows 보안</span> 경고가 나타날 수 있습니다. 아래 순서대로 조치하시면 됩니다.
+          <h4 class="text-sm text-gray-700 font-semibold mb-2">설치할 때도 경고가 뜨나요?</h4>
+          <p class="text-sm text-gray-400 leading-relaxed mb-3">
+            설치 파일 실행 시 <span class="text-amber-600/80 font-semibold">Windows 보안</span> 경고가 나타날 수 있습니다. 아래 순서대로 조치하시면 됩니다.
           </p>
           <div class="space-y-3 mb-4">
-            <div class="flex items-start gap-3 text-sm text-white/50">
-              <span class="flex-shrink-0 w-7 h-7 rounded-full bg-amber-400/15 border border-amber-400/25 flex items-center justify-center text-amber-300 text-xs font-bold mt-0.5">1</span>
-              <span class="leading-relaxed"><span class="text-white/70 font-semibold">"추가 정보"</span>를 클릭하세요</span>
+            <div class="flex items-start gap-3 text-sm text-gray-400">
+              <span class="flex-shrink-0 w-7 h-7 rounded-full bg-amber-400/15 border border-amber-400/25 flex items-center justify-center text-amber-600 text-xs font-bold mt-0.5">1</span>
+              <span class="leading-relaxed"><span class="text-gray-600 font-semibold">"추가 정보"</span>를 클릭하세요</span>
             </div>
-            <div class="flex items-start gap-3 text-sm text-white/50">
-              <span class="flex-shrink-0 w-7 h-7 rounded-full bg-amber-400/15 border border-amber-400/25 flex items-center justify-center text-amber-300 text-xs font-bold mt-0.5">2</span>
-              <span class="leading-relaxed">하단의 <span class="text-white/70 font-semibold">"실행"</span>을 클릭하면 설치가 시작됩니다</span>
+            <div class="flex items-start gap-3 text-sm text-gray-400">
+              <span class="flex-shrink-0 w-7 h-7 rounded-full bg-amber-400/15 border border-amber-400/25 flex items-center justify-center text-amber-600 text-xs font-bold mt-0.5">2</span>
+              <span class="leading-relaxed">하단의 <span class="text-gray-600 font-semibold">"실행"</span>을 클릭하면 설치가 시작됩니다</span>
             </div>
           </div>
           <div class="space-y-3">
-            <div class="rounded-xl overflow-hidden border border-amber-400/15 shadow-lg shadow-black/20">
+            <div class="rounded-xl overflow-hidden border border-amber-300/20 shadow-lg shadow-black/5">
               <img src="설치경고1.png" alt="설치 경고 1단계" class="w-full h-auto">
             </div>
-            <div class="rounded-xl overflow-hidden border border-amber-400/15 shadow-lg shadow-black/20">
+            <div class="rounded-xl overflow-hidden border border-amber-300/20 shadow-lg shadow-black/5">
               <img src="설치경고2.png" alt="설치 경고 2단계" class="w-full h-auto">
             </div>
           </div>
         </div>
 
-        <p class="text-xs text-white/30 leading-relaxed mt-5">
+        <p class="text-xs text-gray-400 leading-relaxed mt-5">
           * 코드 서명 완료 후에는 위 경고들이 더 이상 표시되지 않습니다.
         </p>
 
@@ -1154,22 +1167,22 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="relative border-t border-white/5 py-12">
+  <footer class="relative border-t border-gray-200/30 py-12">
     <div class="max-w-7xl mx-auto px-6">
       <div class="flex flex-col md:flex-row items-center justify-between gap-6">
         <div class="flex items-center gap-3">
-          <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-accent-500 to-sky-500 flex items-center justify-center">
+          <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-accent-400 to-spring-green flex items-center justify-center">
             <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <path d="M4 4h6v6H4z"/><path d="M14 4h6v6h-6z"/><path d="M4 14h6v6H4z"/><path d="M14 14h6v6h-6z"/>
             </svg>
           </div>
           <div>
-            <div class="text-sm font-semibold text-white/70">School Board</div>
-            <div class="text-xs text-white/25">호똑쌤</div>
+            <div class="text-sm font-semibold text-gray-600">School Board</div>
+            <div class="text-xs text-gray-400">호똑쌤</div>
           </div>
         </div>
         <div class="flex items-center gap-6">
-          <div class="text-xs text-white/15">
+          <div class="text-xs text-gray-300">
             &copy; 2026 호똑쌤. All rights reserved.
           </div>
         </div>
@@ -1251,7 +1264,7 @@
       const y = window.scrollY;
       if (y > 50) {
         nav.classList.add('glass-strong');
-        nav.style.borderBottom = '1px solid rgba(99, 102, 241, 0.06)';
+        nav.style.borderBottom = '1px solid rgba(236, 72, 153, 0.08)';
       } else {
         nav.classList.remove('glass-strong');
         nav.style.borderBottom = 'none';
