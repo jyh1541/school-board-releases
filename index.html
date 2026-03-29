@@ -194,14 +194,6 @@
 
     <!-- Content -->
     <div class="relative z-10 max-w-5xl mx-auto px-6 text-center pt-24">
-      <!-- Clock -->
-      <div class="animate-fade-in opacity-0 mb-6 inline-flex items-center gap-3 px-4 py-2 rounded-full border border-sakura-200/50 bg-white/70 shadow-sm" style="animation-fill-mode:forwards">
-        <div class="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse"></div>
-        <span id="hero-clock" class="text-sm font-semibold text-gray-600 tabular-nums font-mono">--:--</span>
-        <span class="text-sakura-200">|</span>
-        <span id="hero-date" class="text-xs text-gray-400">----년 --월 --일</span>
-      </div>
-
       <!-- Badge -->
       <div class="animate-fade-in opacity-0 mb-5" style="animation-fill-mode:forwards; animation-delay:0.1s">
         <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/70 border border-sakura-200/60 text-xs font-medium text-sky-600 shadow-sm">
@@ -931,21 +923,6 @@
       if (asset) { window.location.href = asset.browser_download_url; } else { window.open(GITHUB_RELEASES_PAGE, '_blank'); }
     }
     fetchLatestRelease();
-
-    function updateClock() {
-      const now = new Date();
-      const h = String(now.getHours()).padStart(2, '0');
-      const m = String(now.getMinutes()).padStart(2, '0');
-      const clockEl = document.getElementById('hero-clock');
-      const dateEl = document.getElementById('hero-date');
-      if (clockEl) clockEl.textContent = `${h}:${m}`;
-      if (dateEl) {
-        const days = ['일', '월', '화', '수', '목', '금', '토'];
-        dateEl.textContent = `${now.getFullYear()}년 ${now.getMonth() + 1}월 ${now.getDate()}일 (${days[now.getDay()]})`;
-      }
-    }
-    updateClock();
-    setInterval(updateClock, 1000);
 
     const nav = document.getElementById('nav');
     let lastScroll = 0;
