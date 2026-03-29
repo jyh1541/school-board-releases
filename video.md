@@ -1,0 +1,14 @@
+# 기능별 영상 주소
+- 01_설치 방법 : https://youtu.be/FHEegIWDF6Q
+- 02_온보딩 설정 : https://youtu.be/W-58hdVUNBU
+- 03_일정 : https://youtu.be/hbz_tYBp96I
+- 04_시간표 : https://youtu.be/5etlAdx9Vms
+- 05_메모 : https://youtu.be/AYglVdIJ4qw
+- 06_급식 : https://youtu.be/wd-XSRrBTJs
+- 07_연락처 : https://youtu.be/5WW7QWyNk8M
+- 08_업무자료 : https://youtu.be/2lET0uqIXts
+- 09_북마크 : https://youtu.be/rvMVEByeRTY
+- 10_계산기 : https://youtu.be/0TYcH3OUKHo
+- 11_자동로그인 : https://youtu.be/KojPG1aL8AI
+- 12_설정 : https://youtu.be/EolllxUrVM8
+- 13_대시보드 : https://youtu.be/_trlRg-ithk

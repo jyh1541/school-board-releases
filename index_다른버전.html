@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School Board - 선생님을 위한 올인원 데스크톱 위젯</title>
+  <meta name="description" content="학교 선생님을 위한 올인원 데스크톱 위젯 앱. 시간표, 급식, 학사일정, 메모, 연락처, 계산기를 하나의 위젯에서 관리하세요.">
+  <meta property="og:title" content="School Board">
+  <meta property="og:description" content="선생님을 위한 올인원 데스크톱 위젯">
+  <meta property="og:type" content="website">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['"Pretendard Variable"', 'Pretendard', 'system-ui', 'sans-serif'],
+            body: ['"Pretendard Variable"', 'Pretendard', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            parchment: { 50: '#fdfcfa', 100: '#faf7f2', 200: '#f0ebe3', 300: '#e8e0d4' },
+            forest: { 50: '#edf5f0', 100: '#d4e8db', 200: '#81b29a', 300: '#5fa07d', 400: '#3d8b67', 500: '#2d6a4f', 600: '#245840', 700: '#1a3f2e' },
+            terra: { 50: '#fdf0ec', 100: '#fbe0d6', 200: '#f0c2b0', 300: '#e8a48c', 400: '#e07a5f', 500: '#c45d3e' },
+            navy: { 50: '#eef0f5', 100: '#d4d9e6', 200: '#a8b3cc', 300: '#7b8db3', 400: '#457b9d', 500: '#365f7f' },
+            amber: { 50: '#fef9ee', 100: '#fdf0d5', 200: '#f4c67a', 300: '#f4a261', 400: '#e6893a' },
+          },
+          animation: {
+            'marquee': 'marquee 40s linear infinite',
+            'pulse-soft': 'pulseSoft 4s ease-in-out infinite',
+            'slide-up': 'slideUp 0.8s ease-out forwards',
+            'slide-up-delay': 'slideUp 0.8s ease-out 0.2s forwards',
+            'slide-up-delay2': 'slideUp 0.8s ease-out 0.4s forwards',
+            'fade-in': 'fadeIn 1s ease-out forwards',
+            'fade-in-delay': 'fadeIn 1s ease-out 0.3s forwards',
+          },
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Pretendard:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; word-break: keep-all; overflow-wrap: break-word; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      background: #faf7f2;
+      color: #1a1a1a;
+      overflow-x: hidden;
+    }
+
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: #f0ebe3; }
+    ::-webkit-scrollbar-thumb { background: #c4b8a8; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #a89880; }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    @keyframes pulseSoft {
+      0%, 100% { opacity: 0.12; }
+      50% { opacity: 0.22; }
+    }
+
+    .grain-overlay {
+      position: fixed; inset: 0;
+      pointer-events: none; z-index: 9999;
+      opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-repeat: repeat; background-size: 256px 256px;
+    }
+
+    .glass-strong {
+      background: rgba(250, 247, 242, 0.92) !important;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .reveal { opacity: 0; transform: translateY(30px); transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.08s; }
+    .reveal-delay-2 { transition-delay: 0.16s; }
+    .reveal-delay-3 { transition-delay: 0.24s; }
+    .reveal-delay-4 { transition-delay: 0.32s; }
+
+    .feature-card {
+      background: #fffdf9;
+      border: 1px solid #e8e2d8;
+      transition: all 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .feature-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 48px -12px rgba(45, 106, 79, 0.1), 0 0 0 1px #d4e8db;
+      border-color: #d4e8db;
+    }
+
+    .stat-number { font-variant-numeric: tabular-nums; }
+
+    .mockup-window {
+      border-radius: 10px; overflow: hidden;
+      border: 1px solid #e8e2d8;
+      box-shadow: 0 20px 60px -15px rgba(0, 0, 0, 0.07), 0 0 0 1px rgba(0, 0, 0, 0.02);
+      position: relative;
+    }
+
+    .tape {
+      position: absolute;
+      width: 48px; height: 16px;
+      border-radius: 2px;
+      z-index: 10;
+    }
+    .tape-1 { top: -7px; left: 20%; transform: rotate(-3deg); background: rgba(244, 162, 97, 0.45); }
+    .tape-2 { top: -7px; right: 20%; transform: rotate(2deg); background: rgba(129, 178, 154, 0.4); }
+
+    .btn-warm {
+      position: relative; overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .btn-warm::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.12) 50%, transparent 100%);
+      transform: translateX(-100%); transition: transform 0.5s ease;
+    }
+    .btn-warm:hover::after { transform: translateX(100%); }
+
+    .tag-scroll { overflow: hidden; white-space: nowrap; }
+
+    .section-border {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #e8e2d8, transparent);
+    }
+
+    .light-box-shadow {
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 6px 24px -4px rgba(0,0,0,0.06);
+    }
+
+    .wavy-underline {
+      display: block;
+      width: 120px; height: 12px; margin-top: 8px;
+    }
+
+    /* Lightbox */
+    .lightbox-overlay {
+      position: fixed; inset: 0; z-index: 9999;
+      background: rgba(20, 20, 18, 0.92);
+      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+      cursor: zoom-out;
+    }
+    .lightbox-overlay.active { opacity: 1; pointer-events: auto; }
+    .lightbox-overlay img {
+      max-width: 92vw; max-height: 90vh; object-fit: contain;
+      border-radius: 8px; transform: scale(0.95); transition: transform 0.3s ease;
+    }
+    .lightbox-overlay.active img { transform: scale(1); }
+    .lightbox-close {
+      position: absolute; top: 20px; right: 24px;
+      width: 40px; height: 40px; border-radius: 50%;
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.6); font-size: 20px;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; transition: all 0.2s;
+    }
+    .lightbox-close:hover { background: rgba(255,255,255,0.15); color: white; }
+    .lightbox-caption {
+      position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
+      color: rgba(255,255,255,0.4); font-size: 14px; font-weight: 500;
+    }
+
+    /* Browser tabs */
+    .browser-tab {
+      background: rgba(45, 106, 79, 0.04); border: 1px solid rgba(45, 106, 79, 0.08);
+      color: rgba(26, 26, 26, 0.35); cursor: pointer;
+    }
+    .browser-tab:hover { background: rgba(45, 106, 79, 0.08); color: rgba(26, 26, 26, 0.55); }
+    .browser-tab.active {
+      background: rgba(45, 106, 79, 0.08); border-color: rgba(45, 106, 79, 0.18);
+      color: rgba(45, 106, 79, 0.85);
+    }
+
+    @media (max-width: 768px) {
+      .hero-title { font-size: 2.6rem !important; }
+      .feature-grid { grid-template-columns: 1fr !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="grain-overlay"></div>
+
+  <!-- ==================== NAV ==================== -->
+  <nav id="nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2.5 group">
+        <div class="w-8 h-8 rounded-lg bg-forest-500 flex items-center justify-center shadow-sm group-hover:bg-forest-600 transition-colors">
+          <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h6v6H4z"/><path d="M14 4h6v6h-6z"/><path d="M4 14h6v6H4z"/><path d="M14 14h6v6h-6z"/>
+          </svg>
+        </div>
+        <span class="font-bold text-sm text-gray-800 tracking-tight">School Board</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#features" class="text-sm text-gray-400 hover:text-gray-700 transition-colors">기능</a>
+        <a href="#preview" class="text-sm text-gray-400 hover:text-gray-700 transition-colors">미리보기</a>
+        <a href="#download" class="text-sm text-gray-400 hover:text-gray-700 transition-colors">다운로드</a>
+      </div>
+      <a href="#download" class="btn-warm px-5 py-2 rounded-lg bg-forest-500 hover:bg-forest-600 text-white text-sm font-semibold shadow-sm hover:shadow-md transition-all">
+        다운로드
+      </a>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="relative min-h-screen flex items-center overflow-hidden pt-20">
+    <!-- Subtle organic bg shapes -->
+    <div class="absolute top-20 right-0 w-[500px] h-[500px] bg-forest-100/60 rounded-full blur-[120px] animate-pulse-soft"></div>
+    <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-amber-50/80 rounded-full blur-[100px] animate-pulse-soft" style="animation-delay:2s"></div>
+
+    <div class="max-w-6xl mx-auto px-6 w-full">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <!-- Left: Text -->
+        <div class="relative z-10">
+          <!-- Live clock -->
+          <div class="animate-fade-in opacity-0 mb-8" style="animation-fill-mode:forwards">
+            <div class="inline-flex items-center gap-3 px-4 py-2.5 rounded-full bg-white border border-parchment-300 light-box-shadow">
+              <div class="w-2 h-2 rounded-full bg-forest-400 animate-pulse"></div>
+              <span id="hero-clock" class="text-sm font-semibold text-gray-700 tabular-nums">--:--</span>
+              <span class="text-parchment-300">|</span>
+              <span id="hero-date" class="text-xs text-gray-400">----년 --월 --일</span>
+            </div>
+          </div>
+
+          <!-- Badge -->
+          <div class="animate-fade-in opacity-0 mb-6" style="animation-fill-mode:forwards; animation-delay:0.1s">
+            <span class="inline-block px-3 py-1 rounded-md bg-forest-50 border border-forest-100 text-xs font-semibold text-forest-600 tracking-wide">
+              교육용 데스크톱 앱
+            </span>
+          </div>
+
+          <!-- Title -->
+          <h1 class="hero-title text-5xl md:text-7xl font-black leading-[1.05] mb-2 animate-slide-up opacity-0" style="animation-fill-mode:forwards">
+            선생님을 위한<br>
+            <span class="text-forest-500">올인원 위젯</span>
+          </h1>
+
+          <!-- Hand-drawn wavy underline -->
+          <svg class="wavy-underline animate-fade-in opacity-0" style="animation-fill-mode:forwards; animation-delay:0.5s" viewBox="0 0 120 12" fill="none">
+            <path d="M2 8 Q15 2, 30 8 T60 8 T90 8 T120 8" stroke="#2d6a4f" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.35"/>
+          </svg>
+
+          <!-- Subtitle -->
+          <p class="text-base md:text-lg text-gray-400 max-w-md mt-6 mb-10 animate-slide-up-delay opacity-0 font-normal leading-relaxed" style="animation-fill-mode:forwards">
+            바탕화면 위에 올려두는 스마트 도우미.<br>
+            시간표, 급식, 학사일정, 메모를 한눈에 관리하세요.
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3 animate-slide-up-delay2 opacity-0" style="animation-fill-mode:forwards">
+            <a href="#download" class="btn-warm group flex items-center gap-3 px-7 py-3.5 rounded-xl bg-forest-500 hover:bg-forest-600 text-white font-bold text-sm shadow-md hover:shadow-lg transition-all">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              무료 다운로드
+              <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+            <a href="#features" class="group flex items-center gap-2 px-7 py-3.5 rounded-xl border border-parchment-300 hover:border-parchment-300 text-gray-500 hover:text-gray-700 font-medium text-sm transition-all bg-white/50 hover:bg-white">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+              기능 살펴보기
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Mockup -->
+        <div class="relative animate-fade-in-delay opacity-0" style="animation-fill-mode:forwards; animation-delay:0.4s">
+          <div class="relative">
+            <!-- Tape decorations -->
+            <div class="tape tape-1"></div>
+            <div class="tape tape-2"></div>
+            <div class="mockup-window bg-white rounded-xl overflow-hidden">
+              <div class="flex items-center gap-2 px-4 py-3 border-b border-parchment-200">
+                <div class="flex gap-1.5">
+                  <div class="w-2.5 h-2.5 rounded-full bg-terra-300"></div>
+                  <div class="w-2.5 h-2.5 rounded-full bg-amber-200"></div>
+                  <div class="w-2.5 h-2.5 rounded-full bg-forest-200"></div>
+                </div>
+                <div class="flex-1 text-center">
+                  <span class="text-[11px] text-gray-300 font-medium">School Board</span>
+                </div>
+              </div>
+              <div class="bg-white">
+                <img src="대시보드화면.png" alt="School Board 대시보드" class="w-full h-auto cursor-pointer" onclick="openLightbox(this.src, this.alt)">
+              </div>
+            </div>
+            <!-- Subtle shadow below -->
+            <div class="absolute -bottom-8 left-1/2 -translate-x-1/2 w-3/4 h-16 bg-forest-200/15 blur-[60px] rounded-full"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-fade-in opacity-0" style="animation-fill-mode:forwards; animation-delay:1.5s">
+      <span class="text-[11px] text-gray-300 tracking-wider uppercase">Scroll</span>
+      <div class="w-4 h-7 rounded-full border border-gray-300/70 flex items-start justify-center p-1">
+        <div class="w-0.5 h-1.5 rounded-full bg-forest-300 animate-bounce"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== MARQUEE ==================== -->
+  <div class="relative py-5 overflow-hidden bg-forest-500 mt-16">
+    <div class="tag-scroll">
+      <div class="inline-flex gap-8 animate-marquee">
+        <span class="text-sm text-forest-100/70 whitespace-nowrap font-medium">NEIS 나이스 연동</span>
+        <span class="text-forest-200/40">·</span>
+        <span class="text-sm text-forest-100/70 whitespace-nowrap font-medium">자동 업데이트</span>
+        <span class="text-forest-200/40">·</span>
+        <span class="text-sm text-forest-100/70 whitespace-nowrap font-medium">20+ 테마</span>
+        <span class="text-forest-200/40">·</span>
+        <span class="text-sm text-forest-100/70 whitespace-nowrap font-medium">프레임리스 위젯</span>
+        <span class="text-forest-200/40">·</span>
+        <span class="text-sm text-forest-100/70 whitespace-nowrap font-medium">투명도 조절</span>
+        <span class="text-forest-200/40">·</span>
+        <span class="text-sm text-forest-100/70 whitespace-nowrap font-medium">데이터 암호화</span>
+        <span class="text-forest-200/40">·</span>
+        <span class="text-sm text-forest-100/70 whitespace-nowrap font-medium">엑셀 연동</span>
+        <span class="text-forest-200/40">·</span>
+        <span class="text-sm text-forest-100/70 whitespace-nowrap font-medium">업무포털 자동 로그인</span>
+        <span class="text-forest-200/40">·</span>
+        <span class="text-sm text-forest-100/70 whitespace-nowrap font-medium">구글 시트 연동</span>
+        <span class="text-forest-200/40">·</span>
+        <span class="text-sm text-forest-100/70 whitespace-nowrap font-medium">포터블 지원</span>
+        <span class="text-forest-200/40">·</span>
+        <span class="text-sm text-forest-100/70 whitespace-nowrap font-medium">NEIS 나이스 연동</span>
+        <span class="text-forest-200/40">·</span>
+        <span class="text-sm text-forest-100/70 whitespace-nowrap font-medium">자동 업데이트</span>
+        <span class="text-forest-200/40">·</span>
+        <span class="text-sm text-forest-100/70 whitespace-nowrap font-medium">20+ 테마</span>
+        <span class="text-forest-200/40">·</span>
+        <span class="text-sm text-forest-100/70 whitespace-nowrap font-medium">프레임리스 위젯</span>
+        <span class="text-forest-200/40">·</span>
+        <span class="text-sm text-forest-100/70 whitespace-nowrap font-medium">투명도 조절</span>
+        <span class="text-forest-200/40">·</span>
+        <span class="text-sm text-forest-100/70 whitespace-nowrap font-medium">데이터 암호화</span>
+        <span class="text-forest-200/40">·</span>
+        <span class="text-sm text-forest-100/70 whitespace-nowrap font-medium">엑셀 연동</span>
+        <span class="text-forest-200/40">·</span>
+        <span class="text-sm text-forest-100/70 whitespace-nowrap font-medium">업무포털 자동 로그인</span>
+        <span class="text-forest-200/40">·</span>
+        <span class="text-sm text-forest-100/70 whitespace-nowrap font-medium">구글 시트 연동</span>
+        <span class="text-forest-200/40">·</span>
+        <span class="text-sm text-forest-100/70 whitespace-nowrap font-medium">포터블 지원</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== FEATURES ==================== -->
+  <section id="features" class="relative py-28 md:py-36">
+    <div class="absolute -top-20 -right-40 w-[400px] h-[400px] bg-terra-50/60 rounded-full blur-[120px]"></div>
+
+    <div class="max-w-6xl mx-auto px-6">
+      <!-- Section header -->
+      <div class="text-center mb-16 reveal">
+        <p class="text-xs font-semibold text-forest-500 tracking-widest uppercase mb-4">Core Features</p>
+        <h2 class="text-4xl md:text-5xl font-black text-gray-800 mb-4">
+          교무실의 <span class="text-forest-500">모든 것</span>
+        </h2>
+        <p class="text-gray-400 max-w-md mx-auto text-sm">선생님이 학교에서 필요한 모든 도구를 하나의 위젯에 담았습니다.</p>
+      </div>
+
+      <!-- Feature Grid -->
+      <div class="feature-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+        <!-- 1. Dashboard -->
+        <div class="feature-card rounded-2xl p-6 reveal reveal-delay-1">
+          <div class="w-10 h-10 rounded-xl bg-forest-50 border border-forest-100 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-forest-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
+          </div>
+          <h3 class="text-base font-bold text-gray-800 mb-1.5">대시보드</h3>
+          <p class="text-sm text-gray-400 leading-relaxed mb-4">시계, 날씨, 시간표, 급식을 한 화면에. 벤토 그리드 레이아웃으로 위젯을 자유롭게 배치하세요.</p>
+          <div class="flex gap-1.5">
+            <span class="px-2 py-0.5 rounded bg-forest-50 text-[10px] text-forest-600 font-medium">드래그 배치</span>
+            <span class="px-2 py-0.5 rounded bg-forest-50 text-[10px] text-forest-600 font-medium">위젯 크기 조절</span>
+          </div>
+        </div>
+
+        <!-- 2. Timetable -->
+        <div class="feature-card rounded-2xl p-6 reveal reveal-delay-2">
+          <div class="w-10 h-10 rounded-xl bg-navy-50 border border-navy-100 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-navy-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg>
+          </div>
+          <h3 class="text-base font-bold text-gray-800 mb-1.5">시간표</h3>
+          <p class="text-sm text-gray-400 leading-relaxed mb-4">NEIS에서 자동으로 불러오거나 직접 입력하세요. 학반별, 교사별, 학생 개별 조회까지.</p>
+          <div class="flex gap-1.5">
+            <span class="px-2 py-0.5 rounded bg-navy-50 text-[10px] text-navy-400 font-medium">NEIS 연동</span>
+            <span class="px-2 py-0.5 rounded bg-navy-50 text-[10px] text-navy-400 font-medium">교과별 조회</span>
+          </div>
+        </div>
+
+        <!-- 3. Meals -->
+        <div class="feature-card rounded-2xl p-6 reveal reveal-delay-3">
+          <div class="w-10 h-10 rounded-xl bg-amber-50 border border-amber-100 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+          </div>
+          <h3 class="text-base font-bold text-gray-800 mb-1.5">급식 정보</h3>
+          <p class="text-sm text-gray-400 leading-relaxed mb-4">조·중·석식 3끼 모두 확인. 알레르기 정보도 함께 표시되어 안심하고 식사하세요.</p>
+          <div class="flex gap-1.5">
+            <span class="px-2 py-0.5 rounded bg-amber-50 text-[10px] text-amber-400 font-medium">3식 제공</span>
+            <span class="px-2 py-0.5 rounded bg-amber-50 text-[10px] text-amber-400 font-medium">알레르기 표시</span>
+          </div>
+        </div>
+
+        <!-- 4. Calendar -->
+        <div class="feature-card rounded-2xl p-6 reveal reveal-delay-1">
+          <div class="w-10 h-10 rounded-xl bg-terra-50 border border-terra-100 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-terra-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <h3 class="text-base font-bold text-gray-800 mb-1.5">일정 & D-Day</h3>
+          <p class="text-sm text-gray-400 leading-relaxed mb-4">학사일정과 개인 할 일을 통합 관리. D-Day 카운터로 중요한 날짜를 놓치지 마세요.</p>
+          <div class="flex gap-1.5">
+            <span class="px-2 py-0.5 rounded bg-terra-50 text-[10px] text-terra-400 font-medium">학사일정 연동</span>
+            <span class="px-2 py-0.5 rounded bg-terra-50 text-[10px] text-terra-400 font-medium">알림 설정</span>
+          </div>
+        </div>
+
+        <!-- 5. Memo -->
+        <div class="feature-card rounded-2xl p-6 reveal reveal-delay-2 relative overflow-hidden">
+          <div class="absolute -right-4 -top-4 w-14 h-14 rounded-lg bg-amber-100/60 rotate-12"></div>
+          <div class="relative z-10">
+            <div class="w-10 h-10 rounded-xl bg-amber-50 border border-amber-100 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
+            <h3 class="text-base font-bold text-gray-800 mb-1.5">포스트잇 메모</h3>
+            <p class="text-sm text-gray-400 leading-relaxed mb-4">자유 배치 보드에 드래그 앤 드롭. 리치 텍스트 편집, 6가지 파스텔 색상.</p>
+            <div class="flex gap-1.5">
+              <span class="px-2 py-0.5 rounded bg-amber-50 text-[10px] text-amber-400 font-medium">드래그 배치</span>
+              <span class="px-2 py-0.5 rounded bg-amber-50 text-[10px] text-amber-400 font-medium">리치 텍스트</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Contacts -->
+        <div class="feature-card rounded-2xl p-6 reveal reveal-delay-3">
+          <div class="w-10 h-10 rounded-xl bg-navy-50 border border-navy-100 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-navy-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3 class="text-base font-bold text-gray-800 mb-1.5">연락처</h3>
+          <p class="text-sm text-gray-400 leading-relaxed mb-4">교사·학생 연락처를 분리 관리. 엑셀 붙여넣기, CSV 가져오기, 인쇄 기능까지.</p>
+          <div class="flex gap-1.5">
+            <span class="px-2 py-0.5 rounded bg-navy-50 text-[10px] text-navy-400 font-medium">엑셀 연동</span>
+            <span class="px-2 py-0.5 rounded bg-navy-50 text-[10px] text-navy-400 font-medium">인쇄 지원</span>
+          </div>
+        </div>
+
+        <!-- 7. Calculator -->
+        <div class="feature-card rounded-2xl p-6 reveal reveal-delay-1">
+          <div class="w-10 h-10 rounded-xl bg-purple-50 border border-purple-100 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-purple-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="8" y2="10.01"/><line x1="12" y1="10" x2="12" y2="10.01"/><line x1="16" y1="10" x2="16" y2="10.01"/><line x1="8" y1="14" x2="8" y2="14.01"/><line x1="12" y1="14" x2="12" y2="14.01"/><line x1="16" y1="14" x2="16" y2="14.01"/><line x1="8" y1="18" x2="8" y2="18.01"/><line x1="12" y1="18" x2="12" y2="18.01"/><line x1="16" y1="18" x2="16" y2="18.01"/></svg>
+          </div>
+          <h3 class="text-base font-bold text-gray-800 mb-1.5">계산기</h3>
+          <p class="text-sm text-gray-400 leading-relaxed mb-4">사칙연산부터 단위 변환, 등급 계산기까지. 배점 계산으로 시험 출제도 쉽게.</p>
+          <div class="flex gap-1.5">
+            <span class="px-2 py-0.5 rounded bg-purple-50 text-[10px] text-purple-500 font-medium">단위 변환</span>
+            <span class="px-2 py-0.5 rounded bg-purple-50 text-[10px] text-purple-500 font-medium">등급 계산</span>
+          </div>
+        </div>
+
+        <!-- 8. Auto Login -->
+        <div class="feature-card rounded-2xl p-6 reveal reveal-delay-2">
+          <div class="w-10 h-10 rounded-xl bg-forest-50 border border-forest-100 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-forest-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+          </div>
+          <h3 class="text-base font-bold text-gray-800 mb-1.5">업무포털 자동 로그인</h3>
+          <p class="text-sm text-gray-400 leading-relaxed mb-4">나이스, K-에듀파인 자동 로그인. 인증서 선택부터 비밀번호 입력까지 원클릭.</p>
+          <div class="flex gap-1.5">
+            <span class="px-2 py-0.5 rounded bg-forest-50 text-[10px] text-forest-600 font-medium">나이스</span>
+            <span class="px-2 py-0.5 rounded bg-forest-50 text-[10px] text-forest-600 font-medium">K-에듀파인</span>
+          </div>
+        </div>
+
+        <!-- 9. Themes -->
+        <div class="feature-card rounded-2xl p-6 reveal reveal-delay-3">
+          <div class="w-10 h-10 rounded-xl bg-terra-50 border border-terra-100 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-terra-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="15.5" r="2.5"/><circle cx="8.5" cy="15.5" r="2.5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+          </div>
+          <h3 class="text-base font-bold text-gray-800 mb-1.5">20+ 테마</h3>
+          <p class="text-sm text-gray-400 leading-relaxed mb-4">벚꽃부터 네온까지 20종 프리셋. 원하는 색상으로 커스텀 테마도 만들 수 있어요.</p>
+          <div class="flex gap-1.5">
+            <div class="w-4 h-4 rounded-full bg-gradient-to-br from-pink-300 to-rose-400"></div>
+            <div class="w-4 h-4 rounded-full bg-gradient-to-br from-sky-300 to-blue-500"></div>
+            <div class="w-4 h-4 rounded-full bg-gradient-to-br from-emerald-300 to-green-500"></div>
+            <div class="w-4 h-4 rounded-full bg-gradient-to-br from-violet-300 to-purple-500"></div>
+            <div class="w-4 h-4 rounded-full bg-gradient-to-br from-amber-300 to-orange-500"></div>
+            <div class="w-4 h-4 rounded-full bg-gradient-to-br from-gray-300 to-gray-500"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PREVIEW / HIGHLIGHTS ==================== -->
+  <section id="preview" class="relative py-28 md:py-36 overflow-hidden">
+    <div class="absolute top-1/3 left-0 w-[350px] h-[350px] bg-amber-50/50 rounded-full blur-[120px]"></div>
+    <div class="absolute bottom-1/4 right-0 w-[400px] h-[400px] bg-navy-50/40 rounded-full blur-[140px]"></div>
+
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-20 reveal">
+        <p class="text-xs font-semibold text-forest-500 tracking-widest uppercase mb-4">Preview</p>
+        <h2 class="text-3xl md:text-5xl font-black text-gray-800 mb-3">
+          한눈에 보는 <span class="text-forest-500">핵심 기능</span>
+        </h2>
+        <p class="text-gray-400 max-w-md mx-auto text-sm">학교 업무에 필요한 모든 것을 하나의 앱에 담았습니다.</p>
+      </div>
+
+      <div class="space-y-28 md:space-y-36">
+
+        <!-- 1. 대시보드 -->
+        <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center reveal">
+          <div class="order-2 md:order-1">
+            <div class="mockup-window bg-white rounded-xl overflow-hidden">
+              <div class="flex items-center gap-2 px-4 py-2.5 border-b border-parchment-200">
+                <div class="flex gap-1.5">
+                  <div class="w-2.5 h-2.5 rounded-full bg-terra-200"></div>
+                  <div class="w-2.5 h-2.5 rounded-full bg-amber-200"></div>
+                  <div class="w-2.5 h-2.5 rounded-full bg-forest-200"></div>
+                </div>
+                <div class="flex-1 text-center text-[11px] text-gray-300">대시보드</div>
+              </div>
+              <div class="bg-white" style="aspect-ratio:16/10">
+                <img src="대시보드화면.png" alt="대시보드" class="w-full h-full object-cover cursor-pointer" onclick="openLightbox(this.src, this.alt)">
+              </div>
+            </div>
+          </div>
+          <div class="order-1 md:order-2">
+            <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-forest-50 text-[11px] text-forest-600 font-semibold mb-4">대시보드</div>
+            <h3 class="text-2xl md:text-3xl font-black text-gray-800 mb-3 leading-tight">오늘 하루를<br><span class="text-forest-500">한눈에</span></h3>
+            <p class="text-sm text-gray-400 leading-relaxed">시계, 급식, 시간표, 학사일정, 메모까지. 위젯 기반 대시보드에서 오늘 필요한 모든 정보를 한 화면에 확인하세요.</p>
+          </div>
+        </div>
+
+        <!-- 2. 시간표 -->
+        <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center reveal">
+          <div>
+            <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-navy-50 text-[11px] text-navy-400 font-semibold mb-4">시간표</div>
+            <h3 class="text-2xl md:text-3xl font-black text-gray-800 mb-3 leading-tight">NEIS 연동<br><span class="text-navy-400">자동 시간표</span></h3>
+            <p class="text-sm text-gray-400 leading-relaxed">학교 이름만 검색하면 시간표가 자동으로. API 키 없이 NEIS에서 바로 불러옵니다.</p>
+          </div>
+          <div>
+            <div class="mockup-window bg-white rounded-xl overflow-hidden">
+              <div class="flex items-center gap-2 px-4 py-2.5 border-b border-parchment-200">
+                <div class="flex gap-1.5">
+                  <div class="w-2.5 h-2.5 rounded-full bg-terra-200"></div>
+                  <div class="w-2.5 h-2.5 rounded-full bg-amber-200"></div>
+                  <div class="w-2.5 h-2.5 rounded-full bg-forest-200"></div>
+                </div>
+                <div class="flex-1 text-center text-[11px] text-gray-300">시간표</div>
+              </div>
+              <div class="bg-white" style="aspect-ratio:16/10">
+                <img src="시간표화면.png" alt="시간표" class="w-full h-full object-cover cursor-pointer" onclick="openLightbox(this.src, this.alt)">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. 메모 -->
+        <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center reveal">
+          <div class="order-2 md:order-1">
+            <div class="mockup-window bg-white rounded-xl overflow-hidden">
+              <div class="flex items-center gap-2 px-4 py-2.5 border-b border-parchment-200">
+                <div class="flex gap-1.5">
+                  <div class="w-2.5 h-2.5 rounded-full bg-terra-200"></div>
+                  <div class="w-2.5 h-2.5 rounded-full bg-amber-200"></div>
+                  <div class="w-2.5 h-2.5 rounded-full bg-forest-200"></div>
+                </div>
+                <div class="flex-1 text-center text-[11px] text-gray-300">메모</div>
+              </div>
+              <div class="bg-white" style="aspect-ratio:16/10">
+                <img src="메모장화면.png" alt="메모" class="w-full h-full object-cover cursor-pointer" onclick="openLightbox(this.src, this.alt)">
+              </div>
+            </div>
+          </div>
+          <div class="order-1 md:order-2">
+            <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-forest-50 text-[11px] text-forest-600 font-semibold mb-4">메모</div>
+            <h3 class="text-2xl md:text-3xl font-black text-gray-800 mb-3 leading-tight">간편하게<br><span class="text-forest-500">기록하세요</span></h3>
+            <p class="text-sm text-gray-400 leading-relaxed">떠오르는 생각, 할 일, 업무 메모를 빠르게 기록하고 관리할 수 있습니다.</p>
+          </div>
+        </div>
+
+        <!-- 4. 급식 -->
+        <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center reveal">
+          <div>
+            <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-amber-50 text-[11px] text-amber-400 font-semibold mb-4">급식</div>
+            <h3 class="text-2xl md:text-3xl font-black text-gray-800 mb-3 leading-tight">오늘 뭐 먹지?<br><span class="text-amber-400">급식 자동 확인</span></h3>
+            <p class="text-sm text-gray-400 leading-relaxed">NEIS 연동으로 오늘의 급식 메뉴를 자동으로 확인. 알레르기 정보도 함께 표시됩니다.</p>
+          </div>
+          <div>
+            <div class="mockup-window bg-white rounded-xl overflow-hidden">
+              <div class="flex items-center gap-2 px-4 py-2.5 border-b border-parchment-200">
+                <div class="flex gap-1.5">
+                  <div class="w-2.5 h-2.5 rounded-full bg-terra-200"></div>
+                  <div class="w-2.5 h-2.5 rounded-full bg-amber-200"></div>
+                  <div class="w-2.5 h-2.5 rounded-full bg-forest-200"></div>
+                </div>
+                <div class="flex-1 text-center text-[11px] text-gray-300">급식</div>
+              </div>
+              <div class="bg-white" style="aspect-ratio:16/10">
+                <img src="급식화면.png" alt="급식" class="w-full h-full object-cover cursor-pointer" onclick="openLightbox(this.src, this.alt)">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. 북마크 -->
+        <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center reveal">
+          <div class="order-2 md:order-1">
+            <div class="mockup-window bg-white rounded-xl overflow-hidden">
+              <div class="flex items-center gap-2 px-4 py-2.5 border-b border-parchment-200">
+                <div class="flex gap-1.5">
+                  <div class="w-2.5 h-2.5 rounded-full bg-terra-200"></div>
+                  <div class="w-2.5 h-2.5 rounded-full bg-amber-200"></div>
+                  <div class="w-2.5 h-2.5 rounded-full bg-forest-200"></div>
+                </div>
+                <div class="flex-1 text-center text-[11px] text-gray-300">북마크</div>
+              </div>
+              <div class="bg-white" style="aspect-ratio:16/10">
+                <img src="북마크%20화면.png" alt="북마크" class="w-full h-full object-cover cursor-pointer" onclick="openLightbox(this.src, this.alt)">
+              </div>
+            </div>
+          </div>
+          <div class="order-1 md:order-2">
+            <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-terra-50 text-[11px] text-terra-400 font-semibold mb-4">북마크</div>
+            <h3 class="text-2xl md:text-3xl font-black text-gray-800 mb-3 leading-tight">자주 쓰는 사이트를<br><span class="text-terra-400">빠르게 접근</span></h3>
+            <p class="text-sm text-gray-400 leading-relaxed">NEIS, 교육포털, 학교 홈페이지 등 자주 사용하는 웹사이트를 북마크로 저장하고 한 번에 열어보세요.</p>
+          </div>
+        </div>
+
+        <!-- 6. 업무자료 -->
+        <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center reveal">
+          <div>
+            <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-forest-50 text-[11px] text-forest-600 font-semibold mb-4">업무자료</div>
+            <h3 class="text-2xl md:text-3xl font-black text-gray-800 mb-3 leading-tight">학교 업무 문서를<br><span class="text-forest-500">편리하게 관리</span></h3>
+            <p class="text-sm text-gray-400 leading-relaxed">교재, 수업 자료, 공문 등 학교 업무에 필요한 파일을 카테고리별로 정리하고 빠르게 찾을 수 있습니다.</p>
+          </div>
+          <div>
+            <div class="mockup-window bg-white rounded-xl overflow-hidden">
+              <div class="flex items-center gap-2 px-4 py-2.5 border-b border-parchment-200">
+                <div class="flex gap-1.5">
+                  <div class="w-2.5 h-2.5 rounded-full bg-terra-200"></div>
+                  <div class="w-2.5 h-2.5 rounded-full bg-amber-200"></div>
+                  <div class="w-2.5 h-2.5 rounded-full bg-forest-200"></div>
+                </div>
+                <div class="flex-1 text-center text-[11px] text-gray-300">업무자료</div>
+              </div>
+              <div class="bg-white" style="aspect-ratio:16/10">
+                <img src="업무자료%20화면.png" alt="업무자료" class="w-full h-full object-cover cursor-pointer" onclick="openLightbox(this.src, this.alt)">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. 연락처 -->
+        <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center reveal">
+          <div class="order-2 md:order-1">
+            <div class="mockup-window bg-white rounded-xl overflow-hidden">
+              <div class="flex items-center gap-2 px-4 py-2.5 border-b border-parchment-200">
+                <div class="flex gap-1.5">
+                  <div class="w-2.5 h-2.5 rounded-full bg-terra-200"></div>
+                  <div class="w-2.5 h-2.5 rounded-full bg-amber-200"></div>
+                  <div class="w-2.5 h-2.5 rounded-full bg-forest-200"></div>
+                </div>
+                <div class="flex-1 text-center text-[11px] text-gray-300">연락처</div>
+              </div>
+              <div class="bg-white" style="aspect-ratio:16/10">
+                <img src="연락처%20화면.png" alt="연락처" class="w-full h-full object-cover cursor-pointer" onclick="openLightbox(this.src, this.alt)">
+              </div>
+            </div>
+          </div>
+          <div class="order-1 md:order-2">
+            <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-navy-50 text-[11px] text-navy-400 font-semibold mb-4">연락처</div>
+            <h3 class="text-2xl md:text-3xl font-black text-gray-800 mb-3 leading-tight">교직원 연락처를<br><span class="text-navy-400">한 곳에</span></h3>
+            <p class="text-sm text-gray-400 leading-relaxed">교장선생님, 교감선생님, 동료 교사들의 연락처를 한 곳에서 관리하세요. 검색과 그룹 분류도 지원합니다.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== STATS ==================== -->
+  <section class="py-24 md:py-28 bg-forest-700 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.04]" style="background-image:radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size:24px 24px;"></div>
+    <div class="max-w-5xl mx-auto px-6 relative z-10">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div class="text-center reveal reveal-delay-1">
+          <div class="stat-number text-4xl md:text-5xl font-black text-white mb-1.5" data-target="20">0</div>
+          <div class="text-sm text-forest-200/60">프리셋 테마</div>
+        </div>
+        <div class="text-center reveal reveal-delay-2">
+          <div class="stat-number text-4xl md:text-5xl font-black text-white mb-1.5" data-target="12">0</div>
+          <div class="text-sm text-forest-200/60">핵심 기능</div>
+        </div>
+        <div class="text-center reveal reveal-delay-3">
+          <div class="stat-number text-4xl md:text-5xl font-black text-white mb-1.5">0</div>
+          <div class="text-sm text-forest-200/60">API 키</div>
+        </div>
+        <div class="text-center reveal reveal-delay-4">
+          <div class="stat-number text-4xl md:text-5xl font-black text-white mb-1.5" data-target="100">0</div>
+          <div class="text-sm text-forest-200/60">% 무료</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PRIVACY ==================== -->
+  <section class="relative py-28 md:py-36 overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-forest-50/80 rounded-full blur-[150px]"></div>
+
+    <div class="max-w-4xl mx-auto px-6 relative z-10">
+      <div class="reveal">
+        <div class="bg-white rounded-2xl border border-parchment-300 p-10 md:p-14 relative overflow-hidden light-box-shadow">
+          <!-- Top accent line -->
+          <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-forest-200 via-forest-400 to-forest-200"></div>
+
+          <div class="text-center">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-forest-50 border border-forest-100 mb-8">
+              <svg class="w-8 h-8 text-forest-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="M9 12l2 2 4-4"/>
+              </svg>
+            </div>
+
+            <h2 class="text-3xl md:text-4xl font-black text-gray-800 mb-4">
+              데이터는 오직<br><span class="text-forest-500">선생님의 컴퓨터에만</span>
+            </h2>
+
+            <p class="text-sm md:text-base text-gray-400 max-w-xl mx-auto mb-12 leading-relaxed">
+              어떠한 데이터도 외부 서버에 전송되거나 저장되지 않습니다.<br>
+              시간표, 메모, 연락처, 업무자료 — 모든 것이 <span class="text-forest-600 font-semibold">선생님의 PC 안에서만</span> 관리됩니다.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-2xl mx-auto">
+              <div class="bg-parchment-50 rounded-xl p-5 border border-parchment-200">
+                <div class="w-9 h-9 rounded-lg bg-forest-50 border border-forest-100 flex items-center justify-center mx-auto mb-3">
+                  <svg class="w-4 h-4 text-forest-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M12 12h.01M17 12h.01M7 12h.01"/></svg>
+                </div>
+                <h4 class="text-sm font-bold text-gray-700 mb-0.5">외부 서버 없음</h4>
+                <p class="text-xs text-gray-400 leading-relaxed">클라우드 서버 없이<br>온전히 로컬에서 동작</p>
+              </div>
+              <div class="bg-parchment-50 rounded-xl p-5 border border-parchment-200">
+                <div class="w-9 h-9 rounded-lg bg-forest-50 border border-forest-100 flex items-center justify-center mx-auto mb-3">
+                  <svg class="w-4 h-4 text-forest-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <h4 class="text-sm font-bold text-gray-700 mb-0.5">데이터 전송 없음</h4>
+                <p class="text-xs text-gray-400 leading-relaxed">인터넷 연결 없어도<br>모든 기능 사용 가능</p>
+              </div>
+              <div class="bg-parchment-50 rounded-xl p-5 border border-parchment-200">
+                <div class="w-9 h-9 rounded-lg bg-forest-50 border border-forest-100 flex items-center justify-center mx-auto mb-3">
+                  <svg class="w-4 h-4 text-forest-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+                </div>
+                <h4 class="text-sm font-bold text-gray-700 mb-0.5">로그인 불필요</h4>
+                <p class="text-xs text-gray-400 leading-relaxed">계정 생성 없이<br>설치 후 즉시 사용</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== DOWNLOAD ==================== -->
+  <section id="download" class="relative py-28 md:py-36 overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-forest-50/50 rounded-full blur-[180px]"></div>
+
+    <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+      <div class="reveal">
+        <p class="text-xs font-semibold text-forest-500 tracking-widest uppercase mb-4">Download</p>
+        <h2 class="text-4xl md:text-5xl font-black text-gray-800 mb-3">
+          지금 바로<br><span class="text-forest-500">시작하세요</span>
+        </h2>
+        <p class="text-sm text-gray-400 max-w-md mx-auto mb-10">Windows에 설치하고 학교 이름만 검색하면 끝. 복잡한 설정 없이 1분 안에 시작할 수 있어요.</p>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mb-10 reveal reveal-delay-1">
+        <!-- Installer Download -->
+        <a id="btn-installer" href="#" onclick="downloadAsset('installer', event)" class="btn-warm group flex items-center gap-3 px-8 py-4 rounded-xl bg-forest-500 hover:bg-forest-600 text-white font-bold text-sm shadow-lg hover:shadow-xl transition-all w-full sm:w-auto justify-center">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <div class="text-left">
+            <div class="text-sm font-medium">Windows 인스톨러</div>
+            <div class="text-xs opacity-60">권장 · 자동 업데이트</div>
+          </div>
+          <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+
+        <!-- OneDrive Sub Download -->
+        <a href="https://1drv.ms/u/c/63cbfdc50072c77f/IQCUOMSaaJiiRabz_7bcdwqpAdNcAiuPEcedNsjSBPNsSiY?e=oTtpyf" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-3 px-8 py-4 rounded-xl border border-parchment-300 hover:border-parchment-300 bg-white hover:bg-parchment-50 text-gray-500 hover:text-gray-700 font-medium text-sm transition-all w-full sm:w-auto justify-center">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.7 2 6 4.7 6 7.5c0 .3 0 .5.1.8C3.6 8.8 2 10.8 2 13c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5 0-2.5-1.8-4.5-4.2-4.9C17.9 3.8 15.2 2 12 2z"/></svg>
+          <div class="text-left">
+            <div class="text-sm font-medium">클라우드 대체 다운로드</div>
+            <div class="text-xs opacity-50">GitHub가 느릴 때 사용</div>
+          </div>
+          <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+      </div>
+
+      <!-- 라이선스 코드 -->
+      <div class="mt-4 max-w-2xl mx-auto reveal reveal-delay-2">
+        <div class="rounded-xl border-2 border-dashed border-amber-300/50 bg-amber-50/40 px-6 py-5 text-center">
+          <div class="text-xs text-amber-600/60 font-medium mb-2 tracking-wide">라이센스 키</div>
+          <div class="text-xl md:text-2xl font-bold text-amber-700 tracking-[0.15em] font-mono select-all">TEST-TEST-TEST-TEST</div>
+        </div>
+        <p class="text-xs text-gray-400 mt-2 text-center">
+          * 위 코드를 복사해서 설치 시 라이선스 입력란에 붙여넣기 해주세요.
+        </p>
+      </div>
+
+      <!-- Download warning -->
+      <div class="reveal reveal-delay-3 mt-10 max-w-3xl mx-auto rounded-2xl border border-amber-200/60 bg-white p-6 md:p-8 text-left light-box-shadow">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-8 h-8 rounded-lg bg-amber-50 border border-amber-100 flex items-center justify-center flex-shrink-0">
+            <svg class="w-4 h-4 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <span class="text-sm text-amber-700 font-bold">다운로드 및 설치 시 안내</span>
+        </div>
+
+        <!-- 다운로드 경고 -->
+        <div class="mb-6">
+          <h4 class="text-sm text-gray-700 font-semibold mb-2">다운로드 시 경고가 뜨나요?</h4>
+          <p class="text-sm text-gray-400 leading-relaxed mb-3">
+            코드 서명 전이라 브라우저에서 보안 경고가 나타날 수 있으며, <span class="text-gray-600 font-semibold">실제 보안과는 무관</span>합니다.
+          </p>
+
+          <!-- 브라우저 탭 -->
+          <div class="flex gap-2 mb-4">
+            <button class="browser-tab active px-5 py-2 rounded-lg text-sm font-semibold transition-all" data-tab="chrome" onclick="switchBrowserTab('chrome')">
+              <span class="inline-flex items-center gap-2">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                Chrome
+              </span>
+            </button>
+            <button class="browser-tab px-5 py-2 rounded-lg text-sm font-semibold transition-all" data-tab="edge" onclick="switchBrowserTab('edge')">
+              <span class="inline-flex items-center gap-2">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c1.82 0 3.53-.5 5-1.35" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M22 12c0-5.52-4.48-10-10-10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                Edge
+              </span>
+            </button>
+          </div>
+
+          <!-- Chrome -->
+          <div id="tab-chrome" class="browser-panel">
+            <p class="text-sm text-gray-400 leading-relaxed mb-3">
+              <span class="text-amber-600/80 font-semibold">"확인되지 않은 파일 다운로드"</span> 창이 나타나면 그대로 <span class="text-gray-600 font-semibold">[확인되지 않은 파일 다운로드]</span>를 눌러주세요.
+            </p>
+            <div class="space-y-3">
+              <div class="rounded-lg overflow-hidden border border-parchment-200">
+                <img src="다운로드경고1.png" alt="Chrome 다운로드 경고 1단계" class="w-full h-auto">
+              </div>
+              <div class="rounded-lg overflow-hidden border border-parchment-200">
+                <img src="다운로드경고2.png" alt="Chrome 다운로드 경고 2단계" class="w-full h-auto">
+              </div>
+            </div>
+          </div>
+
+          <!-- Edge -->
+          <div id="tab-edge" class="browser-panel hidden">
+            <p class="text-sm text-gray-400 leading-relaxed mb-3">
+              <span class="text-amber-600/80 font-semibold">"파일을 안전하게 다운로드하시겠습니까?"</span> 창이 나타나면 <span class="text-gray-600 font-semibold">[저장]</span>을 눌러주세요.
+            </p>
+            <div class="space-y-3">
+              <div class="rounded-lg overflow-hidden border border-parchment-200">
+                <img src="다운로드경고(엣지)1.png" alt="Edge 다운로드 경고 1단계" class="w-full h-auto">
+              </div>
+              <div class="rounded-lg overflow-hidden border border-parchment-200">
+                <img src="다운로드경고(엣지)2.png" alt="Edge 다운로드 경고 2단계" class="w-full h-auto">
+              </div>
+              <div class="rounded-lg overflow-hidden border border-parchment-200">
+                <img src="다운로드경고(엣지)3.png" alt="Edge 다운로드 경고 3단계" class="w-full h-auto">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 구분선 -->
+        <div class="h-px bg-parchment-200 my-5"></div>
+
+        <!-- 설치 경고 -->
+        <div>
+          <h4 class="text-sm text-gray-700 font-semibold mb-2">설치할 때도 경고가 뜨나요?</h4>
+          <p class="text-sm text-gray-400 leading-relaxed mb-3">
+            설치 파일 실행 시 <span class="text-amber-600/80 font-semibold">Windows 보안</span> 경고가 나타날 수 있습니다. 아래 순서대로 조치하시면 됩니다.
+          </p>
+          <div class="space-y-3 mb-4">
+            <div class="flex items-start gap-3 text-sm text-gray-400">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-600 text-[11px] font-bold mt-0.5">1</span>
+              <span class="leading-relaxed"><span class="text-gray-600 font-semibold">"추가 정보"</span>를 클릭하세요</span>
+            </div>
+            <div class="flex items-start gap-3 text-sm text-gray-400">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-600 text-[11px] font-bold mt-0.5">2</span>
+              <span class="leading-relaxed">하단의 <span class="text-gray-600 font-semibold">"실행"</span>을 클릭하면 설치가 시작됩니다</span>
+            </div>
+          </div>
+          <div class="space-y-3">
+            <div class="rounded-lg overflow-hidden border border-parchment-200">
+              <img src="설치경고1.png" alt="설치 경고 1단계" class="w-full h-auto">
+            </div>
+            <div class="rounded-lg overflow-hidden border border-parchment-200">
+              <img src="설치경고2.png" alt="설치 경고 2단계" class="w-full h-auto">
+            </div>
+          </div>
+        </div>
+
+        <p class="text-xs text-gray-400 mt-5">
+          * 코드 서명 완료 후에는 위 경고들이 더 이상 표시되지 않습니다.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-gray-900 py-10">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-2.5">
+          <div class="w-7 h-7 rounded-lg bg-forest-500 flex items-center justify-center">
+            <svg class="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h6v6H4z"/><path d="M14 4h6v6h-6z"/><path d="M4 14h6v6H4z"/><path d="M14 14h6v6h-6z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="text-sm font-semibold text-gray-300">School Board</div>
+            <div class="text-[11px] text-gray-500">호똑쌤</div>
+          </div>
+        </div>
+        <div class="text-xs text-gray-600">
+          &copy; 2026 호똑쌤. All rights reserved.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== LIGHTBOX ==================== -->
+  <div id="lightbox" class="lightbox-overlay">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <img src="" alt="">
+    <div class="lightbox-caption"></div>
+  </div>
+
+  <!-- ==================== SCRIPTS ==================== -->
+  <script>
+    // === Direct Download from GitHub Releases ===
+    const GITHUB_API = 'https://api.github.com/repos/jyh1541/school-board-releases/releases/latest';
+    const GITHUB_RELEASES_PAGE = 'https://github.com/jyh1541/school-board-releases/releases/latest';
+    let releaseCache = null;
+
+    async function fetchLatestRelease() {
+      if (releaseCache) return releaseCache;
+      try {
+        const res = await fetch(GITHUB_API);
+        if (!res.ok) return null;
+        releaseCache = await res.json();
+        return releaseCache;
+      } catch {
+        return null;
+      }
+    }
+
+    async function downloadAsset(type, e) {
+      e.preventDefault();
+      const btn = type === 'installer' ? document.getElementById('btn-installer') : document.getElementById('btn-portable');
+      const origText = btn.querySelector('.text-left');
+      const origHTML = origText.innerHTML;
+      origText.innerHTML = '<div class="text-sm font-medium opacity-70">다운로드 준비 중...</div>';
+
+      const release = await fetchLatestRelease();
+      if (!release || !release.assets) {
+        origText.innerHTML = origHTML;
+        window.open(GITHUB_RELEASES_PAGE, '_blank');
+        return;
+      }
+
+      let asset;
+      if (type === 'installer') {
+        asset = release.assets.find(a => a.name.match(/Setup.*\.exe$/i) && !a.name.endsWith('.blockmap'));
+      } else {
+        asset = release.assets.find(a => a.name.match(/Portable.*\.exe$/i) && !a.name.endsWith('.blockmap'));
+      }
+
+      origText.innerHTML = origHTML;
+
+      if (asset) {
+        window.location.href = asset.browser_download_url;
+      } else {
+        window.open(GITHUB_RELEASES_PAGE, '_blank');
+      }
+    }
+
+    // Pre-fetch release info
+    fetchLatestRelease();
+
+    // === Live Clock ===
+    function updateClock() {
+      const now = new Date();
+      const h = String(now.getHours()).padStart(2, '0');
+      const m = String(now.getMinutes()).padStart(2, '0');
+      const clockEl = document.getElementById('hero-clock');
+      const dateEl = document.getElementById('hero-date');
+      if (clockEl) clockEl.textContent = `${h}:${m}`;
+      if (dateEl) {
+        const days = ['일', '월', '화', '수', '목', '금', '토'];
+        dateEl.textContent = `${now.getFullYear()}년 ${now.getMonth() + 1}월 ${now.getDate()}일 (${days[now.getDay()]})`;
+      }
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
+
+    // === Navbar background on scroll ===
+    const nav = document.getElementById('nav');
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      if (y > 50) {
+        nav.classList.add('glass-strong');
+        nav.style.borderBottom = '1px solid #e8e2d8';
+      } else {
+        nav.classList.remove('glass-strong');
+        nav.style.borderBottom = 'none';
+      }
+      lastScroll = y;
+    });
+
+    // === Scroll Reveal ===
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // === Counter Animation ===
+    const counterElements = document.querySelectorAll('.stat-number[data-target]');
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.getAttribute('data-target'));
+          if (target && !el.dataset.animated) {
+            el.dataset.animated = 'true';
+            animateCounter(el, target);
+          }
+        }
+      });
+    }, { threshold: 0.5 });
+    counterElements.forEach(el => counterObserver.observe(el));
+
+    function animateCounter(el, target) {
+      let current = 0;
+      const step = Math.max(1, Math.floor(target / 40));
+      const interval = setInterval(() => {
+        current += step;
+        if (current >= target) {
+          current = target;
+          clearInterval(interval);
+        }
+        el.textContent = current + (target === 100 ? '' : '+');
+      }, 30);
+    }
+
+    // === Smooth scroll for anchor links ===
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // === Parallax on mouse move (hero section only) ===
+    const hero = document.querySelector('section');
+    if (hero) {
+      document.addEventListener('mousemove', (e) => {
+        if (window.innerWidth < 768) return;
+        const x = (e.clientX / window.innerWidth - 0.5) * 20;
+        const y = (e.clientY / window.innerHeight - 0.5) * 20;
+        const orbs = hero.querySelectorAll('.rounded-full[class*="blur-"]');
+        orbs.forEach((orb, i) => {
+          const factor = (i + 1) * 0.5;
+          orb.style.transform = `translate(${x * factor}px, ${y * factor}px)`;
+        });
+      });
+    }
+  </script>
+
+  <script>
+    // === Browser tabs ===
+    function switchBrowserTab(tab) {
+      document.querySelectorAll('.browser-tab').forEach(t => t.classList.remove('active'));
+      document.querySelector(`.browser-tab[data-tab="${tab}"]`).classList.add('active');
+      document.querySelectorAll('.browser-panel').forEach(p => p.classList.add('hidden'));
+      document.getElementById(`tab-${tab}`).classList.remove('hidden');
+    }
+
+    // === Lightbox ===
+    const lightbox = document.getElementById('lightbox');
+
+    function openLightbox(src, alt) {
+      const img = lightbox.querySelector('img');
+      const caption = lightbox.querySelector('.lightbox-caption');
+      img.src = src;
+      caption.textContent = alt || '';
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox || e.target.classList.contains('lightbox-close')) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+        closeLightbox();
+      }
+    });
+  </script>
+</body>
+</html>
