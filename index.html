@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko" class="scroll-smooth">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,53 +15,68 @@
   <meta name="twitter:title" content="School Board - 교사용 바탕화면 위젯">
   <meta name="twitter:description" content="시간표, 급식, 학사일정을 배경화면에서 바로. NEIS 연동, 20+ 테마, 100% 무료.">
   <link rel="icon" href="icon.ico">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            display: ['"Pretendard Variable"', 'Pretendard', 'system-ui', 'sans-serif'],
-            body: ['"Pretendard Variable"', 'Pretendard', 'system-ui', 'sans-serif'],
-          },
-          colors: {
-            sakura: { 50: '#fff5f9', 100: '#ffe8f0', 200: '#ffd6e5', 300: '#ffb3cc', 400: '#f4a0b5', 500: '#e87a94', 600: '#d45a78' },
-            spring: { 50: '#f0fdf4', 100: '#dcfce7', 200: '#bbf7d0', 300: '#86efac', 400: '#4ade80' },
-            sky: { 50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd', 400: '#60a5fa', 500: '#3b82f6' },
-          },
-          animation: {
-            'marquee': 'marquee 35s linear infinite',
-            'fade-in': 'fadeIn 1s ease-out forwards',
-            'slide-up': 'slideUp 0.8s ease-out forwards',
-            'slide-up-d1': 'slideUp 0.8s ease-out 0.15s forwards',
-            'slide-up-d2': 'slideUp 0.8s ease-out 0.3s forwards',
-            'float-petal': 'floatPetal 12s ease-in-out infinite',
-            'float-petal2': 'floatPetal2 15s ease-in-out infinite',
-            'float-petal3': 'floatPetal3 10s ease-in-out infinite',
-            'drift': 'drift 20s linear infinite',
-          },
-        }
-      }
-    }
-  </script>
+  <link rel="stylesheet" href="tailwind.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Pretendard:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
   <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
   <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; word-break: keep-all; overflow-wrap: break-word; }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body { word-break: keep-all; overflow-wrap: break-word; }
     html { scroll-behavior: smooth; }
+
+    :root {
+      --bg: #fffbfe;
+      --text: #2d2b3a;
+      --text-muted: #9ca3af;
+      --sakura: #f4a0b5;
+      --sky: #3b82f6;
+      --glass-bg: rgba(255, 251, 254, 0.92);
+      --glass-border: rgba(244, 160, 181, 0.12);
+      --scrollbar-track: #fff5f9;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0c0c1d;
+        --text: #e5e7eb;
+        --text-muted: #9ca3af;
+        --glass-bg: rgba(12, 12, 29, 0.92);
+        --glass-border: rgba(244, 160, 181, 0.15);
+        --scrollbar-track: #1a1a2e;
+      }
+
+      .feature-card {
+        background: #1a1a2e;
+        border-color: #2a2a3e;
+      }
+      .feature-card:hover {
+        border-color: #3b82f6;
+      }
+      .video-tab:hover { color: #e5e7eb; }
+      .video-tab.active { color: #fff; }
+      .browser-tab { background: rgba(59, 130, 246, 0.08); border-color: rgba(59, 130, 246, 0.15); color: rgba(229, 231, 235, 0.5); }
+      .browser-tab:hover { color: rgba(229, 231, 235, 0.7); }
+      .browser-tab.active { background: rgba(59, 130, 246, 0.15); border-color: rgba(59, 130, 246, 0.3); color: #60a5fa; }
+      .spring-grad { background: linear-gradient(135deg, #0c0c1d 0%, #1a1020 40%, #0d1a12 70%, #1a1020 100%); }
+      .cherry-divider { background: linear-gradient(90deg, transparent, rgba(244, 160, 181, 0.15), rgba(59, 130, 246, 0.1), transparent); }
+      .stat-number { color: #fff; }
+      #mobile-drawer { background: #1a1a2e; }
+      .mobile-nav-link { color: #9ca3af; }
+      .mobile-nav-link:hover { color: #fff; background: rgba(255, 255, 255, 0.05); }
+    }
+
     body {
       font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-      background: #fffbfe;
-      color: #2d2b3a;
+      background: var(--bg);
+      color: var(--text);
       overflow-x: hidden;
     }
 
     ::-webkit-scrollbar { width: 4px; }
-    ::-webkit-scrollbar-track { background: #fff5f9; }
-    ::-webkit-scrollbar-thumb { background: #f4a0b5; border-radius: 2px; }
+    ::-webkit-scrollbar-track { background: var(--scrollbar-track); }
+    ::-webkit-scrollbar-thumb { background: var(--sakura); border-radius: 2px; }
 
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
@@ -70,9 +85,10 @@
     @keyframes floatPetal2 { 0% { transform: translateY(0) translateX(0) rotate(0deg); } 33% { transform: translateY(-55px) translateX(-25px) rotate(120deg); } 66% { transform: translateY(-20px) translateX(20px) rotate(240deg); } 100% { transform: translateY(0) translateX(0) rotate(360deg); } }
     @keyframes floatPetal3 { 0% { transform: translateY(0) translateX(0) rotate(0deg); } 50% { transform: translateY(-35px) translateX(30px) rotate(180deg); } 100% { transform: translateY(0) translateX(0) rotate(360deg); } }
     @keyframes drift { 0% { transform: translateX(-10%); } 100% { transform: translateX(10%); } }
+    @keyframes scrollHint { 0%, 100% { transform: translateY(0); opacity: 0.4; } 50% { transform: translateY(4px); opacity: 1; } }
 
     .glass-strong {
-      background: rgba(255, 251, 254, 0.92) !important;
+      background: var(--glass-bg) !important;
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
     }
@@ -170,24 +186,49 @@
   <!-- ==================== NAV ==================== -->
   <nav id="nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
     <div class="max-w-7xl mx-auto px-6 lg:px-10 py-4 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-2.5 group">
+      <a href="#" class="flex items-center gap-2.5 group" aria-label="School Board 홈으로 이동">
         <img src="icon.ico" alt="School Board" class="w-8 h-8 rounded-xl">
         <span class="font-bold text-sm text-gray-700 group-hover:text-gray-900 transition-colors tracking-tight">School Board</span>
       </a>
       <div class="hidden md:flex items-center gap-8">
-        <a href="#features" class="text-sm text-gray-400 hover:text-gray-700 transition-colors">기능</a>
-        <a href="#preview" class="text-sm text-gray-400 hover:text-gray-700 transition-colors">미리보기</a>
-        <a href="#guide" class="text-sm text-gray-400 hover:text-gray-700 transition-colors">사용 설명서</a>
-        <a href="#download" class="text-sm text-gray-400 hover:text-gray-700 transition-colors">다운로드</a>
+        <a href="#features" class="text-sm text-gray-400 hover:text-gray-700 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:rounded-md">기능</a>
+        <a href="#preview" class="text-sm text-gray-400 hover:text-gray-700 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:rounded-md">미리보기</a>
+        <a href="#guide" class="text-sm text-gray-400 hover:text-gray-700 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:rounded-md">사용 설명서</a>
+        <a href="#download" class="text-sm text-gray-400 hover:text-gray-700 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:rounded-md">다운로드</a>
       </div>
-      <a href="#download" class="px-5 py-2 rounded-xl bg-sky-500 hover:bg-sky-600 text-white text-sm font-semibold transition-all hover:shadow-lg hover:shadow-sky-500/25">
-        다운로드
-      </a>
+      <div class="flex items-center gap-3">
+        <a href="#download" class="hidden sm:inline-flex px-5 py-2 rounded-xl bg-sky-500 hover:bg-sky-600 text-white text-sm font-semibold transition-all hover:shadow-lg hover:shadow-sky-500/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300 focus-visible:ring-offset-2">
+          다운로드
+        </a>
+        <button id="menu-toggle" class="md:hidden flex items-center justify-center w-10 h-10 rounded-xl bg-white/70 border border-gray-200/80 text-gray-600 hover:text-gray-900 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobile-menu">
+          <svg id="menu-icon-open" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          <svg id="menu-icon-close" class="w-5 h-5 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
+        </button>
+      </div>
     </div>
   </nav>
 
+  <!-- Mobile menu overlay -->
+  <div id="mobile-menu" class="fixed inset-0 z-40 pointer-events-none" aria-hidden="true">
+    <div id="mobile-backdrop" class="absolute inset-0 bg-black/30 opacity-0 transition-opacity duration-300"></div>
+    <div id="mobile-drawer" class="absolute top-0 right-0 h-full w-64 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 ease-out flex flex-col">
+      <div class="flex-1 pt-20 px-6 flex flex-col gap-1">
+        <a href="#features" class="mobile-nav-link block px-4 py-3 rounded-xl text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors">기능</a>
+        <a href="#preview" class="mobile-nav-link block px-4 py-3 rounded-xl text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors">미리보기</a>
+        <a href="#guide" class="mobile-nav-link block px-4 py-3 rounded-xl text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors">사용 설명서</a>
+        <a href="#download" class="mobile-nav-link block px-4 py-3 rounded-xl text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors">다운로드</a>
+      </div>
+      <div class="p-6 border-t border-gray-100">
+        <a href="#download" class="mobile-nav-link flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-sky-500 hover:bg-sky-600 text-white text-sm font-semibold transition-all w-full">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          무료 다운로드
+        </a>
+      </div>
+    </div>
+  </div>
+
   <!-- ==================== HERO — Dashboard Showcase ==================== -->
-  <section class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-gray-50 via-white to-sky-50/30">
+  <section class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-gray-50 via-white to-sky-50/30 dark:from-gray-950 dark:via-[#0c0c1d] dark:to-[#0f172a]">
     <!-- Ambient blurs -->
     <div class="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-sky-300/10 rounded-full blur-[140px]"></div>
     <div class="absolute bottom-1/3 right-1/4 w-[350px] h-[350px] bg-sakura-200/15 rounded-full blur-[120px]"></div>
@@ -255,7 +296,7 @@
     <!-- Scroll indicator -->
     <div class="relative z-10 mt-16 flex flex-col items-center gap-2 animate-fade-in opacity-0" style="animation-fill-mode:forwards; animation-delay:1.5s">
       <div class="w-5 h-8 rounded-full border border-sakura-300/50 flex items-start justify-center p-1.5">
-        <div class="w-0.5 h-1.5 rounded-full bg-sky-400 animate-bounce"></div>
+        <div class="w-0.5 h-1.5 rounded-full bg-sky-400" style="animation: scrollHint 2s ease-in-out infinite;"></div>
       </div>
     </div>
   </section>
@@ -309,12 +350,12 @@
   </div>
 
   <!-- ==================== FEATURES — Horizontal Scroll ==================== -->
-  <section id="features" class="py-20 md:py-28 bg-white relative overflow-hidden">
+  <section id="features" class="py-20 md:py-28 bg-white dark:bg-[#0c0c1d] relative overflow-hidden">
     <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle at 1px 1px, #f4a0b5 1px, transparent 0); background-size: 28px 28px; pointer-events:none;"></div>
 
     <div class="max-w-7xl mx-auto px-6 lg:px-10 mb-12 reveal relative z-10">
       <p class="text-xs font-semibold text-sky-500 tracking-[0.2em] uppercase mb-3">Features</p>
-      <h2 class="text-3xl md:text-5xl font-black text-gray-800">핵심 기능</h2>
+      <h2 class="text-3xl md:text-5xl font-black text-gray-800 dark:text-gray-100">핵심 기능</h2>
     </div>
 
     <div class="relative reveal reveal-delay-1 z-10">
@@ -328,8 +369,8 @@
           <div class="w-10 h-10 rounded-xl bg-sky-50 flex items-center justify-center mb-5">
             <svg class="w-5 h-5 text-sky-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
           </div>
-          <h3 class="text-base font-bold text-gray-800 mb-2">대시보드</h3>
-          <p class="text-sm text-gray-400 leading-relaxed mb-4">시계, 날씨, 시간표, 급식을 한 화면에. 벤토 그리드로 위젯을 자유롭게 배치.</p>
+          <h3 class="text-base font-bold text-gray-800 dark:text-gray-100 mb-2">대시보드</h3>
+          <p class="text-sm text-gray-400 dark:text-gray-500 leading-relaxed mb-4">시계, 날씨, 시간표, 급식을 한 화면에. 벤토 그리드로 위젯을 자유롭게 배치.</p>
           <div class="flex gap-1.5"><span class="px-2 py-0.5 rounded-md bg-sky-50 text-[10px] text-sky-600 font-medium">드래그 배치</span><span class="px-2 py-0.5 rounded-md bg-sky-50 text-[10px] text-sky-600 font-medium">크기 조절</span></div>
         </div>
 
@@ -337,8 +378,8 @@
           <div class="w-10 h-10 rounded-xl bg-spring-50 flex items-center justify-center mb-5">
             <svg class="w-5 h-5 text-spring-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
           </div>
-          <h3 class="text-base font-bold text-gray-800 mb-2">시간표</h3>
-          <p class="text-sm text-gray-400 leading-relaxed mb-4">NEIS에서 자동으로 불러오거나 직접 입력. 학반별, 교사별, 학생 개별 조회까지.</p>
+          <h3 class="text-base font-bold text-gray-800 dark:text-gray-100 mb-2">시간표</h3>
+          <p class="text-sm text-gray-400 dark:text-gray-500 leading-relaxed mb-4">NEIS에서 자동으로 불러오거나 직접 입력. 학반별, 교사별, 학생 개별 조회까지.</p>
           <div class="flex gap-1.5"><span class="px-2 py-0.5 rounded-md bg-spring-50 text-[10px] text-emerald-600 font-medium">NEIS 연동</span><span class="px-2 py-0.5 rounded-md bg-spring-50 text-[10px] text-emerald-600 font-medium">교과별 조회</span></div>
         </div>
 
@@ -346,8 +387,8 @@
           <div class="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center mb-5">
             <svg class="w-5 h-5 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
           </div>
-          <h3 class="text-base font-bold text-gray-800 mb-2">급식 정보</h3>
-          <p class="text-sm text-gray-400 leading-relaxed mb-4">조·중·석식 3끼 모두 확인. 알레르기 정보도 함께 표시.</p>
+          <h3 class="text-base font-bold text-gray-800 dark:text-gray-100 mb-2">급식 정보</h3>
+          <p class="text-sm text-gray-400 dark:text-gray-500 leading-relaxed mb-4">조·중·석식 3끼 모두 확인. 알레르기 정보도 함께 표시.</p>
           <div class="flex gap-1.5"><span class="px-2 py-0.5 rounded-md bg-amber-50 text-[10px] text-amber-600 font-medium">3식 제공</span><span class="px-2 py-0.5 rounded-md bg-amber-50 text-[10px] text-amber-600 font-medium">알레르기</span></div>
         </div>
 
@@ -355,8 +396,8 @@
           <div class="w-10 h-10 rounded-xl bg-rose-50 flex items-center justify-center mb-5">
             <svg class="w-5 h-5 text-rose-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
           </div>
-          <h3 class="text-base font-bold text-gray-800 mb-2">일정 & D-Day</h3>
-          <p class="text-sm text-gray-400 leading-relaxed mb-4">학사일정과 개인 할 일을 통합 관리. D-Day 카운터로 중요한 날짜를 놓치지 마세요.</p>
+          <h3 class="text-base font-bold text-gray-800 dark:text-gray-100 mb-2">일정 & D-Day</h3>
+          <p class="text-sm text-gray-400 dark:text-gray-500 leading-relaxed mb-4">학사일정과 개인 할 일을 통합 관리. D-Day 카운터로 중요한 날짜를 놓치지 마세요.</p>
           <div class="flex gap-1.5"><span class="px-2 py-0.5 rounded-md bg-rose-50 text-[10px] text-rose-500 font-medium">학사일정</span><span class="px-2 py-0.5 rounded-md bg-rose-50 text-[10px] text-rose-500 font-medium">알림 설정</span></div>
         </div>
 
@@ -364,8 +405,8 @@
           <div class="w-10 h-10 rounded-xl bg-yellow-50 flex items-center justify-center mb-5">
             <svg class="w-5 h-5 text-yellow-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
           </div>
-          <h3 class="text-base font-bold text-gray-800 mb-2">포스트잇 메모</h3>
-          <p class="text-sm text-gray-400 leading-relaxed mb-4">자유 배치 보드에 드래그 앤 드롭. 리치 텍스트 편집, 6가지 파스텔 색상.</p>
+          <h3 class="text-base font-bold text-gray-800 dark:text-gray-100 mb-2">포스트잇 메모</h3>
+          <p class="text-sm text-gray-400 dark:text-gray-500 leading-relaxed mb-4">자유 배치 보드에 드래그 앤 드롭. 리치 텍스트 편집, 6가지 파스텔 색상.</p>
           <div class="flex gap-1.5"><span class="px-2 py-0.5 rounded-md bg-yellow-50 text-[10px] text-yellow-600 font-medium">드래그 배치</span><span class="px-2 py-0.5 rounded-md bg-yellow-50 text-[10px] text-yellow-600 font-medium">리치 텍스트</span></div>
         </div>
 
@@ -373,8 +414,8 @@
           <div class="w-10 h-10 rounded-xl bg-cyan-50 flex items-center justify-center mb-5">
             <svg class="w-5 h-5 text-cyan-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
-          <h3 class="text-base font-bold text-gray-800 mb-2">연락처</h3>
-          <p class="text-sm text-gray-400 leading-relaxed mb-4">교사·학생 연락처를 분리 관리. 엑셀 붙여넣기, CSV, 인쇄까지.</p>
+          <h3 class="text-base font-bold text-gray-800 dark:text-gray-100 mb-2">연락처</h3>
+          <p class="text-sm text-gray-400 dark:text-gray-500 leading-relaxed mb-4">교사·학생 연락처를 분리 관리. 엑셀 붙여넣기, CSV, 인쇄까지.</p>
           <div class="flex gap-1.5"><span class="px-2 py-0.5 rounded-md bg-cyan-50 text-[10px] text-cyan-600 font-medium">엑셀 연동</span><span class="px-2 py-0.5 rounded-md bg-cyan-50 text-[10px] text-cyan-600 font-medium">인쇄 지원</span></div>
         </div>
 
@@ -382,8 +423,8 @@
           <div class="w-10 h-10 rounded-xl bg-violet-50 flex items-center justify-center mb-5">
             <svg class="w-5 h-5 text-violet-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="8" y2="10.01"/><line x1="12" y1="10" x2="12" y2="10.01"/><line x1="16" y1="10" x2="16" y2="10.01"/></svg>
           </div>
-          <h3 class="text-base font-bold text-gray-800 mb-2">계산기</h3>
-          <p class="text-sm text-gray-400 leading-relaxed mb-4">사칙연산부터 단위 변환, 등급 계산기까지. 배점 계산으로 시험 출제도 쉽게.</p>
+          <h3 class="text-base font-bold text-gray-800 dark:text-gray-100 mb-2">계산기</h3>
+          <p class="text-sm text-gray-400 dark:text-gray-500 leading-relaxed mb-4">사칙연산부터 단위 변환, 등급 계산기까지. 배점 계산으로 시험 출제도 쉽게.</p>
           <div class="flex gap-1.5"><span class="px-2 py-0.5 rounded-md bg-violet-50 text-[10px] text-violet-500 font-medium">단위 변환</span><span class="px-2 py-0.5 rounded-md bg-violet-50 text-[10px] text-violet-500 font-medium">등급 계산</span></div>
         </div>
 
@@ -391,8 +432,8 @@
           <div class="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center mb-5">
             <svg class="w-5 h-5 text-emerald-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
           </div>
-          <h3 class="text-base font-bold text-gray-800 mb-2">업무포털 자동 로그인</h3>
-          <p class="text-sm text-gray-400 leading-relaxed mb-4">나이스, K-에듀파인 자동 로그인. 인증서부터 비밀번호까지 원클릭.</p>
+          <h3 class="text-base font-bold text-gray-800 dark:text-gray-100 mb-2">업무포털 자동 로그인</h3>
+          <p class="text-sm text-gray-400 dark:text-gray-500 leading-relaxed mb-4">나이스, K-에듀파인 자동 로그인. 인증서부터 비밀번호까지 원클릭.</p>
           <div class="flex gap-1.5"><span class="px-2 py-0.5 rounded-md bg-emerald-50 text-[10px] text-emerald-600 font-medium">나이스</span><span class="px-2 py-0.5 rounded-md bg-emerald-50 text-[10px] text-emerald-600 font-medium">K-에듀파인</span></div>
         </div>
 
@@ -400,8 +441,8 @@
           <div class="w-10 h-10 rounded-xl bg-pink-50 flex items-center justify-center mb-5">
             <svg class="w-5 h-5 text-pink-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="15.5" r="2.5"/><circle cx="8.5" cy="15.5" r="2.5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
           </div>
-          <h3 class="text-base font-bold text-gray-800 mb-2">20+ 테마</h3>
-          <p class="text-sm text-gray-400 leading-relaxed mb-4">벚꽃부터 네온까지 20종 프리셋. 원하는 색상으로 커스텀 테마도 만들 수 있어요.</p>
+          <h3 class="text-base font-bold text-gray-800 dark:text-gray-100 mb-2">20+ 테마</h3>
+          <p class="text-sm text-gray-400 dark:text-gray-500 leading-relaxed mb-4">벚꽃부터 네온까지 20종 프리셋. 원하는 색상으로 커스텀 테마도 만들 수 있어요.</p>
           <div class="flex gap-2">
             <div class="w-4 h-4 rounded-full bg-gradient-to-br from-sky-300 to-sky-500"></div>
             <div class="w-4 h-4 rounded-full bg-gradient-to-br from-sakura-300 to-sakura-500"></div>
@@ -416,8 +457,8 @@
           <div class="w-10 h-10 rounded-xl bg-sky-50 flex items-center justify-center mb-5">
             <svg class="w-5 h-5 text-sky-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
           </div>
-          <h3 class="text-base font-bold text-gray-800 mb-2">대시보드</h3>
-          <p class="text-sm text-gray-400 leading-relaxed mb-4">시계, 날씨, 시간표, 급식을 한 화면에. 벤토 그리드로 위젯을 자유롭게 배치.</p>
+          <h3 class="text-base font-bold text-gray-800 dark:text-gray-100 mb-2">대시보드</h3>
+          <p class="text-sm text-gray-400 dark:text-gray-500 leading-relaxed mb-4">시계, 날씨, 시간표, 급식을 한 화면에. 벤토 그리드로 위젯을 자유롭게 배치.</p>
           <div class="flex gap-1.5"><span class="px-2 py-0.5 rounded-md bg-sky-50 text-[10px] text-sky-600 font-medium">드래그 배치</span><span class="px-2 py-0.5 rounded-md bg-sky-50 text-[10px] text-sky-600 font-medium">크기 조절</span></div>
         </div>
 
@@ -425,8 +466,8 @@
           <div class="w-10 h-10 rounded-xl bg-spring-50 flex items-center justify-center mb-5">
             <svg class="w-5 h-5 text-spring-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
           </div>
-          <h3 class="text-base font-bold text-gray-800 mb-2">시간표</h3>
-          <p class="text-sm text-gray-400 leading-relaxed mb-4">NEIS에서 자동으로 불러오거나 직접 입력. 학반별, 교사별, 학생 개별 조회까지.</p>
+          <h3 class="text-base font-bold text-gray-800 dark:text-gray-100 mb-2">시간표</h3>
+          <p class="text-sm text-gray-400 dark:text-gray-500 leading-relaxed mb-4">NEIS에서 자동으로 불러오거나 직접 입력. 학반별, 교사별, 학생 개별 조회까지.</p>
           <div class="flex gap-1.5"><span class="px-2 py-0.5 rounded-md bg-spring-50 text-[10px] text-emerald-600 font-medium">NEIS 연동</span><span class="px-2 py-0.5 rounded-md bg-spring-50 text-[10px] text-emerald-600 font-medium">교과별 조회</span></div>
         </div>
 
@@ -434,8 +475,8 @@
           <div class="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center mb-5">
             <svg class="w-5 h-5 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
           </div>
-          <h3 class="text-base font-bold text-gray-800 mb-2">급식 정보</h3>
-          <p class="text-sm text-gray-400 leading-relaxed mb-4">조·중·석식 3끼 모두 확인. 알레르기 정보도 함께 표시.</p>
+          <h3 class="text-base font-bold text-gray-800 dark:text-gray-100 mb-2">급식 정보</h3>
+          <p class="text-sm text-gray-400 dark:text-gray-500 leading-relaxed mb-4">조·중·석식 3끼 모두 확인. 알레르기 정보도 함께 표시.</p>
           <div class="flex gap-1.5"><span class="px-2 py-0.5 rounded-md bg-amber-50 text-[10px] text-amber-600 font-medium">3식 제공</span><span class="px-2 py-0.5 rounded-md bg-amber-50 text-[10px] text-amber-600 font-medium">알레르기</span></div>
         </div>
 
@@ -443,8 +484,8 @@
           <div class="w-10 h-10 rounded-xl bg-rose-50 flex items-center justify-center mb-5">
             <svg class="w-5 h-5 text-rose-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
           </div>
-          <h3 class="text-base font-bold text-gray-800 mb-2">일정 & D-Day</h3>
-          <p class="text-sm text-gray-400 leading-relaxed mb-4">학사일정과 개인 할 일을 통합 관리. D-Day 카운터로 중요한 날짜를 놓치지 마세요.</p>
+          <h3 class="text-base font-bold text-gray-800 dark:text-gray-100 mb-2">일정 & D-Day</h3>
+          <p class="text-sm text-gray-400 dark:text-gray-500 leading-relaxed mb-4">학사일정과 개인 할 일을 통합 관리. D-Day 카운터로 중요한 날짜를 놓치지 마세요.</p>
           <div class="flex gap-1.5"><span class="px-2 py-0.5 rounded-md bg-rose-50 text-[10px] text-rose-500 font-medium">학사일정</span><span class="px-2 py-0.5 rounded-md bg-rose-50 text-[10px] text-rose-500 font-medium">알림 설정</span></div>
         </div>
 
@@ -452,8 +493,8 @@
           <div class="w-10 h-10 rounded-xl bg-yellow-50 flex items-center justify-center mb-5">
             <svg class="w-5 h-5 text-yellow-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
           </div>
-          <h3 class="text-base font-bold text-gray-800 mb-2">포스트잇 메모</h3>
-          <p class="text-sm text-gray-400 leading-relaxed mb-4">자유 배치 보드에 드래그 앤 드롭. 리치 텍스트 편집, 6가지 파스텔 색상.</p>
+          <h3 class="text-base font-bold text-gray-800 dark:text-gray-100 mb-2">포스트잇 메모</h3>
+          <p class="text-sm text-gray-400 dark:text-gray-500 leading-relaxed mb-4">자유 배치 보드에 드래그 앤 드롭. 리치 텍스트 편집, 6가지 파스텔 색상.</p>
           <div class="flex gap-1.5"><span class="px-2 py-0.5 rounded-md bg-yellow-50 text-[10px] text-yellow-600 font-medium">드래그 배치</span><span class="px-2 py-0.5 rounded-md bg-yellow-50 text-[10px] text-yellow-600 font-medium">리치 텍스트</span></div>
         </div>
 
@@ -461,8 +502,8 @@
           <div class="w-10 h-10 rounded-xl bg-cyan-50 flex items-center justify-center mb-5">
             <svg class="w-5 h-5 text-cyan-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
-          <h3 class="text-base font-bold text-gray-800 mb-2">연락처</h3>
-          <p class="text-sm text-gray-400 leading-relaxed mb-4">교사·학생 연락처를 분리 관리. 엑셀 붙여넣기, CSV, 인쇄까지.</p>
+          <h3 class="text-base font-bold text-gray-800 dark:text-gray-100 mb-2">연락처</h3>
+          <p class="text-sm text-gray-400 dark:text-gray-500 leading-relaxed mb-4">교사·학생 연락처를 분리 관리. 엑셀 붙여넣기, CSV, 인쇄까지.</p>
           <div class="flex gap-1.5"><span class="px-2 py-0.5 rounded-md bg-cyan-50 text-[10px] text-cyan-600 font-medium">엑셀 연동</span><span class="px-2 py-0.5 rounded-md bg-cyan-50 text-[10px] text-cyan-600 font-medium">인쇄 지원</span></div>
         </div>
 
@@ -470,8 +511,8 @@
           <div class="w-10 h-10 rounded-xl bg-violet-50 flex items-center justify-center mb-5">
             <svg class="w-5 h-5 text-violet-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="8" y2="10.01"/><line x1="12" y1="10" x2="12" y2="10.01"/><line x1="16" y1="10" x2="16" y2="10.01"/></svg>
           </div>
-          <h3 class="text-base font-bold text-gray-800 mb-2">계산기</h3>
-          <p class="text-sm text-gray-400 leading-relaxed mb-4">사칙연산부터 단위 변환, 등급 계산기까지. 배점 계산으로 시험 출제도 쉽게.</p>
+          <h3 class="text-base font-bold text-gray-800 dark:text-gray-100 mb-2">계산기</h3>
+          <p class="text-sm text-gray-400 dark:text-gray-500 leading-relaxed mb-4">사칙연산부터 단위 변환, 등급 계산기까지. 배점 계산으로 시험 출제도 쉽게.</p>
           <div class="flex gap-1.5"><span class="px-2 py-0.5 rounded-md bg-violet-50 text-[10px] text-violet-500 font-medium">단위 변환</span><span class="px-2 py-0.5 rounded-md bg-violet-50 text-[10px] text-violet-500 font-medium">등급 계산</span></div>
         </div>
 
@@ -479,8 +520,8 @@
           <div class="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center mb-5">
             <svg class="w-5 h-5 text-emerald-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
           </div>
-          <h3 class="text-base font-bold text-gray-800 mb-2">업무포털 자동 로그인</h3>
-          <p class="text-sm text-gray-400 leading-relaxed mb-4">나이스, K-에듀파인 자동 로그인. 인증서부터 비밀번호까지 원클릭.</p>
+          <h3 class="text-base font-bold text-gray-800 dark:text-gray-100 mb-2">업무포털 자동 로그인</h3>
+          <p class="text-sm text-gray-400 dark:text-gray-500 leading-relaxed mb-4">나이스, K-에듀파인 자동 로그인. 인증서부터 비밀번호까지 원클릭.</p>
           <div class="flex gap-1.5"><span class="px-2 py-0.5 rounded-md bg-emerald-50 text-[10px] text-emerald-600 font-medium">나이스</span><span class="px-2 py-0.5 rounded-md bg-emerald-50 text-[10px] text-emerald-600 font-medium">K-에듀파인</span></div>
         </div>
 
@@ -488,8 +529,8 @@
           <div class="w-10 h-10 rounded-xl bg-pink-50 flex items-center justify-center mb-5">
             <svg class="w-5 h-5 text-pink-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="15.5" r="2.5"/><circle cx="8.5" cy="15.5" r="2.5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
           </div>
-          <h3 class="text-base font-bold text-gray-800 mb-2">20+ 테마</h3>
-          <p class="text-sm text-gray-400 leading-relaxed mb-4">벚꽃부터 네온까지 20종 프리셋. 원하는 색상으로 커스텀 테마도 만들 수 있어요.</p>
+          <h3 class="text-base font-bold text-gray-800 dark:text-gray-100 mb-2">20+ 테마</h3>
+          <p class="text-sm text-gray-400 dark:text-gray-500 leading-relaxed mb-4">벚꽃부터 네온까지 20종 프리셋. 원하는 색상으로 커스텀 테마도 만들 수 있어요.</p>
           <div class="flex gap-2">
             <div class="w-4 h-4 rounded-full bg-gradient-to-br from-sky-300 to-sky-500"></div>
             <div class="w-4 h-4 rounded-full bg-gradient-to-br from-sakura-300 to-sakura-500"></div>
@@ -504,19 +545,19 @@
 
   <!-- ==================== PREVIEW 1: 대시보드 — Full-bleed light overlay ==================== -->
   <section id="preview" class="relative h-[85vh] min-h-[600px] overflow-hidden">
-    <img src="대시보드화면.png" alt="대시보드" class="bleed-img cursor-pointer" onclick="openLightbox(this.src, this.alt)">
+    <img src="대시보드화면.png" alt="대시보드" loading="lazy" class="bleed-img cursor-pointer" onclick="openLightbox(this.src, this.alt)">
     <div class="absolute inset-0 bg-gradient-to-t from-white via-white/50 to-transparent"></div>
     <div class="absolute inset-0 flex items-end">
       <div class="max-w-6xl mx-auto px-6 lg:px-10 pb-16 md:pb-24 w-full reveal">
         <span class="inline-block px-2.5 py-1 rounded-lg bg-sky-500/10 text-[11px] text-sky-600 font-semibold mb-3 backdrop-blur-sm">01 / 대시보드</span>
-        <h3 class="bleed-title text-3xl md:text-5xl font-black text-gray-900 mb-3">오늘 하루를<br>한눈에</h3>
-        <p class="text-sm md:text-base text-gray-400 max-w-md leading-relaxed">시계, 급식, 시간표, 학사일정, 메모까지. 위젯 기반 대시보드에서 오늘 필요한 모든 정보를 한 화면에 확인하세요.</p>
+        <h3 class="bleed-title text-3xl md:text-5xl font-black text-gray-900 dark:text-white mb-3">오늘 하루를<br>한눈에</h3>
+        <p class="text-sm md:text-base text-gray-400 dark:text-gray-500 max-w-md leading-relaxed">시계, 급식, 시간표, 학사일정, 메모까지. 위젯 기반 대시보드에서 오늘 필요한 모든 정보를 한 화면에 확인하세요.</p>
       </div>
     </div>
   </section>
 
   <!-- ==================== PREVIEW 2: 시간표 — Light editorial ==================== -->
-  <section class="relative py-28 md:py-36 bg-[#f8fafc] overflow-hidden">
+  <section class="relative py-28 md:py-36 bg-[#f8fafc] dark:bg-gray-900 overflow-hidden">
     <div class="max-w-6xl mx-auto px-6 lg:px-10">
       <div class="grid md:grid-cols-12 gap-8 md:gap-12 items-center">
         <div class="md:col-span-4 relative">
@@ -524,14 +565,14 @@
           <div class="absolute top-1/2 left-0 -translate-y-1/2 md:left-auto md:right-0">
             <div>
               <span class="inline-block px-2.5 py-1 rounded-lg bg-sky-50 text-[11px] text-sky-600 font-semibold mb-3">시간표</span>
-              <h3 class="text-2xl md:text-3xl font-black text-gray-900 mb-2 leading-tight">NEIS 연동<br><span class="text-sky-500">자동 시간표</span></h3>
+              <h3 class="text-2xl md:text-3xl font-black text-gray-900 dark:text-white mb-2 leading-tight">NEIS 연동<br><span class="text-sky-500">자동 시간표</span></h3>
               <p class="text-sm text-gray-400 leading-relaxed max-w-xs">학교 이름만 검색하면 시간표가 자동으로. API 키 없이 NEIS에서 바로 불러옵니다.</p>
             </div>
           </div>
         </div>
         <div class="md:col-span-8 reveal">
           <div class="rounded-2xl overflow-hidden border border-sakura-100 shadow-xl shadow-sky-100/20">
-            <img src="시간표화면.png" alt="시간표" class="w-full cursor-pointer" onclick="openLightbox(this.src, this.alt)">
+            <img src="시간표화면.png" alt="시간표" loading="lazy" class="w-full cursor-pointer" onclick="openLightbox(this.src, this.alt)">
           </div>
         </div>
       </div>
@@ -539,26 +580,26 @@
   </section>
 
   <!-- ==================== PREVIEW 3: 메모 — Full-bleed light ==================== -->
-  <section class="relative h-[80vh] min-h-[550px] overflow-hidden bg-sakura-50">
-    <img src="메모장화면.png" alt="메모" class="bleed-img cursor-pointer" onclick="openLightbox(this.src, this.alt)">
+  <section class="relative h-[80vh] min-h-[550px] overflow-hidden bg-sakura-50 dark:bg-[#1a1020]">
+    <img src="메모장화면.png" alt="메모" loading="lazy" class="bleed-img cursor-pointer" onclick="openLightbox(this.src, this.alt)">
     <div class="absolute inset-0 bg-gradient-to-b from-sakura-50/70 via-transparent to-sakura-50/80"></div>
     <div class="absolute inset-0 flex items-center justify-center">
       <div class="text-center reveal">
         <span class="inline-block px-2.5 py-1 rounded-lg bg-white/70 text-[11px] text-gray-600 font-semibold mb-4 backdrop-blur-sm">03 / 메모</span>
-        <h3 class="bleed-title text-3xl md:text-5xl font-black text-gray-900 mb-3">간편하게<br>기록하세요</h3>
+        <h3 class="bleed-title text-3xl md:text-5xl font-black text-gray-900 dark:text-white mb-3">간편하게<br>기록하세요</h3>
         <p class="text-sm text-gray-500 max-w-sm mx-auto">떠오르는 생각, 할 일, 업무 메모를 빠르게 기록하고 관리할 수 있습니다.</p>
       </div>
     </div>
   </section>
 
   <!-- ==================== PREVIEW 4: 급식 — Split ==================== -->
-  <section class="relative bg-white overflow-hidden">
+  <section class="relative bg-white dark:bg-[#0c0c1d] overflow-hidden">
     <div class="max-w-7xl mx-auto">
       <div class="grid md:grid-cols-2 min-h-[70vh]">
         <div class="flex items-center px-6 lg:px-16 py-20 reveal">
           <div>
-            <span class="inline-block px-2.5 py-1 rounded-lg bg-amber-50 text-[11px] text-amber-600 font-semibold mb-4">04 / 급식</span>
-            <h3 class="text-3xl md:text-4xl font-black text-gray-900 mb-4 leading-tight">오늘 뭐 먹지?<br><span class="text-sakura-500">급식 자동 확인</span></h3>
+            <span class="inline-block px-2.5 py-1 rounded-lg bg-amber-50 dark:bg-amber-900/30 text-[11px] text-amber-600 dark:text-amber-400 font-semibold mb-4">04 / 급식</span>
+            <h3 class="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-4 leading-tight">오늘 뭐 먹지?<br><span class="text-sakura-500">급식 자동 확인</span></h3>
             <p class="text-sm text-gray-400 leading-relaxed max-w-sm mb-6">NEIS 연동으로 오늘의 급식 메뉴를 자동으로 확인. 알레르기 정보도 함께 표시됩니다.</p>
             <div class="flex gap-3">
               <div class="px-3 py-1.5 rounded-lg bg-gray-50 border border-gray-100"><span class="text-[11px] text-gray-400">조식</span></div>
@@ -568,7 +609,7 @@
           </div>
         </div>
         <div class="relative min-h-[300px] md:min-h-0 reveal reveal-delay-1">
-          <img src="급식화면.png" alt="급식" class="absolute inset-0 w-full h-full object-cover cursor-pointer" onclick="openLightbox(this.src, this.alt)">
+          <img src="급식화면.png" alt="급식" loading="lazy" class="absolute inset-0 w-full h-full object-cover cursor-pointer" onclick="openLightbox(this.src, this.alt)">
           <div class="absolute inset-0 bg-gradient-to-r from-white via-transparent to-transparent md:block hidden"></div>
         </div>
       </div>
@@ -589,7 +630,7 @@
           <div class="text-xs text-white/50 tracking-wider uppercase">핵심 기능</div>
         </div>
         <div class="text-center reveal reveal-delay-3">
-          <div class="stat-number text-5xl md:text-6xl font-black text-white mb-1">0</div>
+          <div class="stat-number text-5xl md:text-6xl font-black text-white mb-1">필요 없음</div>
           <div class="text-xs text-white/50 tracking-wider uppercase">API 키</div>
         </div>
         <div class="text-center reveal reveal-delay-4">
@@ -601,16 +642,16 @@
   </section>
 
   <!-- ==================== PREVIEW 5: 북마크 — Asymmetric ==================== -->
-  <section class="relative bg-[#fefbff] overflow-hidden">
+  <section class="relative bg-[#fefbff] dark:bg-gray-950 overflow-hidden">
     <div class="max-w-7xl mx-auto">
       <div class="grid md:grid-cols-5 min-h-[70vh]">
         <div class="md:col-span-3 relative min-h-[350px] reveal">
-          <img src="북마크%20화면.png" alt="북마크" class="absolute inset-0 w-full h-full object-cover cursor-pointer" onclick="openLightbox(this.src, this.alt)">
+          <img src="북마크%20화면.png" alt="북마크" loading="lazy" class="absolute inset-0 w-full h-full object-cover cursor-pointer" onclick="openLightbox(this.src, this.alt)">
         </div>
         <div class="md:col-span-2 flex items-center px-8 lg:px-12 reveal reveal-delay-1">
           <div>
             <span class="inline-block px-2.5 py-1 rounded-lg bg-sakura-50 text-[11px] text-sakura-500 font-semibold mb-4">05 / 북마크</span>
-            <h3 class="text-2xl md:text-3xl font-black text-gray-900 mb-3 leading-tight">자주 쓰는 사이트를<br><span class="text-sky-500">빠르게 접근</span></h3>
+            <h3 class="text-2xl md:text-3xl font-black text-gray-900 dark:text-white mb-3 leading-tight">자주 쓰는 사이트를<br><span class="text-sky-500">빠르게 접근</span></h3>
             <p class="text-sm text-gray-400 leading-relaxed">NEIS, 교육포털, 학교 홈페이지 등 자주 사용하는 웹사이트를 북마크로 저장하고 한 번에 열어보세요.</p>
           </div>
         </div>
@@ -620,12 +661,12 @@
 
   <!-- ==================== PREVIEW 6: 업무자료 — Full-bleed ==================== -->
   <section class="relative h-[80vh] min-h-[550px] overflow-hidden">
-    <img src="업무자료%20화면.png" alt="업무자료" class="bleed-img cursor-pointer" onclick="openLightbox(this.src, this.alt)">
+    <img src="업무자료%20화면.png" alt="업무자료" loading="lazy" class="bleed-img cursor-pointer" onclick="openLightbox(this.src, this.alt)">
     <div class="absolute inset-0 bg-gradient-to-br from-white/80 via-white/30 to-transparent"></div>
     <div class="absolute inset-0 flex items-start">
       <div class="max-w-6xl mx-auto px-6 lg:px-10 pt-16 md:pt-24 w-full reveal">
         <span class="inline-block px-2.5 py-1 rounded-lg bg-white/70 text-[11px] text-gray-500 font-semibold mb-3 backdrop-blur-sm">06 / 업무자료</span>
-        <h3 class="bleed-title text-3xl md:text-5xl font-black text-gray-900 mb-3">학교 업무 문서를<br>편리하게 관리</h3>
+        <h3 class="bleed-title text-3xl md:text-5xl font-black text-gray-900 dark:text-white mb-3">학교 업무 문서를<br>편리하게 관리</h3>
         <p class="text-sm text-gray-500 max-w-md leading-relaxed">교재, 수업 자료, 공문 등 학교 업무에 필요한 파일을 카테고리별로 정리하고 빠르게 찾을 수 있습니다.</p>
       </div>
     </div>
@@ -638,19 +679,19 @@
     <div class="max-w-5xl mx-auto px-6 lg:px-10">
       <div class="text-center mb-12 reveal">
         <span class="inline-block px-2.5 py-1 rounded-lg bg-sky-50 text-[11px] text-sky-600 font-semibold mb-4">07 / 연락처</span>
-        <h3 class="text-3xl md:text-4xl font-black text-gray-900 mb-3">교직원 연락처를<br><span class="text-sky-500">한 곳에</span></h3>
+        <h3 class="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-3">교직원 연락처를<br><span class="text-sky-500">한 곳에</span></h3>
         <p class="text-sm text-gray-400 max-w-md mx-auto">교장선생님, 교감선생님, 동료 교사들의 연락처를 한 곳에서 관리하세요. 검색과 그룹 분류도 지원합니다.</p>
       </div>
       <div class="max-w-3xl mx-auto reveal reveal-delay-1">
         <div class="rounded-2xl overflow-hidden border border-sakura-100 shadow-2xl shadow-sky-100/10">
-          <img src="연락처%20화면.png" alt="연락처" class="w-full cursor-pointer" onclick="openLightbox(this.src, this.alt)">
+          <img src="연락처%20화면.png" alt="연락처" loading="lazy" class="w-full cursor-pointer" onclick="openLightbox(this.src, this.alt)">
         </div>
       </div>
     </div>
   </section>
 
   <!-- ==================== PRIVACY ==================== -->
-  <section class="relative py-28 md:py-36 bg-white overflow-hidden">
+  <section class="relative py-28 md:py-36 bg-white dark:bg-[#0c0c1d] overflow-hidden">
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-spring-100/30 rounded-full blur-[150px]"></div>
     <div class="max-w-4xl mx-auto px-6 lg:px-10 text-center relative z-10 reveal">
       <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-emerald-50 border border-emerald-100 mb-8">
@@ -659,7 +700,7 @@
           <path d="M9 12l2 2 4-4"/>
         </svg>
       </div>
-      <h2 class="text-3xl md:text-5xl font-black text-gray-900 mb-6 leading-tight">
+      <h2 class="text-3xl md:text-5xl font-black text-gray-900 dark:text-white mb-6 leading-tight">
         데이터는 오직<br><span class="text-emerald-500">선생님의 컴퓨터에만</span>
       </h2>
       <p class="text-sm md:text-base text-gray-400 max-w-xl mx-auto mb-14 leading-relaxed">
@@ -687,13 +728,13 @@
   </section>
 
   <!-- ==================== VIDEO GUIDE ==================== -->
-  <section id="guide" class="py-20 md:py-28 bg-gradient-to-b from-white to-sky-50/50 relative">
+  <section id="guide" class="py-20 md:py-28 bg-gradient-to-b from-white to-sky-50/50 dark:from-[#0c0c1d] dark:to-gray-900 relative">
     <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle at 1px 1px, #3b82f6 1px, transparent 0); background-size: 24px 24px; pointer-events:none;"></div>
 
     <div class="max-w-6xl mx-auto px-6 lg:px-10 relative z-10">
       <div class="text-center mb-12 reveal">
         <p class="text-xs font-semibold text-sky-500 tracking-[0.2em] uppercase mb-3">Video Guide</p>
-        <h2 class="text-3xl md:text-5xl font-black text-gray-800 mb-3">사용 설명서</h2>
+        <h2 class="text-3xl md:text-5xl font-black text-gray-800 dark:text-gray-100 mb-3">사용 설명서</h2>
         <p class="text-sm text-gray-400">각 기능별로 영상으로 쉽게 배워보세요</p>
       </div>
 
@@ -706,41 +747,41 @@
               <svg class="w-4 h-4 text-red-500" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/><path fill="#fff" d="M9.545 15.568V8.432L15.818 12z"/></svg>
               <span class="text-xs font-bold text-white/80 tracking-wide uppercase">재생목록 (13)</span>
             </div>
-            <div class="flex flex-col gap-1 overflow-y-auto md:max-h-[420px] p-2">
-              <button class="video-tab active px-4 py-2.5 rounded-lg text-sm font-semibold transition-all text-left w-full flex items-center gap-2" onclick="switchVideo('FHEegIWDF6Q','01. 설치 방법')"><span class="text-xs opacity-50">01</span><span>설치 방법</span></button>
-              <button class="video-tab px-4 py-2.5 rounded-lg text-sm font-semibold transition-all text-left w-full flex items-center gap-2" onclick="switchVideo('W-58hdVUNBU','02. 온보딩 설정')"><span class="text-xs opacity-50">02</span><span>온보딩 설정</span></button>
-              <button class="video-tab px-4 py-2.5 rounded-lg text-sm font-semibold transition-all text-left w-full flex items-center gap-2" onclick="switchVideo('_trlRg-ithk','03. 대시보드')"><span class="text-xs opacity-50">03</span><span>대시보드</span></button>
-              <button class="video-tab px-4 py-2.5 rounded-lg text-sm font-semibold transition-all text-left w-full flex items-center gap-2" onclick="switchVideo('hbz_tYBp96I','04. 일정')"><span class="text-xs opacity-50">04</span><span>일정</span></button>
-              <button class="video-tab px-4 py-2.5 rounded-lg text-sm font-semibold transition-all text-left w-full flex items-center gap-2" onclick="switchVideo('5etlAdx9Vms','05. 시간표')"><span class="text-xs opacity-50">05</span><span>시간표</span></button>
-              <button class="video-tab px-4 py-2.5 rounded-lg text-sm font-semibold transition-all text-left w-full flex items-center gap-2" onclick="switchVideo('AYglVdIJ4qw','06. 메모')"><span class="text-xs opacity-50">06</span><span>메모</span></button>
-              <button class="video-tab px-4 py-2.5 rounded-lg text-sm font-semibold transition-all text-left w-full flex items-center gap-2" onclick="switchVideo('wd-XSRrBTJs','07. 급식')"><span class="text-xs opacity-50">07</span><span>급식</span></button>
-              <button class="video-tab px-4 py-2.5 rounded-lg text-sm font-semibold transition-all text-left w-full flex items-center gap-2" onclick="switchVideo('5WW7QWyNk8M','08. 연락처')"><span class="text-xs opacity-50">08</span><span>연락처</span></button>
-              <button class="video-tab px-4 py-2.5 rounded-lg text-sm font-semibold transition-all text-left w-full flex items-center gap-2" onclick="switchVideo('2lET0uqIXts','09. 업무자료')"><span class="text-xs opacity-50">09</span><span>업무자료</span></button>
-              <button class="video-tab px-4 py-2.5 rounded-lg text-sm font-semibold transition-all text-left w-full flex items-center gap-2" onclick="switchVideo('rvMVEByeRTY','10. 북마크')"><span class="text-xs opacity-50">10</span><span>북마크</span></button>
-              <button class="video-tab px-4 py-2.5 rounded-lg text-sm font-semibold transition-all text-left w-full flex items-center gap-2" onclick="switchVideo('0TYcH3OUKHo','11. 계산기')"><span class="text-xs opacity-50">11</span><span>계산기</span></button>
-              <button class="video-tab px-4 py-2.5 rounded-lg text-sm font-semibold transition-all text-left w-full flex items-center gap-2" onclick="switchVideo('KojPG1aL8AI','12. 자동로그인')"><span class="text-xs opacity-50">12</span><span>자동로그인</span></button>
-              <button class="video-tab px-4 py-2.5 rounded-lg text-sm font-semibold transition-all text-left w-full flex items-center gap-2" onclick="switchVideo('EolllxUrVM8','13. 설정')"><span class="text-xs opacity-50">13</span><span>설정</span></button>
+            <div class="flex flex-col gap-1 overflow-y-auto md:max-h-[420px] p-2" role="tablist" aria-label="사용 설명서 영상 목록">
+              <button class="video-tab active px-4 py-2.5 rounded-lg text-sm font-semibold transition-all text-left w-full flex items-center gap-2" role="tab" aria-selected="true" onclick="switchVideo('FHEegIWDF6Q','01. 설치 방법',this)"><span class="text-xs opacity-50">01</span><span>설치 방법</span></button>
+              <button class="video-tab px-4 py-2.5 rounded-lg text-sm font-semibold transition-all text-left w-full flex items-center gap-2" role="tab" aria-selected="false" onclick="switchVideo('W-58hdVUNBU','02. 온보딩 설정',this)"><span class="text-xs opacity-50">02</span><span>온보딩 설정</span></button>
+              <button class="video-tab px-4 py-2.5 rounded-lg text-sm font-semibold transition-all text-left w-full flex items-center gap-2" role="tab" aria-selected="false" onclick="switchVideo('_trlRg-ithk','03. 대시보드',this)"><span class="text-xs opacity-50">03</span><span>대시보드</span></button>
+              <button class="video-tab px-4 py-2.5 rounded-lg text-sm font-semibold transition-all text-left w-full flex items-center gap-2" role="tab" aria-selected="false" onclick="switchVideo('hbz_tYBp96I','04. 일정',this)"><span class="text-xs opacity-50">04</span><span>일정</span></button>
+              <button class="video-tab px-4 py-2.5 rounded-lg text-sm font-semibold transition-all text-left w-full flex items-center gap-2" role="tab" aria-selected="false" onclick="switchVideo('5etlAdx9Vms','05. 시간표',this)"><span class="text-xs opacity-50">05</span><span>시간표</span></button>
+              <button class="video-tab px-4 py-2.5 rounded-lg text-sm font-semibold transition-all text-left w-full flex items-center gap-2" role="tab" aria-selected="false" onclick="switchVideo('AYglVdIJ4qw','06. 메모',this)"><span class="text-xs opacity-50">06</span><span>메모</span></button>
+              <button class="video-tab px-4 py-2.5 rounded-lg text-sm font-semibold transition-all text-left w-full flex items-center gap-2" role="tab" aria-selected="false" onclick="switchVideo('wd-XSRrBTJs','07. 급식',this)"><span class="text-xs opacity-50">07</span><span>급식</span></button>
+              <button class="video-tab px-4 py-2.5 rounded-lg text-sm font-semibold transition-all text-left w-full flex items-center gap-2" role="tab" aria-selected="false" onclick="switchVideo('5WW7QWyNk8M','08. 연락처',this)"><span class="text-xs opacity-50">08</span><span>연락처</span></button>
+              <button class="video-tab px-4 py-2.5 rounded-lg text-sm font-semibold transition-all text-left w-full flex items-center gap-2" role="tab" aria-selected="false" onclick="switchVideo('2lET0uqIXts','09. 업무자료',this)"><span class="text-xs opacity-50">09</span><span>업무자료</span></button>
+              <button class="video-tab px-4 py-2.5 rounded-lg text-sm font-semibold transition-all text-left w-full flex items-center gap-2" role="tab" aria-selected="false" onclick="switchVideo('rvMVEByeRTY','10. 북마크',this)"><span class="text-xs opacity-50">10</span><span>북마크</span></button>
+              <button class="video-tab px-4 py-2.5 rounded-lg text-sm font-semibold transition-all text-left w-full flex items-center gap-2" role="tab" aria-selected="false" onclick="switchVideo('0TYcH3OUKHo','11. 계산기',this)"><span class="text-xs opacity-50">11</span><span>계산기</span></button>
+              <button class="video-tab px-4 py-2.5 rounded-lg text-sm font-semibold transition-all text-left w-full flex items-center gap-2" role="tab" aria-selected="false" onclick="switchVideo('KojPG1aL8AI','12. 자동로그인',this)"><span class="text-xs opacity-50">12</span><span>자동로그인</span></button>
+              <button class="video-tab px-4 py-2.5 rounded-lg text-sm font-semibold transition-all text-left w-full flex items-center gap-2" role="tab" aria-selected="false" onclick="switchVideo('EolllxUrVM8','13. 설정',this)"><span class="text-xs opacity-50">13</span><span>설정</span></button>
             </div>
           </div>
 
           <!-- Right: video player -->
-          <div class="flex-1 min-w-0">
+          <div class="flex-1 min-w-0" role="tabpanel" aria-label="영상 재생">
             <!-- Mobile: horizontal scroll tabs (shown only on mobile) -->
             <div class="md:hidden p-2 border-b border-gray-700/50">
               <div class="flex gap-1.5 overflow-x-auto pb-1" style="scrollbar-width:none; -ms-overflow-style:none;">
-                <button class="video-tab active px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all whitespace-nowrap flex-shrink-0" onclick="switchVideo('FHEegIWDF6Q','01. 설치 방법')">01. 설치</button>
+                <button class="video-tab active px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all whitespace-nowrap flex-shrink-0" onclick="switchVideo('FHEegIWDF6Q','01. 설치 방법',this)">01. 설치</button>
                 <button class="video-tab px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all whitespace-nowrap flex-shrink-0" onclick="switchVideo('W-58hdVUNBU','02. 온보딩')">02. 온보딩</button>
-                <button class="video-tab px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all whitespace-nowrap flex-shrink-0" onclick="switchVideo('_trlRg-ithk','03. 대시보드')">03. 대시보드</button>
-                <button class="video-tab px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all whitespace-nowrap flex-shrink-0" onclick="switchVideo('hbz_tYBp96I','04. 일정')">04. 일정</button>
-                <button class="video-tab px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all whitespace-nowrap flex-shrink-0" onclick="switchVideo('5etlAdx9Vms','05. 시간표')">05. 시간표</button>
-                <button class="video-tab px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all whitespace-nowrap flex-shrink-0" onclick="switchVideo('AYglVdIJ4qw','06. 메모')">06. 메모</button>
-                <button class="video-tab px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all whitespace-nowrap flex-shrink-0" onclick="switchVideo('wd-XSRrBTJs','07. 급식')">07. 급식</button>
-                <button class="video-tab px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all whitespace-nowrap flex-shrink-0" onclick="switchVideo('5WW7QWyNk8M','08. 연락처')">08. 연락처</button>
-                <button class="video-tab px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all whitespace-nowrap flex-shrink-0" onclick="switchVideo('2lET0uqIXts','09. 업무자료')">09. 업무자료</button>
-                <button class="video-tab px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all whitespace-nowrap flex-shrink-0" onclick="switchVideo('rvMVEByeRTY','10. 북마크')">10. 북마크</button>
-                <button class="video-tab px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all whitespace-nowrap flex-shrink-0" onclick="switchVideo('0TYcH3OUKHo','11. 계산기')">11. 계산기</button>
-                <button class="video-tab px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all whitespace-nowrap flex-shrink-0" onclick="switchVideo('KojPG1aL8AI','12. 자동로그인')">12. 자동로그인</button>
-                <button class="video-tab px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all whitespace-nowrap flex-shrink-0" onclick="switchVideo('EolllxUrVM8','13. 설정')">13. 설정</button>
+                <button class="video-tab px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all whitespace-nowrap flex-shrink-0" onclick="switchVideo('_trlRg-ithk','03. 대시보드',this)">03. 대시보드</button>
+                <button class="video-tab px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all whitespace-nowrap flex-shrink-0" onclick="switchVideo('hbz_tYBp96I','04. 일정',this)">04. 일정</button>
+                <button class="video-tab px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all whitespace-nowrap flex-shrink-0" onclick="switchVideo('5etlAdx9Vms','05. 시간표',this)">05. 시간표</button>
+                <button class="video-tab px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all whitespace-nowrap flex-shrink-0" onclick="switchVideo('AYglVdIJ4qw','06. 메모',this)">06. 메모</button>
+                <button class="video-tab px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all whitespace-nowrap flex-shrink-0" onclick="switchVideo('wd-XSRrBTJs','07. 급식',this)">07. 급식</button>
+                <button class="video-tab px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all whitespace-nowrap flex-shrink-0" onclick="switchVideo('5WW7QWyNk8M','08. 연락처',this)">08. 연락처</button>
+                <button class="video-tab px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all whitespace-nowrap flex-shrink-0" onclick="switchVideo('2lET0uqIXts','09. 업무자료',this)">09. 업무자료</button>
+                <button class="video-tab px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all whitespace-nowrap flex-shrink-0" onclick="switchVideo('rvMVEByeRTY','10. 북마크',this)">10. 북마크</button>
+                <button class="video-tab px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all whitespace-nowrap flex-shrink-0" onclick="switchVideo('0TYcH3OUKHo','11. 계산기',this)">11. 계산기</button>
+                <button class="video-tab px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all whitespace-nowrap flex-shrink-0" onclick="switchVideo('KojPG1aL8AI','12. 자동로그인',this)">12. 자동로그인</button>
+                <button class="video-tab px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all whitespace-nowrap flex-shrink-0" onclick="switchVideo('EolllxUrVM8','13. 설정',this)">13. 설정</button>
               </div>
             </div>
             <!-- Desktop: title bar -->
@@ -764,7 +805,7 @@
     <div class="max-w-4xl mx-auto px-6 lg:px-10 text-center relative z-10">
       <div class="reveal">
         <p class="text-xs font-semibold text-sky-500 tracking-[0.2em] uppercase mb-4">Download</p>
-        <h2 class="text-4xl md:text-6xl font-black text-gray-900 mb-3">지금 바로<br><span class="bg-gradient-to-r from-sky-500 to-sakura-400 bg-clip-text text-transparent">시작하세요</span></h2>
+        <h2 class="text-4xl md:text-6xl font-black text-gray-900 dark:text-white mb-3">지금 바로<br><span class="text-sky-500 dark:text-sky-400">시작하세요</span></h2>
         <p class="text-sm text-gray-400 max-w-md mx-auto mb-8">Windows에 설치하고 학교 이름만 검색하면 끝. 복잡한 설정 없이 1분 안에 시작할 수 있어요.</p>
       </div>
 
@@ -799,7 +840,7 @@
       </div>
 
       <!-- Warning section -->
-      <div class="mt-8 max-w-3xl mx-auto rounded-2xl border border-amber-200/60 bg-amber-50/30 p-6 md:p-8 text-left">
+      <div class="mt-8 max-w-3xl mx-auto rounded-2xl border border-amber-200/60 dark:border-amber-800/40 bg-amber-50/30 dark:bg-amber-950/20 p-6 md:p-8 text-left">
         <div class="flex items-center gap-3 mb-5">
           <div class="w-8 h-8 rounded-lg bg-amber-100 flex items-center justify-center flex-shrink-0">
             <svg class="w-4 h-4 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
@@ -825,17 +866,17 @@
           <div id="tab-chrome" class="browser-panel">
             <p class="text-sm text-gray-400 leading-relaxed mb-3"><span class="text-amber-600/80 font-semibold">"확인되지 않은 파일 다운로드"</span> 창이 나타나면 그대로 <span class="text-gray-600 font-semibold">[확인되지 않은 파일 다운로드]</span>를 눌러주세요.</p>
             <div class="space-y-3">
-              <div class="rounded-xl overflow-hidden border border-amber-100/60"><img src="다운로드경고1.png" alt="Chrome 다운로드 경고 1단계" class="w-full h-auto"></div>
-              <div class="rounded-xl overflow-hidden border border-amber-100/60"><img src="다운로드경고2.png" alt="Chrome 다운로드 경고 2단계" class="w-full h-auto"></div>
+              <div class="rounded-xl overflow-hidden border border-amber-100/60"><img src="다운로드경고1.png" alt="Chrome 다운로드 경고 1단계" loading="lazy" class="w-full h-auto"></div>
+              <div class="rounded-xl overflow-hidden border border-amber-100/60"><img src="다운로드경고2.png" alt="Chrome 다운로드 경고 2단계" loading="lazy" class="w-full h-auto"></div>
             </div>
           </div>
 
           <div id="tab-edge" class="browser-panel hidden">
             <p class="text-sm text-gray-400 leading-relaxed mb-3"><span class="text-amber-600/80 font-semibold">"파일을 안전하게 다운로드하시겠습니까?"</span> 창이 나타나면 <span class="text-gray-600 font-semibold">[저장]</span>을 눌러주세요.</p>
             <div class="space-y-3">
-              <div class="rounded-xl overflow-hidden border border-amber-100/60"><img src="다운로드경고(엣지)1.png" alt="Edge 다운로드 경고 1단계" class="w-full h-auto"></div>
-              <div class="rounded-xl overflow-hidden border border-amber-100/60"><img src="다운로드경고(엣지)2.png" alt="Edge 다운로드 경고 2단계" class="w-full h-auto"></div>
-              <div class="rounded-xl overflow-hidden border border-amber-100/60"><img src="다운로드경고(엣지)3.png" alt="Edge 다운로드 경고 3단계" class="w-full h-auto"></div>
+              <div class="rounded-xl overflow-hidden border border-amber-100/60"><img src="다운로드경고(엣지)1.png" alt="Edge 다운로드 경고 1단계" loading="lazy" class="w-full h-auto"></div>
+              <div class="rounded-xl overflow-hidden border border-amber-100/60"><img src="다운로드경고(엣지)2.png" alt="Edge 다운로드 경고 2단계" loading="lazy" class="w-full h-auto"></div>
+              <div class="rounded-xl overflow-hidden border border-amber-100/60"><img src="다운로드경고(엣지)3.png" alt="Edge 다운로드 경고 3단계" loading="lazy" class="w-full h-auto"></div>
             </div>
           </div>
         </div>
@@ -856,8 +897,8 @@
             </div>
           </div>
           <div class="space-y-3">
-            <div class="rounded-xl overflow-hidden border border-amber-100/60"><img src="설치경고1.png" alt="설치 경고 1단계" class="w-full h-auto"></div>
-            <div class="rounded-xl overflow-hidden border border-amber-100/60"><img src="설치경고2.png" alt="설치 경고 2단계" class="w-full h-auto"></div>
+            <div class="rounded-xl overflow-hidden border border-amber-100/60"><img src="설치경고1.png" alt="설치 경고 1단계" loading="lazy" class="w-full h-auto"></div>
+            <div class="rounded-xl overflow-hidden border border-amber-100/60"><img src="설치경고2.png" alt="설치 경고 2단계" loading="lazy" class="w-full h-auto"></div>
           </div>
         </div>
 
@@ -883,8 +924,8 @@
   </footer>
 
   <!-- ==================== LIGHTBOX ==================== -->
-  <div id="lightbox" class="lightbox-overlay">
-    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+  <div id="lightbox" class="lightbox-overlay" role="dialog" aria-modal="true" aria-label="이미지 크게보기">
+    <button class="lightbox-close" onclick="closeLightbox()" aria-label="닫기">&times;</button>
     <img src="" alt="">
     <div class="lightbox-caption"></div>
   </div>
@@ -924,13 +965,60 @@
     }
     fetchLatestRelease();
 
+    // Mobile menu
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileBackdrop = document.getElementById('mobile-backdrop');
+    const mobileDrawer = document.getElementById('mobile-drawer');
+    const menuIconOpen = document.getElementById('menu-icon-open');
+    const menuIconClose = document.getElementById('menu-icon-close');
+
+    function openMenu() {
+      mobileMenu.classList.remove('pointer-events-none');
+      mobileMenu.setAttribute('aria-hidden', 'false');
+      menuToggle.setAttribute('aria-expanded', 'true');
+      menuToggle.setAttribute('aria-label', '메뉴 닫기');
+      mobileBackdrop.classList.remove('opacity-0');
+      mobileBackdrop.classList.add('opacity-100');
+      mobileDrawer.classList.remove('translate-x-full');
+      mobileDrawer.classList.add('translate-x-0');
+      menuIconOpen.classList.add('hidden');
+      menuIconClose.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMenu() {
+      mobileMenu.classList.add('pointer-events-none');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.setAttribute('aria-label', '메뉴 열기');
+      mobileBackdrop.classList.remove('opacity-100');
+      mobileBackdrop.classList.add('opacity-0');
+      mobileDrawer.classList.remove('translate-x-0');
+      mobileDrawer.classList.add('translate-x-full');
+      menuIconOpen.classList.remove('hidden');
+      menuIconClose.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+    menuToggle.addEventListener('click', () => {
+      const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+      isOpen ? closeMenu() : openMenu();
+    });
+    mobileBackdrop.addEventListener('click', closeMenu);
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => { closeMenu(); });
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && menuToggle.getAttribute('aria-expanded') === 'true') closeMenu();
+    });
+
+    // Nav scroll effect
     const nav = document.getElementById('nav');
     let lastScroll = 0;
     window.addEventListener('scroll', () => {
       const y = window.scrollY;
       if (y > 50) {
         nav.classList.add('glass-strong');
-        nav.style.borderBottom = '1px solid rgba(244, 160, 181, 0.12)';
+        nav.style.borderBottom = '1px solid var(--glass-border)';
       } else {
         nav.classList.remove('glass-strong');
         nav.style.borderBottom = 'none';
@@ -976,23 +1064,29 @@
 
     const hero = document.querySelector('section');
     if (hero) {
+      let rafId = null;
       document.addEventListener('mousemove', (e) => {
         if (window.innerWidth < 768) return;
-        const x = (e.clientX / window.innerWidth - 0.5) * 20;
-        const y = (e.clientY / window.innerHeight - 0.5) * 20;
-        const orbs = hero.querySelectorAll('.rounded-full[class*="blur-"]');
-        orbs.forEach((orb, i) => {
-          const factor = (i + 1) * 0.5;
-          orb.style.transform = `translate(${x * factor}px, ${y * factor}px)`;
+        if (rafId) return;
+        rafId = requestAnimationFrame(() => {
+          rafId = null;
+          const x = (e.clientX / window.innerWidth - 0.5) * 20;
+          const y = (e.clientY / window.innerHeight - 0.5) * 20;
+          const orbs = hero.querySelectorAll('.rounded-full[class*="blur-"]');
+          orbs.forEach((orb, i) => {
+            const factor = (i + 1) * 0.5;
+            orb.style.transform = `translate(${x * factor}px, ${y * factor}px)`;
+          });
         });
       });
     }
   </script>
 
   <script>
-    function switchVideo(id, title) {
-      document.querySelectorAll('.video-tab').forEach(t => t.classList.remove('active'));
-      event.target.classList.add('active');
+    function switchVideo(id, title, clickedEl) {
+      document.querySelectorAll('.video-tab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+      clickedEl.classList.add('active');
+      clickedEl.setAttribute('aria-selected', 'true');
       document.getElementById('video-player').src = 'https://www.youtube.com/embed/' + id;
       document.getElementById('video-title').textContent = title;
     }
@@ -1005,18 +1099,44 @@
     }
 
     const lightbox = document.getElementById('lightbox');
+    let lightboxPreviousFocus = null;
+
+    function getFocusable(el) {
+      return el.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+    }
+
     function openLightbox(src, alt) {
+      lightboxPreviousFocus = document.activeElement;
       const img = lightbox.querySelector('img');
       const caption = lightbox.querySelector('.lightbox-caption');
       img.src = src;
       caption.textContent = alt || '';
       lightbox.classList.add('active');
+      lightbox.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
+      lightbox.querySelector('.lightbox-close').focus();
     }
+
     function closeLightbox() {
       lightbox.classList.remove('active');
+      lightbox.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
+      if (lightboxPreviousFocus) lightboxPreviousFocus.focus();
     }
+
+    lightbox.addEventListener('keydown', (e) => {
+      if (e.key !== 'Tab') return;
+      const focusable = getFocusable(lightbox);
+      if (focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey) {
+        if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+      } else {
+        if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    });
+
     lightbox.addEventListener('click', (e) => {
       if (e.target === lightbox || e.target.classList.contains('lightbox-close')) closeLightbox();
     });
