@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>스쿨보드(School Board) - 릴리즈</title>
+    <link>https://schoolboard.hoddok.net</link>
+    <description>선생님을 위한 올인원 바탕화면 위젯, 스쿨보드의 최신 버전 릴리즈 소식입니다.</description>
+    <language>ko</language>
+    <atom:link href="https://schoolboard.hoddok.net/rss.xml" rel="self" type="application/rss+xml"/>
+    <lastBuildDate>2026-04-19T00:00:00+09:00</lastBuildDate>
+    <item>
+      <title>스쿨보드 최신 버전 출시</title>
+      <link>https://schoolboard.hoddok.net/#download</link>
+      <description>스쿨보드(School Board) 최신 버전이 출시되었습니다. 시간표, 급식, 학사일정, 메모, 연락처, 계산기를 바탕화면 위젯으로 확인하세요. NEIS 연동, 20+ 테마, 업무포털 자동로그인 지원.</description>
+      <guid isPermaLink="false">schoolboard-latest-release</guid>
+      <pubDate>2026-04-19T00:00:00+09:00</pubDate>
+    </item>
+  </channel>
+</rss>
