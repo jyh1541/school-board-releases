@@ -1,0 +1,455 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "School Board 홈으로" [ref=e4] [cursor=pointer]:
+        - /url: "#"
+        - img "스쿨보드 아이콘" [ref=e6]
+        - generic [ref=e7]: School Board
+      - button "메뉴 열기" [ref=e9] [cursor=pointer]:
+        - img [ref=e10]
+  - generic:
+    - complementary:
+      - generic:
+        - link:
+          - /url: "#features"
+          - text: 기능
+        - link:
+          - /url: "#gallery"
+          - text: 미리보기
+        - link:
+          - /url: "#guide"
+          - text: 사용 설명서
+        - link:
+          - /url: "#download"
+          - text: 다운로드
+      - link:
+        - /url: "#download"
+        - text: 무료 다운로드 →
+  - banner [ref=e11]:
+    - generic [ref=e13]:
+      - generic [ref=e14]:
+        - generic [ref=e15]: 교사를 위한 데스크톱 위젯 · 100% 무료
+        - heading "선생님의 바탕화면을 조금 더, 스마트하게." [level=1] [ref=e17]:
+          - generic [ref=e18]: 선생님의
+          - generic [ref=e19]: 바탕화면을
+          - generic [ref=e20]: 조금 더, 스마트하게.
+        - paragraph [ref=e21]:
+          - text: 시간표, 급식, 학사일정, 메모, 연락처까지. 바탕화면 위에서 바로 확인하는
+          - strong [ref=e22]: 올인원 위젯
+          - text: . NEIS와 구글 캘린더·할 일이 실시간으로 연결됩니다.
+        - generic [ref=e23]:
+          - link "무료로 다운로드" [ref=e24] [cursor=pointer]:
+            - /url: "#download"
+            - img [ref=e26]
+            - generic [ref=e29]: 무료로 다운로드
+            - img [ref=e30]
+          - link "사용 설명서 보기" [ref=e32] [cursor=pointer]:
+            - /url: "#guide"
+            - img [ref=e33]
+            - generic [ref=e36]: 사용 설명서 보기
+        - generic [ref=e37]:
+          - generic [ref=e38]:
+            - generic [ref=e39]: 20+
+            - generic [ref=e40]: 테마 프리셋
+          - generic [ref=e41]:
+            - generic [ref=e42]: 12+
+            - generic [ref=e43]: 핵심 기능
+          - generic [ref=e44]:
+            - generic [ref=e45]: 100%
+            - generic [ref=e46]: 무료 · 오픈
+      - generic [ref=e48]:
+        - generic [ref=e51]:
+          - generic [ref=e56]: 스쿨보드 — 대시보드
+          - img "School Board 대시보드 위젯 - 시간표, 급식, 학사일정, 메모를 바탕화면에서 확인하는 교사용 데스크톱 위젯 앱" [ref=e57]
+        - generic [ref=e58]:
+          - img [ref=e60]
+          - text: NEIS 연동
+        - generic [ref=e62]:
+          - generic [ref=e63]: G
+          - text: 구글 실시간 동기화
+        - generic [ref=e64]:
+          - img [ref=e66]
+          - text: 20+ 테마
+  - generic [ref=e70]:
+    - generic [ref=e73]: NEIS 나이스 연동
+    - generic [ref=e76]: 자동 업데이트
+    - generic [ref=e79]: 구글 캘린더 & 할 일 실시간 동기화
+    - generic [ref=e82]: 20+ 테마
+    - generic [ref=e85]: 프레임리스 위젯
+    - generic [ref=e88]: 투명도 조절
+    - generic [ref=e91]: 데이터 암호화
+    - generic [ref=e94]: 엑셀 연동
+    - generic [ref=e97]: 업무포털 자동 로그인
+    - generic [ref=e100]: 구글 시트 연동
+    - generic [ref=e103]: 포터블 지원
+    - generic [ref=e106]: NEIS 나이스 연동
+    - generic [ref=e109]: 자동 업데이트
+    - generic [ref=e112]: 구글 캘린더 & 할 일 실시간 동기화
+    - generic [ref=e115]: 20+ 테마
+    - generic [ref=e118]: 프레임리스 위젯
+    - generic [ref=e121]: 투명도 조절
+    - generic [ref=e124]: 데이터 암호화
+    - generic [ref=e127]: 엑셀 연동
+    - generic [ref=e130]: 업무포털 자동 로그인
+    - generic [ref=e133]: 구글 시트 연동
+    - generic [ref=e136]: 포터블 지원
+  - generic [ref=e138]:
+    - generic [ref=e139]:
+      - generic [ref=e140]:
+        - generic [ref=e141]: Features
+        - heading "교사를 위한 모든 도구를 한 화면에." [level=2] [ref=e142]:
+          - text: 교사를 위한
+          - text: 모든 도구를 한 화면에.
+      - paragraph [ref=e143]: 시간표부터 급식, 메모, 연락처, 자동 로그인까지. 학교 업무에 필요한 12가지 기능이 데스크톱 위젯으로 통합되어 있습니다.
+    - generic [ref=e144]:
+      - generic [ref=e145]:
+        - generic [ref=e146]: NEW
+        - img [ref=e148]
+        - heading "Google 캘린더 & 할 일 실시간 동기화" [level=3] [ref=e150]:
+          - text: Google 캘린더 & 할 일
+          - text: 실시간 동기화
+        - paragraph [ref=e151]: 구글 캘린더 API와 할 일 API를 통해 일정이 양방향 실시간 연동됩니다. PC와 핸드폰 어디서든 동일하게 확인하세요.
+        - generic [ref=e152]:
+          - generic [ref=e153]: Calendar API
+          - generic [ref=e154]: Tasks API
+          - generic [ref=e155]: 양방향 실시간
+          - generic [ref=e156]: 다중 계정
+      - generic [ref=e157]:
+        - img [ref=e159]
+        - heading "NEIS 자동 시간표" [level=3] [ref=e161]
+        - paragraph [ref=e162]: 학교 이름만 검색하면 NEIS에서 시간표를 자동으로 불러옵니다. 학반별·교사별·학생 개별 조회까지.
+        - generic [ref=e163]:
+          - generic [ref=e164]: NEIS 연동
+          - generic [ref=e165]: 교과별 조회
+          - generic [ref=e166]: API 키 불필요
+        - generic [ref=e168]:
+          - generic [ref=e169]: 월
+          - generic [ref=e170]: 화
+          - generic [ref=e171]: 수
+          - generic [ref=e172]: 목
+          - generic [ref=e173]: 금
+      - generic [ref=e174]:
+        - img [ref=e176]
+        - heading "벤토 대시보드" [level=3] [ref=e181]
+        - paragraph [ref=e182]: 시계, 날씨, 시간표, 급식을 한 화면에. 위젯을 자유롭게 드래그하고 크기를 조절하세요.
+        - generic [ref=e183]:
+          - generic [ref=e184]: 드래그 배치
+          - generic [ref=e185]: 크기 조절
+      - generic [ref=e186]:
+        - img [ref=e188]
+        - heading "오늘의 급식" [level=3] [ref=e191]
+        - paragraph [ref=e192]: 조·중·석식 3끼 모두 확인. 알레르기 정보까지 한 번에.
+        - generic [ref=e193]:
+          - generic [ref=e194]: 3식 제공
+          - generic [ref=e195]: 알레르기 표시
+      - generic [ref=e196]:
+        - img [ref=e198]
+        - heading "포스트잇 메모" [level=3] [ref=e201]
+        - paragraph [ref=e202]: 자유 배치 보드에 드래그 앤 드롭. 리치 텍스트 편집과 6가지 파스텔 색상.
+        - generic [ref=e203]:
+          - generic [ref=e204]: 자유 배치
+          - generic [ref=e205]: 리치 텍스트
+      - generic [ref=e206]:
+        - img [ref=e208]
+        - heading "연락처 관리" [level=3] [ref=e213]
+        - paragraph [ref=e214]: 교사·학생 연락처를 분리해서 관리. 엑셀 붙여넣기, CSV, 인쇄까지.
+        - generic [ref=e215]:
+          - generic [ref=e216]: 엑셀 연동
+          - generic [ref=e217]: 인쇄 지원
+      - generic [ref=e218]:
+        - img [ref=e220]
+        - heading "스마트 계산기" [level=3] [ref=e222]
+        - paragraph [ref=e223]: 사칙연산부터 단위 변환, 등급 계산까지. 시험 배점 계산도 손쉽게.
+        - generic [ref=e224]:
+          - generic [ref=e225]: 단위 변환
+          - generic [ref=e226]: 등급 계산
+      - generic [ref=e227]:
+        - img [ref=e229]
+        - heading "업무포털 자동 로그인" [level=3] [ref=e232]
+        - paragraph [ref=e233]: 나이스, K-에듀파인 자동 로그인. 인증서부터 비밀번호까지 원클릭.
+        - generic [ref=e234]:
+          - generic [ref=e235]: 나이스
+          - generic [ref=e236]: K-에듀파인
+      - generic [ref=e237]:
+        - img [ref=e239]
+        - heading "일정 & D-Day" [level=3] [ref=e241]
+        - paragraph [ref=e242]: 학사일정과 개인 할 일을 통합 관리. 구글 캘린더와 실시간으로 연결됩니다.
+        - generic [ref=e243]:
+          - generic [ref=e244]: 학사일정
+          - generic [ref=e245]: 알림 설정
+          - generic [ref=e246]: 구글 동기화
+      - generic [ref=e247]:
+        - img [ref=e249]
+        - heading "20개 이상의 프리셋 테마" [level=3] [ref=e254]
+        - paragraph [ref=e255]: 벚꽃부터 네온까지 20종 프리셋. 원하는 색상으로 커스텀 테마도 만들 수 있습니다.
+      - generic [ref=e265]:
+        - img [ref=e267]
+        - heading "로컬 우선 · 데이터 암호화" [level=3] [ref=e270]
+        - paragraph [ref=e271]: 모든 데이터는 선생님의 PC 안에만 머무릅니다. 외부 서버 없음, 로그인 불필요.
+        - generic [ref=e272]:
+          - generic [ref=e273]: 암호화
+          - generic [ref=e274]: 오프라인 동작
+          - generic [ref=e275]: 로그인 불필요
+  - generic [ref=e277]:
+    - generic [ref=e278]:
+      - generic [ref=e279]:
+        - img [ref=e281]
+        - generic [ref=e286]: NEW
+      - generic [ref=e288]: Real-time Sync
+      - heading "구글 캘린더와 완벽하게 연결됩니다." [level=2] [ref=e289]:
+        - text: 구글 캘린더와
+        - emphasis [ref=e290]: 완벽하게
+        - text: 연결됩니다.
+      - paragraph [ref=e291]: PC에서 등록한 일정과 할 일이 핸드폰에 실시간으로 동기화됩니다. 구글 캘린더, 구글 할 일과 양방향 연동으로 어디서든 동일하게 관리하세요.
+      - generic [ref=e292]:
+        - generic [ref=e293]:
+          - img [ref=e295]
+          - generic [ref=e297]: 구글 캘린더 양방향 실시간 동기화
+        - generic [ref=e298]:
+          - img [ref=e300]
+          - generic [ref=e302]: 구글 할 일(Tasks) 실시간 연동
+        - generic [ref=e303]:
+          - img [ref=e305]
+          - generic [ref=e307]: PC ↔ 핸드폰 실시간 반영
+    - generic [ref=e310]:
+      - generic [ref=e312]: 12:30
+      - generic [ref=e319]: 실시간 동기화 중
+      - generic [ref=e320]: 구글 캘린더
+      - generic [ref=e321]:
+        - generic [ref=e322]: 3교시 과학 수업
+        - generic [ref=e323]: 10:00 - 10:45
+      - generic [ref=e324]:
+        - generic [ref=e325]: 5교시 미술 수업
+        - generic [ref=e326]: 13:00 - 13:45
+      - generic [ref=e327]: 구글 할 일
+      - generic [ref=e328]:
+        - img [ref=e330]
+        - generic [ref=e332]: 학부모 상담 자료 준비
+      - generic [ref=e335]: 성적표 작성 마감
+      - generic [ref=e338]: 교재 발주 요청
+  - generic [ref=e340]:
+    - generic [ref=e341]:
+      - generic [ref=e342]:
+        - generic [ref=e343]: Preview
+        - heading "실제 화면을 미리 만나보세요." [level=2] [ref=e344]:
+          - text: 실제 화면을
+          - text: 미리 만나보세요.
+      - paragraph [ref=e345]: 대시보드부터 시간표, 메모, 급식, 북마크, 업무자료, 연락처까지. 클릭하면 더 크게 볼 수 있어요.
+    - generic [ref=e346]:
+      - generic [ref=e347]:
+        - img "대시보드 - 시계, 급식, 시간표, 학사일정, 메모를 한 화면에 위젯 기반으로 보여주는 대시보드" [ref=e348]
+        - generic [ref=e349]:
+          - text: 01 / 대시보드
+          - heading "오늘 하루를 한눈에" [level=3] [ref=e350]
+          - paragraph [ref=e351]: 시계, 급식, 시간표, 학사일정, 메모까지 — 위젯 기반 대시보드에서 오늘 필요한 모든 정보를 한 화면에.
+      - generic [ref=e352]:
+        - img "시간표 - NEIS 연동으로 자동으로 불러오는 학반·교사별 시간표" [ref=e353]
+        - generic [ref=e354]:
+          - text: 02 / 시간표
+          - heading "NEIS 자동 시간표" [level=3] [ref=e355]
+          - paragraph [ref=e356]: 학교 이름만 검색하면 시간표가 자동으로. API 키 없이 NEIS에서 바로.
+      - generic [ref=e357]:
+        - img "메모 - 자유 배치 보드에 드래그 앤 드롭으로 정리하는 포스트잇 메모" [ref=e358]
+        - generic [ref=e359]:
+          - text: 03 / 메모
+          - heading "간편하게 기록하세요" [level=3] [ref=e360]
+          - paragraph [ref=e361]: 떠오르는 생각, 할 일, 업무 메모를 빠르게 기록하고 관리하세요.
+      - generic [ref=e362]:
+        - img "급식 - 조·중·석식 3끼와 알레르기 정보를 한 번에 확인하는 급식 화면" [ref=e363]
+        - generic [ref=e364]:
+          - text: 04 / 급식
+          - heading "오늘 뭐 먹지?" [level=3] [ref=e365]
+          - paragraph [ref=e366]: NEIS 연동으로 오늘의 급식 메뉴를 자동으로 확인. 알레르기 정보도 함께.
+      - generic [ref=e367]:
+        - img "북마크 - 자주 쓰는 사이트를 빠르게 접근할 수 있는 북마크 화면" [ref=e368]
+        - generic [ref=e369]:
+          - text: 05 / 북마크
+          - heading "자주 쓰는 사이트, 빠르게" [level=3] [ref=e370]
+          - paragraph [ref=e371]: NEIS, 교육포털, 학교 홈페이지 등 자주 사용하는 웹사이트를 한 번에.
+      - generic [ref=e372]:
+        - img "업무자료 - 교재, 수업 자료, 공문 등 학교 업무 문서를 카테고리별로 정리하는 업무자료 화면" [ref=e373]
+        - generic [ref=e374]:
+          - text: 06 / 업무자료
+          - heading "학교 업무 문서를 깔끔하게" [level=3] [ref=e375]
+          - paragraph [ref=e376]: 교재, 수업 자료, 공문 등 필요한 파일을 카테고리별로 정리하고 빠르게 검색.
+      - generic [ref=e377]:
+        - img "연락처 - 교직원 연락처를 검색하고 그룹별로 분류하는 연락처 화면" [ref=e378]
+        - generic [ref=e379]:
+          - text: 07 / 연락처
+          - heading "교직원 연락처를 한 곳에" [level=3] [ref=e380]
+          - paragraph [ref=e381]: 교장선생님, 교감선생님, 동료 교사들의 연락처를 한 곳에서 관리. 검색과 그룹 분류도 지원합니다.
+  - generic [ref=e382]:
+    - generic [ref=e383]:
+      - generic [ref=e384]: By the Numbers
+      - heading "숫자로 보는 스쿨보드." [level=2] [ref=e385]
+    - generic [ref=e386]:
+      - generic [ref=e387]:
+        - generic [ref=e388]: 0+
+        - generic [ref=e389]: 프리셋 테마
+      - generic [ref=e390]:
+        - generic [ref=e391]: 0+
+        - generic [ref=e392]: 핵심 기능
+      - generic [ref=e393]:
+        - generic [ref=e394]: 불필요
+        - generic [ref=e395]: API 키
+      - generic [ref=e396]:
+        - generic [ref=e397]: 0%
+        - generic [ref=e398]: 무료
+  - generic [ref=e401]:
+    - img [ref=e403]
+    - generic [ref=e406]: Privacy First
+    - heading "데이터는 오직 선생님의 컴퓨터에만" [level=2] [ref=e407]:
+      - text: 데이터는 오직
+      - text: 선생님의 컴퓨터에만
+    - paragraph [ref=e408]: 어떠한 데이터도 외부 서버에 전송되거나 저장되지 않습니다. 시간표, 메모, 연락처, 업무자료 — 모든 것이 선생님의 PC 안에서만 관리됩니다.
+    - generic [ref=e409]:
+      - generic [ref=e410]:
+        - img [ref=e412]
+        - heading "외부 서버 없음" [level=4] [ref=e414]
+        - paragraph [ref=e415]: 클라우드 서버 없이 온전히 로컬에서 동작합니다.
+      - generic [ref=e416]:
+        - img [ref=e418]
+        - heading "데이터 전송 없음" [level=4] [ref=e420]
+        - paragraph [ref=e421]: 인터넷 연결 없어도 모든 기능을 사용할 수 있어요.
+      - generic [ref=e422]:
+        - img [ref=e424]
+        - heading "로그인 불필요" [level=4] [ref=e427]
+        - paragraph [ref=e428]: 계정 생성 없이 설치 후 즉시 사용할 수 있어요.
+  - generic [ref=e430]:
+    - generic [ref=e431]:
+      - generic [ref=e432]: Video Guide
+      - heading "사용 설명서." [level=2] [ref=e433]
+      - paragraph [ref=e434]: 각 기능별로 영상으로 쉽게 배워보세요. 13개의 짧은 영상으로 빠르게 익힐 수 있어요.
+    - generic [ref=e435]:
+      - tablist [ref=e436]:
+        - button "01. 설치" [ref=e437] [cursor=pointer]
+        - button "02. 온보딩" [ref=e438] [cursor=pointer]
+        - button "03. 대시보드" [ref=e439] [cursor=pointer]
+        - button "04. 일정" [ref=e440] [cursor=pointer]
+        - button "05. 시간표" [ref=e441] [cursor=pointer]
+        - button "06. 메모" [ref=e442] [cursor=pointer]
+        - button "07. 급식" [ref=e443] [cursor=pointer]
+        - button "08. 연락처" [ref=e444] [cursor=pointer]
+        - button "09. 업무자료" [ref=e445] [cursor=pointer]
+        - button "10. 북마크" [ref=e446] [cursor=pointer]
+        - button "11. 계산기" [ref=e447] [cursor=pointer]
+        - button "12. 자동로그인" [ref=e448] [cursor=pointer]
+        - button "13. 설정" [ref=e449] [cursor=pointer]
+      - text: ▶
+      - iframe [ref=e452]:
+        - generic [active] [ref=f7e1]:
+          - generic "YouTube 동영상 플레이어" [ref=f7e3]
+          - generic [ref=f7e5]:
+            - generic:
+              - generic:
+                - button "동영상 재생" [ref=f7e10] [cursor=pointer]
+                - button "재생 컨트롤 숨기기" [ref=f7e12] [cursor=pointer]
+                - generic [ref=f7e14]:
+                  - generic [ref=f7e19]:
+                    - generic [ref=f7e20]:
+                      - link "01 설치 방법" [ref=f7e21] [cursor=pointer]:
+                        - /url: https://www.youtube.com/watch?v=FHEegIWDF6Q
+                      - link "호똑쌤" [ref=f7e22] [cursor=pointer]:
+                        - /url: /channel/UCkm4e42foCzdmnTxcd_yFrw
+                        - generic [ref=f7e23]: 호똑쌤
+                    - generic [ref=f7e24]:
+                      - button [ref=f7e25] [cursor=pointer]
+                      - generic [ref=f7e27]:
+                        - generic: 호똑쌤
+                        - generic: 구독자 202명
+                  - generic [ref=f7e28]:
+                    - button "공유" [ref=f7e31] [cursor=pointer]:
+                      - generic [ref=f7e35]:
+                        - img
+                    - link "YouTube에서 보기" [ref=f7e42] [cursor=pointer]:
+                      - /url: https://www.youtube.com/watch?v=FHEegIWDF6Q
+                      - generic [ref=f7e45]:
+                        - text: "다음에서 보기:"
+                        - img [ref=f7e47]:
+                          - generic [ref=f7e49]:
+                            - img
+  - generic [ref=e454]:
+    - generic [ref=e455]: Download
+    - heading "지금 바로 시작하세요." [level=1] [ref=e456]:
+      - text: 지금 바로
+      - emphasis [ref=e457]: 시작하세요.
+    - paragraph [ref=e458]: Windows에 설치하고 학교 이름만 검색하면 끝. 복잡한 설정 없이 1분 안에 시작할 수 있어요.
+    - generic [ref=e459]:
+      - link "Windows 인스톨러 권장 · 자동 업데이트" [ref=e460] [cursor=pointer]:
+        - /url: "#"
+        - img [ref=e461]
+        - generic [ref=e464]:
+          - generic [ref=e465]: Windows 인스톨러
+          - generic [ref=e466]: 권장 · 자동 업데이트
+        - img [ref=e467]
+      - link "클라우드 대체 GitHub가 느릴 때" [ref=e469] [cursor=pointer]:
+        - /url: https://1drv.ms/u/c/63cbfdc50072c77f/IQCgzC6pO89_QrBTyqk2MGfLAf1Eij0l8JDVAp1SHHL7-r4?e=bD1zLd
+        - img [ref=e470]
+        - generic [ref=e472]:
+          - generic [ref=e473]: 클라우드 대체
+          - generic [ref=e474]: GitHub가 느릴 때
+    - paragraph [ref=e475]: Windows 10 / 11 · 자동 업데이트 지원 · 코드 서명 진행 중
+    - generic [ref=e476]:
+      - generic [ref=e477]:
+        - img [ref=e479]
+        - heading "다운로드 및 설치 시 안내" [level=3] [ref=e481]
+      - generic [ref=e482]:
+        - heading "다운로드 시 경고가 뜨나요?" [level=4] [ref=e483]
+        - paragraph [ref=e484]:
+          - text: 코드 서명 전이라 브라우저에서 보안 경고가 나타날 수 있으며,
+          - strong [ref=e485]: 실제 보안과는 무관
+          - text: 합니다.
+        - generic [ref=e486]:
+          - button "Chrome" [ref=e487] [cursor=pointer]:
+            - img [ref=e488]
+            - text: Chrome
+          - button "Edge" [ref=e491] [cursor=pointer]:
+            - img [ref=e492]
+            - text: Edge
+        - generic [ref=e495]:
+          - paragraph [ref=e496]:
+            - strong [ref=e497]: "\"확인되지 않은 파일 다운로드\""
+            - text: 창이 나타나면 그대로
+            - strong [ref=e498]: "[확인되지 않은 파일 다운로드]"
+            - text: 를 눌러주세요.
+          - generic [ref=e499]:
+            - img "Chrome 다운로드 경고 1단계" [ref=e501]
+            - img "Chrome 다운로드 경고 2단계" [ref=e503]
+      - generic [ref=e505]:
+        - heading "설치할 때도 경고가 뜨나요?" [level=4] [ref=e506]
+        - paragraph [ref=e507]:
+          - text: 설치 파일 실행 시
+          - strong [ref=e508]: Windows 보안
+          - text: 경고가 나타날 수 있습니다.
+        - generic [ref=e509]:
+          - generic [ref=e510]:
+            - generic [ref=e511]: "1"
+            - generic [ref=e512]:
+              - strong [ref=e513]: "\"추가 정보\""
+              - text: 를 클릭하세요
+          - generic [ref=e514]:
+            - generic [ref=e515]: "2"
+            - generic [ref=e516]:
+              - text: 하단의
+              - strong [ref=e517]: "\"실행\""
+              - text: 을 클릭하면 설치가 시작됩니다
+        - generic [ref=e518]:
+          - img "설치 경고 1단계" [ref=e520]
+          - img "설치 경고 2단계" [ref=e522]
+      - paragraph [ref=e523]: "* 코드 서명 완료 후에는 위 경고들이 더 이상 표시되지 않습니다."
+  - contentinfo [ref=e524]:
+    - generic [ref=e525]:
+      - generic [ref=e526]:
+        - img "스쿨보드 로고" [ref=e528]
+        - generic [ref=e529]:
+          - generic [ref=e530]: 스쿨보드(School Board)
+          - generic [ref=e531]: made by 호똑쌤
+      - generic [ref=e532]:
+        - link "개인정보처리방침" [ref=e533] [cursor=pointer]:
+          - /url: privacy.html
+        - link "이용약관" [ref=e535] [cursor=pointer]:
+          - /url: terms.html
+      - generic [ref=e536]: © 2026 호똑쌤. All rights reserved.
+    - generic [ref=e537]: "저작권 등록번호: C-2026-018961호 · 컴퓨터프로그램저작물 (응용프로그램 > 사무관리) · 저작자: 지연호 · 등록일: 2026.04.15 · 한국저작권위원회"
+  - dialog "이미지 크게보기":
+    - button "닫기": ×

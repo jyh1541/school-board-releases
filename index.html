@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>스쿨보드(School Board) - 선생님을 위한 올인원 바탕화면 위젯 | 시간표, 급식, 학사일정</title>
-  <meta name="description" content="교사용 바탕화면 위젯 스쿨보드. 시간표, 급식, 학사일정, 메모, 연락처, 계산기를 배경화면에서 바로 확인. NEIS 연동, 20+ 테마, 업무포털 자동로그인. 100% 무료.">
-  <meta name="keywords" content="스쿨보드, 스쿨보드 앱, 교사 위젯, 바탕화면 위젯, 교사 배경화면, 시간표 앱, 시간표 프로그램, 급식 앱, 급식 확인, 학사일정, NEIS 연동, 나이스 연동, 교육용 소프트웨어, 교육용 앱, 선생님 도구, 교사 필수앱, 교사 업무 툴, 데스크톱 위젯, 학교 업무, 학교행정, 학사관리, 수업 도구, 교과 연구, 시간표 작성, 학급경영, 교사 커뮤니티, 학교 앱, 나이스, K에듀파인, 업무포털, 자동로그인, 무료 교사 앱, 선생님 추천 앱">
+  <meta name="description" content="교사용 바탕화면 위젯 스쿨보드. 시간표, 급식, 학사일정, 메모, 연락처, 계산기를 배경화면에서 바로 확인. NEIS 연동, 구글 캘린더·할 일 실시간 동기화, 20+ 테마, 업무포털 자동로그인. 100% 무료.">
+  <meta name="keywords" content="스쿨보드, 스쿨보드 앱, 교사 위젯, 바탕화면 위젯, 교사 배경화면, 시간표 앱, 시간표 프로그램, 급식 앱, 급식 확인, 학사일정, NEIS 연동, 나이스 연동, 구글 캘린더 동기화, 구글 할 일 연동, 실시간 동기화, 교육용 소프트웨어, 교육용 앱, 선생님 도구, 교사 필수앱, 교사 업무 툴, 데스크톱 위젯, 학교 업무, 학교행정, 학사관리, 수업 도구, 교과 연구, 시간표 작성, 학급경영, 교사 커뮤니티, 학교 앱, 나이스, K에듀파인, 업무포털, 자동로그인, 무료 교사 앱, 선생님 추천 앱">
   <meta name="author" content="호똑쌤">
   <meta name="robots" content="index, follow">
   <meta name="naver-site-verification" content="5646473725845364041f89d1a68f06c6abc9f361" />
@@ -13,959 +13,1740 @@
   <link rel="alternate" type="application/rss+xml" title="스쿨보드 릴리즈 RSS" href="https://schoolboard.hoddok.net/rss.xml">
   <meta property="og:url" content="https://schoolboard.hoddok.net/">
   <meta property="og:title" content="스쿨보드(School Board) - 선생님을 위한 올인원 바탕화면 위젯">
-  <meta property="og:description" content="시간표, 급식, 학사일정, 메모, 연락처를 바탕화면에서 한눈에. NEIS 연동, 20+ 테마, 100% 무료.">
+  <meta property="og:description" content="시간표, 급식, 학사일정, 메모, 연락처를 바탕화면에서 한눈에. NEIS 연동, 구글 캘린더·할 일 실시간 동기화, 20+ 테마, 100% 무료.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ko_KR">
   <meta property="og:site_name" content="스쿨보드(School Board)">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="스쿨보드(School Board) - 교사용 바탕화면 위젯">
-  <meta name="twitter:description" content="시간표, 급식, 학사일정을 배경화면에서 바로. NEIS 연동, 20+ 테마, 100% 무료.">
+  <meta name="twitter:description" content="시간표, 급식, 학사일정을 배경화면에서 바로. 구글 캘린더·할 일 실시간 동기화, NEIS 연동, 20+ 테마, 100% 무료.">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "스쿨보드",
     "alternateName": "School Board",
-    "description": "선생님을 위한 올인원 바탕화면 위젯. 시간표, 급식, 학사일정, 메모, 연락처, 계산기를 배경화면에서 바로 확인. NEIS 연동, 20+ 테마, 업무포털 자동로그인.",
+    "description": "선생님을 위한 올인원 바탕화면 위젯. 시간표, 급식, 학사일정, 메모, 연락처, 계산기를 배경화면에서 바로 확인. NEIS 연동, 구글 캘린더·할 일 실시간 동기화, 20+ 테마, 업무포털 자동로그인.",
     "applicationCategory": "교육",
     "operatingSystem": "Windows",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "KRW",
-      "description": "100% 무료"
-    },
-    "author": {
-      "@type": "Person",
-      "name": "호똑쌤"
-    },
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "KRW", "description": "100% 무료" },
+    "author": { "@type": "Person", "name": "호똑쌤" },
     "keywords": ["스쿨보드", "교사 위젯", "시간표 앱", "급식 확인", "학사일정", "NEIS 연동", "선생님 도구", "바탕화면 위젯", "교육용 앱"],
     "screenshot": "https://schoolboard.hoddok.net/대시보드화면.png",
-    "featureList": ["시간표 관리", "급식 정보", "학사일정", "메모", "연락처", "계산기", "날씨", "업무포털 자동로그인", "20+ 테마", "자동 업데이트"]
+    "featureList": ["시간표 관리", "급식 정보", "학사일정", "메모", "연락처", "계산기", "날씨", "업무포털 자동로그인", "구글 캘린더 실시간 동기화", "구글 할 일 연동", "20+ 테마", "자동 업데이트"]
   }
   </script>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "스쿨보드(School Board)",
-    "url": "https://schoolboard.hoddok.net/"
-  }
+  { "@context": "https://schema.org", "@type": "WebSite", "name": "스쿨보드(School Board)", "url": "https://schoolboard.hoddok.net/" }
   </script>
   <link rel="icon" href="icon.ico">
-  <link rel="stylesheet" href="tailwind.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Pretendard:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
   <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
-  <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    body { word-break: keep-all; overflow-wrap: break-word; }
-    html { scroll-behavior: smooth; }
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>.reveal, .h-fade { opacity: 1 !important; transform: none !important; animation: none !important; }</style>
+  </noscript>
 
+  <style>
+    /* ============= RESET & BASE ============= */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body { word-break: keep-all; overflow-wrap: break-word; }
+    img, svg { display: block; max-width: 100%; }
+    button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ============= TOKENS ============= */
     :root {
-      --bg: #fffbfe;
-      --text: #2d2b3a;
-      --text-muted: #9ca3af;
-      --sakura: #f4a0b5;
-      --sky: #3b82f6;
-      --glass-bg: rgba(255, 251, 254, 0.92);
-      --glass-border: rgba(244, 160, 181, 0.12);
-      --scrollbar-track: #fff5f9;
+      --bg: #fdfbf6;
+      --bg-2: #f6f1e8;
+      --ink: #0d0d14;
+      --ink-2: #2a2638;
+      --ink-3: #6b6779;
+      --ink-4: #a8a3b5;
+      --line: #e8e1d3;
+      --paper: #ffffff;
+      --indigo: #4f46e5;
+      --violet: #8b5cf6;
+      --pink: #ec4899;
+      --coral: #fb7185;
+      --peach: #fdba74;
+      --teal: #14b8a6;
+      --lemon: #facc15;
+      --grad-hero: linear-gradient(120deg, #4f46e5 0%, #8b5cf6 35%, #ec4899 70%, #fb923c 100%);
+      --grad-soft: linear-gradient(135deg, #fef3e7 0%, #f3e7ff 50%, #ffe7f0 100%);
+      --shadow-sm: 0 1px 2px rgba(15, 12, 30, 0.04);
+      --shadow-md: 0 12px 30px -12px rgba(15, 12, 30, 0.12);
+      --shadow-lg: 0 30px 80px -20px rgba(79, 70, 229, 0.18);
+      --shadow-glow: 0 0 60px -10px rgba(139, 92, 246, 0.35);
+      --radius: 22px;
+      --radius-lg: 32px;
     }
 
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #0c0c1d;
-        --text: #e5e7eb;
-        --text-muted: #9ca3af;
-        --glass-bg: rgba(12, 12, 29, 0.92);
-        --glass-border: rgba(244, 160, 181, 0.15);
-        --scrollbar-track: #1a1a2e;
+        --bg: #0a0a14;
+        --bg-2: #11111e;
+        --ink: #f5f1e8;
+        --ink-2: #d6d2c4;
+        --ink-3: #9c98ad;
+        --ink-4: #6b6779;
+        --line: #1f1d2e;
+        --paper: #14131f;
+        --grad-soft: linear-gradient(135deg, #1a1426 0%, #1d1530 50%, #261228 100%);
+        --shadow-md: 0 12px 30px -12px rgba(0, 0, 0, 0.5);
+        --shadow-lg: 0 30px 80px -20px rgba(139, 92, 246, 0.4);
       }
-
-      .feature-card {
-        background: #1a1a2e;
-        border-color: #2a2a3e;
-      }
-      .feature-card:hover {
-        border-color: #3b82f6;
-      }
-      .video-tab:hover { color: #e5e7eb; }
-      .video-tab.active { color: #fff; }
-      .browser-tab { background: rgba(59, 130, 246, 0.08); border-color: rgba(59, 130, 246, 0.15); color: rgba(229, 231, 235, 0.5); }
-      .browser-tab:hover { color: rgba(229, 231, 235, 0.7); }
-      .browser-tab.active { background: rgba(59, 130, 246, 0.15); border-color: rgba(59, 130, 246, 0.3); color: #60a5fa; }
-      .spring-grad { background: linear-gradient(135deg, #0c0c1d 0%, #1a1020 40%, #0d1a12 70%, #1a1020 100%); }
-      .cherry-divider { background: linear-gradient(90deg, transparent, rgba(244, 160, 181, 0.15), rgba(59, 130, 246, 0.1), transparent); }
-      .stat-number { color: #fff; }
-      #mobile-drawer { background: #1a1a2e; }
-      .mobile-nav-link { color: #9ca3af; }
-      .mobile-nav-link:hover { color: #fff; background: rgba(255, 255, 255, 0.05); }
     }
 
     body {
       font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      font-feature-settings: "ss01", "ss02";
       background: var(--bg);
-      color: var(--text);
+      color: var(--ink);
       overflow-x: hidden;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      letter-spacing: -0.01em;
     }
 
-    ::-webkit-scrollbar { width: 4px; }
-    ::-webkit-scrollbar-track { background: var(--scrollbar-track); }
-    ::-webkit-scrollbar-thumb { background: var(--sakura); border-radius: 2px; }
-
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes marquee { 0% { transform: translateX(0%); } 100% { transform: translateX(-50%); } }
-    @keyframes floatPetal { 0% { transform: translateY(0) translateX(0) rotate(0deg); } 25% { transform: translateY(-40px) translateX(20px) rotate(90deg); } 50% { transform: translateY(-15px) translateX(-10px) rotate(180deg); } 75% { transform: translateY(-50px) translateX(15px) rotate(270deg); } 100% { transform: translateY(0) translateX(0) rotate(360deg); } }
-    @keyframes floatPetal2 { 0% { transform: translateY(0) translateX(0) rotate(0deg); } 33% { transform: translateY(-55px) translateX(-25px) rotate(120deg); } 66% { transform: translateY(-20px) translateX(20px) rotate(240deg); } 100% { transform: translateY(0) translateX(0) rotate(360deg); } }
-    @keyframes floatPetal3 { 0% { transform: translateY(0) translateX(0) rotate(0deg); } 50% { transform: translateY(-35px) translateX(30px) rotate(180deg); } 100% { transform: translateY(0) translateX(0) rotate(360deg); } }
-    @keyframes drift { 0% { transform: translateX(-10%); } 100% { transform: translateX(10%); } }
-    @keyframes scrollHint { 0%, 100% { transform: translateY(0); opacity: 0.4; } 50% { transform: translateY(4px); opacity: 1; } }
-
-    .glass-strong {
-      background: var(--glass-bg) !important;
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+    /* Subtle grain noise on body */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.5;
+      mix-blend-mode: multiply;
+      background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.04 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    }
+    @media (prefers-color-scheme: dark) {
+      body::before { mix-blend-mode: screen; opacity: 0.35; }
     }
 
-    .reveal { opacity: 0; transform: translateY(30px); transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
-    .reveal.active { opacity: 1; transform: translateY(0); }
-    .reveal-delay-1 { transition-delay: 0.08s; }
-    .reveal-delay-2 { transition-delay: 0.16s; }
-    .reveal-delay-3 { transition-delay: 0.24s; }
-    .reveal-delay-4 { transition-delay: 0.32s; }
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 10px; height: 10px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--ink-4); border-radius: 999px; border: 2px solid var(--bg); }
+    ::-webkit-scrollbar-thumb:hover { background: var(--ink-3); }
+    ::selection { background: var(--ink); color: var(--bg); }
 
-    .stat-number { font-variant-numeric: tabular-nums; }
+    /* ============= TYPOGRAPHY ============= */
+    /* Lightweight accent: gentle Pretendard ExtraLight contrasted against the bold heading */
+    .font-serif-italic { font-family: 'Pretendard', sans-serif; font-style: normal; font-weight: 200; letter-spacing: -0.045em; }
+    .font-mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+    .text-balance { text-wrap: balance; }
+    .tracking-tightest { letter-spacing: -0.045em; }
+    .tabular { font-variant-numeric: tabular-nums; }
 
-    .video-tab {
-      background: transparent;
-      border: none;
-      color: rgba(255,255,255,0.55);
-      cursor: pointer;
-      font-size: 0.8rem;
-    }
-    .video-tab:hover { color: #fff; background: rgba(255,255,255,0.08); }
-    .video-tab.active {
-      background: rgba(255,255,255,0.12);
-      color: #fff;
-      font-weight: 700;
+    .display {
+      font-weight: 900;
+      letter-spacing: -0.045em;
+      line-height: 0.95;
     }
 
-    .tag-scroll { overflow: hidden; white-space: nowrap; }
-
-    .feature-track {
-      display: flex;
-      gap: 1rem;
-      width: max-content;
-      animation: featureSlide 35s linear infinite;
+    /* Gradient text */
+    .grad-text {
+      background: var(--grad-hero);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      background-size: 200% 100%;
+      animation: gradShift 12s ease-in-out infinite;
     }
-    .feature-track:hover { animation-play-state: paused; }
-    @keyframes featureSlide {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+    @keyframes gradShift {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
     }
 
-    .feature-card {
-      background: #ffffff;
-      border: 1px solid #fce4ef;
+    /* ============= LAYOUT ============= */
+    .container-x { max-width: 1280px; margin: 0 auto; padding-left: 28px; padding-right: 28px; }
+    @media (max-width: 640px) { .container-x { padding-left: 20px; padding-right: 20px; } }
+
+    /* ============= NAV ============= */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 80;
       transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-      flex-shrink: 0;
+      padding: 18px 0;
     }
-    .feature-card:hover {
-      border-color: #bfdbfe;
-      transform: translateY(-4px);
-      box-shadow: 0 16px 40px -12px rgba(59, 130, 246, 0.12);
+    .nav.scrolled {
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      background: color-mix(in srgb, var(--bg) 75%, transparent);
+      border-bottom: 1px solid var(--line);
+      padding: 12px 0;
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: inline-flex; align-items: center; gap: 12px; font-weight: 800; font-size: 15px; letter-spacing: -0.02em; }
+    .nav-logo .logo-mark {
+      width: 34px; height: 34px; border-radius: 11px;
+      background: var(--ink); color: var(--bg);
+      display: grid; place-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+      overflow: hidden;
+    }
+    .nav-logo img { width: 100%; height: 100%; object-fit: cover; }
+    .nav-links { display: none; gap: 6px; padding: 6px; border-radius: 999px; background: color-mix(in srgb, var(--ink) 5%, transparent); }
+    @media (min-width: 900px) { .nav-links { display: inline-flex; } }
+    .nav-link {
+      padding: 8px 16px; border-radius: 999px; font-size: 13.5px; font-weight: 600;
+      color: var(--ink-3); transition: all 0.25s ease;
+    }
+    .nav-link:hover { color: var(--ink); background: color-mix(in srgb, var(--ink) 6%, transparent); }
+    .nav-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 18px; border-radius: 999px;
+      background: var(--ink); color: var(--bg);
+      font-size: 13px; font-weight: 700; letter-spacing: -0.01em;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(0,0,0,0.18); }
+    .nav-cta .arrow { transition: transform 0.2s ease; }
+    .nav-cta:hover .arrow { transform: translateX(2px); }
+
+    .nav-toggle {
+      display: inline-grid; place-items: center;
+      width: 40px; height: 40px; border-radius: 12px;
+      border: 1px solid var(--line); color: var(--ink);
+    }
+    @media (min-width: 900px) { .nav-toggle { display: none; } }
+
+    /* Mobile menu */
+    .m-menu { position: fixed; inset: 0; z-index: 90; pointer-events: none; }
+    .m-menu.open { pointer-events: auto; }
+    .m-backdrop { position: absolute; inset: 0; background: rgba(10,10,20,0.4); opacity: 0; transition: opacity 0.3s ease; backdrop-filter: blur(4px); }
+    .m-menu.open .m-backdrop { opacity: 1; }
+    .m-drawer {
+      position: absolute; top: 0; right: 0; bottom: 0;
+      width: min(86vw, 340px);
+      background: var(--paper);
+      transform: translateX(100%);
+      transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+      display: flex; flex-direction: column;
+      padding: 88px 24px 24px;
+      border-left: 1px solid var(--line);
+    }
+    .m-menu.open .m-drawer { transform: translateX(0); }
+    .m-link { padding: 14px 16px; border-radius: 14px; font-size: 16px; font-weight: 600; color: var(--ink-2); }
+    .m-link:hover { background: color-mix(in srgb, var(--ink) 5%, transparent); color: var(--ink); }
+    .m-cta { margin-top: auto; padding: 14px 18px; border-radius: 16px; background: var(--ink); color: var(--bg); text-align: center; font-weight: 700; }
+
+    /* ============= HERO ============= */
+    .hero {
+      position: relative;
+      padding: 140px 0 80px;
+      overflow: hidden;
+    }
+    .hero-bg-grad {
+      position: absolute; inset: 0; z-index: -1; pointer-events: none;
+      background:
+        radial-gradient(60% 50% at 78% 22%, rgba(236,72,153,0.18) 0%, transparent 60%),
+        radial-gradient(55% 50% at 18% 30%, rgba(79,70,229,0.16) 0%, transparent 60%),
+        radial-gradient(70% 60% at 50% 100%, rgba(251,146,60,0.12) 0%, transparent 60%);
+    }
+    @media (prefers-color-scheme: dark) {
+      .hero-bg-grad {
+        background:
+          radial-gradient(60% 50% at 78% 22%, rgba(236,72,153,0.22) 0%, transparent 60%),
+          radial-gradient(55% 50% at 18% 30%, rgba(99,102,241,0.22) 0%, transparent 60%),
+          radial-gradient(70% 60% at 50% 100%, rgba(251,146,60,0.12) 0%, transparent 60%);
+      }
     }
 
-    .lightbox-overlay { position: fixed; inset: 0; z-index: 9999; background: rgba(20, 10, 15, 0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; cursor: zoom-out; }
-    .lightbox-overlay.active { opacity: 1; pointer-events: auto; }
-    .lightbox-overlay img { max-width: 92vw; max-height: 90vh; object-fit: contain; border-radius: 8px; transform: scale(0.95); transition: transform 0.3s ease; }
-    .lightbox-overlay.active img { transform: scale(1); }
-    .lightbox-close { position: absolute; top: 20px; right: 24px; width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.5); font-size: 22px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s; }
-    .lightbox-close:hover { background: rgba(255,255,255,0.15); color: white; }
-    .lightbox-caption { position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.35); font-size: 14px; font-weight: 500; }
+    .pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 7px 14px; border-radius: 999px;
+      background: color-mix(in srgb, var(--paper) 70%, transparent);
+      border: 1px solid var(--line);
+      backdrop-filter: blur(8px);
+      font-size: 12px; font-weight: 600; letter-spacing: -0.01em;
+      color: var(--ink-2);
+    }
+    .pill .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 0 4px color-mix(in srgb, var(--teal) 18%, transparent); animation: pulse 2.4s ease-in-out infinite; }
+    @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.2); opacity: 0.7; } }
 
-    .browser-tab { background: rgba(59, 130, 246, 0.05); border: 1px solid rgba(59, 130, 246, 0.1); color: rgba(45,43,58,0.35); cursor: pointer; }
-    .browser-tab:hover { background: rgba(59, 130, 246, 0.08); color: rgba(45,43,58,0.55); }
-    .browser-tab.active { background: rgba(59, 130, 246, 0.1); border-color: rgba(59, 130, 246, 0.2); color: #3b82f6; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+      align-items: end;
+    }
+    @media (min-width: 1000px) {
+      .hero-grid { grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); gap: 64px; }
+    }
 
-    .bleed-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .hero-title {
+      font-size: clamp(46px, 7.6vw, 96px);
+      line-height: 1.02;
+      letter-spacing: -0.05em;
+      font-weight: 900;
+      margin: 24px 0 26px;
+      color: var(--ink);
+    }
+    .hero-title .line { display: block; padding: 2px 0; }
+    .hero-title .grad-text { padding-right: 0.04em; }
 
-    .petal {
+    .hero-sub {
+      max-width: 540px;
+      font-size: clamp(15px, 1.4vw, 18px);
+      color: var(--ink-3);
+      line-height: 1.55;
+      margin-bottom: 32px;
+    }
+
+    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 12px;
+      padding: 16px 24px; border-radius: 16px;
+      background: var(--ink); color: var(--bg);
+      font-weight: 700; font-size: 14.5px; letter-spacing: -0.01em;
+      transition: all 0.25s ease;
+      box-shadow: 0 12px 28px -10px rgba(15,12,30,0.4);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 18px 36px -12px rgba(15,12,30,0.5); }
+    .btn-primary .icon-wrap {
+      width: 26px; height: 26px; border-radius: 8px;
+      background: color-mix(in srgb, var(--bg) 18%, transparent);
+      display: grid; place-items: center;
+    }
+
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 16px 22px; border-radius: 16px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      color: var(--ink-2);
+      font-weight: 600; font-size: 14px;
+      transition: all 0.25s ease;
+    }
+    .btn-ghost:hover { color: var(--ink); border-color: var(--ink-3); transform: translateY(-1px); }
+
+    .quick-stats {
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      max-width: 540px;
+    }
+    .qs-item {
+      padding: 14px 16px; border-radius: 14px;
+      background: color-mix(in srgb, var(--paper) 60%, transparent);
+      border: 1px solid var(--line);
+      backdrop-filter: blur(8px);
+    }
+    .qs-num { font-size: 22px; font-weight: 800; letter-spacing: -0.03em; color: var(--ink); }
+    .qs-label { font-size: 11px; color: var(--ink-3); margin-top: 2px; font-weight: 500; }
+
+    /* Hero Visual: layered cards */
+    .hero-visual {
+      position: relative;
+      aspect-ratio: 4 / 3.4;
+      width: 100%;
+      transform-style: preserve-3d;
+      perspective: 1400px;
+    }
+    .h-card {
+      position: absolute; inset: 0;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg), 0 0 0 1px var(--line);
+      transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .h-card-main {
+      transform: rotate(-2.5deg) translate(0, 0);
+      background: var(--paper);
+      z-index: 3;
+    }
+    .h-card-main img { width: 100%; height: 100%; object-fit: cover; }
+    .h-card-back {
+      inset: 22px -28px -28px 22px;
+      transform: rotate(4deg);
+      background: linear-gradient(135deg, #f3e7ff 0%, #ffe7f0 100%);
+      z-index: 1;
+      box-shadow: 0 30px 60px -20px rgba(236,72,153,0.25);
+    }
+    .h-card-mid {
+      inset: -16px 16px 16px -16px;
+      transform: rotate(-6deg);
+      background: linear-gradient(135deg, #e0e7ff 0%, #fdf4dc 100%);
+      z-index: 2;
+      box-shadow: 0 22px 50px -18px rgba(79,70,229,0.25);
+    }
+    /* Floating chips */
+    .chip-float {
       position: absolute;
-      width: 14px;
-      height: 14px;
-      background: rgba(244, 160, 181, 0.25);
-      border-radius: 50% 0 50% 50%;
+      padding: 10px 14px; border-radius: 14px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-md);
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 12px; font-weight: 600; color: var(--ink);
+      z-index: 5;
+    }
+    .chip-1 { top: -14px; left: -14px; animation: floaty 5s ease-in-out infinite; }
+    .chip-2 { bottom: -16px; right: -14px; animation: floaty 6s ease-in-out infinite reverse; }
+    .chip-3 { top: 38%; right: -28px; animation: floaty 7s ease-in-out infinite; }
+    @keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+    .chip-icon { width: 22px; height: 22px; border-radius: 7px; display: grid; place-items: center; flex-shrink: 0; }
+
+    .hero-window {
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 32px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.6));
+      backdrop-filter: blur(8px);
+      display: flex; align-items: center; gap: 6px;
+      padding: 0 12px;
+      z-index: 4;
+      border-bottom: 1px solid color-mix(in srgb, var(--ink) 6%, transparent);
+    }
+    .hero-window .dot { width: 9px; height: 9px; border-radius: 50%; }
+
+    /* Marquee */
+    .marquee {
+      position: relative;
+      overflow: hidden;
+      padding: 18px 0;
+      background: var(--ink);
+      color: var(--bg);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .marquee::before, .marquee::after {
+      content: ''; position: absolute; top: 0; bottom: 0; width: 80px; z-index: 2; pointer-events: none;
+    }
+    .marquee::before { left: 0; background: linear-gradient(90deg, var(--ink), transparent); }
+    .marquee::after { right: 0; background: linear-gradient(-90deg, var(--ink), transparent); }
+    .marquee-track {
+      display: inline-flex; gap: 36px; white-space: nowrap;
+      animation: marqueeScroll 40s linear infinite;
+      font-size: 14px; font-weight: 600; letter-spacing: -0.01em;
+    }
+    .marquee:hover .marquee-track { animation-play-state: paused; }
+    @keyframes marqueeScroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    .m-item { display: inline-flex; align-items: center; gap: 12px; }
+    .m-item .star {
+      width: 16px; height: 16px; flex-shrink: 0;
+      background: var(--lemon);
+      mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 .5l3.06 7.74L23 9.27l-5.94 5.37L18.66 23 12 18.78 5.34 23l1.6-8.36L1 9.27l7.94-1.03z'/></svg>") center/contain no-repeat;
+    }
+    .m-item.highlight { color: var(--lemon); }
+
+    /* ============= SECTION HEADERS ============= */
+    section { position: relative; }
+    .section-pad { padding: 110px 0; }
+    @media (max-width: 720px) { .section-pad { padding: 80px 0; } }
+
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 11.5px; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--ink-3);
+    }
+    .eyebrow::before { content: ''; width: 28px; height: 1px; background: currentColor; opacity: 0.5; }
+    .section-title {
+      font-size: clamp(36px, 5vw, 64px);
+      font-weight: 900;
+      letter-spacing: -0.045em;
+      line-height: 1;
+      margin-top: 18px;
+      color: var(--ink);
+    }
+    .section-lede {
+      max-width: 540px;
+      margin-top: 16px;
+      font-size: 16px;
+      color: var(--ink-3);
+      line-height: 1.6;
+    }
+
+    /* ============= FEATURES (BENTO) ============= */
+    .bento {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+      margin-top: 48px;
+    }
+    .b-card {
+      grid-column: span 12;
+      position: relative;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 28px;
+      overflow: hidden;
+      transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s ease, border-color 0.25s;
+      min-height: 220px;
+      display: flex; flex-direction: column;
+    }
+    .b-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: color-mix(in srgb, var(--ink) 18%, var(--line)); }
+    .b-card .b-icon {
+      width: 44px; height: 44px; border-radius: 12px;
+      display: grid; place-items: center; margin-bottom: 16px;
+      background: color-mix(in srgb, var(--ink) 6%, transparent);
+      color: var(--ink);
+    }
+    .b-card h3 { font-size: 18px; font-weight: 800; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 8px; }
+    .b-card p { font-size: 13.5px; color: var(--ink-3); line-height: 1.55; }
+    .b-card .b-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+    .b-tag { font-size: 10.5px; font-weight: 700; padding: 4px 10px; border-radius: 999px; background: color-mix(in srgb, var(--ink) 5%, transparent); color: var(--ink-2); letter-spacing: -0.01em; }
+
+    @media (min-width: 720px) {
+      .b-card { grid-column: span 6; }
+      .b-feature { grid-column: span 12; min-height: 280px; }
+    }
+    @media (min-width: 1000px) {
+      .b-card { grid-column: span 4; }
+      .b-feature { grid-column: span 8; }
+      .b-tall { grid-column: span 4; grid-row: span 2; }
+      .b-wide { grid-column: span 8; }
+      .b-half { grid-column: span 6; }
+    }
+
+    /* Feature card variants */
+    .b-feature {
+      background: linear-gradient(135deg, #4f46e5 0%, #8b5cf6 50%, #ec4899 100%);
+      color: white;
+      border-color: transparent;
+      padding: 36px;
+    }
+    .b-feature::before {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(40% 50% at 80% 20%, rgba(255,255,255,0.18), transparent 60%),
+        radial-gradient(40% 60% at 20% 80%, rgba(255,255,255,0.10), transparent 60%);
       pointer-events: none;
     }
-
-    .spring-grad {
-      background: linear-gradient(135deg, #eff6ff 0%, #fff5f9 40%, #f0fdf4 70%, #fff5f9 100%);
+    .b-feature .b-icon { background: rgba(255,255,255,0.18); color: white; backdrop-filter: blur(8px); }
+    .b-feature h3 { color: white; font-size: 28px; }
+    .b-feature p { color: rgba(255,255,255,0.85); font-size: 15px; max-width: 460px; }
+    .b-feature .b-tag { background: rgba(255,255,255,0.18); color: white; backdrop-filter: blur(8px); }
+    .b-feature .badge-new {
+      position: absolute; top: 24px; right: 24px;
+      padding: 6px 12px; border-radius: 999px;
+      background: var(--lemon); color: var(--ink);
+      font-size: 11px; font-weight: 800; letter-spacing: 0.04em;
+      animation: pulse 2.4s ease-in-out infinite;
     }
 
-    .cherry-divider {
-      height: 2px;
-      background: linear-gradient(90deg, transparent, rgba(244, 160, 181, 0.3), rgba(59, 130, 246, 0.2), transparent);
+    .b-tall { background: linear-gradient(180deg, #fdf4dc 0%, #fff 100%); }
+    @media (prefers-color-scheme: dark) { .b-tall { background: linear-gradient(180deg, #2a200d 0%, var(--paper) 100%); } }
+
+    .b-icon-violet { background: color-mix(in srgb, var(--violet) 12%, transparent); color: var(--violet); }
+    .b-icon-pink { background: color-mix(in srgb, var(--pink) 12%, transparent); color: var(--pink); }
+    .b-icon-teal { background: color-mix(in srgb, var(--teal) 12%, transparent); color: var(--teal); }
+    .b-icon-coral { background: color-mix(in srgb, var(--coral) 12%, transparent); color: var(--coral); }
+    .b-icon-peach { background: color-mix(in srgb, var(--peach) 22%, transparent); color: #c2410c; }
+    .b-icon-indigo { background: color-mix(in srgb, var(--indigo) 12%, transparent); color: var(--indigo); }
+
+    .theme-dots { display: flex; gap: 6px; margin-top: 16px; }
+    .theme-dot { width: 18px; height: 18px; border-radius: 50%; border: 2px solid var(--paper); box-shadow: 0 0 0 1px var(--line); }
+
+    /* ============= GALLERY (PREVIEWS) ============= */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 16px;
+      margin-top: 56px;
+    }
+    .g-item {
+      grid-column: span 12;
+      position: relative;
+      border-radius: 26px;
+      overflow: hidden;
+      cursor: zoom-in;
+      transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s ease;
+      isolation: isolate;
+      background: var(--paper);
+      border: 1px solid var(--line);
+    }
+    .g-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .g-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.22,1,0.36,1); }
+    .g-item:hover img { transform: scale(1.04); }
+    .g-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(10,10,20,0.85) 100%);
+      pointer-events: none;
+    }
+    .g-meta {
+      position: absolute; left: 24px; right: 24px; bottom: 24px;
+      color: white;
+      z-index: 2;
+    }
+    .g-num {
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 11.5px; font-weight: 600; opacity: 0.7;
+      letter-spacing: 0.04em; text-transform: uppercase;
+    }
+    .g-title { font-size: 22px; font-weight: 800; letter-spacing: -0.02em; margin-top: 4px; }
+    .g-desc { font-size: 13px; color: rgba(255,255,255,0.75); margin-top: 6px; line-height: 1.5; max-width: 340px; }
+
+    @media (min-width: 720px) {
+      .g-tall { grid-column: span 5; aspect-ratio: 4/5; }
+      .g-wide { grid-column: span 7; aspect-ratio: 7/5; }
+      .g-square { grid-column: span 6; aspect-ratio: 1/1; }
+      .g-full { grid-column: span 12; aspect-ratio: 21/9; }
+      .g-third { grid-column: span 4; aspect-ratio: 4/5; }
+      .g-twothird { grid-column: span 8; aspect-ratio: 8/5; }
+    }
+    @media (max-width: 719px) {
+      .g-item { aspect-ratio: 4/3; }
     }
 
-    @media (max-width: 768px) {
-      .hero-title { font-size: 2.8rem !important; line-height: 1.1 !important; }
-      .bleed-title { font-size: 2rem !important; }
-      .feature-scroll > div { min-width: 260px !important; }
+    /* ============= GOOGLE SYNC ============= */
+    .sync-section {
+      background: linear-gradient(135deg, #0d0d18 0%, #1a1530 50%, #2d1a3a 100%);
+      color: white;
+      padding: 110px 0;
+      overflow: hidden;
+      position: relative;
+      border-radius: 40px;
+      margin: 60px 28px;
     }
+    @media (max-width: 720px) { .sync-section { margin: 40px 16px; padding: 70px 0; border-radius: 28px; } }
+    .sync-section::before {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(40% 40% at 80% 20%, rgba(250,204,21,0.15), transparent 60%),
+        radial-gradient(50% 50% at 20% 80%, rgba(99,102,241,0.18), transparent 60%);
+      pointer-events: none;
+    }
+    .sync-section::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.06) 1px, transparent 0);
+      background-size: 28px 28px;
+      mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black, transparent);
+    }
+    .sync-grid {
+      display: grid; grid-template-columns: 1fr; gap: 60px; align-items: center;
+      max-width: 1180px; margin: 0 auto; padding: 0 28px;
+      position: relative; z-index: 1;
+    }
+    @media (min-width: 900px) { .sync-grid { grid-template-columns: 1.1fr 0.9fr; gap: 80px; } }
+
+    .sync-eyebrow { color: rgba(255,255,255,0.6); }
+    .sync-title { color: white; font-size: clamp(36px, 5vw, 60px); font-weight: 900; letter-spacing: -0.045em; line-height: 1.02; margin-top: 18px; }
+    .sync-title em { font-family: 'Pretendard', sans-serif; font-style: normal; font-weight: 200; background: linear-gradient(90deg, #facc15, #fb923c); -webkit-background-clip: text; background-clip: text; color: transparent; letter-spacing: -0.045em; }
+    .sync-lede { color: rgba(255,255,255,0.7); font-size: 16px; line-height: 1.6; margin: 24px 0 32px; max-width: 520px; }
+
+    .sync-features { display: flex; flex-direction: column; gap: 14px; }
+    .sync-feat {
+      display: flex; align-items: center; gap: 14px;
+      padding: 16px 20px; border-radius: 16px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(8px);
+    }
+    .sync-feat-ic {
+      width: 32px; height: 32px; border-radius: 10px;
+      background: rgba(20,184,166,0.18); color: #5eead4;
+      display: grid; place-items: center; flex-shrink: 0;
+    }
+
+    /* Phone mockup */
+    .phone-wrap { display: flex; justify-content: center; position: relative; }
+    .phone {
+      width: 280px; max-width: 100%;
+      background: #0a0a14;
+      border-radius: 40px;
+      padding: 12px;
+      border: 2px solid #2a2a3e;
+      box-shadow:
+        0 60px 100px -20px rgba(139,92,246,0.4),
+        0 0 0 1px rgba(255,255,255,0.04),
+        inset 0 0 0 1px rgba(255,255,255,0.06);
+      position: relative;
+    }
+    .phone::before {
+      content: ''; position: absolute; top: 18px; left: 50%; transform: translateX(-50%);
+      width: 86px; height: 22px; background: #0a0a14; border-radius: 999px; z-index: 2;
+    }
+    .phone-screen {
+      background: linear-gradient(180deg, #14131f 0%, #1f1830 100%);
+      border-radius: 28px;
+      overflow: hidden;
+      padding: 48px 16px 18px;
+    }
+    .phone-status { display: flex; justify-content: space-between; align-items: center; padding: 0 8px; margin-bottom: 16px; }
+    .phone-status .time { font-size: 11px; color: rgba(255,255,255,0.6); font-weight: 600; }
+    .phone-status .icons { display: flex; gap: 4px; }
+    .phone-status .icons span { width: 14px; height: 8px; border-radius: 2px; background: rgba(255,255,255,0.4); }
+    .sync-banner {
+      display: flex; align-items: center; gap: 8px;
+      padding: 8px 12px; border-radius: 10px;
+      background: rgba(20,184,166,0.18);
+      border: 1px solid rgba(20,184,166,0.3);
+      margin-bottom: 14px;
+    }
+    .sync-banner .live-dot { width: 7px; height: 7px; border-radius: 50%; background: #5eead4; box-shadow: 0 0 0 4px rgba(94,234,212,0.18); animation: pulse 2s infinite; }
+    .sync-banner span:last-child { font-size: 11px; color: #5eead4; font-weight: 600; }
+    .phone-section-label { font-size: 10px; color: rgba(255,255,255,0.5); margin: 14px 0 8px; font-weight: 600; letter-spacing: 0.04em; }
+    .p-event {
+      padding: 9px 11px; border-radius: 8px;
+      background: rgba(96,165,250,0.18); border-left: 3px solid #60a5fa;
+      margin-bottom: 6px;
+    }
+    .p-event.violet { background: rgba(168,85,247,0.18); border-left-color: #a855f7; }
+    .p-event-title { font-size: 11px; font-weight: 700; color: #93c5fd; }
+    .p-event.violet .p-event-title { color: #d8b4fe; }
+    .p-event-time { font-size: 9px; color: rgba(255,255,255,0.45); margin-top: 2px; }
+    .p-task { display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 8px; background: rgba(255,255,255,0.04); margin-bottom: 4px; }
+    .p-check { width: 14px; height: 14px; border-radius: 4px; border: 1.5px solid rgba(255,255,255,0.3); flex-shrink: 0; display: grid; place-items: center; }
+    .p-check.done { background: #facc15; border-color: #facc15; }
+    .p-task.done span:last-child { text-decoration: line-through; opacity: 0.5; }
+    .p-task span:last-child { font-size: 11px; color: rgba(255,255,255,0.85); }
+
+    /* ============= STATS ============= */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+      margin-top: 48px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      overflow: hidden;
+      background: var(--paper);
+    }
+    @media (min-width: 720px) { .stats { grid-template-columns: repeat(4, 1fr); } }
+    .stat-cell { padding: 36px 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); position: relative; }
+    @media (min-width: 720px) { .stat-cell { border-bottom: none; } .stat-cell:last-child { border-right: none; } }
+    @media (max-width: 719px) { .stat-cell:nth-child(2n) { border-right: none; } .stat-cell:nth-last-child(-n+2) { border-bottom: none; } }
+    .stat-num { font-size: clamp(40px, 5vw, 64px); font-weight: 900; letter-spacing: -0.05em; line-height: 1; color: var(--ink); }
+    .stat-num .unit { font-size: 0.5em; color: var(--ink-3); font-weight: 700; margin-left: 4px; }
+    .stat-label { margin-top: 12px; font-size: 12px; font-weight: 600; color: var(--ink-3); letter-spacing: 0.04em; text-transform: uppercase; }
+
+    /* ============= PRIVACY ============= */
+    .privacy-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 32px;
+      padding: 56px 36px;
+      text-align: center;
+      max-width: 1080px;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+    }
+    .privacy-card::before {
+      content: ''; position: absolute; top: -100px; left: 50%; transform: translateX(-50%);
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(20,184,166,0.18), transparent 70%);
+      pointer-events: none;
+    }
+    .privacy-shield {
+      width: 72px; height: 72px; border-radius: 22px;
+      background: linear-gradient(135deg, #14b8a6, #0ea5e9);
+      display: inline-grid; place-items: center;
+      box-shadow: 0 20px 40px -10px rgba(20,184,166,0.4);
+      margin-bottom: 28px;
+      position: relative;
+      z-index: 1;
+    }
+    .privacy-grid {
+      display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 40px;
+      position: relative; z-index: 1;
+    }
+    @media (min-width: 720px) { .privacy-grid { grid-template-columns: repeat(3, 1fr); } }
+    .priv-item { padding: 24px; border-radius: 18px; background: var(--bg-2); text-align: left; }
+    .priv-icon { width: 36px; height: 36px; border-radius: 11px; background: var(--paper); display: grid; place-items: center; margin-bottom: 14px; color: var(--teal); }
+    .priv-item h4 { font-size: 14px; font-weight: 800; color: var(--ink); margin-bottom: 6px; letter-spacing: -0.01em; }
+    .priv-item p { font-size: 12.5px; color: var(--ink-3); line-height: 1.55; }
+
+    /* ============= VIDEO GUIDE ============= */
+    .video-card {
+      margin-top: 48px;
+      border-radius: 28px;
+      overflow: hidden;
+      background: #0d0d18;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      flex-direction: column;
+    }
+    @media (min-width: 900px) { .video-card { flex-direction: row; min-height: 540px; } }
+    .video-list {
+      width: 100%;
+      background: #14131f;
+      padding: 14px;
+      display: flex; flex-direction: column;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    @media (min-width: 900px) {
+      .video-list { width: 280px; flex-shrink: 0; border-bottom: none; border-right: 1px solid rgba(255,255,255,0.06); max-height: none; }
+    }
+    .video-list-header {
+      display: flex; align-items: center; gap: 10px;
+      padding: 10px 12px; margin-bottom: 8px;
+      color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .video-list-header .yt-mark { width: 22px; height: 16px; background: #ef4444; border-radius: 4px; display: grid; place-items: center; }
+    .video-list-scroll { display: flex; flex-direction: column; gap: 2px; max-height: 460px; overflow-y: auto; padding-right: 4px; }
+    .video-list-scroll::-webkit-scrollbar { width: 6px; }
+    .video-list-scroll::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border: none; }
+    .video-tab {
+      display: flex; align-items: center; gap: 10px;
+      padding: 11px 14px; border-radius: 12px;
+      font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.55);
+      transition: all 0.2s ease;
+      text-align: left; width: 100%;
+    }
+    .video-tab .num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: rgba(255,255,255,0.35); flex-shrink: 0; }
+    .video-tab:hover { background: rgba(255,255,255,0.05); color: white; }
+    .video-tab.active { background: rgba(99,102,241,0.18); color: white; }
+    .video-tab.active .num { color: #818cf8; }
+    .video-tab.active::before { content: '▶'; color: #818cf8; font-size: 9px; }
+    .video-mobile-tabs { display: flex; gap: 6px; overflow-x: auto; padding: 12px; background: #14131f; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .video-mobile-tabs::-webkit-scrollbar { display: none; }
+    @media (min-width: 900px) { .video-mobile-tabs { display: none; } }
+    .video-mobile-tabs button { flex-shrink: 0; padding: 7px 12px; border-radius: 10px; font-size: 11.5px; font-weight: 700; color: rgba(255,255,255,0.55); white-space: nowrap; background: rgba(255,255,255,0.04); }
+    .video-mobile-tabs button.active { background: rgba(99,102,241,0.25); color: white; }
+    .video-player {
+      flex: 1; display: flex; flex-direction: column; background: black; min-height: 240px;
+    }
+    .video-player-bar { padding: 14px 18px; border-bottom: 1px solid rgba(255,255,255,0.06); color: white; font-size: 14px; font-weight: 700; display: none; }
+    @media (min-width: 900px) { .video-player-bar { display: block; } }
+    .video-frame { position: relative; width: 100%; padding-top: 56.25%; flex: 1; }
+    .video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+
+    /* ============= DOWNLOAD ============= */
+    .dl-section {
+      background: linear-gradient(135deg, #4f46e5 0%, #8b5cf6 50%, #ec4899 100%);
+      color: white;
+      padding: 110px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .dl-section::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(40% 40% at 20% 30%, rgba(255,255,255,0.15), transparent 60%),
+        radial-gradient(40% 40% at 80% 70%, rgba(250,204,21,0.18), transparent 60%);
+    }
+    .dl-section::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.08) 1px, transparent 0);
+      background-size: 32px 32px;
+      mask-image: radial-gradient(ellipse 70% 50% at 50% 50%, black, transparent);
+    }
+    .dl-inner { max-width: 880px; margin: 0 auto; padding: 0 28px; text-align: center; position: relative; z-index: 1; }
+    .dl-title { font-size: clamp(44px, 7vw, 92px); font-weight: 900; letter-spacing: -0.05em; line-height: 0.95; color: white; margin: 18px 0 16px; }
+    .dl-title em { font-family: 'Pretendard', sans-serif; font-style: normal; font-weight: 200; color: #fef3c7; letter-spacing: -0.045em; }
+    .dl-lede { font-size: 17px; color: rgba(255,255,255,0.85); max-width: 540px; margin: 0 auto 36px; line-height: 1.55; }
+    .dl-buttons { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-bottom: 14px; }
+    .dl-btn-main {
+      display: inline-flex; align-items: center; gap: 14px;
+      padding: 18px 26px; border-radius: 18px;
+      background: white; color: var(--ink);
+      font-weight: 800; font-size: 15px;
+      transition: all 0.25s ease;
+      box-shadow: 0 18px 40px -10px rgba(0,0,0,0.3);
+    }
+    .dl-btn-main:hover { transform: translateY(-2px); box-shadow: 0 24px 48px -12px rgba(0,0,0,0.4); }
+    .dl-btn-main .arr { transition: transform 0.2s; }
+    .dl-btn-main:hover .arr { transform: translateX(4px); }
+    .dl-btn-sub {
+      display: inline-flex; align-items: center; gap: 12px;
+      padding: 18px 24px; border-radius: 18px;
+      background: rgba(255,255,255,0.12); color: white;
+      border: 1px solid rgba(255,255,255,0.2);
+      backdrop-filter: blur(8px);
+      font-weight: 600; font-size: 14px;
+      transition: all 0.25s ease;
+    }
+    .dl-btn-sub:hover { background: rgba(255,255,255,0.2); }
+    .dl-btn-text { text-align: left; }
+    .dl-btn-text-1 { font-size: 14px; font-weight: 800; line-height: 1.1; }
+    .dl-btn-text-2 { font-size: 11px; opacity: 0.7; margin-top: 2px; font-weight: 500; }
+
+    .warn-card {
+      margin-top: 48px;
+      max-width: 880px;
+      background: var(--paper);
+      color: var(--ink);
+      border-radius: 28px;
+      padding: 36px;
+      text-align: left;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--line);
+      position: relative;
+      z-index: 1;
+    }
+    @media (max-width: 720px) { .warn-card { padding: 24px; margin-left: 16px; margin-right: 16px; } }
+    .warn-head { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+    .warn-ic { width: 36px; height: 36px; border-radius: 11px; background: #fef3c7; color: #d97706; display: grid; place-items: center; flex-shrink: 0; }
+    .warn-head h3 { font-size: 16px; font-weight: 800; color: var(--ink); letter-spacing: -0.01em; }
+    .warn-block h4 { font-size: 15px; font-weight: 800; color: var(--ink); margin-bottom: 10px; letter-spacing: -0.01em; }
+    .warn-block p { font-size: 13.5px; color: var(--ink-3); line-height: 1.6; margin-bottom: 14px; }
+    .warn-block strong { color: var(--ink); font-weight: 700; }
+    .warn-divider { height: 1px; background: var(--line); margin: 28px 0; }
+    .browser-tabs { display: flex; gap: 6px; margin-bottom: 16px; }
+    .browser-tab {
+      padding: 9px 16px; border-radius: 11px;
+      background: var(--bg-2); color: var(--ink-3);
+      font-size: 13px; font-weight: 700;
+      transition: all 0.2s ease;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .browser-tab:hover { color: var(--ink); }
+    .browser-tab.active { background: var(--ink); color: var(--bg); }
+    .warn-imgs { display: flex; flex-direction: column; gap: 10px; }
+    .warn-img-wrap { border-radius: 14px; overflow: hidden; border: 1px solid var(--line); }
+    .warn-steps { display: flex; flex-direction: column; gap: 10px; margin-bottom: 18px; }
+    .warn-step { display: flex; align-items: center; gap: 12px; font-size: 13.5px; color: var(--ink-3); }
+    .warn-step-num { flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: #fef3c7; color: #d97706; display: grid; place-items: center; font-size: 11.5px; font-weight: 800; }
+    .warn-foot { font-size: 12px; color: var(--ink-4); margin-top: 18px; }
+
+    /* ============= FOOTER ============= */
+    .footer {
+      background: var(--ink);
+      color: var(--ink-4);
+      padding: 70px 0 36px;
+      border-top: 1px solid var(--line);
+    }
+    .footer-grid { display: flex; flex-direction: column; gap: 36px; align-items: center; text-align: center; }
+    @media (min-width: 720px) { .footer-grid { flex-direction: row; justify-content: space-between; align-items: center; text-align: left; } }
+    .footer-brand { display: flex; align-items: center; gap: 14px; }
+    .footer-mark { width: 44px; height: 44px; border-radius: 13px; background: var(--bg); color: var(--ink); display: grid; place-items: center; overflow: hidden; }
+    .footer-mark img { width: 100%; height: 100%; object-fit: cover; }
+    .footer-brand-name { font-size: 15px; font-weight: 800; color: var(--bg); letter-spacing: -0.02em; }
+    .footer-brand-author { font-size: 12px; color: var(--ink-4); margin-top: 2px; }
+    .footer-links { display: flex; gap: 20px; font-size: 13px; }
+    .footer-links a { color: var(--ink-4); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--bg); }
+    .footer-divider { width: 1px; height: 14px; background: var(--ink-4); opacity: 0.4; }
+    .footer-copy { font-size: 12px; color: var(--ink-4); }
+    .footer-legal {
+      max-width: 1280px; margin: 32px auto 0; padding: 24px 28px 0;
+      border-top: 1px solid color-mix(in srgb, var(--bg) 8%, transparent);
+      font-size: 11px; color: color-mix(in srgb, var(--ink-4) 70%, transparent); line-height: 1.6; text-align: center;
+    }
+
+    /* ============= LIGHTBOX ============= */
+    .lightbox {
+      position: fixed; inset: 0; z-index: 200;
+      background: rgba(8, 6, 18, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      display: grid; place-items: center;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.3s ease;
+      cursor: zoom-out;
+    }
+    .lightbox.active { opacity: 1; pointer-events: auto; }
+    .lightbox img { max-width: 92vw; max-height: 88vh; object-fit: contain; border-radius: 16px; transform: scale(0.96); transition: transform 0.3s ease; box-shadow: 0 40px 80px rgba(0,0,0,0.5); }
+    .lightbox.active img { transform: scale(1); }
+    .lightbox-close {
+      position: absolute; top: 24px; right: 24px;
+      width: 44px; height: 44px; border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: rgba(255,255,255,0.7);
+      font-size: 24px;
+      display: grid; place-items: center;
+    }
+    .lightbox-close:hover { background: rgba(255,255,255,0.2); color: white; }
+    .lightbox-cap { position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.5); font-size: 13px; font-weight: 500; }
+
+    /* ============= REVEAL ANIM ============= */
+    .reveal { opacity: 0; transform: translateY(36px); transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1); }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal, .reveal.in { opacity: 1; transform: none; transition: none; }
+      .h-fade { opacity: 1; animation: none; }
+      .marquee-track, .grad-text, .b-feature .badge-new, .pill .dot, .sync-banner .live-dot,
+      .chip-1, .chip-2, .chip-3 { animation: none; }
+    }
+    .reveal-d1 { transition-delay: 0.08s; }
+    .reveal-d2 { transition-delay: 0.16s; }
+    .reveal-d3 { transition-delay: 0.24s; }
+
+    /* Hero entrance */
+    .h-fade { opacity: 0; animation: fadeUp 1s cubic-bezier(0.22,1,0.36,1) forwards; }
+    .h-fade-1 { animation-delay: 0.05s; }
+    .h-fade-2 { animation-delay: 0.18s; }
+    .h-fade-3 { animation-delay: 0.32s; }
+    .h-fade-4 { animation-delay: 0.45s; }
+    .h-fade-5 { animation-delay: 0.6s; }
+    .h-fade-vis { animation-delay: 0.4s; }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Sticky preview labels */
+    .label-sticker {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 12px; border-radius: 999px;
+      background: var(--paper); color: var(--ink-2);
+      border: 1px solid var(--line);
+      font-size: 11px; font-weight: 700; letter-spacing: -0.01em;
+    }
+
+    /* Section split between sync and gallery */
+    .ribbon-band {
+      margin: 0;
+      padding: 28px 0;
+      background: var(--ink);
+      color: var(--bg);
+      overflow: hidden;
+    }
+
+    /* Visibility helpers */
+    .sm-only { display: block; }
+    .md-up { display: none; }
+    @media (min-width: 720px) { .sm-only { display: none; } .md-up { display: block; } }
   </style>
 </head>
 <body>
 
   <!-- ==================== NAV ==================== -->
-  <nav id="nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10 py-4 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-2.5 group" aria-label="School Board 홈으로 이동">
-        <img src="icon.ico" alt="School Board" class="w-8 h-8 rounded-xl">
-        <span class="font-bold text-sm text-gray-700 group-hover:text-gray-900 transition-colors tracking-tight">School Board</span>
+  <nav id="nav" class="nav">
+    <div class="container-x nav-inner">
+      <a href="#" class="nav-logo" aria-label="School Board 홈으로">
+        <span class="logo-mark"><img src="icon.ico" alt="스쿨보드 아이콘"></span>
+        <span>School Board</span>
       </a>
-      <div class="hidden md:flex items-center gap-8">
-        <a href="#features" class="text-sm text-gray-400 hover:text-gray-700 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:rounded-md">기능</a>
-        <a href="#preview" class="text-sm text-gray-400 hover:text-gray-700 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:rounded-md">미리보기</a>
-        <a href="#guide" class="text-sm text-gray-400 hover:text-gray-700 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:rounded-md">사용 설명서</a>
-        <a href="#download" class="text-sm text-gray-400 hover:text-gray-700 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:rounded-md">다운로드</a>
+      <div class="nav-links" role="navigation">
+        <a href="#features" class="nav-link">기능</a>
+        <a href="#gallery" class="nav-link">미리보기</a>
+        <a href="#guide" class="nav-link">사용 설명서</a>
+        <a href="#download" class="nav-link">다운로드</a>
       </div>
-      <div class="flex items-center gap-3">
-        <a href="#download" class="hidden sm:inline-flex px-5 py-2 rounded-xl bg-sky-500 hover:bg-sky-600 text-white text-sm font-semibold transition-all hover:shadow-lg hover:shadow-sky-500/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300 focus-visible:ring-offset-2">
-          다운로드
+      <div style="display:flex; align-items:center; gap:10px;">
+        <a href="#download" class="nav-cta" style="display:none;">
+          <span>무료 다운로드</span>
+          <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
         </a>
-        <button id="menu-toggle" class="md:hidden flex items-center justify-center w-10 h-10 rounded-xl bg-white/70 border border-gray-200/80 text-gray-600 hover:text-gray-900 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobile-menu">
-          <svg id="menu-icon-open" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-          <svg id="menu-icon-close" class="w-5 h-5 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
+        <button id="menu-toggle" class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobile-menu">
+          <svg id="menu-icon-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          <svg id="menu-icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none;"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
         </button>
+        <style>
+          @media (min-width: 640px) { #nav .nav-cta { display: inline-flex !important; } }
+        </style>
       </div>
     </div>
   </nav>
 
-  <!-- Mobile menu overlay -->
-  <div id="mobile-menu" class="fixed inset-0 z-40 pointer-events-none" aria-hidden="true">
-    <div id="mobile-backdrop" class="absolute inset-0 bg-black/30 opacity-0 transition-opacity duration-300"></div>
-    <div id="mobile-drawer" class="absolute top-0 right-0 h-full w-64 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 ease-out flex flex-col">
-      <div class="flex-1 pt-20 px-6 flex flex-col gap-1">
-        <a href="#features" class="mobile-nav-link block px-4 py-3 rounded-xl text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors">기능</a>
-        <a href="#preview" class="mobile-nav-link block px-4 py-3 rounded-xl text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors">미리보기</a>
-        <a href="#guide" class="mobile-nav-link block px-4 py-3 rounded-xl text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors">사용 설명서</a>
-        <a href="#download" class="mobile-nav-link block px-4 py-3 rounded-xl text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors">다운로드</a>
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="m-menu" aria-hidden="true">
+    <div id="mobile-backdrop" class="m-backdrop"></div>
+    <aside class="m-drawer" aria-label="모바일 메뉴">
+      <div style="display:flex; flex-direction:column; gap:4px;">
+        <a href="#features" class="m-link mobile-nav-link">기능</a>
+        <a href="#gallery" class="m-link mobile-nav-link">미리보기</a>
+        <a href="#guide" class="m-link mobile-nav-link">사용 설명서</a>
+        <a href="#download" class="m-link mobile-nav-link">다운로드</a>
       </div>
-      <div class="p-6 border-t border-gray-100">
-        <a href="#download" class="mobile-nav-link flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-sky-500 hover:bg-sky-600 text-white text-sm font-semibold transition-all w-full">
-          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          무료 다운로드
-        </a>
-      </div>
-    </div>
+      <a href="#download" class="m-cta mobile-nav-link">무료 다운로드 →</a>
+    </aside>
   </div>
 
-  <!-- ==================== HERO — Dashboard Showcase ==================== -->
-  <section class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-gray-50 via-white to-sky-50/30 dark:from-gray-950 dark:via-[#0c0c1d] dark:to-[#0f172a]">
-    <!-- Ambient blurs -->
-    <div class="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-sky-300/10 rounded-full blur-[140px]"></div>
-    <div class="absolute bottom-1/3 right-1/4 w-[350px] h-[350px] bg-sakura-200/15 rounded-full blur-[120px]"></div>
+  <!-- ==================== HERO ==================== -->
+  <header class="hero">
+    <div class="hero-bg-grad" aria-hidden="true"></div>
+    <div class="container-x">
+      <div class="hero-grid">
+        <div>
+          <span class="pill h-fade h-fade-1">
+            <span class="dot"></span>
+            교사를 위한 데스크톱 위젯 · 100% 무료
+          </span>
 
-    <!-- Content -->
-    <div class="relative z-10 max-w-5xl mx-auto px-6 text-center pt-24">
-      <!-- Badge -->
-      <div class="animate-fade-in opacity-0 mb-5" style="animation-fill-mode:forwards; animation-delay:0.1s">
-        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/70 border border-sakura-200/60 text-xs font-medium text-sky-600 shadow-sm">
-          <svg class="w-3 h-3 text-sakura-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15l-1.25-2L8 11l1.5-1.5L11.75 14 16 8.5 17.5 10l-6.5 7z" opacity="0.6"/></svg>
-          교육용 데스크톱 앱 · 100% 무료
-        </span>
-      </div>
+          <h1 class="hero-title h-fade h-fade-2">
+            <span class="line">선생님의</span>
+            <span class="line">바탕화면을</span>
+            <span class="line"><span class="font-serif-italic" style="font-size:0.95em;">조금 더,</span> <span class="grad-text">스마트하게</span>.</span>
+          </h1>
 
-      <!-- Title -->
-      <h1 class="hero-title text-5xl md:text-7xl lg:text-8xl font-black leading-[0.95] mb-4 animate-slide-up opacity-0 tracking-tight" style="animation-fill-mode:forwards">
-        선생님을 위한<br>
-        <span class="bg-gradient-to-r from-sky-500 via-sky-400 to-sakura-400 bg-clip-text text-transparent">올인원 위젯</span>
-      </h1>
+          <p class="hero-sub h-fade h-fade-3">
+            시간표, 급식, 학사일정, 메모, 연락처까지. <br class="md-up">
+            바탕화면 위에서 바로 확인하는 <strong style="color:var(--ink); font-weight:700;">올인원 위젯</strong>.
+            NEIS와 구글 캘린더·할 일이 실시간으로 연결됩니다.
+          </p>
 
-      <!-- Subtitle -->
-      <p class="text-sm md:text-base text-gray-400 max-w-md mx-auto mb-8 animate-slide-up-d1 opacity-0 font-light leading-relaxed" style="animation-fill-mode:forwards">
-        바탕화면 위에 올려두는 스마트 도우미.<br>
-        시간표, 급식, 학사일정, 메모를 한눈에.
-      </p>
-
-      <!-- CTA -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mb-12 animate-slide-up-d2 opacity-0" style="animation-fill-mode:forwards">
-        <a href="#download" class="group flex items-center gap-3 px-7 py-3.5 rounded-2xl bg-sky-500 hover:bg-sky-600 text-white font-bold text-sm transition-all hover:shadow-xl hover:shadow-sky-400/30">
-          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          무료 다운로드
-          <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-        </a>
-        <a href="#guide" class="group flex items-center gap-3 px-7 py-3.5 rounded-2xl bg-white/70 border border-gray-200/80 hover:bg-white hover:border-sky-200 text-gray-600 hover:text-sky-600 font-bold text-sm transition-all shadow-sm hover:shadow-md">
-          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/><path fill="#fff" d="M9.545 15.568V8.432L15.818 12z"/></svg>
-          사용 설명서
-        </a>
-        <a href="#features" class="flex items-center gap-2 px-7 py-3.5 rounded-2xl bg-white/60 border border-sakura-200/50 hover:bg-white/80 text-gray-500 hover:text-gray-700 font-medium text-sm transition-all backdrop-blur-sm">
-          기능 살펴보기
-        </a>
-      </div>
-    </div>
-
-    <!-- Dashboard Mockup - full width showcase -->
-    <div class="relative z-10 w-full max-w-6xl mx-auto px-4 md:px-8 animate-fade-in opacity-0" style="animation-fill-mode:forwards; animation-delay:0.5s">
-      <div class="relative rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl shadow-black/10 border border-gray-200/60 bg-gray-100">
-        <!-- Window chrome bar -->
-        <div class="bg-gray-100 border-b border-gray-200 px-4 py-2.5 flex items-center gap-2">
-          <div class="flex gap-1.5">
-            <div class="w-3 h-3 rounded-full bg-red-400/70"></div>
-            <div class="w-3 h-3 rounded-full bg-yellow-400/70"></div>
-            <div class="w-3 h-3 rounded-full bg-green-400/70"></div>
+          <div class="cta-row h-fade h-fade-4">
+            <a href="#download" class="btn-primary">
+              <span class="icon-wrap">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              </span>
+              <span>무료로 다운로드</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+            <a href="#guide" class="btn-ghost">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z" opacity="0.85"/><path fill="white" d="M9.545 15.568V8.432L15.818 12z"/></svg>
+              <span>사용 설명서 보기</span>
+            </a>
           </div>
-          <div class="flex-1 flex justify-center">
-            <div class="px-4 py-0.5 rounded-md bg-white/60 text-[11px] text-gray-400 font-medium">스쿨보드(School Board) — 대시보드</div>
+
+          <div class="quick-stats h-fade h-fade-5">
+            <div class="qs-item"><div class="qs-num tabular">20<span style="font-size:14px;color:var(--ink-3);">+</span></div><div class="qs-label">테마 프리셋</div></div>
+            <div class="qs-item"><div class="qs-num tabular">12<span style="font-size:14px;color:var(--ink-3);">+</span></div><div class="qs-label">핵심 기능</div></div>
+            <div class="qs-item"><div class="qs-num tabular">100<span class="unit" style="font-size:14px;color:var(--ink-3);">%</span></div><div class="qs-label">무료 · 오픈</div></div>
           </div>
         </div>
-        <!-- Screenshot -->
-        <img src="대시보드화면.png" alt="School Board 대시보드 위젯 - 시간표, 급식, 학사일정, 메모를 바탕화면에서 확인하는 교사용 데스크톱 위젯 앱" class="w-full h-auto block">
-      </div>
-      <!-- Reflection glow -->
-      <div class="absolute -bottom-8 left-1/2 -translate-x-1/2 w-3/4 h-16 bg-sky-300/15 blur-[40px] rounded-full"></div>
-    </div>
 
-    <!-- Scroll indicator -->
-    <div class="relative z-10 mt-16 flex flex-col items-center gap-2 animate-fade-in opacity-0" style="animation-fill-mode:forwards; animation-delay:1.5s">
-      <div class="w-5 h-8 rounded-full border border-sakura-300/50 flex items-start justify-center p-1.5">
-        <div class="w-0.5 h-1.5 rounded-full bg-sky-400" style="animation: scrollHint 2s ease-in-out infinite;"></div>
+        <div class="h-fade h-fade-vis" style="position:relative;">
+          <div class="hero-visual">
+            <div class="h-card h-card-back"></div>
+            <div class="h-card h-card-mid"></div>
+            <div class="h-card h-card-main">
+              <div class="hero-window">
+                <span class="dot" style="background:#fb7185;"></span>
+                <span class="dot" style="background:#facc15;"></span>
+                <span class="dot" style="background:#34d399;"></span>
+                <span style="margin-left:auto; margin-right:auto; font-size:10.5px; color:var(--ink-3); font-weight:600;">스쿨보드 — 대시보드</span>
+              </div>
+              <img src="대시보드화면.png" alt="School Board 대시보드 위젯 - 시간표, 급식, 학사일정, 메모를 바탕화면에서 확인하는 교사용 데스크톱 위젯 앱" loading="eager">
+            </div>
+
+            <span class="chip-float chip-1">
+              <span class="chip-icon" style="background:#dcfce7; color:#15803d;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+              NEIS 연동
+            </span>
+            <span class="chip-float chip-2">
+              <span class="chip-icon" style="background:#fef3c7; color:#b45309;">G</span>
+              구글 실시간 동기화
+            </span>
+            <span class="chip-float chip-3">
+              <span class="chip-icon" style="background:#ede9fe; color:#6d28d9;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></span>
+              20+ 테마
+            </span>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
+  </header>
 
   <!-- ==================== MARQUEE STRIP ==================== -->
-  <div class="cherry-divider"></div>
-  <div class="relative py-3 overflow-hidden bg-gradient-to-r from-sky-500 via-sky-400 to-sakura-400">
-    <div class="tag-scroll">
-      <div class="inline-flex gap-8 animate-marquee">
-        <span class="text-sm text-white/90 whitespace-nowrap font-medium">NEIS 나이스 연동</span>
-        <span class="text-white/40">·</span>
-        <span class="text-sm text-white/90 whitespace-nowrap font-medium">자동 업데이트</span>
-        <span class="text-white/40">·</span>
-        <span class="text-sm text-white/90 whitespace-nowrap font-medium">20+ 테마</span>
-        <span class="text-white/40">·</span>
-        <span class="text-sm text-white/90 whitespace-nowrap font-medium">프레임리스 위젯</span>
-        <span class="text-white/40">·</span>
-        <span class="text-sm text-white/90 whitespace-nowrap font-medium">투명도 조절</span>
-        <span class="text-white/40">·</span>
-        <span class="text-sm text-white/90 whitespace-nowrap font-medium">데이터 암호화</span>
-        <span class="text-white/40">·</span>
-        <span class="text-sm text-white/90 whitespace-nowrap font-medium">엑셀 연동</span>
-        <span class="text-white/40">·</span>
-        <span class="text-sm text-white/90 whitespace-nowrap font-medium">업무포털 자동 로그인</span>
-        <span class="text-white/40">·</span>
-        <span class="text-sm text-white/90 whitespace-nowrap font-medium">구글 시트 연동</span>
-        <span class="text-white/40">·</span>
-        <span class="text-sm text-white/90 whitespace-nowrap font-medium">포터블 지원</span>
-        <span class="text-white/40">·</span>
-        <span class="text-sm text-white/90 whitespace-nowrap font-medium">NEIS 나이스 연동</span>
-        <span class="text-white/40">·</span>
-        <span class="text-sm text-white/90 whitespace-nowrap font-medium">자동 업데이트</span>
-        <span class="text-white/40">·</span>
-        <span class="text-sm text-white/90 whitespace-nowrap font-medium">20+ 테마</span>
-        <span class="text-white/40">·</span>
-        <span class="text-sm text-white/90 whitespace-nowrap font-medium">프레임리스 위젯</span>
-        <span class="text-white/40">·</span>
-        <span class="text-sm text-white/90 whitespace-nowrap font-medium">투명도 조절</span>
-        <span class="text-white/40">·</span>
-        <span class="text-sm text-white/90 whitespace-nowrap font-medium">데이터 암호화</span>
-        <span class="text-white/40">·</span>
-        <span class="text-sm text-white/90 whitespace-nowrap font-medium">엑셀 연동</span>
-        <span class="text-white/40">·</span>
-        <span class="text-sm text-white/90 whitespace-nowrap font-medium">업무포털 자동 로그인</span>
-        <span class="text-white/40">·</span>
-        <span class="text-sm text-white/90 whitespace-nowrap font-medium">구글 시트 연동</span>
-        <span class="text-white/40">·</span>
-        <span class="text-sm text-white/90 whitespace-nowrap font-medium">포터블 지원</span>
-      </div>
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span class="m-item"><span class="star"></span><span>NEIS 나이스 연동</span></span>
+      <span class="m-item"><span class="star"></span><span>자동 업데이트</span></span>
+      <span class="m-item highlight"><span class="star"></span><span>구글 캘린더 & 할 일 실시간 동기화</span></span>
+      <span class="m-item"><span class="star"></span><span>20+ 테마</span></span>
+      <span class="m-item"><span class="star"></span><span>프레임리스 위젯</span></span>
+      <span class="m-item"><span class="star"></span><span>투명도 조절</span></span>
+      <span class="m-item"><span class="star"></span><span>데이터 암호화</span></span>
+      <span class="m-item"><span class="star"></span><span>엑셀 연동</span></span>
+      <span class="m-item"><span class="star"></span><span>업무포털 자동 로그인</span></span>
+      <span class="m-item"><span class="star"></span><span>구글 시트 연동</span></span>
+      <span class="m-item"><span class="star"></span><span>포터블 지원</span></span>
+      <!-- duplicate for seamless loop -->
+      <span class="m-item"><span class="star"></span><span>NEIS 나이스 연동</span></span>
+      <span class="m-item"><span class="star"></span><span>자동 업데이트</span></span>
+      <span class="m-item highlight"><span class="star"></span><span>구글 캘린더 & 할 일 실시간 동기화</span></span>
+      <span class="m-item"><span class="star"></span><span>20+ 테마</span></span>
+      <span class="m-item"><span class="star"></span><span>프레임리스 위젯</span></span>
+      <span class="m-item"><span class="star"></span><span>투명도 조절</span></span>
+      <span class="m-item"><span class="star"></span><span>데이터 암호화</span></span>
+      <span class="m-item"><span class="star"></span><span>엑셀 연동</span></span>
+      <span class="m-item"><span class="star"></span><span>업무포털 자동 로그인</span></span>
+      <span class="m-item"><span class="star"></span><span>구글 시트 연동</span></span>
+      <span class="m-item"><span class="star"></span><span>포터블 지원</span></span>
     </div>
   </div>
 
-  <!-- ==================== FEATURES — Horizontal Scroll ==================== -->
-  <section id="features" class="py-20 md:py-28 bg-white dark:bg-[#0c0c1d] relative overflow-hidden">
-    <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle at 1px 1px, #f4a0b5 1px, transparent 0); background-size: 28px 28px; pointer-events:none;"></div>
-
-    <div class="max-w-7xl mx-auto px-6 lg:px-10 mb-12 reveal relative z-10">
-      <p class="text-xs font-semibold text-sky-500 tracking-[0.2em] uppercase mb-3">Features</p>
-      <h2 class="text-3xl md:text-5xl font-black text-gray-800 dark:text-gray-100">핵심 기능</h2>
-    </div>
-
-    <div class="relative reveal reveal-delay-1 z-10">
-      <!-- Fade edges -->
-      <div class="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
-      <div class="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
-
-      <div class="feature-track">
-        <!-- Set 1 -->
-        <div class="feature-card w-[300px] md:w-[320px] rounded-2xl p-7 shadow-sm shadow-sakura-100/50">
-          <div class="w-10 h-10 rounded-xl bg-sky-50 flex items-center justify-center mb-5">
-            <svg class="w-5 h-5 text-sky-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
-          </div>
-          <h3 class="text-base font-bold text-gray-800 dark:text-gray-100 mb-2">대시보드</h3>
-          <p class="text-sm text-gray-400 dark:text-gray-500 leading-relaxed mb-4">시계, 날씨, 시간표, 급식을 한 화면에. 벤토 그리드로 위젯을 자유롭게 배치.</p>
-          <div class="flex gap-1.5"><span class="px-2 py-0.5 rounded-md bg-sky-50 text-[10px] text-sky-600 font-medium">드래그 배치</span><span class="px-2 py-0.5 rounded-md bg-sky-50 text-[10px] text-sky-600 font-medium">크기 조절</span></div>
+  <!-- ==================== FEATURES ==================== -->
+  <section id="features" class="section-pad">
+    <div class="container-x">
+      <div class="reveal" style="display:flex; align-items:end; justify-content:space-between; gap:32px; flex-wrap:wrap;">
+        <div>
+          <span class="eyebrow">Features</span>
+          <h2 class="section-title">교사를 위한<br><span class="font-serif-italic" style="font-weight:400; color:var(--ink-3);">모든 도구를</span> 한 화면에.</h2>
         </div>
-
-        <div class="feature-card w-[300px] md:w-[320px] rounded-2xl p-7 shadow-sm shadow-spring-100/50">
-          <div class="w-10 h-10 rounded-xl bg-spring-50 flex items-center justify-center mb-5">
-            <svg class="w-5 h-5 text-spring-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          </div>
-          <h3 class="text-base font-bold text-gray-800 dark:text-gray-100 mb-2">시간표</h3>
-          <p class="text-sm text-gray-400 dark:text-gray-500 leading-relaxed mb-4">NEIS에서 자동으로 불러오거나 직접 입력. 학반별, 교사별, 학생 개별 조회까지.</p>
-          <div class="flex gap-1.5"><span class="px-2 py-0.5 rounded-md bg-spring-50 text-[10px] text-emerald-600 font-medium">NEIS 연동</span><span class="px-2 py-0.5 rounded-md bg-spring-50 text-[10px] text-emerald-600 font-medium">교과별 조회</span></div>
-        </div>
-
-        <div class="feature-card w-[300px] md:w-[320px] rounded-2xl p-7 shadow-sm shadow-amber-100/50">
-          <div class="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center mb-5">
-            <svg class="w-5 h-5 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
-          </div>
-          <h3 class="text-base font-bold text-gray-800 dark:text-gray-100 mb-2">급식 정보</h3>
-          <p class="text-sm text-gray-400 dark:text-gray-500 leading-relaxed mb-4">조·중·석식 3끼 모두 확인. 알레르기 정보도 함께 표시.</p>
-          <div class="flex gap-1.5"><span class="px-2 py-0.5 rounded-md bg-amber-50 text-[10px] text-amber-600 font-medium">3식 제공</span><span class="px-2 py-0.5 rounded-md bg-amber-50 text-[10px] text-amber-600 font-medium">알레르기</span></div>
-        </div>
-
-        <div class="feature-card w-[300px] md:w-[320px] rounded-2xl p-7 shadow-sm shadow-rose-100/50">
-          <div class="w-10 h-10 rounded-xl bg-rose-50 flex items-center justify-center mb-5">
-            <svg class="w-5 h-5 text-rose-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          </div>
-          <h3 class="text-base font-bold text-gray-800 dark:text-gray-100 mb-2">일정 & D-Day</h3>
-          <p class="text-sm text-gray-400 dark:text-gray-500 leading-relaxed mb-4">학사일정과 개인 할 일을 통합 관리. D-Day 카운터로 중요한 날짜를 놓치지 마세요.</p>
-          <div class="flex gap-1.5"><span class="px-2 py-0.5 rounded-md bg-rose-50 text-[10px] text-rose-500 font-medium">학사일정</span><span class="px-2 py-0.5 rounded-md bg-rose-50 text-[10px] text-rose-500 font-medium">알림 설정</span></div>
-        </div>
-
-        <div class="feature-card w-[300px] md:w-[320px] rounded-2xl p-7 shadow-sm shadow-yellow-100/50">
-          <div class="w-10 h-10 rounded-xl bg-yellow-50 flex items-center justify-center mb-5">
-            <svg class="w-5 h-5 text-yellow-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-          </div>
-          <h3 class="text-base font-bold text-gray-800 dark:text-gray-100 mb-2">포스트잇 메모</h3>
-          <p class="text-sm text-gray-400 dark:text-gray-500 leading-relaxed mb-4">자유 배치 보드에 드래그 앤 드롭. 리치 텍스트 편집, 6가지 파스텔 색상.</p>
-          <div class="flex gap-1.5"><span class="px-2 py-0.5 rounded-md bg-yellow-50 text-[10px] text-yellow-600 font-medium">드래그 배치</span><span class="px-2 py-0.5 rounded-md bg-yellow-50 text-[10px] text-yellow-600 font-medium">리치 텍스트</span></div>
-        </div>
-
-        <div class="feature-card w-[300px] md:w-[320px] rounded-2xl p-7 shadow-sm shadow-cyan-100/50">
-          <div class="w-10 h-10 rounded-xl bg-cyan-50 flex items-center justify-center mb-5">
-            <svg class="w-5 h-5 text-cyan-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          </div>
-          <h3 class="text-base font-bold text-gray-800 dark:text-gray-100 mb-2">연락처</h3>
-          <p class="text-sm text-gray-400 dark:text-gray-500 leading-relaxed mb-4">교사·학생 연락처를 분리 관리. 엑셀 붙여넣기, CSV, 인쇄까지.</p>
-          <div class="flex gap-1.5"><span class="px-2 py-0.5 rounded-md bg-cyan-50 text-[10px] text-cyan-600 font-medium">엑셀 연동</span><span class="px-2 py-0.5 rounded-md bg-cyan-50 text-[10px] text-cyan-600 font-medium">인쇄 지원</span></div>
-        </div>
-
-        <div class="feature-card w-[300px] md:w-[320px] rounded-2xl p-7 shadow-sm shadow-violet-100/50">
-          <div class="w-10 h-10 rounded-xl bg-violet-50 flex items-center justify-center mb-5">
-            <svg class="w-5 h-5 text-violet-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="8" y2="10.01"/><line x1="12" y1="10" x2="12" y2="10.01"/><line x1="16" y1="10" x2="16" y2="10.01"/></svg>
-          </div>
-          <h3 class="text-base font-bold text-gray-800 dark:text-gray-100 mb-2">계산기</h3>
-          <p class="text-sm text-gray-400 dark:text-gray-500 leading-relaxed mb-4">사칙연산부터 단위 변환, 등급 계산기까지. 배점 계산으로 시험 출제도 쉽게.</p>
-          <div class="flex gap-1.5"><span class="px-2 py-0.5 rounded-md bg-violet-50 text-[10px] text-violet-500 font-medium">단위 변환</span><span class="px-2 py-0.5 rounded-md bg-violet-50 text-[10px] text-violet-500 font-medium">등급 계산</span></div>
-        </div>
-
-        <div class="feature-card w-[300px] md:w-[320px] rounded-2xl p-7 shadow-sm shadow-emerald-100/50">
-          <div class="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center mb-5">
-            <svg class="w-5 h-5 text-emerald-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
-          </div>
-          <h3 class="text-base font-bold text-gray-800 dark:text-gray-100 mb-2">업무포털 자동 로그인</h3>
-          <p class="text-sm text-gray-400 dark:text-gray-500 leading-relaxed mb-4">나이스, K-에듀파인 자동 로그인. 인증서부터 비밀번호까지 원클릭.</p>
-          <div class="flex gap-1.5"><span class="px-2 py-0.5 rounded-md bg-emerald-50 text-[10px] text-emerald-600 font-medium">나이스</span><span class="px-2 py-0.5 rounded-md bg-emerald-50 text-[10px] text-emerald-600 font-medium">K-에듀파인</span></div>
-        </div>
-
-        <div class="feature-card w-[300px] md:w-[320px] rounded-2xl p-7 shadow-sm shadow-pink-100/50">
-          <div class="w-10 h-10 rounded-xl bg-pink-50 flex items-center justify-center mb-5">
-            <svg class="w-5 h-5 text-pink-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="15.5" r="2.5"/><circle cx="8.5" cy="15.5" r="2.5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
-          </div>
-          <h3 class="text-base font-bold text-gray-800 dark:text-gray-100 mb-2">20+ 테마</h3>
-          <p class="text-sm text-gray-400 dark:text-gray-500 leading-relaxed mb-4">벚꽃부터 네온까지 20종 프리셋. 원하는 색상으로 커스텀 테마도 만들 수 있어요.</p>
-          <div class="flex gap-2">
-            <div class="w-4 h-4 rounded-full bg-gradient-to-br from-sky-300 to-sky-500"></div>
-            <div class="w-4 h-4 rounded-full bg-gradient-to-br from-sakura-300 to-sakura-500"></div>
-            <div class="w-4 h-4 rounded-full bg-gradient-to-br from-emerald-300 to-emerald-500"></div>
-            <div class="w-4 h-4 rounded-full bg-gradient-to-br from-violet-300 to-violet-500"></div>
-            <div class="w-4 h-4 rounded-full bg-gradient-to-br from-amber-300 to-orange-500"></div>
-          </div>
-        </div>
-
-        <!-- Set 2 (duplicate for seamless loop) -->
-        <div class="feature-card w-[300px] md:w-[320px] rounded-2xl p-7 shadow-sm shadow-sakura-100/50">
-          <div class="w-10 h-10 rounded-xl bg-sky-50 flex items-center justify-center mb-5">
-            <svg class="w-5 h-5 text-sky-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
-          </div>
-          <h3 class="text-base font-bold text-gray-800 dark:text-gray-100 mb-2">대시보드</h3>
-          <p class="text-sm text-gray-400 dark:text-gray-500 leading-relaxed mb-4">시계, 날씨, 시간표, 급식을 한 화면에. 벤토 그리드로 위젯을 자유롭게 배치.</p>
-          <div class="flex gap-1.5"><span class="px-2 py-0.5 rounded-md bg-sky-50 text-[10px] text-sky-600 font-medium">드래그 배치</span><span class="px-2 py-0.5 rounded-md bg-sky-50 text-[10px] text-sky-600 font-medium">크기 조절</span></div>
-        </div>
-
-        <div class="feature-card w-[300px] md:w-[320px] rounded-2xl p-7 shadow-sm shadow-spring-100/50">
-          <div class="w-10 h-10 rounded-xl bg-spring-50 flex items-center justify-center mb-5">
-            <svg class="w-5 h-5 text-spring-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          </div>
-          <h3 class="text-base font-bold text-gray-800 dark:text-gray-100 mb-2">시간표</h3>
-          <p class="text-sm text-gray-400 dark:text-gray-500 leading-relaxed mb-4">NEIS에서 자동으로 불러오거나 직접 입력. 학반별, 교사별, 학생 개별 조회까지.</p>
-          <div class="flex gap-1.5"><span class="px-2 py-0.5 rounded-md bg-spring-50 text-[10px] text-emerald-600 font-medium">NEIS 연동</span><span class="px-2 py-0.5 rounded-md bg-spring-50 text-[10px] text-emerald-600 font-medium">교과별 조회</span></div>
-        </div>
-
-        <div class="feature-card w-[300px] md:w-[320px] rounded-2xl p-7 shadow-sm shadow-amber-100/50">
-          <div class="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center mb-5">
-            <svg class="w-5 h-5 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
-          </div>
-          <h3 class="text-base font-bold text-gray-800 dark:text-gray-100 mb-2">급식 정보</h3>
-          <p class="text-sm text-gray-400 dark:text-gray-500 leading-relaxed mb-4">조·중·석식 3끼 모두 확인. 알레르기 정보도 함께 표시.</p>
-          <div class="flex gap-1.5"><span class="px-2 py-0.5 rounded-md bg-amber-50 text-[10px] text-amber-600 font-medium">3식 제공</span><span class="px-2 py-0.5 rounded-md bg-amber-50 text-[10px] text-amber-600 font-medium">알레르기</span></div>
-        </div>
-
-        <div class="feature-card w-[300px] md:w-[320px] rounded-2xl p-7 shadow-sm shadow-rose-100/50">
-          <div class="w-10 h-10 rounded-xl bg-rose-50 flex items-center justify-center mb-5">
-            <svg class="w-5 h-5 text-rose-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          </div>
-          <h3 class="text-base font-bold text-gray-800 dark:text-gray-100 mb-2">일정 & D-Day</h3>
-          <p class="text-sm text-gray-400 dark:text-gray-500 leading-relaxed mb-4">학사일정과 개인 할 일을 통합 관리. D-Day 카운터로 중요한 날짜를 놓치지 마세요.</p>
-          <div class="flex gap-1.5"><span class="px-2 py-0.5 rounded-md bg-rose-50 text-[10px] text-rose-500 font-medium">학사일정</span><span class="px-2 py-0.5 rounded-md bg-rose-50 text-[10px] text-rose-500 font-medium">알림 설정</span></div>
-        </div>
-
-        <div class="feature-card w-[300px] md:w-[320px] rounded-2xl p-7 shadow-sm shadow-yellow-100/50">
-          <div class="w-10 h-10 rounded-xl bg-yellow-50 flex items-center justify-center mb-5">
-            <svg class="w-5 h-5 text-yellow-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-          </div>
-          <h3 class="text-base font-bold text-gray-800 dark:text-gray-100 mb-2">포스트잇 메모</h3>
-          <p class="text-sm text-gray-400 dark:text-gray-500 leading-relaxed mb-4">자유 배치 보드에 드래그 앤 드롭. 리치 텍스트 편집, 6가지 파스텔 색상.</p>
-          <div class="flex gap-1.5"><span class="px-2 py-0.5 rounded-md bg-yellow-50 text-[10px] text-yellow-600 font-medium">드래그 배치</span><span class="px-2 py-0.5 rounded-md bg-yellow-50 text-[10px] text-yellow-600 font-medium">리치 텍스트</span></div>
-        </div>
-
-        <div class="feature-card w-[300px] md:w-[320px] rounded-2xl p-7 shadow-sm shadow-cyan-100/50">
-          <div class="w-10 h-10 rounded-xl bg-cyan-50 flex items-center justify-center mb-5">
-            <svg class="w-5 h-5 text-cyan-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          </div>
-          <h3 class="text-base font-bold text-gray-800 dark:text-gray-100 mb-2">연락처</h3>
-          <p class="text-sm text-gray-400 dark:text-gray-500 leading-relaxed mb-4">교사·학생 연락처를 분리 관리. 엑셀 붙여넣기, CSV, 인쇄까지.</p>
-          <div class="flex gap-1.5"><span class="px-2 py-0.5 rounded-md bg-cyan-50 text-[10px] text-cyan-600 font-medium">엑셀 연동</span><span class="px-2 py-0.5 rounded-md bg-cyan-50 text-[10px] text-cyan-600 font-medium">인쇄 지원</span></div>
-        </div>
-
-        <div class="feature-card w-[300px] md:w-[320px] rounded-2xl p-7 shadow-sm shadow-violet-100/50">
-          <div class="w-10 h-10 rounded-xl bg-violet-50 flex items-center justify-center mb-5">
-            <svg class="w-5 h-5 text-violet-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="8" y2="10.01"/><line x1="12" y1="10" x2="12" y2="10.01"/><line x1="16" y1="10" x2="16" y2="10.01"/></svg>
-          </div>
-          <h3 class="text-base font-bold text-gray-800 dark:text-gray-100 mb-2">계산기</h3>
-          <p class="text-sm text-gray-400 dark:text-gray-500 leading-relaxed mb-4">사칙연산부터 단위 변환, 등급 계산기까지. 배점 계산으로 시험 출제도 쉽게.</p>
-          <div class="flex gap-1.5"><span class="px-2 py-0.5 rounded-md bg-violet-50 text-[10px] text-violet-500 font-medium">단위 변환</span><span class="px-2 py-0.5 rounded-md bg-violet-50 text-[10px] text-violet-500 font-medium">등급 계산</span></div>
-        </div>
-
-        <div class="feature-card w-[300px] md:w-[320px] rounded-2xl p-7 shadow-sm shadow-emerald-100/50">
-          <div class="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center mb-5">
-            <svg class="w-5 h-5 text-emerald-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
-          </div>
-          <h3 class="text-base font-bold text-gray-800 dark:text-gray-100 mb-2">업무포털 자동 로그인</h3>
-          <p class="text-sm text-gray-400 dark:text-gray-500 leading-relaxed mb-4">나이스, K-에듀파인 자동 로그인. 인증서부터 비밀번호까지 원클릭.</p>
-          <div class="flex gap-1.5"><span class="px-2 py-0.5 rounded-md bg-emerald-50 text-[10px] text-emerald-600 font-medium">나이스</span><span class="px-2 py-0.5 rounded-md bg-emerald-50 text-[10px] text-emerald-600 font-medium">K-에듀파인</span></div>
-        </div>
-
-        <div class="feature-card w-[300px] md:w-[320px] rounded-2xl p-7 shadow-sm shadow-pink-100/50">
-          <div class="w-10 h-10 rounded-xl bg-pink-50 flex items-center justify-center mb-5">
-            <svg class="w-5 h-5 text-pink-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="15.5" r="2.5"/><circle cx="8.5" cy="15.5" r="2.5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
-          </div>
-          <h3 class="text-base font-bold text-gray-800 dark:text-gray-100 mb-2">20+ 테마</h3>
-          <p class="text-sm text-gray-400 dark:text-gray-500 leading-relaxed mb-4">벚꽃부터 네온까지 20종 프리셋. 원하는 색상으로 커스텀 테마도 만들 수 있어요.</p>
-          <div class="flex gap-2">
-            <div class="w-4 h-4 rounded-full bg-gradient-to-br from-sky-300 to-sky-500"></div>
-            <div class="w-4 h-4 rounded-full bg-gradient-to-br from-sakura-300 to-sakura-500"></div>
-            <div class="w-4 h-4 rounded-full bg-gradient-to-br from-emerald-300 to-emerald-500"></div>
-            <div class="w-4 h-4 rounded-full bg-gradient-to-br from-violet-300 to-violet-500"></div>
-            <div class="w-4 h-4 rounded-full bg-gradient-to-br from-amber-300 to-orange-500"></div>
-          </div>
-        </div>
+        <p class="section-lede">
+          시간표부터 급식, 메모, 연락처, 자동 로그인까지. 학교 업무에 필요한 12가지 기능이 데스크톱 위젯으로 통합되어 있습니다.
+        </p>
       </div>
-    </div>
-  </section>
 
-  <!-- ==================== PREVIEW 1: 대시보드 — Full-bleed light overlay ==================== -->
-  <section id="preview" class="relative h-[85vh] min-h-[600px] overflow-hidden">
-    <img src="대시보드화면.png" alt="대시보드" loading="lazy" class="bleed-img cursor-pointer" onclick="openLightbox(this.src, this.alt)">
-    <div class="absolute inset-0 bg-gradient-to-t from-white via-white/50 to-transparent"></div>
-    <div class="absolute inset-0 flex items-end">
-      <div class="max-w-6xl mx-auto px-6 lg:px-10 pb-16 md:pb-24 w-full reveal">
-        <span class="inline-block px-2.5 py-1 rounded-lg bg-sky-500/10 text-[11px] text-sky-600 font-semibold mb-3 backdrop-blur-sm">01 / 대시보드</span>
-        <h3 class="bleed-title text-3xl md:text-5xl font-black text-gray-900 dark:text-white mb-3">오늘 하루를<br>한눈에</h3>
-        <p class="text-sm md:text-base text-gray-400 dark:text-gray-500 max-w-md leading-relaxed">시계, 급식, 시간표, 학사일정, 메모까지. 위젯 기반 대시보드에서 오늘 필요한 모든 정보를 한 화면에 확인하세요.</p>
-      </div>
-    </div>
-  </section>
+      <div class="bento">
 
-  <!-- ==================== PREVIEW 2: 시간표 — Light editorial ==================== -->
-  <section class="relative py-28 md:py-36 bg-[#f8fafc] dark:bg-gray-900 overflow-hidden">
-    <div class="max-w-6xl mx-auto px-6 lg:px-10">
-      <div class="grid md:grid-cols-12 gap-8 md:gap-12 items-center">
-        <div class="md:col-span-4 relative">
-          <span class="text-[120px] md:text-[180px] font-black text-sky-100/50 leading-none select-none">02</span>
-          <div class="absolute top-1/2 left-0 -translate-y-1/2 md:left-auto md:right-0">
-            <div>
-              <span class="inline-block px-2.5 py-1 rounded-lg bg-sky-50 text-[11px] text-sky-600 font-semibold mb-3">시간표</span>
-              <h3 class="text-2xl md:text-3xl font-black text-gray-900 dark:text-white mb-2 leading-tight">NEIS 연동<br><span class="text-sky-500">자동 시간표</span></h3>
-              <p class="text-sm text-gray-400 leading-relaxed max-w-xs">학교 이름만 검색하면 시간표가 자동으로. API 키 없이 NEIS에서 바로 불러옵니다.</p>
+        <!-- HERO FEATURE: Google Calendar + Tasks (NEW) -->
+        <div class="b-card b-feature reveal">
+          <span class="badge-new">NEW</span>
+          <div class="b-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <rect x="3" y="4" width="18" height="18" rx="2"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8" y1="2" x2="8" y2="6"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+          </div>
+          <h3>Google 캘린더 &amp; 할 일<br>실시간 동기화</h3>
+          <p style="margin-top:12px;">
+            구글 캘린더 API와 할 일 API를 통해 일정이 양방향 실시간 연동됩니다. PC와 핸드폰 어디서든 동일하게 확인하세요.
+          </p>
+          <div class="b-tags">
+            <span class="b-tag">Calendar API</span>
+            <span class="b-tag">Tasks API</span>
+            <span class="b-tag">양방향 실시간</span>
+            <span class="b-tag">다중 계정</span>
+          </div>
+        </div>
+
+        <!-- 시간표 -->
+        <div class="b-card b-tall reveal reveal-d1">
+          <div class="b-icon b-icon-violet">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <h3>NEIS 자동 시간표</h3>
+          <p>학교 이름만 검색하면 NEIS에서 시간표를 자동으로 불러옵니다. 학반별·교사별·학생 개별 조회까지.</p>
+          <div class="b-tags">
+            <span class="b-tag">NEIS 연동</span>
+            <span class="b-tag">교과별 조회</span>
+            <span class="b-tag">API 키 불필요</span>
+          </div>
+          <div style="margin-top:auto; padding-top:24px;">
+            <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:6px;">
+              <div style="padding:8px 4px; border-radius:8px; background:color-mix(in srgb, var(--violet) 8%, transparent); text-align:center; font-size:10px; font-weight:700; color:var(--violet);">월</div>
+              <div style="padding:8px 4px; border-radius:8px; background:color-mix(in srgb, var(--violet) 8%, transparent); text-align:center; font-size:10px; font-weight:700; color:var(--violet);">화</div>
+              <div style="padding:8px 4px; border-radius:8px; background:color-mix(in srgb, var(--violet) 18%, transparent); text-align:center; font-size:10px; font-weight:700; color:var(--violet);">수</div>
+              <div style="padding:8px 4px; border-radius:8px; background:color-mix(in srgb, var(--violet) 8%, transparent); text-align:center; font-size:10px; font-weight:700; color:var(--violet);">목</div>
+              <div style="padding:8px 4px; border-radius:8px; background:color-mix(in srgb, var(--violet) 8%, transparent); text-align:center; font-size:10px; font-weight:700; color:var(--violet);">금</div>
             </div>
           </div>
         </div>
-        <div class="md:col-span-8 reveal">
-          <div class="rounded-2xl overflow-hidden border border-sakura-100 shadow-xl shadow-sky-100/20">
-            <img src="시간표화면.png" alt="시간표" loading="lazy" class="w-full cursor-pointer" onclick="openLightbox(this.src, this.alt)">
+
+        <!-- 대시보드 -->
+        <div class="b-card reveal reveal-d2">
+          <div class="b-icon b-icon-indigo">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
+          </div>
+          <h3>벤토 대시보드</h3>
+          <p>시계, 날씨, 시간표, 급식을 한 화면에. 위젯을 자유롭게 드래그하고 크기를 조절하세요.</p>
+          <div class="b-tags"><span class="b-tag">드래그 배치</span><span class="b-tag">크기 조절</span></div>
+        </div>
+
+        <!-- 급식 -->
+        <div class="b-card reveal reveal-d3">
+          <div class="b-icon b-icon-peach">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+          </div>
+          <h3>오늘의 급식</h3>
+          <p>조·중·석식 3끼 모두 확인. 알레르기 정보까지 한 번에.</p>
+          <div class="b-tags"><span class="b-tag">3식 제공</span><span class="b-tag">알레르기 표시</span></div>
+        </div>
+
+        <!-- 메모 -->
+        <div class="b-card reveal">
+          <div class="b-icon" style="background:#fef9c3; color:#a16207;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <h3>포스트잇 메모</h3>
+          <p>자유 배치 보드에 드래그 앤 드롭. 리치 텍스트 편집과 6가지 파스텔 색상.</p>
+          <div class="b-tags"><span class="b-tag">자유 배치</span><span class="b-tag">리치 텍스트</span></div>
+        </div>
+
+        <!-- 연락처 -->
+        <div class="b-card reveal reveal-d1">
+          <div class="b-icon b-icon-teal">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>연락처 관리</h3>
+          <p>교사·학생 연락처를 분리해서 관리. 엑셀 붙여넣기, CSV, 인쇄까지.</p>
+          <div class="b-tags"><span class="b-tag">엑셀 연동</span><span class="b-tag">인쇄 지원</span></div>
+        </div>
+
+        <!-- 계산기 -->
+        <div class="b-card reveal reveal-d2">
+          <div class="b-icon b-icon-violet">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="8" y2="10.01"/><line x1="12" y1="10" x2="12" y2="10.01"/><line x1="16" y1="10" x2="16" y2="10.01"/></svg>
+          </div>
+          <h3>스마트 계산기</h3>
+          <p>사칙연산부터 단위 변환, 등급 계산까지. 시험 배점 계산도 손쉽게.</p>
+          <div class="b-tags"><span class="b-tag">단위 변환</span><span class="b-tag">등급 계산</span></div>
+        </div>
+
+        <!-- 자동 로그인 -->
+        <div class="b-card reveal reveal-d3">
+          <div class="b-icon" style="background:#d1fae5; color:#047857;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+          </div>
+          <h3>업무포털 자동 로그인</h3>
+          <p>나이스, K-에듀파인 자동 로그인. 인증서부터 비밀번호까지 원클릭.</p>
+          <div class="b-tags"><span class="b-tag">나이스</span><span class="b-tag">K-에듀파인</span></div>
+        </div>
+
+        <!-- 일정 D-Day -->
+        <div class="b-card reveal">
+          <div class="b-icon b-icon-coral">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <h3>일정 &amp; D-Day</h3>
+          <p>학사일정과 개인 할 일을 통합 관리. 구글 캘린더와 실시간으로 연결됩니다.</p>
+          <div class="b-tags"><span class="b-tag">학사일정</span><span class="b-tag">알림 설정</span><span class="b-tag" style="background:#fef3c7; color:#a16207;">구글 동기화</span></div>
+        </div>
+
+        <!-- 20+ 테마 (wide) -->
+        <div class="b-card b-half reveal reveal-d1">
+          <div class="b-icon b-icon-pink">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="15.5" r="2.5"/><circle cx="8.5" cy="15.5" r="2.5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+          </div>
+          <h3>20개 이상의 프리셋 테마</h3>
+          <p>벚꽃부터 네온까지 20종 프리셋. 원하는 색상으로 커스텀 테마도 만들 수 있습니다.</p>
+          <div class="theme-dots">
+            <span class="theme-dot" style="background:linear-gradient(135deg,#60a5fa,#2563eb);"></span>
+            <span class="theme-dot" style="background:linear-gradient(135deg,#f9a8d4,#ec4899);"></span>
+            <span class="theme-dot" style="background:linear-gradient(135deg,#86efac,#16a34a);"></span>
+            <span class="theme-dot" style="background:linear-gradient(135deg,#c4b5fd,#7c3aed);"></span>
+            <span class="theme-dot" style="background:linear-gradient(135deg,#fcd34d,#f97316);"></span>
+            <span class="theme-dot" style="background:linear-gradient(135deg,#fda4af,#e11d48);"></span>
+            <span class="theme-dot" style="background:linear-gradient(135deg,#67e8f9,#0891b2);"></span>
+            <span class="theme-dot" style="background:linear-gradient(135deg,#1e293b,#0f172a);"></span>
+          </div>
+        </div>
+
+        <!-- 보안 / 프라이버시 -->
+        <div class="b-card b-half reveal reveal-d2">
+          <div class="b-icon" style="background:#cffafe; color:#0891b2;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <h3>로컬 우선 · 데이터 암호화</h3>
+          <p>모든 데이터는 선생님의 PC 안에만 머무릅니다. 외부 서버 없음, 로그인 불필요.</p>
+          <div class="b-tags"><span class="b-tag">암호화</span><span class="b-tag">오프라인 동작</span><span class="b-tag">로그인 불필요</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== GOOGLE SYNC ==================== -->
+  <section class="sync-section">
+    <div class="sync-grid">
+      <div class="reveal">
+        <div style="display:flex; align-items:center; gap:14px; margin-bottom:8px;">
+          <div style="width:48px; height:48px; border-radius:14px; background:rgba(255,255,255,0.08); display:grid; place-items:center; backdrop-filter:blur(8px);">
+            <svg width="24" height="24" viewBox="0 0 24 24"><path d="M22.5 12c0-.94-.09-1.85-.26-2.72H12v5.16h5.92a5.06 5.06 0 0 1-2.2 3.32v2.76h3.57c2.08-1.92 3.28-4.74 3.28-8.52z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.76c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.11c-.22-.66-.35-1.36-.35-2.11s.13-1.45.35-2.11V7.05H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.95l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.36c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.05l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+          </div>
+          <span class="pill" style="background:rgba(250,204,21,0.18); border-color:rgba(250,204,21,0.3); color:#fde047;">
+            <span class="dot" style="background:#facc15;"></span>NEW
+          </span>
+        </div>
+        <span class="eyebrow sync-eyebrow">Real-time Sync</span>
+        <h2 class="sync-title">구글 캘린더와<br><em>완벽하게</em> 연결됩니다.</h2>
+        <p class="sync-lede">
+          PC에서 등록한 일정과 할 일이 핸드폰에 실시간으로 동기화됩니다. 구글 캘린더, 구글 할 일과 양방향 연동으로 어디서든 동일하게 관리하세요.
+        </p>
+
+        <div class="sync-features">
+          <div class="sync-feat">
+            <div class="sync-feat-ic">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span style="font-size:14px; color:rgba(255,255,255,0.9); font-weight:500;">구글 캘린더 양방향 실시간 동기화</span>
+          </div>
+          <div class="sync-feat">
+            <div class="sync-feat-ic">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span style="font-size:14px; color:rgba(255,255,255,0.9); font-weight:500;">구글 할 일(Tasks) 실시간 연동</span>
+          </div>
+          <div class="sync-feat">
+            <div class="sync-feat-ic">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span style="font-size:14px; color:rgba(255,255,255,0.9); font-weight:500;">PC ↔ 핸드폰 실시간 반영</span>
           </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ==================== PREVIEW 3: 메모 — Full-bleed light ==================== -->
-  <section class="relative h-[80vh] min-h-[550px] overflow-hidden bg-sakura-50 dark:bg-[#1a1020]">
-    <img src="메모장화면.png" alt="메모" loading="lazy" class="bleed-img cursor-pointer" onclick="openLightbox(this.src, this.alt)">
-    <div class="absolute inset-0 bg-gradient-to-b from-sakura-50/70 via-transparent to-sakura-50/80"></div>
-    <div class="absolute inset-0 flex items-center justify-center">
-      <div class="text-center reveal">
-        <span class="inline-block px-2.5 py-1 rounded-lg bg-white/70 text-[11px] text-gray-600 font-semibold mb-4 backdrop-blur-sm">03 / 메모</span>
-        <h3 class="bleed-title text-3xl md:text-5xl font-black text-gray-900 dark:text-white mb-3">간편하게<br>기록하세요</h3>
-        <p class="text-sm text-gray-500 max-w-sm mx-auto">떠오르는 생각, 할 일, 업무 메모를 빠르게 기록하고 관리할 수 있습니다.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== PREVIEW 4: 급식 — Split ==================== -->
-  <section class="relative bg-white dark:bg-[#0c0c1d] overflow-hidden">
-    <div class="max-w-7xl mx-auto">
-      <div class="grid md:grid-cols-2 min-h-[70vh]">
-        <div class="flex items-center px-6 lg:px-16 py-20 reveal">
-          <div>
-            <span class="inline-block px-2.5 py-1 rounded-lg bg-amber-50 dark:bg-amber-900/30 text-[11px] text-amber-600 dark:text-amber-400 font-semibold mb-4">04 / 급식</span>
-            <h3 class="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-4 leading-tight">오늘 뭐 먹지?<br><span class="text-sakura-500">급식 자동 확인</span></h3>
-            <p class="text-sm text-gray-400 leading-relaxed max-w-sm mb-6">NEIS 연동으로 오늘의 급식 메뉴를 자동으로 확인. 알레르기 정보도 함께 표시됩니다.</p>
-            <div class="flex gap-3">
-              <div class="px-3 py-1.5 rounded-lg bg-gray-50 border border-gray-100"><span class="text-[11px] text-gray-400">조식</span></div>
-              <div class="px-3 py-1.5 rounded-lg bg-sky-50 border border-sky-100"><span class="text-[11px] text-sky-600 font-medium">중식</span></div>
-              <div class="px-3 py-1.5 rounded-lg bg-gray-50 border border-gray-100"><span class="text-[11px] text-gray-400">석식</span></div>
+      <div class="phone-wrap reveal reveal-d2">
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="phone-status">
+              <span class="time">12:30</span>
+              <div class="icons"><span></span><span></span><span></span></div>
+            </div>
+            <div class="sync-banner">
+              <span class="live-dot"></span>
+              <span>실시간 동기화 중</span>
+            </div>
+            <div class="phone-section-label">구글 캘린더</div>
+            <div class="p-event">
+              <div class="p-event-title">3교시 과학 수업</div>
+              <div class="p-event-time">10:00 - 10:45</div>
+            </div>
+            <div class="p-event violet">
+              <div class="p-event-title">5교시 미술 수업</div>
+              <div class="p-event-time">13:00 - 13:45</div>
+            </div>
+            <div class="phone-section-label">구글 할 일</div>
+            <div class="p-task done">
+              <div class="p-check done"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#0d0d18" stroke-width="4" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <span>학부모 상담 자료 준비</span>
+            </div>
+            <div class="p-task">
+              <div class="p-check"></div>
+              <span>성적표 작성 마감</span>
+            </div>
+            <div class="p-task">
+              <div class="p-check"></div>
+              <span>교재 발주 요청</span>
             </div>
           </div>
         </div>
-        <div class="relative min-h-[300px] md:min-h-0 reveal reveal-delay-1">
-          <img src="급식화면.png" alt="급식" loading="lazy" class="absolute inset-0 w-full h-full object-cover cursor-pointer" onclick="openLightbox(this.src, this.alt)">
-          <div class="absolute inset-0 bg-gradient-to-r from-white via-transparent to-transparent md:block hidden"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== GALLERY (PREVIEW SCREENS) ==================== -->
+  <section id="gallery" class="section-pad" style="padding-top:60px;">
+    <div class="container-x">
+      <div class="reveal" style="display:flex; align-items:end; justify-content:space-between; gap:32px; flex-wrap:wrap;">
+        <div>
+          <span class="eyebrow">Preview</span>
+          <h2 class="section-title">실제 화면을<br><span class="font-serif-italic" style="font-weight:400; color:var(--ink-3);">미리 만나보세요.</span></h2>
         </div>
+        <p class="section-lede">
+          대시보드부터 시간표, 메모, 급식, 북마크, 업무자료, 연락처까지. 클릭하면 더 크게 볼 수 있어요.
+        </p>
+      </div>
+
+      <div class="gallery">
+        <!-- 1 대시보드 - g-twothird -->
+        <a class="g-item g-twothird reveal" onclick="openLightbox('대시보드화면.png','대시보드')">
+          <img src="대시보드화면.png" alt="대시보드 - 시계, 급식, 시간표, 학사일정, 메모를 한 화면에 위젯 기반으로 보여주는 대시보드" loading="lazy">
+          <div class="g-overlay"></div>
+          <div class="g-meta">
+            <span class="g-num">01 / 대시보드</span>
+            <h3 class="g-title">오늘 하루를 한눈에</h3>
+            <p class="g-desc">시계, 급식, 시간표, 학사일정, 메모까지 — 위젯 기반 대시보드에서 오늘 필요한 모든 정보를 한 화면에.</p>
+          </div>
+        </a>
+
+        <!-- 2 시간표 - g-third -->
+        <a class="g-item g-third reveal reveal-d1" onclick="openLightbox('시간표화면.png','시간표')">
+          <img src="시간표화면.png" alt="시간표 - NEIS 연동으로 자동으로 불러오는 학반·교사별 시간표" loading="lazy">
+          <div class="g-overlay"></div>
+          <div class="g-meta">
+            <span class="g-num">02 / 시간표</span>
+            <h3 class="g-title">NEIS 자동 시간표</h3>
+            <p class="g-desc">학교 이름만 검색하면 시간표가 자동으로. API 키 없이 NEIS에서 바로.</p>
+          </div>
+        </a>
+
+        <!-- 3 메모 - g-square -->
+        <a class="g-item g-square reveal" onclick="openLightbox('메모장화면.png','메모')">
+          <img src="메모장화면.png" alt="메모 - 자유 배치 보드에 드래그 앤 드롭으로 정리하는 포스트잇 메모" loading="lazy">
+          <div class="g-overlay"></div>
+          <div class="g-meta">
+            <span class="g-num">03 / 메모</span>
+            <h3 class="g-title">간편하게 기록하세요</h3>
+            <p class="g-desc">떠오르는 생각, 할 일, 업무 메모를 빠르게 기록하고 관리하세요.</p>
+          </div>
+        </a>
+
+        <!-- 4 급식 - g-square -->
+        <a class="g-item g-square reveal reveal-d1" onclick="openLightbox('급식화면.png','급식')">
+          <img src="급식화면.png" alt="급식 - 조·중·석식 3끼와 알레르기 정보를 한 번에 확인하는 급식 화면" loading="lazy">
+          <div class="g-overlay"></div>
+          <div class="g-meta">
+            <span class="g-num">04 / 급식</span>
+            <h3 class="g-title">오늘 뭐 먹지?</h3>
+            <p class="g-desc">NEIS 연동으로 오늘의 급식 메뉴를 자동으로 확인. 알레르기 정보도 함께.</p>
+          </div>
+        </a>
+
+        <!-- 5 북마크 - g-twothird -->
+        <a class="g-item g-twothird reveal" onclick="openLightbox('북마크 화면.png','북마크')">
+          <img src="북마크 화면.png" alt="북마크 - 자주 쓰는 사이트를 빠르게 접근할 수 있는 북마크 화면" loading="lazy">
+          <div class="g-overlay"></div>
+          <div class="g-meta">
+            <span class="g-num">05 / 북마크</span>
+            <h3 class="g-title">자주 쓰는 사이트, 빠르게</h3>
+            <p class="g-desc">NEIS, 교육포털, 학교 홈페이지 등 자주 사용하는 웹사이트를 한 번에.</p>
+          </div>
+        </a>
+
+        <!-- 6 업무자료 - g-third -->
+        <a class="g-item g-third reveal reveal-d1" onclick="openLightbox('업무자료 화면.png','업무자료')">
+          <img src="업무자료 화면.png" alt="업무자료 - 교재, 수업 자료, 공문 등 학교 업무 문서를 카테고리별로 정리하는 업무자료 화면" loading="lazy">
+          <div class="g-overlay"></div>
+          <div class="g-meta">
+            <span class="g-num">06 / 업무자료</span>
+            <h3 class="g-title">학교 업무 문서를 깔끔하게</h3>
+            <p class="g-desc">교재, 수업 자료, 공문 등 필요한 파일을 카테고리별로 정리하고 빠르게 검색.</p>
+          </div>
+        </a>
+
+        <!-- 7 연락처 - g-full -->
+        <a class="g-item g-full reveal" onclick="openLightbox('연락처 화면.png','연락처')">
+          <img src="연락처 화면.png" alt="연락처 - 교직원 연락처를 검색하고 그룹별로 분류하는 연락처 화면" loading="lazy" style="object-position:top center;">
+          <div class="g-overlay"></div>
+          <div class="g-meta">
+            <span class="g-num">07 / 연락처</span>
+            <h3 class="g-title">교직원 연락처를 한 곳에</h3>
+            <p class="g-desc">교장선생님, 교감선생님, 동료 교사들의 연락처를 한 곳에서 관리. 검색과 그룹 분류도 지원합니다.</p>
+          </div>
+        </a>
       </div>
     </div>
   </section>
 
   <!-- ==================== STATS ==================== -->
-  <section class="relative py-24 md:py-28 bg-gradient-to-br from-sky-500 via-sky-400 to-sakura-400 overflow-hidden">
-    <div class="absolute inset-0 opacity-[0.04]" style="background-image:radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size:20px 20px;"></div>
-    <div class="max-w-5xl mx-auto px-6 relative z-10">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-8">
-        <div class="text-center reveal reveal-delay-1">
-          <div class="stat-number text-5xl md:text-6xl font-black text-white mb-1" data-target="20">0</div>
-          <div class="text-xs text-white/50 tracking-wider uppercase">프리셋 테마</div>
-        </div>
-        <div class="text-center reveal reveal-delay-2">
-          <div class="stat-number text-5xl md:text-6xl font-black text-white mb-1" data-target="12">0</div>
-          <div class="text-xs text-white/50 tracking-wider uppercase">핵심 기능</div>
-        </div>
-        <div class="text-center reveal reveal-delay-3">
-          <div class="stat-number text-5xl md:text-6xl font-black text-white mb-1">필요 없음</div>
-          <div class="text-xs text-white/50 tracking-wider uppercase">API 키</div>
-        </div>
-        <div class="text-center reveal reveal-delay-4">
-          <div class="stat-number text-5xl md:text-6xl font-black text-white mb-1" data-target="100">0</div>
-          <div class="text-xs text-white/50 tracking-wider uppercase">% 무료</div>
-        </div>
-      </div>
+  <section class="container-x" style="padding-bottom: 80px;">
+    <div class="reveal" style="text-align:center; max-width:680px; margin:0 auto 8px;">
+      <span class="eyebrow" style="justify-content:center;">By the Numbers</span>
+      <h2 class="section-title" style="text-align:center;">숫자로 보는 스쿨보드.</h2>
     </div>
-  </section>
-
-  <!-- ==================== PREVIEW 5: 북마크 — Asymmetric ==================== -->
-  <section class="relative bg-[#fefbff] dark:bg-gray-950 overflow-hidden">
-    <div class="max-w-7xl mx-auto">
-      <div class="grid md:grid-cols-5 min-h-[70vh]">
-        <div class="md:col-span-3 relative min-h-[350px] reveal">
-          <img src="북마크%20화면.png" alt="북마크" loading="lazy" class="absolute inset-0 w-full h-full object-cover cursor-pointer" onclick="openLightbox(this.src, this.alt)">
-        </div>
-        <div class="md:col-span-2 flex items-center px-8 lg:px-12 reveal reveal-delay-1">
-          <div>
-            <span class="inline-block px-2.5 py-1 rounded-lg bg-sakura-50 text-[11px] text-sakura-500 font-semibold mb-4">05 / 북마크</span>
-            <h3 class="text-2xl md:text-3xl font-black text-gray-900 dark:text-white mb-3 leading-tight">자주 쓰는 사이트를<br><span class="text-sky-500">빠르게 접근</span></h3>
-            <p class="text-sm text-gray-400 leading-relaxed">NEIS, 교육포털, 학교 홈페이지 등 자주 사용하는 웹사이트를 북마크로 저장하고 한 번에 열어보세요.</p>
-          </div>
-        </div>
+    <div class="stats reveal reveal-d1">
+      <div class="stat-cell">
+        <div class="stat-num tabular" data-target="20">0<span class="unit">+</span></div>
+        <div class="stat-label">프리셋 테마</div>
       </div>
-    </div>
-  </section>
-
-  <!-- ==================== PREVIEW 6: 업무자료 — Full-bleed ==================== -->
-  <section class="relative h-[80vh] min-h-[550px] overflow-hidden">
-    <img src="업무자료%20화면.png" alt="업무자료" loading="lazy" class="bleed-img cursor-pointer" onclick="openLightbox(this.src, this.alt)">
-    <div class="absolute inset-0 bg-gradient-to-br from-white/80 via-white/30 to-transparent"></div>
-    <div class="absolute inset-0 flex items-start">
-      <div class="max-w-6xl mx-auto px-6 lg:px-10 pt-16 md:pt-24 w-full reveal">
-        <span class="inline-block px-2.5 py-1 rounded-lg bg-white/70 text-[11px] text-gray-500 font-semibold mb-3 backdrop-blur-sm">06 / 업무자료</span>
-        <h3 class="bleed-title text-3xl md:text-5xl font-black text-gray-900 dark:text-white mb-3">학교 업무 문서를<br>편리하게 관리</h3>
-        <p class="text-sm text-gray-500 max-w-md leading-relaxed">교재, 수업 자료, 공문 등 학교 업무에 필요한 파일을 카테고리별로 정리하고 빠르게 찾을 수 있습니다.</p>
+      <div class="stat-cell">
+        <div class="stat-num tabular" data-target="12">0<span class="unit">+</span></div>
+        <div class="stat-label">핵심 기능</div>
       </div>
-    </div>
-  </section>
-
-  <!-- ==================== PREVIEW 7: 연락처 — Light centered ==================== -->
-  <section class="relative py-28 md:py-36 spring-grad overflow-hidden">
-    <div class="petal top-[10%] right-[15%] animate-float-petal2" style="opacity:0.3"></div>
-    <div class="petal bottom-[20%] left-[12%] animate-float-petal3" style="opacity:0.25"></div>
-    <div class="max-w-5xl mx-auto px-6 lg:px-10">
-      <div class="text-center mb-12 reveal">
-        <span class="inline-block px-2.5 py-1 rounded-lg bg-sky-50 text-[11px] text-sky-600 font-semibold mb-4">07 / 연락처</span>
-        <h3 class="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-3">교직원 연락처를<br><span class="text-sky-500">한 곳에</span></h3>
-        <p class="text-sm text-gray-400 max-w-md mx-auto">교장선생님, 교감선생님, 동료 교사들의 연락처를 한 곳에서 관리하세요. 검색과 그룹 분류도 지원합니다.</p>
+      <div class="stat-cell">
+        <div class="stat-num" style="font-size:clamp(22px, 2.4vw, 32px); padding-top:10px; line-height:1.3;">불필요</div>
+        <div class="stat-label">API 키</div>
       </div>
-      <div class="max-w-3xl mx-auto reveal reveal-delay-1">
-        <div class="rounded-2xl overflow-hidden border border-sakura-100 shadow-2xl shadow-sky-100/10">
-          <img src="연락처%20화면.png" alt="연락처" loading="lazy" class="w-full cursor-pointer" onclick="openLightbox(this.src, this.alt)">
-        </div>
+      <div class="stat-cell">
+        <div class="stat-num tabular" data-target="100"><span style="background:linear-gradient(120deg,#4f46e5,#ec4899); -webkit-background-clip:text; background-clip:text; color:transparent;">0</span><span class="unit" style="background:linear-gradient(120deg,#4f46e5,#ec4899); -webkit-background-clip:text; background-clip:text; color:transparent;">%</span></div>
+        <div class="stat-label">무료</div>
       </div>
     </div>
   </section>
 
   <!-- ==================== PRIVACY ==================== -->
-  <section class="relative py-28 md:py-36 bg-white dark:bg-[#0c0c1d] overflow-hidden">
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-spring-100/30 rounded-full blur-[150px]"></div>
-    <div class="max-w-4xl mx-auto px-6 lg:px-10 text-center relative z-10 reveal">
-      <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-emerald-50 border border-emerald-100 mb-8">
-        <svg class="w-7 h-7 text-emerald-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-          <path d="M9 12l2 2 4-4"/>
-        </svg>
-      </div>
-      <h2 class="text-3xl md:text-5xl font-black text-gray-900 dark:text-white mb-6 leading-tight">
-        데이터는 오직<br><span class="text-emerald-500">선생님의 컴퓨터에만</span>
-      </h2>
-      <p class="text-sm md:text-base text-gray-400 max-w-xl mx-auto mb-14 leading-relaxed">
-        어떠한 데이터도 외부 서버에 전송되거나 저장되지 않습니다.<br>
-        시간표, 메모, 연락처, 업무자료 — 모든 것이 <span class="text-emerald-600 font-semibold">선생님의 PC 안에서만</span> 관리됩니다.
-      </p>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-        <div class="p-5 rounded-xl bg-sky-50/50 border border-sky-100/50">
-          <div class="w-8 h-8 rounded-lg bg-sky-100 flex items-center justify-center mx-auto mb-3"><svg class="w-4 h-4 text-sky-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M12 12h.01M17 12h.01M7 12h.01"/></svg></div>
-          <h4 class="text-sm font-bold text-gray-700 mb-0.5">외부 서버 없음</h4>
-          <p class="text-xs text-gray-400 leading-relaxed">클라우드 서버 없이<br>온전히 로컬에서 동작</p>
+  <section class="section-pad" style="background:var(--bg-2);">
+    <div class="container-x">
+      <div class="privacy-card reveal">
+        <div class="privacy-shield">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path d="M9 12l2 2 4-4"/>
+          </svg>
         </div>
-        <div class="p-5 rounded-xl bg-sakura-50/50 border border-sakura-100/50">
-          <div class="w-8 h-8 rounded-lg bg-sakura-100 flex items-center justify-center mx-auto mb-3"><svg class="w-4 h-4 text-sakura-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-          <h4 class="text-sm font-bold text-gray-700 mb-0.5">데이터 전송 없음</h4>
-          <p class="text-xs text-gray-400 leading-relaxed">인터넷 연결 없어도<br>모든 기능 사용 가능</p>
-        </div>
-        <div class="p-5 rounded-xl bg-emerald-50/50 border border-emerald-100/50">
-          <div class="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center mx-auto mb-3"><svg class="w-4 h-4 text-emerald-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg></div>
-          <h4 class="text-sm font-bold text-gray-700 mb-0.5">로그인 불필요</h4>
-          <p class="text-xs text-gray-400 leading-relaxed">계정 생성 없이<br>설치 후 즉시 사용</p>
+        <span class="eyebrow" style="justify-content:center;">Privacy First</span>
+        <h2 class="section-title" style="margin-top:14px; max-width:780px; margin-left:auto; margin-right:auto;">
+          데이터는 오직<br>
+          <span style="background:linear-gradient(120deg, #14b8a6, #0ea5e9); -webkit-background-clip:text; background-clip:text; color:transparent;">선생님의 컴퓨터에만</span>
+        </h2>
+        <p class="section-lede" style="margin:24px auto 0; text-align:center;">
+          어떠한 데이터도 외부 서버에 전송되거나 저장되지 않습니다. 시간표, 메모, 연락처, 업무자료 — 모든 것이 선생님의 PC 안에서만 관리됩니다.
+        </p>
+        <div class="privacy-grid">
+          <div class="priv-item">
+            <div class="priv-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M12 12h.01M17 12h.01M7 12h.01"/></svg></div>
+            <h4>외부 서버 없음</h4>
+            <p>클라우드 서버 없이 온전히 로컬에서 동작합니다.</p>
+          </div>
+          <div class="priv-item">
+            <div class="priv-icon" style="color:#ec4899;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <h4>데이터 전송 없음</h4>
+            <p>인터넷 연결 없어도 모든 기능을 사용할 수 있어요.</p>
+          </div>
+          <div class="priv-item">
+            <div class="priv-icon" style="color:#8b5cf6;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg></div>
+            <h4>로그인 불필요</h4>
+            <p>계정 생성 없이 설치 후 즉시 사용할 수 있어요.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ==================== VIDEO GUIDE ==================== -->
-  <section id="guide" class="py-20 md:py-28 bg-gradient-to-b from-white to-sky-50/50 dark:from-[#0c0c1d] dark:to-gray-900 relative">
-    <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle at 1px 1px, #3b82f6 1px, transparent 0); background-size: 24px 24px; pointer-events:none;"></div>
-
-    <div class="max-w-6xl mx-auto px-6 lg:px-10 relative z-10">
-      <div class="text-center mb-12 reveal">
-        <p class="text-xs font-semibold text-sky-500 tracking-[0.2em] uppercase mb-3">Video Guide</p>
-        <h2 class="text-3xl md:text-5xl font-black text-gray-800 dark:text-gray-100 mb-3">사용 설명서</h2>
-        <p class="text-sm text-gray-400">각 기능별로 영상으로 쉽게 배워보세요</p>
+  <section id="guide" class="section-pad">
+    <div class="container-x">
+      <div class="reveal" style="text-align:center; max-width:680px; margin:0 auto;">
+        <span class="eyebrow" style="justify-content:center;">Video Guide</span>
+        <h2 class="section-title" style="text-align:center;">사용 설명서.</h2>
+        <p class="section-lede" style="margin:18px auto 0; text-align:center;">각 기능별로 영상으로 쉽게 배워보세요. 13개의 짧은 영상으로 빠르게 익힐 수 있어요.</p>
       </div>
 
-      <!-- Video player card -->
-      <div class="reveal reveal-delay-1 rounded-2xl md:rounded-3xl overflow-hidden bg-gray-900 shadow-2xl shadow-black/20 border border-gray-700/50">
-        <div class="flex flex-col md:flex-row">
-          <!-- Left: playlist sidebar (hidden on mobile, shown on md+) -->
-          <div class="hidden md:block md:w-60 lg:w-64 flex-shrink-0 bg-gray-800/80 border-r border-gray-700/50">
-            <div class="p-3 border-b border-gray-700/50 flex items-center gap-2">
-              <svg class="w-4 h-4 text-red-500" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/><path fill="#fff" d="M9.545 15.568V8.432L15.818 12z"/></svg>
-              <span class="text-xs font-bold text-white/80 tracking-wide uppercase">재생목록 (13)</span>
-            </div>
-            <div class="flex flex-col gap-1 overflow-y-auto md:max-h-[420px] p-2" role="tablist" aria-label="사용 설명서 영상 목록">
-              <button class="video-tab active px-4 py-2.5 rounded-lg text-sm font-semibold transition-all text-left w-full flex items-center gap-2" role="tab" aria-selected="true" onclick="switchVideo('FHEegIWDF6Q','01. 설치 방법',this)"><span class="text-xs opacity-50">01</span><span>설치 방법</span></button>
-              <button class="video-tab px-4 py-2.5 rounded-lg text-sm font-semibold transition-all text-left w-full flex items-center gap-2" role="tab" aria-selected="false" onclick="switchVideo('W-58hdVUNBU','02. 온보딩 설정',this)"><span class="text-xs opacity-50">02</span><span>온보딩 설정</span></button>
-              <button class="video-tab px-4 py-2.5 rounded-lg text-sm font-semibold transition-all text-left w-full flex items-center gap-2" role="tab" aria-selected="false" onclick="switchVideo('_trlRg-ithk','03. 대시보드',this)"><span class="text-xs opacity-50">03</span><span>대시보드</span></button>
-              <button class="video-tab px-4 py-2.5 rounded-lg text-sm font-semibold transition-all text-left w-full flex items-center gap-2" role="tab" aria-selected="false" onclick="switchVideo('hbz_tYBp96I','04. 일정',this)"><span class="text-xs opacity-50">04</span><span>일정</span></button>
-              <button class="video-tab px-4 py-2.5 rounded-lg text-sm font-semibold transition-all text-left w-full flex items-center gap-2" role="tab" aria-selected="false" onclick="switchVideo('5etlAdx9Vms','05. 시간표',this)"><span class="text-xs opacity-50">05</span><span>시간표</span></button>
-              <button class="video-tab px-4 py-2.5 rounded-lg text-sm font-semibold transition-all text-left w-full flex items-center gap-2" role="tab" aria-selected="false" onclick="switchVideo('AYglVdIJ4qw','06. 메모',this)"><span class="text-xs opacity-50">06</span><span>메모</span></button>
-              <button class="video-tab px-4 py-2.5 rounded-lg text-sm font-semibold transition-all text-left w-full flex items-center gap-2" role="tab" aria-selected="false" onclick="switchVideo('wd-XSRrBTJs','07. 급식',this)"><span class="text-xs opacity-50">07</span><span>급식</span></button>
-              <button class="video-tab px-4 py-2.5 rounded-lg text-sm font-semibold transition-all text-left w-full flex items-center gap-2" role="tab" aria-selected="false" onclick="switchVideo('5WW7QWyNk8M','08. 연락처',this)"><span class="text-xs opacity-50">08</span><span>연락처</span></button>
-              <button class="video-tab px-4 py-2.5 rounded-lg text-sm font-semibold transition-all text-left w-full flex items-center gap-2" role="tab" aria-selected="false" onclick="switchVideo('2lET0uqIXts','09. 업무자료',this)"><span class="text-xs opacity-50">09</span><span>업무자료</span></button>
-              <button class="video-tab px-4 py-2.5 rounded-lg text-sm font-semibold transition-all text-left w-full flex items-center gap-2" role="tab" aria-selected="false" onclick="switchVideo('rvMVEByeRTY','10. 북마크',this)"><span class="text-xs opacity-50">10</span><span>북마크</span></button>
-              <button class="video-tab px-4 py-2.5 rounded-lg text-sm font-semibold transition-all text-left w-full flex items-center gap-2" role="tab" aria-selected="false" onclick="switchVideo('0TYcH3OUKHo','11. 계산기',this)"><span class="text-xs opacity-50">11</span><span>계산기</span></button>
-              <button class="video-tab px-4 py-2.5 rounded-lg text-sm font-semibold transition-all text-left w-full flex items-center gap-2" role="tab" aria-selected="false" onclick="switchVideo('KojPG1aL8AI','12. 자동로그인',this)"><span class="text-xs opacity-50">12</span><span>자동로그인</span></button>
-              <button class="video-tab px-4 py-2.5 rounded-lg text-sm font-semibold transition-all text-left w-full flex items-center gap-2" role="tab" aria-selected="false" onclick="switchVideo('EolllxUrVM8','13. 설정',this)"><span class="text-xs opacity-50">13</span><span>설정</span></button>
-            </div>
-          </div>
+      <div class="video-card reveal reveal-d1">
+        <!-- Mobile horizontal tabs -->
+        <div class="video-mobile-tabs" role="tablist">
+          <button class="active" onclick="switchVideo('FHEegIWDF6Q','01. 설치 방법',this)">01. 설치</button>
+          <button onclick="switchVideo('W-58hdVUNBU','02. 온보딩 설정',this)">02. 온보딩</button>
+          <button onclick="switchVideo('_trlRg-ithk','03. 대시보드',this)">03. 대시보드</button>
+          <button onclick="switchVideo('hbz_tYBp96I','04. 일정',this)">04. 일정</button>
+          <button onclick="switchVideo('5etlAdx9Vms','05. 시간표',this)">05. 시간표</button>
+          <button onclick="switchVideo('AYglVdIJ4qw','06. 메모',this)">06. 메모</button>
+          <button onclick="switchVideo('wd-XSRrBTJs','07. 급식',this)">07. 급식</button>
+          <button onclick="switchVideo('5WW7QWyNk8M','08. 연락처',this)">08. 연락처</button>
+          <button onclick="switchVideo('2lET0uqIXts','09. 업무자료',this)">09. 업무자료</button>
+          <button onclick="switchVideo('rvMVEByeRTY','10. 북마크',this)">10. 북마크</button>
+          <button onclick="switchVideo('0TYcH3OUKHo','11. 계산기',this)">11. 계산기</button>
+          <button onclick="switchVideo('KojPG1aL8AI','12. 자동로그인',this)">12. 자동로그인</button>
+          <button onclick="switchVideo('EolllxUrVM8','13. 설정',this)">13. 설정</button>
+        </div>
 
-          <!-- Right: video player -->
-          <div class="flex-1 min-w-0" role="tabpanel" aria-label="영상 재생">
-            <!-- Mobile: horizontal scroll tabs (shown only on mobile) -->
-            <div class="md:hidden p-2 border-b border-gray-700/50">
-              <div class="flex gap-1.5 overflow-x-auto pb-1" style="scrollbar-width:none; -ms-overflow-style:none;">
-                <button class="video-tab active px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all whitespace-nowrap flex-shrink-0" onclick="switchVideo('FHEegIWDF6Q','01. 설치 방법',this)">01. 설치</button>
-                <button class="video-tab px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all whitespace-nowrap flex-shrink-0" onclick="switchVideo('W-58hdVUNBU','02. 온보딩')">02. 온보딩</button>
-                <button class="video-tab px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all whitespace-nowrap flex-shrink-0" onclick="switchVideo('_trlRg-ithk','03. 대시보드',this)">03. 대시보드</button>
-                <button class="video-tab px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all whitespace-nowrap flex-shrink-0" onclick="switchVideo('hbz_tYBp96I','04. 일정',this)">04. 일정</button>
-                <button class="video-tab px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all whitespace-nowrap flex-shrink-0" onclick="switchVideo('5etlAdx9Vms','05. 시간표',this)">05. 시간표</button>
-                <button class="video-tab px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all whitespace-nowrap flex-shrink-0" onclick="switchVideo('AYglVdIJ4qw','06. 메모',this)">06. 메모</button>
-                <button class="video-tab px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all whitespace-nowrap flex-shrink-0" onclick="switchVideo('wd-XSRrBTJs','07. 급식',this)">07. 급식</button>
-                <button class="video-tab px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all whitespace-nowrap flex-shrink-0" onclick="switchVideo('5WW7QWyNk8M','08. 연락처',this)">08. 연락처</button>
-                <button class="video-tab px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all whitespace-nowrap flex-shrink-0" onclick="switchVideo('2lET0uqIXts','09. 업무자료',this)">09. 업무자료</button>
-                <button class="video-tab px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all whitespace-nowrap flex-shrink-0" onclick="switchVideo('rvMVEByeRTY','10. 북마크',this)">10. 북마크</button>
-                <button class="video-tab px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all whitespace-nowrap flex-shrink-0" onclick="switchVideo('0TYcH3OUKHo','11. 계산기',this)">11. 계산기</button>
-                <button class="video-tab px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all whitespace-nowrap flex-shrink-0" onclick="switchVideo('KojPG1aL8AI','12. 자동로그인',this)">12. 자동로그인</button>
-                <button class="video-tab px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all whitespace-nowrap flex-shrink-0" onclick="switchVideo('EolllxUrVM8','13. 설정',this)">13. 설정</button>
-              </div>
-            </div>
-            <!-- Desktop: title bar -->
-            <div class="hidden md:block p-3 border-b border-gray-700/50 flex items-center gap-3">
-              <div id="video-title" class="text-sm font-bold text-white/90">01. 설치 방법</div>
-            </div>
-            <div class="relative w-full" style="padding-top:56.25%">
-              <iframe id="video-player" class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/FHEegIWDF6Q" title="YouTube video player" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
+        <!-- Desktop sidebar -->
+        <aside class="video-list" style="display:none;" id="video-list-desktop">
+          <div class="video-list-header">
+            <span class="yt-mark"><svg width="10" height="8" viewBox="0 0 24 24" fill="white"><path d="M9.545 15.568V8.432L15.818 12z"/></svg></span>
+            <span>재생목록 · 13편</span>
+          </div>
+          <div class="video-list-scroll" role="tablist">
+            <button class="video-tab active" role="tab" onclick="switchVideo('FHEegIWDF6Q','01. 설치 방법',this)"><span class="num">01</span><span>설치 방법</span></button>
+            <button class="video-tab" role="tab" onclick="switchVideo('W-58hdVUNBU','02. 온보딩 설정',this)"><span class="num">02</span><span>온보딩 설정</span></button>
+            <button class="video-tab" role="tab" onclick="switchVideo('_trlRg-ithk','03. 대시보드',this)"><span class="num">03</span><span>대시보드</span></button>
+            <button class="video-tab" role="tab" onclick="switchVideo('hbz_tYBp96I','04. 일정',this)"><span class="num">04</span><span>일정</span></button>
+            <button class="video-tab" role="tab" onclick="switchVideo('5etlAdx9Vms','05. 시간표',this)"><span class="num">05</span><span>시간표</span></button>
+            <button class="video-tab" role="tab" onclick="switchVideo('AYglVdIJ4qw','06. 메모',this)"><span class="num">06</span><span>메모</span></button>
+            <button class="video-tab" role="tab" onclick="switchVideo('wd-XSRrBTJs','07. 급식',this)"><span class="num">07</span><span>급식</span></button>
+            <button class="video-tab" role="tab" onclick="switchVideo('5WW7QWyNk8M','08. 연락처',this)"><span class="num">08</span><span>연락처</span></button>
+            <button class="video-tab" role="tab" onclick="switchVideo('2lET0uqIXts','09. 업무자료',this)"><span class="num">09</span><span>업무자료</span></button>
+            <button class="video-tab" role="tab" onclick="switchVideo('rvMVEByeRTY','10. 북마크',this)"><span class="num">10</span><span>북마크</span></button>
+            <button class="video-tab" role="tab" onclick="switchVideo('0TYcH3OUKHo','11. 계산기',this)"><span class="num">11</span><span>계산기</span></button>
+            <button class="video-tab" role="tab" onclick="switchVideo('KojPG1aL8AI','12. 자동로그인',this)"><span class="num">12</span><span>자동로그인</span></button>
+            <button class="video-tab" role="tab" onclick="switchVideo('EolllxUrVM8','13. 설정',this)"><span class="num">13</span><span>설정</span></button>
+          </div>
+        </aside>
+
+        <div class="video-player">
+          <div class="video-player-bar" id="video-title">01. 설치 방법</div>
+          <div class="video-frame">
+            <iframe id="video-player" src="https://www.youtube.com/embed/FHEegIWDF6Q" title="YouTube 사용 설명서 영상" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
         </div>
+
+        <style>
+          @media (min-width: 900px) {
+            #video-list-desktop { display: flex !important; }
+          }
+        </style>
       </div>
     </div>
   </section>
 
   <!-- ==================== DOWNLOAD ==================== -->
-  <section id="download" class="relative py-20 md:py-28 spring-grad overflow-hidden">
-    <div class="petal top-[10%] left-[8%] animate-float-petal" style="opacity:0.3"></div>
-    <div class="petal top-[30%] right-[12%] animate-float-petal2" style="opacity:0.25; width:11px; height:11px; background:rgba(59,130,246,0.15)"></div>
+  <section id="download" class="dl-section">
+    <div class="dl-inner">
+      <span class="eyebrow" style="color:rgba(255,255,255,0.6); justify-content:center;">Download</span>
+      <h1 class="dl-title">지금 바로<br><em>시작하세요.</em></h1>
+      <p class="dl-lede">Windows에 설치하고 학교 이름만 검색하면 끝. 복잡한 설정 없이 1분 안에 시작할 수 있어요.</p>
 
-    <div class="max-w-4xl mx-auto px-6 lg:px-10 text-center relative z-10">
-      <div class="reveal">
-        <p class="text-xs font-semibold text-sky-500 tracking-[0.2em] uppercase mb-4">Download</p>
-        <h2 class="text-4xl md:text-6xl font-black text-gray-900 dark:text-white mb-3">지금 바로<br><span class="text-sky-500 dark:text-sky-400">시작하세요</span></h2>
-        <p class="text-sm text-gray-400 max-w-md mx-auto mb-8">Windows에 설치하고 학교 이름만 검색하면 끝. 복잡한 설정 없이 1분 안에 시작할 수 있어요.</p>
-      </div>
-
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mb-6 reveal reveal-delay-1">
-        <a id="btn-installer" href="#" onclick="downloadAsset('installer', event)" class="group flex items-center gap-3 px-8 py-4 rounded-2xl bg-sky-500 hover:bg-sky-600 text-white font-bold text-sm transition-all hover:shadow-xl hover:shadow-sky-400/25 w-full sm:w-auto justify-center">
-          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          <div class="text-left">
-            <div class="text-sm font-medium">Windows 인스톨러</div>
-            <div class="text-xs opacity-60">권장 · 자동 업데이트</div>
+      <div class="dl-buttons">
+        <a id="btn-installer" href="#" onclick="downloadAsset('installer', event)" class="dl-btn-main">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <div class="dl-btn-text">
+            <div class="dl-btn-text-1">Windows 인스톨러</div>
+            <div class="dl-btn-text-2">권장 · 자동 업데이트</div>
           </div>
-          <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
         </a>
-        <a href="https://1drv.ms/u/c/63cbfdc50072c77f/IQCgzC6pO89_QrBTyqk2MGfLAf1Eij0l8JDVAp1SHHL7-r4?e=bD1zLd" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-3 px-8 py-4 rounded-2xl bg-white/70 border border-sakura-200/60 hover:bg-white/90 text-gray-500 hover:text-gray-700 font-medium text-sm transition-all w-full sm:w-auto justify-center backdrop-blur-sm">
-          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2C8.7 2 6 4.7 6 7.5c0 .3 0 .5.1.8C3.6 8.8 2 10.8 2 13c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5 0-2.5-1.8-4.5-4.2-4.9C17.9 3.8 15.2 2 12 2z"/></svg>
-          <div class="text-left">
-            <div class="text-sm font-medium">클라우드 대체 다운로드</div>
-            <div class="text-xs opacity-40">GitHub가 느릴 때 사용</div>
+        <a href="https://1drv.ms/u/c/63cbfdc50072c77f/IQCgzC6pO89_QrBTyqk2MGfLAf1Eij0l8JDVAp1SHHL7-r4?e=bD1zLd" target="_blank" rel="noopener noreferrer" class="dl-btn-sub">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2C8.7 2 6 4.7 6 7.5c0 .3 0 .5.1.8C3.6 8.8 2 10.8 2 13c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5 0-2.5-1.8-4.5-4.2-4.9C17.9 3.8 15.2 2 12 2z"/></svg>
+          <div class="dl-btn-text">
+            <div class="dl-btn-text-1">클라우드 대체</div>
+            <div class="dl-btn-text-2">GitHub가 느릴 때</div>
           </div>
         </a>
       </div>
 
-      <!-- Warning section -->
-      <div class="mt-8 max-w-3xl mx-auto rounded-2xl border border-amber-200/60 dark:border-amber-800/40 bg-amber-50/30 dark:bg-amber-950/20 p-6 md:p-8 text-left">
-        <div class="flex items-center gap-3 mb-5">
-          <div class="w-8 h-8 rounded-lg bg-amber-100 flex items-center justify-center flex-shrink-0">
-            <svg class="w-4 h-4 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      <p style="font-size:12px; color:rgba(255,255,255,0.6); margin-top:8px;">Windows 10 / 11 · 자동 업데이트 지원 · 코드 서명 진행 중</p>
+
+      <!-- Warning Card -->
+      <div class="warn-card">
+        <div class="warn-head">
+          <div class="warn-ic">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
           </div>
-          <span class="text-sm text-amber-700 font-bold">다운로드 및 설치 시 안내</span>
+          <h3>다운로드 및 설치 시 안내</h3>
         </div>
 
-        <div class="mb-6">
-          <h4 class="text-sm text-gray-700 font-semibold mb-2">다운로드 시 경고가 뜨나요?</h4>
-          <p class="text-sm text-gray-400 leading-relaxed mb-3">
-            코드 서명 전이라 브라우저에서 보안 경고가 나타날 수 있으며, <span class="text-gray-600 font-semibold">실제 보안과는 무관</span>합니다.
-          </p>
+        <div class="warn-block">
+          <h4>다운로드 시 경고가 뜨나요?</h4>
+          <p>코드 서명 전이라 브라우저에서 보안 경고가 나타날 수 있으며, <strong>실제 보안과는 무관</strong>합니다.</p>
 
-          <div class="flex gap-2 mb-4">
-            <button class="browser-tab active px-5 py-2 rounded-lg text-sm font-semibold transition-all" data-tab="chrome" onclick="switchBrowserTab('chrome')">
-              <span class="inline-flex items-center gap-2"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/></svg>Chrome</span>
+          <div class="browser-tabs">
+            <button class="browser-tab active" data-tab="chrome" onclick="switchBrowserTab('chrome')">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/></svg>
+              Chrome
             </button>
-            <button class="browser-tab px-5 py-2 rounded-lg text-sm font-semibold transition-all" data-tab="edge" onclick="switchBrowserTab('edge')">
-              <span class="inline-flex items-center gap-2"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Edge</span>
+            <button class="browser-tab" data-tab="edge" onclick="switchBrowserTab('edge')">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              Edge
             </button>
           </div>
 
           <div id="tab-chrome" class="browser-panel">
-            <p class="text-sm text-gray-400 leading-relaxed mb-3"><span class="text-amber-600/80 font-semibold">"확인되지 않은 파일 다운로드"</span> 창이 나타나면 그대로 <span class="text-gray-600 font-semibold">[확인되지 않은 파일 다운로드]</span>를 눌러주세요.</p>
-            <div class="space-y-3">
-              <div class="rounded-xl overflow-hidden border border-amber-100/60"><img src="다운로드경고1.png" alt="Chrome 다운로드 경고 1단계" loading="lazy" class="w-full h-auto"></div>
-              <div class="rounded-xl overflow-hidden border border-amber-100/60"><img src="다운로드경고2.png" alt="Chrome 다운로드 경고 2단계" loading="lazy" class="w-full h-auto"></div>
+            <p><strong style="color:#d97706;">"확인되지 않은 파일 다운로드"</strong> 창이 나타나면 그대로 <strong>[확인되지 않은 파일 다운로드]</strong>를 눌러주세요.</p>
+            <div class="warn-imgs">
+              <div class="warn-img-wrap"><img src="다운로드경고1.png" alt="Chrome 다운로드 경고 1단계" loading="lazy"></div>
+              <div class="warn-img-wrap"><img src="다운로드경고2.png" alt="Chrome 다운로드 경고 2단계" loading="lazy"></div>
             </div>
           </div>
 
-          <div id="tab-edge" class="browser-panel hidden">
-            <p class="text-sm text-gray-400 leading-relaxed mb-3"><span class="text-amber-600/80 font-semibold">"파일을 안전하게 다운로드하시겠습니까?"</span> 창이 나타나면 <span class="text-gray-600 font-semibold">[저장]</span>을 눌러주세요.</p>
-            <div class="space-y-3">
-              <div class="rounded-xl overflow-hidden border border-amber-100/60"><img src="다운로드경고(엣지)1.png" alt="Edge 다운로드 경고 1단계" loading="lazy" class="w-full h-auto"></div>
-              <div class="rounded-xl overflow-hidden border border-amber-100/60"><img src="다운로드경고(엣지)2.png" alt="Edge 다운로드 경고 2단계" loading="lazy" class="w-full h-auto"></div>
-              <div class="rounded-xl overflow-hidden border border-amber-100/60"><img src="다운로드경고(엣지)3.png" alt="Edge 다운로드 경고 3단계" loading="lazy" class="w-full h-auto"></div>
+          <div id="tab-edge" class="browser-panel" style="display:none;">
+            <p><strong style="color:#d97706;">"파일을 안전하게 다운로드하시겠습니까?"</strong> 창이 나타나면 <strong>[저장]</strong>을 눌러주세요.</p>
+            <div class="warn-imgs">
+              <div class="warn-img-wrap"><img src="다운로드경고(엣지)1.png" alt="Edge 다운로드 경고 1단계" loading="lazy"></div>
+              <div class="warn-img-wrap"><img src="다운로드경고(엣지)2.png" alt="Edge 다운로드 경고 2단계" loading="lazy"></div>
+              <div class="warn-img-wrap"><img src="다운로드경고(엣지)3.png" alt="Edge 다운로드 경고 3단계" loading="lazy"></div>
             </div>
           </div>
         </div>
 
-        <div class="h-px bg-amber-200/40 my-5"></div>
+        <div class="warn-divider"></div>
 
-        <div>
-          <h4 class="text-sm text-gray-700 font-semibold mb-2">설치할 때도 경고가 뜨나요?</h4>
-          <p class="text-sm text-gray-400 leading-relaxed mb-3">설치 파일 실행 시 <span class="text-amber-600/80 font-semibold">Windows 보안</span> 경고가 나타날 수 있습니다.</p>
-          <div class="space-y-3 mb-4">
-            <div class="flex items-start gap-3 text-sm text-gray-400">
-              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-amber-100 border border-amber-200 flex items-center justify-center text-amber-600 text-[11px] font-bold mt-0.5">1</span>
-              <span><span class="text-gray-600 font-semibold">"추가 정보"</span>를 클릭하세요</span>
+        <div class="warn-block">
+          <h4>설치할 때도 경고가 뜨나요?</h4>
+          <p>설치 파일 실행 시 <strong style="color:#d97706;">Windows 보안</strong> 경고가 나타날 수 있습니다.</p>
+          <div class="warn-steps">
+            <div class="warn-step">
+              <span class="warn-step-num">1</span>
+              <span><strong>"추가 정보"</strong>를 클릭하세요</span>
             </div>
-            <div class="flex items-start gap-3 text-sm text-gray-400">
-              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-amber-100 border border-amber-200 flex items-center justify-center text-amber-600 text-[11px] font-bold mt-0.5">2</span>
-              <span>하단의 <span class="text-gray-600 font-semibold">"실행"</span>을 클릭하면 설치가 시작됩니다</span>
+            <div class="warn-step">
+              <span class="warn-step-num">2</span>
+              <span>하단의 <strong>"실행"</strong>을 클릭하면 설치가 시작됩니다</span>
             </div>
           </div>
-          <div class="space-y-3">
-            <div class="rounded-xl overflow-hidden border border-amber-100/60"><img src="설치경고1.png" alt="설치 경고 1단계" loading="lazy" class="w-full h-auto"></div>
-            <div class="rounded-xl overflow-hidden border border-amber-100/60"><img src="설치경고2.png" alt="설치 경고 2단계" loading="lazy" class="w-full h-auto"></div>
+          <div class="warn-imgs">
+            <div class="warn-img-wrap"><img src="설치경고1.png" alt="설치 경고 1단계" loading="lazy"></div>
+            <div class="warn-img-wrap"><img src="설치경고2.png" alt="설치 경고 2단계" loading="lazy"></div>
           </div>
         </div>
 
-        <p class="text-xs text-gray-400 mt-5">* 코드 서명 완료 후에는 위 경고들이 더 이상 표시되지 않습니다.</p>
+        <p class="warn-foot">* 코드 서명 완료 후에는 위 경고들이 더 이상 표시되지 않습니다.</p>
       </div>
     </div>
   </section>
 
   <!-- ==================== FOOTER ==================== -->
-  <footer class="bg-gradient-to-r from-sky-600 to-sakura-500 py-8">
-    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-3">
-      <div class="flex items-center gap-2.5">
-        <div class="w-6 h-6 rounded-lg bg-white/20 flex items-center justify-center">
-          <svg class="w-3 h-3 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h6v6H4z"/><path d="M14 4h6v6h-6z"/><path d="M4 14h6v6H4z"/><path d="M14 14h6v6h-6z"/></svg>
-        </div>
+  <footer class="footer">
+    <div class="container-x footer-grid">
+      <div class="footer-brand">
+        <div class="footer-mark"><img src="icon.ico" alt="스쿨보드 로고"></div>
         <div>
-          <div class="text-xs font-semibold text-white/80">스쿨보드(School Board)</div>
-          <div class="text-[10px] text-white/50">호똑쌤</div>
+          <div class="footer-brand-name">스쿨보드(School Board)</div>
+          <div class="footer-brand-author">made by 호똑쌤</div>
         </div>
       </div>
-      <div class="flex items-center gap-4 text-[11px] text-white/60">
-        <a href="privacy.html" class="hover:text-white transition-colors">개인정보처리방침</a>
-        <span class="text-white/20">|</span>
-        <a href="terms.html" class="hover:text-white transition-colors">이용약관</a>
+      <div class="footer-links">
+        <a href="privacy.html">개인정보처리방침</a>
+        <span class="footer-divider"></span>
+        <a href="terms.html">이용약관</a>
       </div>
-      <div class="text-[11px] text-white/40">&copy; 2026 호똑쌤. All rights reserved.</div>
+      <div class="footer-copy">&copy; 2026 호똑쌤. All rights reserved.</div>
     </div>
-    <div class="max-w-6xl mx-auto px-6 mt-4 pt-4 border-t border-white/10 text-center text-[10px] text-white/30 leading-relaxed">
-      저작권 등록번호: C-2026-018961호 | 컴퓨터프로그램저작물 (응용프로그램 > 사무관리) | 저작자: 지연호 | 등록일: 2026.04.15 | 한국저작권위원회
+    <div class="footer-legal">
+      저작권 등록번호: C-2026-018961호 · 컴퓨터프로그램저작물 (응용프로그램 &gt; 사무관리) · 저작자: 지연호 · 등록일: 2026.04.15 · 한국저작권위원회
     </div>
   </footer>
 
   <!-- ==================== LIGHTBOX ==================== -->
-  <div id="lightbox" class="lightbox-overlay" role="dialog" aria-modal="true" aria-label="이미지 크게보기">
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="이미지 크게보기">
     <button class="lightbox-close" onclick="closeLightbox()" aria-label="닫기">&times;</button>
     <img src="" alt="">
-    <div class="lightbox-caption"></div>
+    <div class="lightbox-cap"></div>
   </div>
 
   <!-- ==================== SCRIPTS ==================== -->
   <script>
+    // ===== Download via GitHub API =====
     const GITHUB_API = 'https://api.github.com/repos/jyh1541/school-board-releases/releases/latest';
     const GITHUB_RELEASES_PAGE = 'https://github.com/jyh1541/school-board-releases/releases/latest';
     let releaseCache = null;
@@ -982,201 +1763,204 @@
 
     async function downloadAsset(type, e) {
       e.preventDefault();
-      const btn = type === 'installer' ? document.getElementById('btn-installer') : document.getElementById('btn-portable');
-      const origText = btn.querySelector('.text-left');
-      const origHTML = origText.innerHTML;
-      origText.innerHTML = '<div class="text-sm font-medium opacity-70">다운로드 준비 중...</div>';
+      const btn = document.getElementById('btn-installer');
+      const txt = btn.querySelector('.dl-btn-text');
+      const orig = txt.innerHTML;
+      txt.innerHTML = '<div class="dl-btn-text-1" style="opacity:0.7;">다운로드 준비 중...</div>';
       const release = await fetchLatestRelease();
-      if (!release || !release.assets) { origText.innerHTML = origHTML; window.open(GITHUB_RELEASES_PAGE, '_blank'); return; }
-      let asset;
-      if (type === 'installer') {
-        asset = release.assets.find(a => a.name.match(/Setup.*\.exe$/i) && !a.name.endsWith('.blockmap'));
-      } else {
-        asset = release.assets.find(a => a.name.match(/Portable.*\.exe$/i) && !a.name.endsWith('.blockmap'));
+      if (!release || !release.assets) {
+        txt.innerHTML = orig;
+        window.open(GITHUB_RELEASES_PAGE, '_blank');
+        return;
       }
-      origText.innerHTML = origHTML;
-      if (asset) { window.location.href = asset.browser_download_url; } else { window.open(GITHUB_RELEASES_PAGE, '_blank'); }
+      const asset = type === 'installer'
+        ? release.assets.find(a => a.name.match(/Setup.*\.exe$/i) && !a.name.endsWith('.blockmap'))
+        : release.assets.find(a => a.name.match(/Portable.*\.exe$/i) && !a.name.endsWith('.blockmap'));
+      txt.innerHTML = orig;
+      if (asset) window.location.href = asset.browser_download_url;
+      else window.open(GITHUB_RELEASES_PAGE, '_blank');
     }
     fetchLatestRelease();
 
-    // Mobile menu
+    // ===== Mobile Menu =====
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     const mobileBackdrop = document.getElementById('mobile-backdrop');
-    const mobileDrawer = document.getElementById('mobile-drawer');
     const menuIconOpen = document.getElementById('menu-icon-open');
     const menuIconClose = document.getElementById('menu-icon-close');
 
     function openMenu() {
-      mobileMenu.classList.remove('pointer-events-none');
+      mobileMenu.classList.add('open');
       mobileMenu.setAttribute('aria-hidden', 'false');
       menuToggle.setAttribute('aria-expanded', 'true');
-      menuToggle.setAttribute('aria-label', '메뉴 닫기');
-      mobileBackdrop.classList.remove('opacity-0');
-      mobileBackdrop.classList.add('opacity-100');
-      mobileDrawer.classList.remove('translate-x-full');
-      mobileDrawer.classList.add('translate-x-0');
-      menuIconOpen.classList.add('hidden');
-      menuIconClose.classList.remove('hidden');
+      menuIconOpen.style.display = 'none';
+      menuIconClose.style.display = 'block';
       document.body.style.overflow = 'hidden';
     }
     function closeMenu() {
-      mobileMenu.classList.add('pointer-events-none');
+      mobileMenu.classList.remove('open');
       mobileMenu.setAttribute('aria-hidden', 'true');
       menuToggle.setAttribute('aria-expanded', 'false');
-      menuToggle.setAttribute('aria-label', '메뉴 열기');
-      mobileBackdrop.classList.remove('opacity-100');
-      mobileBackdrop.classList.add('opacity-0');
-      mobileDrawer.classList.remove('translate-x-0');
-      mobileDrawer.classList.add('translate-x-full');
-      menuIconOpen.classList.remove('hidden');
-      menuIconClose.classList.add('hidden');
+      menuIconOpen.style.display = 'block';
+      menuIconClose.style.display = 'none';
       document.body.style.overflow = '';
     }
     menuToggle.addEventListener('click', () => {
-      const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
-      isOpen ? closeMenu() : openMenu();
+      menuToggle.getAttribute('aria-expanded') === 'true' ? closeMenu() : openMenu();
     });
     mobileBackdrop.addEventListener('click', closeMenu);
-    document.querySelectorAll('.mobile-nav-link').forEach(link => {
-      link.addEventListener('click', () => { closeMenu(); });
-    });
-    document.addEventListener('keydown', (e) => {
+    document.querySelectorAll('.mobile-nav-link').forEach(a => a.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', e => {
       if (e.key === 'Escape' && menuToggle.getAttribute('aria-expanded') === 'true') closeMenu();
     });
 
-    // Nav scroll effect
+    // ===== Nav scroll =====
     const nav = document.getElementById('nav');
-    let lastScroll = 0;
     window.addEventListener('scroll', () => {
-      const y = window.scrollY;
-      if (y > 50) {
-        nav.classList.add('glass-strong');
-        nav.style.borderBottom = '1px solid var(--glass-border)';
-      } else {
-        nav.classList.remove('glass-strong');
-        nav.style.borderBottom = 'none';
-      }
-      lastScroll = y;
-    });
+      if (window.scrollY > 30) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
+    }, { passive: true });
 
-    const revealElements = document.querySelectorAll('.reveal');
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-    revealElements.forEach(el => revealObserver.observe(el));
-
-    const counterElements = document.querySelectorAll('.stat-number[data-target]');
-    const counterObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const el = entry.target;
-          const target = parseInt(el.getAttribute('data-target'));
-          if (target && !el.dataset.animated) { el.dataset.animated = 'true'; animateCounter(el, target); }
-        }
-      });
-    }, { threshold: 0.5 });
-    counterElements.forEach(el => counterObserver.observe(el));
-
-    function animateCounter(el, target) {
-      let current = 0;
-      const step = Math.max(1, Math.floor(target / 40));
-      const interval = setInterval(() => {
-        current += step;
-        if (current >= target) { current = target; clearInterval(interval); }
-        el.textContent = current + (target === 100 ? '' : '+');
-      }, 30);
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
-    });
-
-    const hero = document.querySelector('section');
-    if (hero) {
-      let rafId = null;
-      document.addEventListener('mousemove', (e) => {
-        if (window.innerWidth < 768) return;
-        if (rafId) return;
-        rafId = requestAnimationFrame(() => {
-          rafId = null;
-          const x = (e.clientX / window.innerWidth - 0.5) * 20;
-          const y = (e.clientY / window.innerHeight - 0.5) * 20;
-          const orbs = hero.querySelectorAll('.rounded-full[class*="blur-"]');
-          orbs.forEach((orb, i) => {
-            const factor = (i + 1) * 0.5;
-            orb.style.transform = `translate(${x * factor}px, ${y * factor}px)`;
-          });
+    // ===== Reveal animations =====
+    const revealEls = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const revealObs = new IntersectionObserver(entries => {
+        entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); revealObs.unobserve(en.target); } });
+      }, { threshold: 0, rootMargin: '0px 0px -8% 0px' });
+      revealEls.forEach(el => revealObs.observe(el));
+      // safety fallback: ensure anything in viewport on load shows up immediately
+      requestAnimationFrame(() => {
+        const vh = window.innerHeight;
+        revealEls.forEach(el => {
+          const r = el.getBoundingClientRect();
+          if (r.top < vh * 0.95) el.classList.add('in');
         });
       });
+      // ultimate safety net: after 2s reveal everything
+      setTimeout(() => revealEls.forEach(el => el.classList.add('in')), 2000);
+    } else {
+      revealEls.forEach(el => el.classList.add('in'));
     }
-  </script>
 
-  <script>
+    // ===== Stat counters =====
+    const counters = document.querySelectorAll('.stat-num[data-target]');
+    const counterObs = new IntersectionObserver(entries => {
+      entries.forEach(en => {
+        if (en.isIntersecting && !en.target.dataset.done) {
+          en.target.dataset.done = '1';
+          animateCounter(en.target, parseInt(en.target.getAttribute('data-target')));
+        }
+      });
+    }, { threshold: 0.4 });
+    counters.forEach(el => counterObs.observe(el));
+
+    function animateCounter(el, target) {
+      let cur = 0;
+      const isHundred = target === 100;
+      const step = Math.max(1, Math.floor(target / 40));
+      const baseHTML = el.innerHTML;
+      const unitMatch = baseHTML.match(/<span class="unit"[^>]*>([\s\S]*?)<\/span>/);
+      const unit = unitMatch ? unitMatch[0] : '';
+      const numWrapStart = baseHTML.indexOf('>') > -1 && baseHTML.startsWith('<span') ? '<span' : '';
+      const interval = setInterval(() => {
+        cur += step;
+        if (cur >= target) { cur = target; clearInterval(interval); }
+        if (numWrapStart) {
+          // gradient wrapped number (100% case)
+          el.innerHTML = `<span style="background:linear-gradient(120deg,#4f46e5,#ec4899); -webkit-background-clip:text; background-clip:text; color:transparent;">${cur}</span>${unit}`;
+        } else {
+          el.innerHTML = `${cur}${unit}`;
+        }
+      }, 28);
+    }
+
+    // ===== Smooth scroll =====
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', function(e) {
+        const id = this.getAttribute('href');
+        if (id === '#' || id.length < 2) return;
+        const t = document.querySelector(id);
+        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+    });
+
+    // ===== Video Switch =====
     function switchVideo(id, title, clickedEl) {
-      document.querySelectorAll('.video-tab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
-      clickedEl.classList.add('active');
-      clickedEl.setAttribute('aria-selected', 'true');
-      document.getElementById('video-player').src = 'https://www.youtube.com/embed/' + id;
+      document.querySelectorAll('.video-tab, .video-mobile-tabs button').forEach(t => t.classList.remove('active'));
+      if (clickedEl) clickedEl.classList.add('active');
+      // also sync the corresponding tab in the other list
+      document.querySelectorAll('.video-tab, .video-mobile-tabs button').forEach(t => {
+        const onclick = t.getAttribute('onclick') || '';
+        if (onclick.includes("'" + id + "'")) t.classList.add('active');
+      });
+      document.getElementById('video-player').src = 'https://www.youtube.com/embed/' + id + '?autoplay=1';
       document.getElementById('video-title').textContent = title;
     }
 
+    // ===== Browser Tab Switch =====
     function switchBrowserTab(tab) {
       document.querySelectorAll('.browser-tab').forEach(t => t.classList.remove('active'));
       document.querySelector(`.browser-tab[data-tab="${tab}"]`).classList.add('active');
-      document.querySelectorAll('.browser-panel').forEach(p => p.classList.add('hidden'));
-      document.getElementById(`tab-${tab}`).classList.remove('hidden');
+      document.querySelectorAll('.browser-panel').forEach(p => p.style.display = 'none');
+      document.getElementById(`tab-${tab}`).style.display = 'block';
     }
 
+    // ===== Lightbox =====
     const lightbox = document.getElementById('lightbox');
-    let lightboxPreviousFocus = null;
-
-    function getFocusable(el) {
-      return el.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
-    }
-
+    let lbPrev = null;
     function openLightbox(src, alt) {
-      lightboxPreviousFocus = document.activeElement;
+      lbPrev = document.activeElement;
       const img = lightbox.querySelector('img');
-      const caption = lightbox.querySelector('.lightbox-caption');
+      const cap = lightbox.querySelector('.lightbox-cap');
       img.src = src;
-      caption.textContent = alt || '';
+      img.alt = alt || '';
+      cap.textContent = alt || '';
       lightbox.classList.add('active');
       lightbox.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
       lightbox.querySelector('.lightbox-close').focus();
     }
-
     function closeLightbox() {
       lightbox.classList.remove('active');
       lightbox.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
-      if (lightboxPreviousFocus) lightboxPreviousFocus.focus();
+      if (lbPrev) lbPrev.focus();
     }
-
-    lightbox.addEventListener('keydown', (e) => {
-      if (e.key !== 'Tab') return;
-      const focusable = getFocusable(lightbox);
-      if (focusable.length === 0) return;
-      const first = focusable[0];
-      const last = focusable[focusable.length - 1];
-      if (e.shiftKey) {
-        if (document.activeElement === first) { e.preventDefault(); last.focus(); }
-      } else {
-        if (document.activeElement === last) { e.preventDefault(); first.focus(); }
-      }
-    });
-
-    lightbox.addEventListener('click', (e) => {
+    lightbox.addEventListener('click', e => {
       if (e.target === lightbox || e.target.classList.contains('lightbox-close')) closeLightbox();
     });
-    document.addEventListener('keydown', (e) => {
+    document.addEventListener('keydown', e => {
       if (e.key === 'Escape' && lightbox.classList.contains('active')) closeLightbox();
     });
+
+    // ===== Subtle parallax for hero visual =====
+    const heroVisual = document.querySelector('.hero-visual');
+    if (heroVisual && window.matchMedia('(min-width: 900px)').matches) {
+      let raf = null;
+      heroVisual.addEventListener('mousemove', e => {
+        if (raf) return;
+        raf = requestAnimationFrame(() => {
+          raf = null;
+          const r = heroVisual.getBoundingClientRect();
+          const x = (e.clientX - r.left) / r.width - 0.5;
+          const y = (e.clientY - r.top) / r.height - 0.5;
+          const main = heroVisual.querySelector('.h-card-main');
+          const mid = heroVisual.querySelector('.h-card-mid');
+          const back = heroVisual.querySelector('.h-card-back');
+          main.style.transform = `rotate(${-2.5 + x * 1.5}deg) translate(${x * 8}px, ${y * 8}px)`;
+          mid.style.transform = `rotate(${-6 + x * 1}deg) translate(${x * 4}px, ${y * 4}px)`;
+          back.style.transform = `rotate(${4 + x * 0.5}deg) translate(${x * 2}px, ${y * 2}px)`;
+        });
+      });
+      heroVisual.addEventListener('mouseleave', () => {
+        const main = heroVisual.querySelector('.h-card-main');
+        const mid = heroVisual.querySelector('.h-card-mid');
+        const back = heroVisual.querySelector('.h-card-back');
+        main.style.transform = '';
+        mid.style.transform = '';
+        back.style.transform = '';
+      });
+    }
   </script>
 </body>
 </html>
