@@ -1,20 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://schoolboard.hoddok.net/</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-06-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://schoolboard.hoddok.net/mobile-images/meta_image.png</image:loc>
+      <image:title>스쿨보드 모바일 웹 소개 화면</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://schoolboard.hoddok.net/%EB%8C%80%EC%8B%9C%EB%B3%B4%EB%93%9C%ED%99%94%EB%A9%B4.png</image:loc>
+      <image:title>스쿨보드 대시보드 화면</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://schoolboard.hoddok.net/%EC%8B%9C%EA%B0%84%ED%91%9C%ED%99%94%EB%A9%B4.png</image:loc>
+      <image:title>스쿨보드 시간표 화면</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://schoolboard.hoddok.net/%EA%B8%89%EC%8B%9D%ED%99%94%EB%A9%B4.png</image:loc>
+      <image:title>스쿨보드 급식 화면</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://schoolboard.hoddok.net/privacy.html</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://schoolboard.hoddok.net/terms.html</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>

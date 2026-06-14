@@ -25,7 +25,5 @@
 
 User-agent: *
 Allow: /
-Disallow: /index_초기버전.html
-Disallow: /index_다른버전.html
 
 Sitemap: https://schoolboard.hoddok.net/sitemap.xml
