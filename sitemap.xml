@@ -4,7 +4,7 @@
   xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://schoolboard.hoddok.net/</loc>
-    <lastmod>2026-06-14</lastmod>
+    <lastmod>2026-06-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -25,14 +25,14 @@
     </image:image>
   </url>
   <url>
-    <loc>https://schoolboard.hoddok.net/privacy.html</loc>
-    <lastmod>2026-06-14</lastmod>
+    <loc>https://schoolboard.hoddok.net/privacy</loc>
+    <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://schoolboard.hoddok.net/terms.html</loc>
-    <lastmod>2026-06-14</lastmod>
+    <loc>https://schoolboard.hoddok.net/terms</loc>
+    <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
