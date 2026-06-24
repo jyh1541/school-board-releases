@@ -1,3 +1,17 @@
+# robots.txt for https://schoolboard.cc
+
+User-agent: *
+Allow: /
+
+User-agent: Yeti
+Allow: /
+
+Sitemap: https://schoolboard.cc/sitemap.xml
+
+
+# ─────────────────────────────────────────────────────────────
+# Content signals (AI 크롤러 콘텐츠 시그널 안내 — 참고용 주석)
+# ─────────────────────────────────────────────────────────────
 # As a condition of accessing this website, you agree to abide by the following
 # content signals:
 
@@ -22,8 +36,3 @@
 # ANY RESTRICTIONS EXPRESSED VIA CONTENT SIGNALS ARE EXPRESS RESERVATIONS OF
 # RIGHTS UNDER ARTICLE 4 OF THE EUROPEAN UNION DIRECTIVE 2019/790 ON COPYRIGHT
 # AND RELATED RIGHTS IN THE DIGITAL SINGLE MARKET.
-
-User-agent: *
-Allow: /
-
-Sitemap: https://schoolboard.cc/sitemap.xml
