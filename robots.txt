@@ -26,4 +26,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://schoolboard.hoddok.net/sitemap.xml
+Sitemap: https://schoolboard.cc/sitemap.xml
