@@ -76,7 +76,7 @@
         "author": { "@type": "Person", "name": "호똑쌤" },
         "publisher": { "@id": "https://schoolboard.cc/#organization" },
         "keywords": ["스쿨보드", "스쿨 보드", "SchoolBoard", "School Board", "스쿨보드 모바일", "교사 위젯", "시간표 앱", "급식 확인", "학사일정", "NEIS 연동", "선생님 도구", "바탕화면 위젯", "교육용 앱"],
-        "screenshot": "https://schoolboard.cc/%EB%8C%80%EC%8B%9C%EB%B3%B4%EB%93%9C%ED%99%94%EB%A9%B4.png",
+        "screenshot": "https://schoolboard.cc/screenshots/desktop-dashboard.png",
         "featureList": ["시간표 관리", "급식 정보", "학사일정", "메모", "연락처", "계산기", "날씨", "업무포털 자동로그인", "모바일 웹", "학급관리", "구글 캘린더 실시간 동기화", "구글 할 일 연동", "20+ 테마", "자동 업데이트"]
       }
     ]
@@ -595,54 +595,80 @@
     .theme-dot { width: 18px; height: 18px; border-radius: 50%; border: 2px solid var(--paper); box-shadow: 0 0 0 1px var(--line); }
 
     /* ============= GALLERY (PREVIEWS) ============= */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 16px;
-      margin-top: 56px;
+    .screen-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 32px;
     }
-    .g-item {
-      grid-column: span 12;
-      position: relative;
-      border-radius: 26px;
-      overflow: hidden;
-      cursor: zoom-in;
-      transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s ease;
-      isolation: isolate;
-      background: var(--paper);
+    .screen-tag {
+      padding: 8px 12px;
       border: 1px solid var(--line);
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--paper) 82%, transparent);
+      color: var(--ink-3);
+      font-size: 12px;
+      font-weight: 750;
     }
-    .g-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-    .g-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.22,1,0.36,1); }
-    .g-item:hover img { transform: scale(1.04); }
-    .g-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(180deg, transparent 40%, rgba(10,10,20,0.85) 100%);
-      pointer-events: none;
+    .screen-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 28px;
     }
-    .g-meta {
-      position: absolute; left: 24px; right: 24px; bottom: 24px;
-      color: white;
-      z-index: 2;
+    .screen-card {
+      min-width: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: var(--paper);
+      box-shadow: var(--shadow-sm);
+      cursor: zoom-in;
+      transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s ease, border-color 0.35s ease;
     }
-    .g-num {
+    .screen-card:hover {
+      transform: translateY(-5px);
+      border-color: color-mix(in srgb, var(--violet) 28%, var(--line));
+      box-shadow: var(--shadow-lg);
+    }
+    .screen-media {
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+      background: #f7f9fd;
+    }
+    .screen-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 0.55s cubic-bezier(0.22,1,0.36,1);
+    }
+    .screen-card:hover .screen-media img { transform: scale(1.018); }
+    .screen-copy {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 14px;
+      padding: 18px 20px 20px;
+    }
+    .screen-index {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 11px;
+      background: color-mix(in srgb, var(--violet) 11%, transparent);
+      color: var(--violet);
       font-family: 'JetBrains Mono', ui-monospace, monospace;
-      font-size: 11.5px; font-weight: 600; opacity: 0.7;
-      letter-spacing: 0.04em; text-transform: uppercase;
+      font-size: 11px;
+      font-weight: 800;
     }
-    .g-title { font-size: 22px; font-weight: 800; letter-spacing: -0.02em; margin-top: 4px; }
-    .g-desc { font-size: 13px; color: rgba(255,255,255,0.75); margin-top: 6px; line-height: 1.5; max-width: 340px; }
-
-    @media (min-width: 720px) {
-      .g-tall { grid-column: span 5; aspect-ratio: 4/5; }
-      .g-wide { grid-column: span 7; aspect-ratio: 7/5; }
-      .g-square { grid-column: span 6; aspect-ratio: 1/1; }
-      .g-full { grid-column: span 12; aspect-ratio: 21/9; }
-      .g-third { grid-column: span 4; aspect-ratio: 4/5; }
-      .g-twothird { grid-column: span 8; aspect-ratio: 8/5; }
-    }
-    @media (max-width: 719px) {
-      .g-item { aspect-ratio: 4/3; }
+    .screen-title { color: var(--ink); font-size: 17px; font-weight: 850; letter-spacing: -0.02em; }
+    .screen-desc { margin-top: 4px; color: var(--ink-3); font-size: 12.5px; line-height: 1.55; }
+    @media (max-width: 760px) {
+      .screen-gallery { grid-template-columns: 1fr; gap: 14px; }
+      .screen-media { aspect-ratio: 4 / 3; }
+      .screen-copy { padding: 15px 16px 17px; }
     }
 
     /* ============= GOOGLE SYNC ============= */
@@ -1384,7 +1410,7 @@
                 <span class="dot" style="background:#34d399;"></span>
                 <span style="margin-left:auto; margin-right:auto; font-size:10.5px; color:var(--ink-3); font-weight:600;">스쿨보드 — 대시보드</span>
               </div>
-              <img src="대시보드화면.png" alt="스쿨보드 대시보드 위젯 - 시간표, 급식, 학사일정, 메모를 바탕화면에서 확인하는 교사용 데스크톱 위젯 앱" loading="eager">
+              <img src="screenshots/desktop-dashboard.png" alt="예시 일정, 시간표, 할 일이 채워진 최신 스쿨보드 대시보드" loading="eager">
             </div>
 
             <span class="chip-float chip-1">
@@ -1526,13 +1552,13 @@
           <img src="mobile-images/mobile-attendance-day.png" alt="스쿨보드 모바일 일간 출결 화면" loading="lazy">
           <span>일간 출결</span>
         </button>
-        <button class="mobile-shot" type="button" onclick="openLightbox('mobile-images/mobile-meals.png','모바일 급식')">
-          <img src="mobile-images/mobile-meals.png" alt="스쿨보드 모바일 급식 화면" loading="lazy">
-          <span>급식</span>
+        <button class="mobile-shot" type="button" onclick="openLightbox('mobile-images/mobile-contacts.png','모바일 연락처')">
+          <img src="mobile-images/mobile-contacts.png" alt="예시 교직원 정보가 채워진 스쿨보드 모바일 연락처 화면" loading="lazy">
+          <span>연락처</span>
         </button>
-        <button class="mobile-shot" type="button" onclick="openLightbox('mobile-images/mobile-theme.png','모바일 테마 설정')">
-          <img src="mobile-images/mobile-theme.png" alt="스쿨보드 모바일 테마 설정 화면" loading="lazy">
-          <span>테마 설정</span>
+        <button class="mobile-shot" type="button" onclick="openLightbox('mobile-images/mobile-memos.png','모바일 메모')">
+          <img src="mobile-images/mobile-memos.png" alt="예시 할 일과 수업 아이디어가 채워진 스쿨보드 모바일 메모 화면" loading="lazy">
+          <span>메모</span>
         </button>
       </div>
     </div>
@@ -1790,86 +1816,67 @@
           <h2 class="section-title">실제 화면을<br><span class="font-serif-italic" style="font-weight:400; color:var(--ink-3);">미리 만나보세요.</span></h2>
         </div>
         <p class="section-lede">
-          대시보드부터 시간표, 메모, 급식, 북마크, 업무자료, 연락처까지. 클릭하면 더 크게 볼 수 있어요.
+          실제 앱에 예시 데이터를 채워 촬영한 최신 화면입니다. 학급 운영부터 수업 준비, 기록과 업무 정리까지 한눈에 살펴보세요.
         </p>
       </div>
 
-      <div class="gallery">
-        <!-- 1 대시보드 - g-twothird -->
-        <a class="g-item g-twothird reveal" href="대시보드화면.png" onclick="openLightbox('대시보드화면.png','대시보드'); return false;">
-          <img src="대시보드화면.png" alt="대시보드 - 시계, 급식, 시간표, 학사일정, 메모를 한 화면에 위젯 기반으로 보여주는 대시보드" loading="lazy">
-          <div class="g-overlay"></div>
-          <div class="g-meta">
-            <span class="g-num">01 / 대시보드</span>
-            <h3 class="g-title">오늘 하루를 한눈에</h3>
-            <p class="g-desc">시계, 급식, 시간표, 학사일정, 메모까지 — 위젯 기반 대시보드에서 오늘 필요한 모든 정보를 한 화면에.</p>
-          </div>
+      <div class="screen-tags reveal reveal-d1" aria-label="화면 기능 분류">
+        <span class="screen-tag">하루 관리</span>
+        <span class="screen-tag">수업 준비</span>
+        <span class="screen-tag">학급 운영</span>
+        <span class="screen-tag">기록</span>
+        <span class="screen-tag">업무 도구</span>
+      </div>
+
+      <div class="screen-gallery">
+        <a class="screen-card reveal" href="screenshots/desktop-dashboard.png" onclick="openLightbox('screenshots/desktop-dashboard.png','대시보드'); return false;">
+          <div class="screen-media"><img src="screenshots/desktop-dashboard.png" alt="예시 일정, 시간표, 할 일이 채워진 스쿨보드 대시보드" loading="lazy"></div>
+          <div class="screen-copy"><span class="screen-index">01</span><div><h3 class="screen-title">오늘의 흐름을 한눈에</h3><p class="screen-desc">일정, 시간표, 할 일, D-Day를 원하는 배치로 모아봅니다.</p></div></div>
         </a>
 
-        <!-- 2 시간표 - g-third -->
-        <a class="g-item g-third reveal reveal-d1" href="시간표화면.png" onclick="openLightbox('시간표화면.png','시간표'); return false;">
-          <img src="시간표화면.png" alt="시간표 - NEIS 연동으로 자동으로 불러오는 학반·교사별 시간표" loading="lazy">
-          <div class="g-overlay"></div>
-          <div class="g-meta">
-            <span class="g-num">02 / 시간표</span>
-            <h3 class="g-title">NEIS 자동 시간표</h3>
-            <p class="g-desc">학교 이름만 검색하면 시간표가 자동으로. API 키 없이 NEIS에서 바로.</p>
-          </div>
+        <a class="screen-card reveal reveal-d1" href="screenshots/desktop-calendar.png" onclick="openLightbox('screenshots/desktop-calendar.png','일정'); return false;">
+          <div class="screen-media"><img src="screenshots/desktop-calendar.png" alt="학부모 상담주간 등 예시 일정이 표시된 스쿨보드 일정 화면" loading="lazy"></div>
+          <div class="screen-copy"><span class="screen-index">02</span><div><h3 class="screen-title">일정과 알림을 한 곳에서</h3><p class="screen-desc">학교 일정과 개인 일정을 달력으로 보고 필요한 알림까지 관리합니다.</p></div></div>
         </a>
 
-        <!-- 3 메모 - g-square -->
-        <a class="g-item g-square reveal" href="메모장화면.png" onclick="openLightbox('메모장화면.png','메모'); return false;">
-          <img src="메모장화면.png" alt="메모 - 자유 배치 보드에 드래그 앤 드롭으로 정리하는 포스트잇 메모" loading="lazy">
-          <div class="g-overlay"></div>
-          <div class="g-meta">
-            <span class="g-num">03 / 메모</span>
-            <h3 class="g-title">간편하게 기록하세요</h3>
-            <p class="g-desc">떠오르는 생각, 할 일, 업무 메모를 빠르게 기록하고 관리하세요.</p>
-          </div>
+        <a class="screen-card reveal" href="screenshots/desktop-timetable.png" onclick="openLightbox('screenshots/desktop-timetable.png','시간표'); return false;">
+          <div class="screen-media"><img src="screenshots/desktop-timetable.png" alt="국어, 수학, 과학 등 예시 수업이 채워진 스쿨보드 시간표" loading="lazy"></div>
+          <div class="screen-copy"><span class="screen-index">03</span><div><h3 class="screen-title">수기·NEIS 시간표를 선명하게</h3><p class="screen-desc">교시별 수업을 색상으로 구분하고 나이스·컴시간 연동도 선택할 수 있습니다.</p></div></div>
         </a>
 
-        <!-- 4 급식 - g-square -->
-        <a class="g-item g-square reveal reveal-d1" href="급식화면.png" onclick="openLightbox('급식화면.png','급식'); return false;">
-          <img src="급식화면.png" alt="급식 - 조·중·석식 3끼와 알레르기 정보를 한 번에 확인하는 급식 화면" loading="lazy">
-          <div class="g-overlay"></div>
-          <div class="g-meta">
-            <span class="g-num">04 / 급식</span>
-            <h3 class="g-title">오늘 뭐 먹지?</h3>
-            <p class="g-desc">NEIS 연동으로 오늘의 급식 메뉴를 자동으로 확인. 알레르기 정보도 함께.</p>
-          </div>
+        <a class="screen-card reveal reveal-d1" href="screenshots/desktop-class-attendance.png" onclick="openLightbox('screenshots/desktop-class-attendance.png','일간 출결'); return false;">
+          <div class="screen-media"><img src="screenshots/desktop-class-attendance.png" alt="24명의 예시 학생과 교시별 상태가 표시된 스쿨보드 일간 출결 화면" loading="lazy"></div>
+          <div class="screen-copy"><span class="screen-index">04</span><div><h3 class="screen-title">교시별 출결을 빠르게</h3><p class="screen-desc">지각, 조퇴, 결과와 사유를 학생별로 입력하고 나이스 보고 여부도 확인합니다.</p></div></div>
         </a>
 
-        <!-- 5 북마크 - g-twothird -->
-        <a class="g-item g-twothird reveal" href="북마크 화면.png" onclick="openLightbox('북마크 화면.png','북마크'); return false;">
-          <img src="북마크 화면.png" alt="북마크 - 자주 쓰는 사이트를 빠르게 접근할 수 있는 북마크 화면" loading="lazy">
-          <div class="g-overlay"></div>
-          <div class="g-meta">
-            <span class="g-num">05 / 북마크</span>
-            <h3 class="g-title">자주 쓰는 사이트, 빠르게</h3>
-            <p class="g-desc">NEIS, 교육포털, 학교 홈페이지 등 자주 사용하는 웹사이트를 한 번에.</p>
-          </div>
+        <a class="screen-card reveal" href="screenshots/desktop-class-seating.png" onclick="openLightbox('screenshots/desktop-class-seating.png','자리배정'); return false;">
+          <div class="screen-media"><img src="screenshots/desktop-class-seating.png" alt="24명의 예시 학생이 배치된 스쿨보드 자리배정 화면" loading="lazy"></div>
+          <div class="screen-copy"><span class="screen-index">05</span><div><h3 class="screen-title">24명의 자리를 직관적으로</h3><p class="screen-desc">분단과 앞·뒤 영역을 구분해 자리표를 만들고 인쇄하거나 PDF로 보관합니다.</p></div></div>
         </a>
 
-        <!-- 6 업무자료 - g-third -->
-        <a class="g-item g-third reveal reveal-d1" href="업무자료 화면.png" onclick="openLightbox('업무자료 화면.png','업무자료'); return false;">
-          <img src="업무자료 화면.png" alt="업무자료 - 교재, 수업 자료, 공문 등 학교 업무 문서를 카테고리별로 정리하는 업무자료 화면" loading="lazy">
-          <div class="g-overlay"></div>
-          <div class="g-meta">
-            <span class="g-num">06 / 업무자료</span>
-            <h3 class="g-title">학교 업무 문서를 깔끔하게</h3>
-            <p class="g-desc">교재, 수업 자료, 공문 등 필요한 파일을 카테고리별로 정리하고 빠르게 검색.</p>
-          </div>
+        <a class="screen-card reveal reveal-d1" href="screenshots/desktop-memos.png" onclick="openLightbox('screenshots/desktop-memos.png','메모'); return false;">
+          <div class="screen-media"><img src="screenshots/desktop-memos.png" alt="수업 아이디어와 상담 내용을 예시로 담은 스쿨보드 메모 화면" loading="lazy"></div>
+          <div class="screen-copy"><span class="screen-index">06</span><div><h3 class="screen-title">포스트잇처럼 가볍게 기록</h3><p class="screen-desc">수업 아이디어와 상담 메모, 체크리스트를 폴더별로 나눠 관리합니다.</p></div></div>
         </a>
 
-        <!-- 7 연락처 - g-full -->
-        <a class="g-item g-full reveal" href="연락처 화면.png" onclick="openLightbox('연락처 화면.png','연락처'); return false;">
-          <img src="연락처 화면.png" alt="연락처 - 교직원 연락처를 검색하고 그룹별로 분류하는 연락처 화면" loading="lazy" style="object-position:top center;">
-          <div class="g-overlay"></div>
-          <div class="g-meta">
-            <span class="g-num">07 / 연락처</span>
-            <h3 class="g-title">교직원 연락처를 한 곳에</h3>
-            <p class="g-desc">교장선생님, 교감선생님, 동료 교사들의 연락처를 한 곳에서 관리. 검색과 그룹 분류도 지원합니다.</p>
-          </div>
+        <a class="screen-card reveal" href="screenshots/desktop-notebook.png" onclick="openLightbox('screenshots/desktop-notebook.png','노트북'); return false;">
+          <div class="screen-media"><img src="screenshots/desktop-notebook.png" alt="학급 운영 체크리스트 예시가 작성된 스쿨보드 노트북 화면" loading="lazy"></div>
+          <div class="screen-copy"><span class="screen-index">07</span><div><h3 class="screen-title">수업과 학급 운영을 깊게 정리</h3><p class="screen-desc">주제와 페이지로 기록을 쌓고 체크리스트와 수업 메모를 구조화합니다.</p></div></div>
+        </a>
+
+        <a class="screen-card reveal reveal-d1" href="screenshots/desktop-contacts.png" onclick="openLightbox('screenshots/desktop-contacts.png','연락처'); return false;">
+          <div class="screen-media"><img src="screenshots/desktop-contacts.png" alt="가상의 교직원 예시 정보가 채워진 스쿨보드 연락처 화면" loading="lazy"></div>
+          <div class="screen-copy"><span class="screen-index">08</span><div><h3 class="screen-title">교직원 정보를 한 번에</h3><p class="screen-desc">부서, 내선, 휴대폰과 담당 업무를 검색 가능한 연락처로 정리합니다.</p></div></div>
+        </a>
+
+        <a class="screen-card reveal" href="screenshots/desktop-resources.png" onclick="openLightbox('screenshots/desktop-resources.png','업무관리'); return false;">
+          <div class="screen-media"><img src="screenshots/desktop-resources.png" alt="학교 업무포털과 교육과정 자료 예시가 정리된 스쿨보드 업무관리 화면" loading="lazy"></div>
+          <div class="screen-copy"><span class="screen-index">09</span><div><h3 class="screen-title">업무 링크와 자료를 정돈</h3><p class="screen-desc">자주 쓰는 학교 시스템과 수업 자료를 그룹별로 모아 바로 엽니다.</p></div></div>
+        </a>
+
+        <a class="screen-card reveal reveal-d1" href="screenshots/desktop-toolbox.png" onclick="openLightbox('screenshots/desktop-toolbox.png','도구상자'); return false;">
+          <div class="screen-media"><img src="screenshots/desktop-toolbox.png" alt="PDF 편집기, QR 생성기, 수업 타이머 등이 모인 스쿨보드 도구상자" loading="lazy"></div>
+          <div class="screen-copy"><span class="screen-index">10</span><div><h3 class="screen-title">교실에 필요한 도구 모음</h3><p class="screen-desc">PDF 편집, QR 생성, 랜덤 뽑기, 수업 타이머와 기록 도구를 한곳에서 사용합니다.</p></div></div>
         </a>
       </div>
     </div>
