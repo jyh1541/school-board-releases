@@ -23,6 +23,13 @@
       '<span class="mark-note" style="left:' + mark.at[0] + '%;top:' + mark.at[1] + '%" aria-hidden="true">' + esc(mark.note) + '</span>';
   }
 
+  // ---------- 3D가 오래 안 뜨면 정지 이미지 첫 화면으로 ----------
+  window.addEventListener('load', function () {
+    setTimeout(function () {
+      if (!window.__stage3dLoaded) document.documentElement.classList.add('no-webgl');
+    }, 8000);
+  });
+
   // ---------- 다운로드: GitHub 최신 릴리스의 설치 파일로 바로 연결 ----------
   var GITHUB_API = 'https://api.github.com/repos/jyh1541/school-board-releases/releases/latest';
   var RELEASES_PAGE = 'https://github.com/jyh1541/school-board-releases/releases/latest';

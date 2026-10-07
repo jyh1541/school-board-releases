@@ -69,6 +69,8 @@ const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
 const lerp = (a, b, t) => a + (b - a) * t;
 const smooth = (a, b, v) => { const t = clamp((v - a) / (b - a), 0, 1); return t * t * (3 - 2 * t); };
 
+window.__stage3dLoaded = true;
+
 if (!webglAvailable()) {
   root.classList.add('no-webgl');
 } else {
@@ -79,6 +81,8 @@ if (!webglAvailable()) {
 }
 
 async function start() {
+  // 늦게 불러와져서 이미 정지 이미지로 바뀐 뒤라면 3D를 시작하지 않는다
+  if (root.classList.contains('no-webgl')) return;
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'high-performance' });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.75));
   renderer.outputColorSpace = THREE.SRGBColorSpace;
