@@ -334,6 +334,19 @@ section { position: relative; }
 .trust-list dt { font-size: 21px; font-weight: 750; letter-spacing: -0.01em; }
 .trust-list dd { margin-top: 10px; color: var(--ink-2); }
 
+/* ---------- 학교운영위원회 심의 안내 ---------- */
+.review-notice { margin-top: 64px; padding: clamp(20px, 3vw, 40px); max-width: 1100px; border: 1px solid var(--line); border-radius: 20px; background: var(--white); }
+.review-label { margin-bottom: 12px; color: var(--cobalt); font-size: 14px; font-weight: 750; }
+.review-copy h3 { font-family: var(--font-display); font-weight: 800; font-size: clamp(24px, 3vw, 36px); line-height: 1.3; letter-spacing: -0.03em; }
+.review-copy > p:not(.review-label) { margin-top: 16px; color: var(--ink-2); max-width: 48em; }
+.review-copy strong { color: var(--ink); }
+.review-copy .review-source { font-size: 14px; }
+.review-source a, .faq details p a { color: var(--cobalt); text-underline-offset: 3px; }
+.review-evidence { margin-top: 28px; }
+.review-evidence > a { display: block; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; cursor: zoom-in; }
+.review-evidence img { width: 100%; }
+.review-evidence figcaption { margin-top: 10px; color: var(--ink-2); font-size: 14px; }
+
 /* ---------- 업데이트 ---------- */
 .updates { background: var(--white); }
 .update-list { margin-top: 48px; max-width: 1100px; border-top: 1px solid var(--line); }
