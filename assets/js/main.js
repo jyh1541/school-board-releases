@@ -30,19 +30,23 @@
     }, 8000);
   });
 
-  // ---------- 다운로드: GitHub 최신 릴리스의 설치 파일로 바로 연결 ----------
+  // ---------- 다운로드: GitHub 설치 파일 조회 실패 시 OneDrive로 연결 ----------
   var GITHUB_API = 'https://api.github.com/repos/jyh1541/school-board-releases/releases/latest';
-  var RELEASES_PAGE = 'https://github.com/jyh1541/school-board-releases/releases/latest';
   var CLOUD_DOWNLOAD = 'https://1drv.ms/u/c/63cbfdc50072c77f/IQCq6XTIlqR8SYsXwn2mXhkRAQfAZPx2DQKNH5B0siG9JXo?e=8cjvOx';
-  var releasePromise = null, releaseStatus = 0;
+  var releasePromise = null;
   function fetchLatestRelease() {
     if (!releasePromise) {
-      releasePromise = fetch(GITHUB_API)
-        .then(function (res) {
-          releaseStatus = res.status;
-          return res.ok ? res.json() : null;
-        })
-        .catch(function () { return null; });
+      var timeout;
+      var request = window.fetch ? fetch(GITHUB_API)
+        .then(function (res) { return res.ok ? res.json() : null; })
+        .catch(function () { return null; }) : Promise.resolve(null);
+      releasePromise = Promise.race([
+        request,
+        new Promise(function (resolve) { timeout = setTimeout(function () { resolve(null); }, 8000); }),
+      ]).then(function (release) {
+        clearTimeout(timeout);
+        return release;
+      });
     }
     return releasePromise;
   }
@@ -63,14 +67,12 @@
       label.textContent = '다운로드 준비 중…';
       fetchLatestRelease().then(function (release) {
         label.textContent = original;
-        var asset = release && release.assets && release.assets.find(function (a) { return /Setup.*\.exe$/i.test(a.name); });
+        var asset = release && Array.isArray(release.assets) && release.assets.find(function (a) { return /Setup.*\.exe$/i.test(a.name) && a.browser_download_url; });
         if (asset) {
           window.location.href = asset.browser_download_url;
           showToast('<span>다운로드를 시작했어요. 경고 창이 뜨면 설치 도움말을 확인해 주세요.</span><a href="#help">설치 도움말</a>');
-        } else if (releaseStatus === 404) {
-          window.location.href = CLOUD_DOWNLOAD;
         } else {
-          window.open(RELEASES_PAGE, '_blank', 'noopener');
+          window.location.href = CLOUD_DOWNLOAD;
         }
       });
     });
