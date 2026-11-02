@@ -33,11 +33,15 @@
   // ---------- 다운로드: GitHub 최신 릴리스의 설치 파일로 바로 연결 ----------
   var GITHUB_API = 'https://api.github.com/repos/jyh1541/school-board-releases/releases/latest';
   var RELEASES_PAGE = 'https://github.com/jyh1541/school-board-releases/releases/latest';
-  var releasePromise = null;
+  var CLOUD_DOWNLOAD = 'https://1drv.ms/u/c/63cbfdc50072c77f/IQCq6XTIlqR8SYsXwn2mXhkRAQfAZPx2DQKNH5B0siG9JXo?e=8cjvOx';
+  var releasePromise = null, releaseStatus = 0;
   function fetchLatestRelease() {
     if (!releasePromise) {
       releasePromise = fetch(GITHUB_API)
-        .then(function (res) { return res.ok ? res.json() : null; })
+        .then(function (res) {
+          releaseStatus = res.status;
+          return res.ok ? res.json() : null;
+        })
         .catch(function () { return null; });
     }
     return releasePromise;
@@ -63,6 +67,8 @@
         if (asset) {
           window.location.href = asset.browser_download_url;
           showToast('<span>다운로드를 시작했어요. 경고 창이 뜨면 설치 도움말을 확인해 주세요.</span><a href="#help">설치 도움말</a>');
+        } else if (releaseStatus === 404) {
+          window.location.href = CLOUD_DOWNLOAD;
         } else {
           window.open(RELEASES_PAGE, '_blank', 'noopener');
         }
