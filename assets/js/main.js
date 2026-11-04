@@ -1,4 +1,4 @@
-// 3D 장면 밖의 동작: 메뉴, 선생님의 하루, 도구상자, 휴대폰, 업데이트, 영상, 설치 도움말
+// 3D 장면 밖의 동작: 메뉴, 다운로드, 선생님의 하루, 도구상자, 휴대폰, 업데이트, 영상, 설치 도움말
 (function () {
   var SITE = window.SITE || {};
   var $ = function (sel, root) { return (root || document).querySelector(sel); };
@@ -30,14 +30,19 @@
     }, 8000);
   });
 
-  // ---------- 최신 버전 표시: 다운로드 링크는 HTML에서 직접 연결 ----------
+  // ---------- 다운로드: GitHub 우선, 404 응답일 때만 Google Drive로 연결 ----------
   var GITHUB_API = 'https://api.github.com/repos/jyh1541/school-board-releases/releases/latest';
+  var RELEASES_PAGE = 'https://github.com/jyh1541/school-board-releases/releases/latest';
+  var CLOUD_DOWNLOAD = 'https://drive.google.com/file/d/1By3EKyMP2fH46lyTtlZX5tOXX7NjYnKK/view?pli=1';
   var releasePromise = null;
   function fetchLatestRelease() {
     if (!releasePromise) {
       var timeout;
       var request = window.fetch ? fetch(GITHUB_API)
-        .then(function (res) { return res.ok ? res.json() : null; })
+        .then(function (res) {
+          if (!res.ok) return { status: res.status, release: null };
+          return res.json().then(function (release) { return { status: res.status, release: release }; });
+        })
         .catch(function () { return null; }) : Promise.resolve(null);
       releasePromise = Promise.race([
         request,
@@ -50,7 +55,36 @@
     return releasePromise;
   }
 
-  fetchLatestRelease().then(function (release) {
+  $$('.js-download').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      if (e.button !== 0 || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+      e.preventDefault();
+      if (btn.getAttribute('aria-busy') === 'true') return;
+      var label = $('.js-download-label', btn);
+      var original = label.textContent;
+      btn.setAttribute('aria-busy', 'true');
+      label.textContent = '다운로드 준비 중…';
+      fetchLatestRelease().then(function (result) {
+        label.textContent = original;
+        btn.removeAttribute('aria-busy');
+        var release = result && result.release;
+        var asset = release && Array.isArray(release.assets) && release.assets.find(function (a) {
+          return /Setup.*\.exe$/i.test(a.name) && a.browser_download_url;
+        });
+        if (asset) {
+          window.location.href = asset.browser_download_url;
+        } else if (result && result.status === 404) {
+          window.location.href = CLOUD_DOWNLOAD;
+        } else {
+          // 속도 저하, API 제한, 네트워크 오류는 404로 취급하지 않는다.
+          window.location.href = RELEASES_PAGE;
+        }
+      });
+    });
+  });
+
+  fetchLatestRelease().then(function (result) {
+    var release = result && result.release;
     var el = $('#latest-version');
     if (el && release && release.tag_name) el.textContent = '최신 버전 ' + release.tag_name.replace(/^v?/, 'v');
   });
