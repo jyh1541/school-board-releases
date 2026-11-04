@@ -1,4 +1,4 @@
-// 3D 장면 밖의 동작: 메뉴, 다운로드, 선생님의 하루, 도구상자, 휴대폰, 업데이트, 영상, 설치 도움말
+// 3D 장면 밖의 동작: 메뉴, 선생님의 하루, 도구상자, 휴대폰, 업데이트, 영상, 설치 도움말
 (function () {
   var SITE = window.SITE || {};
   var $ = function (sel, root) { return (root || document).querySelector(sel); };
@@ -30,9 +30,8 @@
     }, 8000);
   });
 
-  // ---------- 다운로드: GitHub 설치 파일 조회 실패 시 Google Drive로 연결 ----------
+  // ---------- 최신 버전 표시: 다운로드 링크는 HTML에서 직접 연결 ----------
   var GITHUB_API = 'https://api.github.com/repos/jyh1541/school-board-releases/releases/latest';
-  var CLOUD_DOWNLOAD = 'https://drive.google.com/file/d/1By3EKyMP2fH46lyTtlZX5tOXX7NjYnKK/view?pli=1';
   var releasePromise = null;
   function fetchLatestRelease() {
     if (!releasePromise) {
@@ -51,32 +50,6 @@
     return releasePromise;
   }
 
-  var toast = $('#toast'), toastTimer = null;
-  function showToast(html) {
-    toast.innerHTML = html;
-    toast.hidden = false;
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(function () { toast.hidden = true; }, 9000);
-  }
-
-  $$('.js-download').forEach(function (btn) {
-    btn.addEventListener('click', function (e) {
-      e.preventDefault();
-      var label = $('.js-download-label', btn) || btn;
-      var original = label.textContent;
-      label.textContent = '다운로드 준비 중…';
-      fetchLatestRelease().then(function (release) {
-        label.textContent = original;
-        var asset = release && Array.isArray(release.assets) && release.assets.find(function (a) { return /Setup.*\.exe$/i.test(a.name) && a.browser_download_url; });
-        if (asset) {
-          window.location.href = asset.browser_download_url;
-          showToast('<span>다운로드를 시작했어요. 경고 창이 뜨면 설치 도움말을 확인해 주세요.</span><a href="#help">설치 도움말</a>');
-        } else {
-          window.location.href = CLOUD_DOWNLOAD;
-        }
-      });
-    });
-  });
   fetchLatestRelease().then(function (release) {
     var el = $('#latest-version');
     if (el && release && release.tag_name) el.textContent = '최신 버전 ' + release.tag_name.replace(/^v?/, 'v');
