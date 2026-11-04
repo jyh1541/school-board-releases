@@ -30,9 +30,9 @@
     }, 8000);
   });
 
-  // ---------- 다운로드: GitHub 설치 파일 조회 실패 시 OneDrive로 연결 ----------
+  // ---------- 다운로드: GitHub 설치 파일 조회 실패 시 Google Drive로 연결 ----------
   var GITHUB_API = 'https://api.github.com/repos/jyh1541/school-board-releases/releases/latest';
-  var CLOUD_DOWNLOAD = 'https://1drv.ms/u/c/63cbfdc50072c77f/IQCq6XTIlqR8SYsXwn2mXhkRAQfAZPx2DQKNH5B0siG9JXo?e=8cjvOx';
+  var CLOUD_DOWNLOAD = 'https://drive.google.com/file/d/1By3EKyMP2fH46lyTtlZX5tOXX7NjYnKK/view?pli=1';
   var releasePromise = null;
   function fetchLatestRelease() {
     if (!releasePromise) {
