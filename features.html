@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>스쿨보드 기능 설명서 - 학급관리·업무 자동화·문서 도구 전체 기능</title>
+  <meta name="description" content="스쿨보드의 모든 기능을 묶음별로 자세히 정리한 설명서예요. 대시보드·시간표·급식, 출결·나이스 일괄입력·QR 출결·생활기록부, 업무포털 알림·복무 상신, 글깎이·PDF 편집기, 시험시간표까지.">
+  <meta name="keywords" content="스쿨보드, 스쿨 보드, SchoolBoard, School Board, 교사 업무 앱, 교사 프로그램, 선생님 앱, 학급관리, 나이스 출결 일괄입력, QR 출결, 자리배정, 생활기록부, 생기부 작성, 성취수준, 상담 신청, 시간표 앱, NEIS 연동, 나이스 연동, 컴시간, 압핀, 급식 확인, 학사일정, 구글 캘린더 동기화, 업무포털 자동로그인, 업무포털 알림, 복무 상신, 초과근무 상신, 에듀파인 품의, PDF 편집기, 이미지 편집기, 한글 문서 편집, 글깎이, 시험시간표, 감독 배정, 추정 분할점수, 수업 타이머, 랜덤 뽑기, 투표 설문, 온라인 등록부, 전자칠판 대시보드, 똑똑이, 무료 교사 앱">
+  <meta name="author" content="호똑쌤">
+  <meta name="application-name" content="스쿨보드">
+  <meta name="apple-mobile-web-app-title" content="스쿨보드">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="naver-site-verification" content="5646473725845364041f89d1a68f06c6abc9f361" />
+  <meta name="naver-site-verification" content="a4c6b944f19af2b3b591fb4dce9ae5059185be26" />
+  <meta name="theme-color" content="#F7F9FC">
+  <link rel="canonical" href="https://schoolboard.cc/features">
+  <link rel="alternate" type="application/rss+xml" title="스쿨보드 릴리즈 RSS" href="https://schoolboard.cc/rss.xml">
+  <meta property="og:url" content="https://schoolboard.cc/features">
+  <meta property="og:title" content="스쿨보드 기능 설명서">
+  <meta property="og:description" content="학급관리부터 나이스 출결 일괄입력, 생기부 초안, 업무포털 알림, 시험시간표까지. 선생님용 무료 업무 앱 스쿨보드의 기능을 하나씩 소개해요.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:site_name" content="스쿨보드">
+  <meta property="og:image" content="https://schoolboard.cc/mobile-images/meta_image.png">
+  <meta property="og:image:secure_url" content="https://schoolboard.cc/mobile-images/meta_image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1292">
+  <meta property="og:image:height" content="657">
+  <meta property="og:image:alt" content="스쿨보드 소개 화면">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="스쿨보드 기능 설명서">
+  <meta name="twitter:description" content="PC와 휴대폰에서 함께 쓰는 선생님용 무료 업무 앱의 기능 소개.">
+  <meta name="twitter:image" content="https://schoolboard.cc/mobile-images/meta_image.png">
+  <meta name="twitter:image:alt" content="스쿨보드 소개 화면">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://i.ytimg.com">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="preload" as="font" type="font/woff2" href="https://cdn.jsdelivr.net/gh/fonts-archive/Paperlogy/Paperlogy-8ExtraBold.woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/catalog.css?v=2">
+  <script>document.documentElement.classList.add('js');</script>
+  <script defer src="assets/js/catalog-data.js?v=2"></script>
+  <script defer src="assets/js/common.js?v=1"></script>
+  <script defer src="assets/js/catalog.js?v=3"></script>
+</head>
+<body>
+  <a class="skip-link" href="#overview">본문으로 건너뛰기</a>
+
+  <!-- ========== 좁은 화면 상단 막대 ========== -->
+  <header class="topbar">
+    <button class="menu-btn" type="button" aria-controls="side" aria-expanded="false">
+      <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span class="sr-only">기능 목록 열기</span>
+    </button>
+    <a class="topbar-brand" href="/"><img src="icon-192.png" alt="" width="28" height="28"><span>스쿨보드</span></a>
+    <span class="topbar-now" id="topbar-now" aria-hidden="true"></span>
+    <a class="btn btn-ink btn-sm topbar-cta" href="#download">무료 받기</a>
+  </header>
+
+  <!-- ========== 왼쪽 기능 목록 ========== -->
+  <aside class="side" id="side" aria-label="기능 목록">
+    <div class="side-head">
+      <a class="side-brand" href="/">
+        <img src="icon-192.png" alt="" width="36" height="36">
+        <span><strong>스쿨보드</strong><small>기능 설명서</small></span>
+      </a>
+      <a class="side-home" href="/">← 스쿨보드 홈으로</a>
+      <label class="side-search">
+        <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="m20 20-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span class="sr-only">기능 찾기</span>
+        <input id="side-search" type="search" placeholder="기능 찾기 (출결, 생기부…)" autocomplete="off" enterkeyhint="go">
+      </label>
+    </div>
+
+    <nav class="side-nav" id="side-nav" aria-label="기능별 소개">
+      <div class="nav-group">
+        <p class="nav-title">시작하기</p>
+        <a href="#overview" data-k="소개 처음 설명서">설명서 처음</a>
+      </div>
+      <div class="nav-group">
+        <p class="nav-title"><span>01</span>매일 쓰는 화면</p>
+        <a href="#dashboard" data-k="위젯 바탕화면 위젯모드 단축키">대시보드·위젯</a>
+        <a href="#classroom-board" data-k="초등 전자칠판 알림판 한문장 pin 잠금 대시보드창">전자칠판 대시보드 <em class="tag tag-new">NEW</em></a>
+        <a href="#ddokddok" data-k="마스코트 캐릭터 비서 브리핑 심부름 째깍이 또박이 꼼꼼이">똑똑이 <em class="tag tag-new">NEW</em></a>
+        <a href="#calendar" data-k="캘린더 구글 태스크 학사일정 dday 디데이 할일">일정·할 일</a>
+        <a href="#timetable" data-k="나이스 neis 컴시간 압핀 종소리 수업 알림">시간표</a>
+        <a href="#meal" data-k="급식 식단 날씨 미세먼지 유치원">급식·날씨</a>
+        <a href="#memo" data-k="메모 포스트잇 루틴">메모·루틴</a>
+        <a href="#notebook" data-k="노트북 학습지 문서 qr 배포">노트북</a>
+        <a href="#contacts" data-k="연락처 전화번호 초성 검색">연락처</a>
+      </div>
+      <div class="nav-group">
+        <p class="nav-title"><span>02</span>학급관리</p>
+        <a href="#attendance" data-k="출결 나이스 일괄입력 결석 지각 조퇴 휴업일">출결·나이스 일괄입력 <em class="tag tag-new">NEW</em></a>
+        <a href="#qr-attendance" data-k="qr 출석 스캐너 야자 방과후 공기계">QR 출결</a>
+        <a href="#seating" data-k="자리 배치 짝 바꾸기">자리배정</a>
+        <a href="#records" data-k="누가기록 상점 벌점 상벌점 관찰">누가기록·상벌점</a>
+        <a href="#student-records" data-k="생기부 생활기록부 초안 세특 행발 ai 작성 수정">생활기록부 정리 <em class="tag tag-best">BEST</em></a>
+        <a href="#record-analysis" data-k="생기부 분석 진로 진학 상담 점검 맞춤법 바이트 입결">생기부 분석·진로 상담</a>
+        <a href="#achievements" data-k="초등 성취수준 성취기준">성취수준(초등)</a>
+        <a href="#consultations" data-k="상담 신청 학부모 qr">상담 신청</a>
+        <a href="#activities" data-k="학급활동모음 학생활동 ocr 손글씨 스캔 수행평가">학급활동모음·OCR</a>
+        <a href="#class-more" data-k="진도표 학급메모 그룹 명단 생일 사진">진도표와 학급 살림</a>
+      </div>
+      <div class="nav-group">
+        <p class="nav-title"><span>03</span>업무 자동화</p>
+        <a href="#auto-login" data-k="자동로그인 업무포털 인증서 나이스 에듀파인">자동 로그인</a>
+        <a href="#portal-status" data-k="업무포털 현황 알림 결재 공람 체험학습 교데통">업무포털 현황 <em class="tag tag-new">NEW</em></a>
+        <a href="#duty" data-k="복무 상신 초과근무 초근 육아시간 연가 병가">복무·초과근무 상신</a>
+        <a href="#pumui" data-k="원클릭 품의 에듀파인 견적서 장바구니 품목">원클릭 품의 <em class="tag tag-new">NEW</em></a>
+        <a href="#office" data-k="교무실 확성기 공지 주간일정 학교일정">온라인 교무실</a>
+        <a href="#resources" data-k="업무자료 업무관리 즐겨찾기 북마크 구글시트">업무관리·즐겨찾기</a>
+      </div>
+      <div class="nav-group">
+        <p class="nav-title"><span>04</span>문서·AI 도구</p>
+        <a href="#geulkkakki" data-k="글깎이 한글 hwp ai 양식 시험지">글깎이</a>
+        <a href="#pdf-editor" data-k="pdf 합치기 나누기 압축 변환">PDF 편집기</a>
+        <a href="#html-editor" data-k="html 슬라이드 가정통신문 카드뉴스">HTML 편집기</a>
+        <a href="#image-editor" data-k="이미지 사진 용량 모자이크">이미지 편집기</a>
+      </div>
+      <div class="nav-group">
+        <p class="nav-title"><span>05</span>수업 도구</p>
+        <a href="#class-timer" data-k="타이머 수업 시간">수업 타이머</a>
+        <a href="#random-pick" data-k="뽑기 랜덤 모둠 발표">랜덤 뽑기·모둠 편성</a>
+        <a href="#vote" data-k="투표 설문 qr">투표 및 설문</a>
+        <a href="#name-game" data-k="이름 외우기 게임 퀴즈">학생이름외우기</a>
+      </div>
+      <div class="nav-group">
+        <p class="nav-title"><span>06</span>평가·교육과정</p>
+        <a href="#exam-schedule" data-k="시험 시간표 감독 배정 고사실 좌석표">시험시간표·감독 배정</a>
+        <a href="#cut-score" data-k="분할점수 성취도 예측 최성보 역산">추정 분할점수</a>
+        <a href="#course-scheduler" data-k="선택교과 그룹편성 반편성 반배정 수강신청">선택교과 편성·반배정</a>
+        <a href="#online-signature" data-k="온라인 등록부 서명 연수 qr">온라인 등록부</a>
+        <a href="#small-tools" data-k="배점 등급 수행평가 점검 qr 생성기 계산기 수강신청확인서">자주 쓰는 작은 도구</a>
+      </div>
+      <div class="nav-group">
+        <p class="nav-title"><span>07</span>어디서나·안심</p>
+        <a href="#mobile" data-k="모바일 휴대폰 폰 웹">스쿨보드 모바일</a>
+        <a href="#sync" data-k="동기화 구글 드라이브 백업 pin 잠금 프로필">동기화·백업·잠금</a>
+        <a href="#trust" data-k="데이터 개인정보 학운위 심의 보안">데이터와 학교 도입</a>
+        <a href="#settings" data-k="설정 테마 글꼴 단축키 온보딩">내 맘대로 설정</a>
+      </div>
+      <div class="nav-group">
+        <p class="nav-title">소식·도움</p>
+        <a href="#updates" data-k="업데이트 새소식 버전 변경">업데이트 소식</a>
+        <a href="#videos" data-k="영상 유튜브 사용법 쇼츠">영상으로 보기</a>
+        <a href="#download" data-k="다운로드 설치 받기">무료 다운로드</a>
+        <a href="#help" data-k="설치 경고 문제 faq 자주 묻는">설치 도움말·FAQ</a>
+      </div>
+      <p class="nav-empty" id="nav-empty" hidden>찾는 기능이 목록에 없어요. 다른 낱말로 찾아 보세요.</p>
+    </nav>
+
+    <div class="side-foot">
+      <a class="btn btn-ink js-download" href="https://github.com/jyh1541/school-board-releases/releases/latest">
+        <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 5.5 10.5 4.4v7.2H3V5.5Zm0 13 7.5 1.1v-7.1H3v6Zm8.4 1.2L21 21v-8.5h-9.6v7.2Zm0-15.4v7.3H21V3l-9.6 1.3Z"/></svg>
+        <span class="js-download-label">Windows용 무료 다운로드</span>
+      </a>
+      <a class="side-mobile" href="https://m.schoolboard.cc" target="_blank" rel="noopener noreferrer">휴대폰은 m.schoolboard.cc</a>
+    </div>
+  </aside>
+  <div class="side-backdrop" id="side-backdrop" hidden></div>
+
+  <main class="main" id="main">
+
+    <!-- ========== 설명서 머리 ========== -->
+    <section class="hero hero-doc" id="overview" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="hero-eyebrow">스쿨보드 기능 설명서</p>
+        <h1 class="hero-title" id="hero-title">기능을 하나씩<br>자세히 볼게요.</h1>
+        <p class="hero-lede">스쿨보드의 기능을 7가지 묶음으로 나눠 정리했어요. 왼쪽 목록에서 고르거나 ‘기능 찾기’에 출결, 생기부처럼 적어 보세요. 기능마다 실제 화면과 사용 영상을 붙였어요.</p>
+        <div class="hero-actions">
+          <a class="btn btn-ink btn-lg js-download only-wide" href="https://github.com/jyh1541/school-board-releases/releases/latest">
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 5.5 10.5 4.4v7.2H3V5.5Zm0 13 7.5 1.1v-7.1H3v6Zm8.4 1.2L21 21v-8.5h-9.6v7.2Zm0-15.4v7.3H21V3l-9.6 1.3Z"/></svg>
+            <span class="js-download-label">Windows용 무료 다운로드</span>
+          </a>
+          <a class="btn btn-ink btn-lg only-narrow" href="https://m.schoolboard.cc" target="_blank" rel="noopener noreferrer">휴대폰에서 바로 쓰기</a>
+          <a class="btn btn-line btn-lg" href="/">스쿨보드 소개 보기</a>
+        </div>
+        <ol class="doc-index">
+          <li><a href="#g-daily"><span>01</span>매일 쓰는 화면</a></li>
+          <li><a href="#g-class"><span>02</span>학급관리</a></li>
+          <li><a href="#g-auto"><span>03</span>업무 자동화</a></li>
+          <li><a href="#g-docs"><span>04</span>문서·AI 도구</a></li>
+          <li><a href="#g-lesson"><span>05</span>수업 도구</a></li>
+          <li><a href="#g-exam"><span>06</span>평가·교육과정</a></li>
+          <li><a href="#g-anywhere"><span>07</span>어디서나·안심</a></li>
+        </ol>
+      </div>
+      <figure class="hero-shot">
+        <button class="shot" type="button" data-zoom="assets/shots/desktop/dashboard-2160.webp" aria-label="대시보드 화면 크게 보기">
+          <img src="assets/shots/desktop/dashboard-1080.webp" srcset="assets/shots/desktop/dashboard-1080.webp 1080w, assets/shots/desktop/dashboard-2160.webp 2160w" sizes="(max-width: 1100px) 92vw, 50vw" width="1600" height="1000" alt="스쿨보드 대시보드 화면. 시간표, 급식, 일정, 할 일, 날씨 위젯이 한 화면에 놓여 있어요." fetchpriority="high">
+        </button>
+        <img class="hero-mascot" src="assets/img/mascot/ddokddok.webp" alt="" width="313" height="332">
+      </figure>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- 01 매일 쓰는 화면 -->
+    <!-- =================================================================== -->
+    <div class="group-intro" id="g-daily">
+      <p class="group-no">01</p>
+      <h2>매일 쓰는 화면</h2>
+      <p>켜 두기만 하면 오늘 수업, 급식, 일정, 할 일이 보여요. 출근해서 가장 먼저 여는 화면이에요.</p>
+    </div>
+
+    <section class="feat" id="dashboard" aria-labelledby="dashboard-t">
+      <header class="feat-head">
+        <p class="feat-kicker">매일 쓰는 화면</p>
+        <h2 id="dashboard-t">대시보드·위젯</h2>
+        <p class="feat-lede">위젯을 원하는 대로 놓는 선생님만의 바탕화면이에요. 시간표·급식·일정·할 일·D-Day가 저절로 채워져요.</p>
+      </header>
+      <div class="feat-body">
+        <ul class="points">
+          <li><b>위젯 30가지 넘게</b>시계·날씨·D-Day·캘린더·시간표·급식·할 일·출결·QR 출결 현황·업무포털 현황까지 오른쪽 클릭으로 넣고 크기를 바꿔요.</li>
+          <li><b>바탕화면이 대시보드로</b>위젯 모드를 켜면 바탕화면 아이콘 아래에 붙어 배경화면처럼 늘 보여요. 아이콘 클릭은 그대로 돼요.</li>
+          <li><b>용도별 대시보드</b>업무용·수업용처럼 여러 개를 만들어 바꿔 쓰고, 두 개를 동시에 창으로 띄울 수도 있어요.</li>
+          <li><b>단축키 한 번</b><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>F8</kbd>로 어디서든 스쿨보드를 부르고, <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>F7</kbd>로 대시보드로 바로 가요.</li>
+          <li><b>내 눈에 맞게</b>위젯마다 글자 크기를 바꾸고, 창 투명도와 위치 잠금도 정해요.</li>
+        </ul>
+        <figure class="feat-media">
+          <button class="shot" type="button" data-zoom="assets/shots/desktop/dashboard-2160.webp" aria-label="대시보드 화면 크게 보기"><img src="assets/shots/desktop/dashboard-1080.webp" srcset="assets/shots/desktop/dashboard-1080.webp 1080w, assets/shots/desktop/dashboard-2160.webp 2160w" sizes="(max-width: 1100px) 92vw, 46vw" width="1600" height="1000" alt="스쿨보드 대시보드 화면" loading="lazy" decoding="async"></button>
+        </figure>
+      </div>
+      <div class="feat-videos">
+        <button class="vchip" type="button" data-yt="_trlRg-ithk" data-title="대시보드 사용법"><span class="vchip-play" aria-hidden="true"></span>대시보드 사용법<small>9:55</small></button>
+        <button class="vchip" type="button" data-yt="qye8bQxcN_4" data-title="위젯 기능 소개"><span class="vchip-play" aria-hidden="true"></span>위젯 기능 소개<small>2:50</small></button>
+      </div>
+    </section>
+
+    <section class="feat" id="classroom-board" aria-labelledby="classroom-board-t">
+      <header class="feat-head">
+        <p class="feat-kicker">매일 쓰는 화면 <em class="tag tag-new">NEW</em> <em class="tag tag-soft">초등 추천</em></p>
+        <h2 id="classroom-board-t">전자칠판 대시보드·오늘의 알림판</h2>
+        <p class="feat-lede">교실 전자칠판에 띄울 대시보드를 따로 만들어요. 학생이 만져도 PIN으로 안전해요.</p>
+      </header>
+      <div class="feat-body is-tall">
+        <ul class="points">
+          <li><b>대시보드 창</b>선생님용 대시보드는 그대로 두고, 교실용 대시보드를 창으로 하나 더 띄워 전자칠판으로 보내요.</li>
+          <li><b>PIN 잠금</b>학생이 누르거나 오른쪽 클릭해도 화면과 설정이 바뀌지 않게 잠가요.</li>
+          <li><b>오늘의 알림판</b>메신저 공지나 알림장 글을 붙여 넣으면 아침활동·준비물·숙제·알림 카드로 알아서 나눠요. 모두 소리 내어 읽기도 돼요.</li>
+          <li><b>오늘의 한 문장</b>날마다 바뀌는 366일 문장을 칠판처럼 띄워요.</li>
+          <li><b>대시보드마다 따로</b>시계 디자인 15종, D-Day, 알림판, 위젯 글자 크기(60~500%)가 대시보드별로 저장돼요.</li>
+        </ul>
+        <figure class="feat-media">
+          <button class="vcard is-short" type="button" data-yt="O14hDzpgZIM" data-short data-title="전자칠판 전용 대시보드"><img src="https://i.ytimg.com/vi/O14hDzpgZIM/oar2.jpg" width="1080" height="1920" alt="" loading="lazy" decoding="async"><span class="vcard-play" aria-hidden="true"></span><span class="vcard-tag">쇼츠</span><span class="sr-only">전자칠판 전용 대시보드 영상 보기</span></button>
+          <button class="vcard is-short" type="button" data-yt="znCZHgi_Tig" data-short data-title="오늘의 알림판"><img src="https://i.ytimg.com/vi/znCZHgi_Tig/oar2.jpg" width="1080" height="1920" alt="" loading="lazy" decoding="async"><span class="vcard-play" aria-hidden="true"></span><span class="vcard-tag">쇼츠</span><span class="sr-only">오늘의 알림판 영상 보기</span></button>
+        </figure>
+      </div>
+    </section>
+
+    <section class="feat feat-mascot" id="ddokddok" aria-labelledby="ddokddok-t">
+      <header class="feat-head">
+        <p class="feat-kicker">매일 쓰는 화면 <em class="tag tag-new">NEW</em></p>
+        <h2 id="ddokddok-t">똑똑이, 스쿨보드의 작은 비서</h2>
+        <p class="feat-lede">화면 오른쪽 아래에 사는 공식 마스코트예요. 오늘 할 일을 알려 주고, 적어서 부탁하면 대신 넣어 줘요.</p>
+      </header>
+      <div class="feat-body">
+        <ul class="points">
+          <li><b>오늘 브리핑</b>앱을 켜면 일정·할 일·수업·시간표 변경·상담·출결·급식·날씨·D-Day를 정리해 알려 줘요. 넣을 항목은 직접 골라요.</li>
+          <li><b>노크 알림과 하루 마무리</b>수업·일정·상담·교무실 알림이 오면 노크하고, 마지막 수업이 끝나면 남은 할 일과 내일 일정을 알려 줘요.</li>
+          <li><b>심부름</b>“내일 오후 3시 협의회 일정 추가해 줘”, “김민수 상점 2점 줘”처럼 적으면 일정·할 일·메모·누가기록·상벌점·출결을 넣어 줘요. 빠진 내용은 되물어요.</li>
+          <li><b>사용법 질문</b>두 번 클릭하면 오늘 정보와 질문 창이 열려요. 스쿨보드 사용법을 물어보면 답해 줘요.</li>
+          <li><b>방해하지 않기</b>수업 시간에는 알아서 숨고, 창 밖으로 꺼내면 바탕화면 펫이 돼요. 쉬는 시간엔 미니게임 5종도 있어요.</li>
+          <li><b>친구 셋</b>째깍이(시계), 또박이(연필), 꼼꼼이(출석부)로 바꿀 수 있어요.</li>
+        </ul>
+        <figure class="feat-media mascot-stage">
+          <div class="mascot-row">
+            <img src="assets/img/mascot/ddokddok.webp" alt="똑똑이" width="313" height="332" loading="lazy">
+            <img src="assets/img/mascot/jjaekkak.webp" alt="째깍이" width="313" height="375" loading="lazy">
+            <img src="assets/img/mascot/ttobak.webp" alt="또박이" width="313" height="368" loading="lazy">
+            <img src="assets/img/mascot/kkomkkom.webp" alt="꼼꼼이" width="313" height="323" loading="lazy">
+          </div>
+          <figcaption><span>똑똑이</span><span>째깍이</span><span>또박이</span><span>꼼꼼이</span></figcaption>
+        </figure>
+      </div>
+      <div class="feat-videos">
+        <button class="vchip" type="button" data-yt="fBVCqRhlY4Y" data-short data-title="똑똑이 소개"><span class="vchip-play" aria-hidden="true"></span>똑똑이 소개<small>쇼츠</small></button>
+        <button class="vchip" type="button" data-yt="tsIaJuzvhXk" data-short data-title="똑똑이 친구들 등장"><span class="vchip-play" aria-hidden="true"></span>똑똑이 친구들 등장<small>쇼츠</small></button>
+      </div>
+    </section>
+
+    <section class="feat" id="calendar" aria-labelledby="calendar-t">
+      <header class="feat-head">
+        <p class="feat-kicker">매일 쓰는 화면</p>
+        <h2 id="calendar-t">일정·할 일</h2>
+        <p class="feat-lede">일정과 할 일이 구글 캘린더·구글 태스크와 실시간으로 맞춰져요. 학사일정은 저절로 들어와요.</p>
+      </header>
+      <div class="feat-body">
+        <ul class="points">
+          <li><b>구글 캘린더·태스크 연동</b>휴대폰 구글 캘린더에 넣은 일정이 스쿨보드에, 스쿨보드에 넣은 할 일이 구글 태스크에 그대로 보여요.</li>
+          <li><b>학사일정 자동</b>NEIS 학사일정을 불러오고, 원하는 날은 D-Day로 바로 등록해요.</li>
+          <li><b>학교식 반복</b>‘셋째 주 수요일’, ‘2주마다’, ‘N일마다’ 같은 반복을 종료일과 함께 넣어요.</li>
+          <li><b>엑셀 일괄 업로드</b>연간 계획을 붙여 넣으면 오류·중복 의심 행을 미리 보여 주고 한 번에 올려요.</li>
+          <li><b>보기 방식</b>월간·주간·N일 보기에 음력·24절기, 학생 생일까지 캘린더에 표시해요.</li>
+        </ul>
+        <figure class="feat-media">
+          <button class="shot" type="button" data-zoom="assets/shots/desktop/calendar-2160.webp" aria-label="일정 화면 크게 보기"><img src="assets/shots/desktop/calendar-1080.webp" srcset="assets/shots/desktop/calendar-1080.webp 1080w, assets/shots/desktop/calendar-2160.webp 2160w" sizes="(max-width: 1100px) 92vw, 46vw" width="1600" height="1000" alt="스쿨보드 일정 화면" loading="lazy" decoding="async"></button>
+        </figure>
+      </div>
+      <div class="feat-videos">
+        <button class="vchip" type="button" data-yt="jVAJ9cxcClg" data-title="일정·할 일과 구글 캘린더 연동"><span class="vchip-play" aria-hidden="true"></span>구글 캘린더·태스크 연동<small>2:54</small></button>
+        <button class="vchip" type="button" data-yt="hbz_tYBp96I" data-title="일정 사용법"><span class="vchip-play" aria-hidden="true"></span>일정 사용법<small>3:07</small></button>
+      </div>
+    </section>
+
+    <section class="feat" id="timetable" aria-labelledby="timetable-t">
+      <header class="feat-head">
+        <p class="feat-kicker">매일 쓰는 화면</p>
+        <h2 id="timetable-t">시간표</h2>
+        <p class="feat-lede">나이스·컴시간·압핀 시간표를 그대로 불러오고, 바뀌면 알려 줘요.</p>
+      </header>
+      <div class="feat-body">
+        <ul class="points">
+          <li><b>세 가지 연동</b>NEIS 시간표, 컴시간알리미, 압핀알리미 중 우리 학교에 맞는 것을 골라 실시간으로 조회해요.</li>
+          <li><b>누구 시간표든</b>내 시간표는 물론 다른 선생님, 반별, 학생 개별 시간표까지 한 번에 조회해요.</li>
+          <li><b>변경 알림</b>나이스는 1시간, 컴시간·압핀은 30분마다 확인해 시간표가 바뀌면 알려 줘요.</li>
+          <li><b>수업 종소리</b>수업 시작·종료 전에 소리와 팝업으로 알려 줘요. 내 음원(mp3·wav)도 쓸 수 있어요.</li>
+          <li><b>직접 보완</b>개인 시간표를 손으로 고치고, 0교시와 요일별 교시 수도 맞춰요.</li>
+        </ul>
+        <figure class="feat-media">
+          <button class="shot" type="button" data-zoom="assets/shots/desktop/timetable-2160.webp" aria-label="시간표 화면 크게 보기"><img src="assets/shots/desktop/timetable-1080.webp" srcset="assets/shots/desktop/timetable-1080.webp 1080w, assets/shots/desktop/timetable-2160.webp 2160w" sizes="(max-width: 1100px) 92vw, 46vw" width="1600" height="1000" alt="스쿨보드 시간표 화면" loading="lazy" decoding="async"></button>
+        </figure>
+      </div>
+      <div class="feat-videos">
+        <button class="vchip" type="button" data-yt="5etlAdx9Vms" data-title="시간표 사용법"><span class="vchip-play" aria-hidden="true"></span>시간표 사용법<small>2:49</small></button>
+      </div>
+    </section>
+
+    <section class="feat" id="meal" aria-labelledby="meal-t">
+      <header class="feat-head">
+        <p class="feat-kicker">매일 쓰는 화면</p>
+        <h2 id="meal-t">급식·날씨</h2>
+        <p class="feat-lede">오늘 점심과 이번 주 식단, 영양 정보까지. 날씨와 대기질도 함께 봐요.</p>
+      </header>
+      <div class="feat-body">
+        <ul class="points">
+          <li><b>학교 급식 자동</b>학교만 고르면 NEIS 급식이 매일 들어와요. 주간표로 한 주를 미리 봐요.</li>
+          <li><b>영양 정보</b>칼로리와 탄수화물·단백질·지방을 함께 보여 줘요.</li>
+          <li><b>다른 학교·유치원도</b>자녀 학교나 유치원 급식으로 바꿔 볼 수 있어요. 휴대폰은 급식 학교를 따로 정해요.</li>
+          <li><b>날씨와 대기질</b>지역 날씨와 미세먼지·오존을 위젯으로 띄우고, 해외 도시도 골라요.</li>
+        </ul>
+        <figure class="feat-media">
+          <button class="shot" type="button" data-zoom="assets/shots/desktop/meal-2160.webp" aria-label="급식 화면 크게 보기"><img src="assets/shots/desktop/meal-1080.webp" srcset="assets/shots/desktop/meal-1080.webp 1080w, assets/shots/desktop/meal-2160.webp 2160w" sizes="(max-width: 1100px) 92vw, 46vw" width="1600" height="1000" alt="스쿨보드 급식 화면" loading="lazy" decoding="async"></button>
+        </figure>
+      </div>
+      <div class="feat-videos">
+        <button class="vchip" type="button" data-yt="wd-XSRrBTJs" data-title="급식 사용법"><span class="vchip-play" aria-hidden="true"></span>급식 사용법<small>0:58</small></button>
+      </div>
+    </section>
+
+    <section class="feat" id="memo" aria-labelledby="memo-t">
+      <header class="feat-head">
+        <p class="feat-kicker">매일 쓰는 화면</p>
+        <h2 id="memo-t">메모·루틴</h2>
+        <p class="feat-lede">포스트잇처럼 붙이는 메모와 매일 반복하는 루틴을 한곳에 둬요.</p>
+      </header>
+      <div class="feat-body">
+        <ul class="points">
+          <li><b>포스트잇 메모</b>색과 글자 크기(6~120pt)를 바꾸고, 사진을 붙여 넣거나 끌어다 놓아요.</li>
+          <li><b>루틴</b>매일 하는 일을 체크 목록으로 두면 자정에 저절로 초기화돼요.</li>
+          <li><b>폴더와 격자 배치</b>메모를 폴더로 나누고, 자유 배치와 격자 배치 중에서 골라요.</li>
+          <li><b>메모 속 할 일</b>메모에 넣은 할 일에 기한을 주면 캘린더에 체크 항목으로 떠요.</li>
+          <li><b>링크 넣기</b>메모와 일정 설명에 링크를 넣어 바로 열어요.</li>
+        </ul>
+        <figure class="feat-media">
+          <button class="shot" type="button" data-zoom="assets/shots/desktop/memo-2160.webp" aria-label="메모 화면 크게 보기"><img src="assets/shots/desktop/memo-1080.webp" srcset="assets/shots/desktop/memo-1080.webp 1080w, assets/shots/desktop/memo-2160.webp 2160w" sizes="(max-width: 1100px) 92vw, 46vw" width="1600" height="1000" alt="스쿨보드 메모 화면" loading="lazy" decoding="async"></button>
+        </figure>
+      </div>
+      <div class="feat-videos">
+        <button class="vchip" type="button" data-yt="AYglVdIJ4qw" data-title="메모 사용법"><span class="vchip-play" aria-hidden="true"></span>메모 사용법<small>1:23</small></button>
+      </div>
+    </section>
+
+    <section class="feat" id="notebook" aria-labelledby="notebook-t">
+      <header class="feat-head">
+        <p class="feat-kicker">매일 쓰는 화면</p>
+        <h2 id="notebook-t">노트북</h2>
+        <p class="feat-lede">가볍게 쓰는 문서 공간이에요. 학습지를 만들어 QR로 학생에게 바로 나눠 줘요.</p>
+      </header>
+      <div class="feat-body">
+        <ul class="points">
+          <li><b>블록 문서</b>제목·체크리스트·표·콜아웃·2열·3열을 마크다운 단축 입력으로 빠르게 쓰고, @로 다른 페이지를 이어요.</li>
+          <li><b>QR 배포</b>게시 기간과 고정 QR 주소를 정해 학생 휴대폰에 학습지를 띄우고, 고친 내용은 같은 QR에 다시 반영해요.</li>
+          <li><b>QR 인쇄 한 장</b>제목·QR·안내 문구가 담긴 인쇄용 한 장을 바로 뽑아요.</li>
+          <li><b>내보내기</b>Markdown·HTML·텍스트·PDF로 내보내고, 대시보드에 노트북 페이지를 띄워요.</li>
+        </ul>
+        <figure class="feat-media">
+          <button class="shot" type="button" data-zoom="assets/shots/desktop/notebook-2160.webp" aria-label="노트북 화면 크게 보기"><img src="assets/shots/desktop/notebook-1080.webp" srcset="assets/shots/desktop/notebook-1080.webp 1080w, assets/shots/desktop/notebook-2160.webp 2160w" sizes="(max-width: 1100px) 92vw, 46vw" width="1600" height="1000" alt="스쿨보드 노트북 화면" loading="lazy" decoding="async"></button>
+        </figure>
+      </div>
+    </section>
+
+    <section class="feat" id="contacts" aria-labelledby="contacts-t">
+      <header class="feat-head">
+        <p class="feat-kicker">매일 쓰는 화면</p>
+        <h2 id="contacts-t">연락처</h2>
+        <p class="feat-lede">교사·학생·학부모 연락처를 초성 몇 글자로 바로 찾아요.</p>
+      </header>
+      <div class="feat-body">
+        <ul class="points">
+          <li><b>영문 자판 그대로 초성 검색</b>한/영 전환 없이 ‘gre’만 쳐도 홍길동을 찾아요. ‘ㄱㅁㅅ’ 같은 초성도 돼요.</li>
+          <li><b>누르면 복사</b>전화번호를 누르면 바로 복사돼요. 학부모 번호는 두 개까지 적어요.</li>
+          <li><b>엑셀 붙여넣기</b>명단을 엑셀에서 그대로 붙여 넣고, 여러 기준으로 정렬하고 인쇄해요.</li>
+          <li><b>위젯과 휴대폰</b>대시보드 검색 위젯에서 바로 찾고, 휴대폰에서는 바로 전화·문자해요.</li>
+        </ul>
+        <figure class="feat-media">
+          <button class="shot" type="button" data-zoom="assets/shots/desktop/contacts-2160.webp" aria-label="연락처 화면 크게 보기"><img src="assets/shots/desktop/contacts-1080.webp" srcset="assets/shots/desktop/contacts-1080.webp 1080w, assets/shots/desktop/contacts-2160.webp 2160w" sizes="(max-width: 1100px) 92vw, 46vw" width="1600" height="1000" alt="스쿨보드 연락처 화면" loading="lazy" decoding="async"></button>
+        </figure>
+      </div>
+      <div class="feat-videos">
+        <button class="vchip" type="button" data-yt="5WW7QWyNk8M" data-title="연락처 사용법"><span class="vchip-play" aria-hidden="true"></span>연락처 사용법<small>2:08</small></button>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- 02 학급관리 -->
+    <!-- =================================================================== -->
+    <div class="group-intro" id="g-class">
+      <p class="group-no">02</p>
+      <h2>학급관리</h2>
+      <p>출결부터 자리, 상담, 생활기록부까지. 한 반의 1년이 한곳에 쌓여요. 담임반과 수업반을 함께 관리해요.</p>
+    </div>
+
+    <section class="feat" id="attendance" aria-labelledby="attendance-t">
+      <header class="feat-head">
+        <p class="feat-kicker">학급관리 <em class="tag tag-new">NEW 나이스 일괄입력</em></p>
+        <h2 id="attendance-t">출결 관리·나이스 일괄입력</h2>
+        <p class="feat-lede">교시별로 클릭 몇 번이면 출결 끝. 체크한 출결은 버튼 한 번으로 나이스에 들어가요.</p>
+      </header>
+      <div class="feat-body">
+        <ul class="points">
+          <li><b>나이스 출결 일괄입력</b>아직 나이스에 올리지 않은 출결만 모아 날짜별로 자동 입력하고, 다시 조회해 확인한 뒤 ‘나이스 반영’으로 표시해요.</li>
+          <li><b>안전장치</b>나이스에 다른 값이 있으면 건너뛰기(기본)와 덮어쓰기 중에서 골라요. 나이스에서 지울 때도 같은 값만 지워요.</li>
+          <li><b>교시 자동 채우기</b>지각은 조회부터 고른 교시까지, 조퇴는 고른 교시부터 종례까지 한 번에 채워요.</li>
+          <li><b>휴업일 반영</b>NEIS 학사일정의 휴업일을 불러와 출결 집계에서 빼고, 다른 학급에도 복사해요.</li>
+          <li><b>출결 종합</b>질병·미인정·기타·인정을 나눠 보고, 서류 제출을 체크하고, 결석일수가 넘치면 알려 줘요.</li>
+        </ul>
+        <figure class="feat-media">
+          <button class="shot" type="button" data-zoom="assets/shots/desktop/attendance-2160.webp" aria-label="출결 관리 화면 크게 보기"><img src="assets/shots/desktop/attendance-1080.webp" srcset="assets/shots/desktop/attendance-1080.webp 1080w, assets/shots/desktop/attendance-2160.webp 2160w" sizes="(max-width: 1100px) 92vw, 46vw" width="1600" height="1000" alt="스쿨보드 학급관리 출결 화면" loading="lazy" decoding="async"></button>
+        </figure>
+      </div>
+      <div class="feat-videos">
+        <button class="vchip vchip-strong" type="button" data-yt="6WFEUKAFrAM" data-title="나이스 출결 자동 일괄입력"><span class="vchip-play" aria-hidden="true"></span>나이스 출결 일괄입력 시연<small>0:55</small></button>
+      </div>
+    </section>
+
+    <section class="feat" id="qr-attendance" aria-labelledby="qr-attendance-t">
+      <header class="feat-head">
+        <p class="feat-kicker">학급관리</p>
+        <h2 id="qr-attendance-t">QR 출결</h2>
+        <p class="feat-lede">학생이 QR 코드를 찍으면 출석부가 알아서 채워져요.</p>
+      </header>
+      <div class="feat-body">
+        <ul class="points">
+          <li><b>상시 스캐너</b>한 번 켜 두면 학생이 찍은 시각으로 날짜와 교시가 자동으로 나뉘어요. 교시마다 출결을 새로 만들 필요가 없어요.</li>
+          <li><b>남는 휴대폰이 스캐너</b>공기계를 교실에 두면 스캐너가 돼요. 앞·뒤 카메라 전환, 스캔음, 다른 반 QR 감지까지 해요.</li>
+          <li><b>지각 판정</b>시작 N분 뒤는 지각으로, 쉬는 시간에 찍으면 다음 교시로 인정해요.</li>
+          <li><b>야자·방과후</b>교시 밖 시간대를 만들고 요일마다 대상 학생을 다르게 정해요.</li>
+          <li><b>QR 카드와 현황판</b>학생 QR 카드를 A4에 한 번에 뽑고, 현황판과 대시보드 위젯에서 미체크 학생을 바로 봐요.</li>
+        </ul>
+        <figure class="feat-media">
+          <button class="shot" type="button" data-zoom="assets/shots/desktop/qr-attendance-2160.webp" aria-label="QR 출결 화면 크게 보기"><img src="assets/shots/desktop/qr-attendance-1080.webp" srcset="assets/shots/desktop/qr-attendance-1080.webp 1080w, assets/shots/desktop/qr-attendance-2160.webp 2160w" sizes="(max-width: 1100px) 92vw, 46vw" width="1600" height="1000" alt="스쿨보드 QR 출결 현황판 화면" loading="lazy" decoding="async"></button>
+        </figure>
+      </div>
+    </section>
+
+    <section class="feat" id="seating" aria-labelledby="seating-t">
+      <header class="feat-head">
+        <p class="feat-kicker">학급관리</p>
+        <h2 id="seating-t">자리배정</h2>
+        <p class="feat-lede">조건을 넣으면 자리를 자동으로 배정하고, 전체화면으로 두근두근 발표해요.</p>
+      </header>
+      <div class="feat-body">
+        <ul class="points">
+          <li><b>공정한 자동 배정</b>고정석, 남녀 조건, 붙으면 안 되는 학생, 지난 짝 피하기, 학생 선호도까지 반영해요.</li>
+          <li><b>발표가 이벤트로</b>3·2·1 카운트다운과 카드 섞기, 색종이와 함께 새 자리를 공개해요.</li>
+          <li><b>우리 교실 모양 그대로</b>분단마다 열 수를 다르게 하고, 교탁 쪽에서 본 모양으로 돌려 봐요.</li>
+          <li><b>자리에서 바로 기록</b>자리표에서 학생을 눌러 출결·누가기록·상벌점을 넣어요.</li>
+          <li><b>사진과 명렬표</b>나이스 사진출석부 엑셀에서 사진을 한 번에 꺼내 붙이고, 자리표와 명렬표를 함께 출력해요.</li>
+        </ul>
+        <figure class="feat-media">
+          <button class="shot" type="button" data-zoom="assets/shots/desktop/seating-2160.webp" aria-label="자리배정 화면 크게 보기"><img src="assets/shots/desktop/seating-1080.webp" srcset="assets/shots/desktop/seating-1080.webp 1080w, assets/shots/desktop/seating-2160.webp 2160w" sizes="(max-width: 1100px) 92vw, 46vw" width="1600" height="1000" alt="스쿨보드 자리배정 전체화면 발표 화면" loading="lazy" decoding="async"></button>
+        </figure>
+      </div>
+    </section>
+
+    <section class="feat" id="records" aria-labelledby="records-t">
+      <header class="feat-head">
+        <p class="feat-kicker">학급관리</p>
+        <h2 id="records-t">누가기록·상벌점</h2>
+        <p class="feat-lede">학생 이름을 누르고 바로 기록해요. 쌓인 기록은 생활기록부의 재료가 돼요.</p>
+      </header>
+      <div class="feat-body">
+        <ul class="points">
+          <li><b>바로 기록</b>학생 목록에서 이름을 누르고 교과세특·행발 같은 분류로 관찰 내용을 남겨요.</li>
+          <li><b>상벌점</b>상점·벌점을 사유와 함께 주고, 여러 학생에게 한 번에 넣어요. 나이스 입력 여부도 체크해요.</li>
+          <li><b>타임라인</b>여러 학생 기록을 합쳐 보고, 걸러 본 그대로 인쇄·PDF·엑셀로 뽑아요.</li>
+          <li><b>학생 사진</b>학생 사진을 등록해 두면 기록할 때 얼굴과 함께 봐요.</li>
+        </ul>
+        <figure class="feat-media">
+          <button class="shot" type="button" data-zoom="assets/shots/desktop/records-2160.webp" aria-label="누가기록 화면 크게 보기"><img src="assets/shots/desktop/records-1080.webp" srcset="assets/shots/desktop/records-1080.webp 1080w, assets/shots/desktop/records-2160.webp 2160w" sizes="(max-width: 1100px) 92vw, 46vw" width="1600" height="1000" alt="스쿨보드 누가기록 화면" loading="lazy" decoding="async"></button>
+        </figure>
+      </div>
+    </section>
+
+    <section class="feat" id="student-records" aria-labelledby="student-records-t">
+      <header class="feat-head">
+        <p class="feat-kicker">학급관리 <em class="tag tag-best">BEST</em></p>
+        <h2 id="student-records-t">생활기록부 정리</h2>
+        <p class="feat-lede">한 해 동안 모은 재료로, 선생님 문체에 맞춘 생기부 초안을 써요. 다 쓴 글은 AI로 한 번 더 다듬어요.</p>
+      </header>
+      <div class="feat-body">
+        <ul class="points">
+          <li><b>재료가 한곳에</b>누가기록, 성취수준(초등), 학생이 QR로 낸 활동, 손글씨 OCR 결과를 학생별로 모아요.</li>
+          <li><b>내 문체 그대로</b>작년에 쓴 생기부 예시와 쓸 서술어 목록을 넣으면 그 문체를 따라 써요.</li>
+          <li><b>학생마다 한 줄</b>개인별 요구사항과 목표 바이트를 정하고, 여러 학생을 동시에 작성해요. 아직 안 쓴 학생만 골라 쓸 수도 있어요.</li>
+          <li><b>AI 수정</b>다 쓴 글을 학생별로 AI에게 다듬어 달라고 하고, 마음에 안 들면 되돌려요.</li>
+          <li><b>학생 이름은 빼고</b>AI에는 학생 이름 없이 활동 내용과 요구사항만 보내요.</li>
+        </ul>
+        <figure class="feat-media">
+          <button class="shot" type="button" data-zoom="assets/shots/desktop/student-records-2160.webp" aria-label="생활기록부 정리 화면 크게 보기"><img src="assets/shots/desktop/student-records-1080.webp" srcset="assets/shots/desktop/student-records-1080.webp 1080w, assets/shots/desktop/student-records-2160.webp 2160w" sizes="(max-width: 1100px) 92vw, 46vw" width="1600" height="1000" alt="스쿨보드 생활기록부 정리 화면" loading="lazy" decoding="async"></button>
+        </figure>
+      </div>
+      <div class="feat-videos">
+        <button class="vchip vchip-strong" type="button" data-yt="PTndX5ohm_E" data-title="생활기록부 정리와 똑똑이 소개"><span class="vchip-play" aria-hidden="true"></span>생활기록부 정리 시연<small>1:49</small></button>
+      </div>
+    </section>
+
+    <section class="feat" id="record-analysis" aria-labelledby="record-analysis-t">
+      <header class="feat-head">
+        <p class="feat-kicker">학급관리</p>
+        <h2 id="record-analysis-t">생기부 분석·진로진학 상담</h2>
+        <p class="feat-lede">학교생활기록부 PDF를 올리면 학생별로 영역을 나눠 보여 줘요. 진로 설계와 입결 조회, 마감 전 점검까지 한 작업창에서 해요.</p>
+      </header>
+      <div class="feat-body">
+        <ul class="points">
+          <li><b>PDF 한 번에 올리기</b>NEIS 학교생활기록부Ⅱ PDF를 한꺼번에 올리면 학급 명단과 자동으로 짝지어요.</li>
+          <li><b>영역별 조회·분석</b>교과성적, 세부능력 및 특기사항 같은 영역을 나눠 보고 역량을 분석해요. 중학교 생기부도 돼요.</li>
+          <li><b>진로·과목 설계와 입결</b>상담에 필요한 진로·과목 설계와 대학·입결 조회를 같은 창에서 이어 봐요.</li>
+          <li><b>마감 전 생기부 점검</b>NEIS 바이트 초과, 기재 금지 표현, 맞춤법, 다른 학생과 겹치는 문장을 찾아 표시해요.</li>
+          <li><b>PC 안에서만</b>생기부 PDF 분석은 컴퓨터 안에서만 처리하고 주민번호·주소 같은 항목은 읽지 않아요.</li>
+        </ul>
+        <div class="feat-media feat-panel">
+          <p class="panel-title">‘생기부·진로 상담’ 작업창</p>
+          <ol class="panel-steps">
+            <li><span>1</span><b>생기부 조회·분석</b>영역별로 읽고 역량 분석</li>
+            <li><span>2</span><b>진로·과목 설계</b>희망 진로에 맞춘 과목 설계</li>
+            <li><span>3</span><b>대학·입결 조회</b>상담 자료로 바로 확인</li>
+            <li><span>4</span><b>생활기록부 점검</b>바이트·금지어·맞춤법·문장 겹침</li>
+          </ol>
+          <p class="panel-note">학급관리 위쪽의 <strong>생기부·진로 상담</strong> 버튼으로 열어요.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="feat" id="achievements" aria-labelledby="achievements-t">
+      <header class="feat-head">
+        <p class="feat-kicker">학급관리 <em class="tag tag-soft">초등 추천</em></p>
+        <h2 id="achievements-t">성취수준(초등)</h2>
+        <p class="feat-lede">성취기준별로 수준만 체크하면, 그 기록이 초등 생활기록부 초안의 재료가 돼요.</p>
+      </header>
+      <div class="feat-body">
+        <ul class="points">
+          <li><b>클릭으로 체크</b>성취기준을 추가하고 학생마다 수준을 눌러 기록해요.</li>
+          <li><b>엑셀 일괄 업로드</b>이미 엑셀로 정리해 둔 표는 그대로 붙여 넣어요.</li>
+          <li><b>생기부로 이어서</b>생활기록부 정리에서 ‘활동내용 불러오기’를 누르면 체크한 성취수준을 가져와 초안을 써요.</li>
+          <li><b>공통설정과 개인별 요구사항</b>내 문체와 학급 특색은 공통설정으로, 학생 한 명의 디테일은 한두 줄 요구사항으로 더해요.</li>
+        </ul>
+        <figure class="feat-media">
+          <button class="shot" type="button" data-zoom="assets/shots/desktop/achievements-2160.webp" aria-label="성취수준 화면 크게 보기"><img src="assets/shots/desktop/achievements-1080.webp" srcset="assets/shots/desktop/achievements-1080.webp 1080w, assets/shots/desktop/achievements-2160.webp 2160w" sizes="(max-width: 1100px) 92vw, 46vw" width="1600" height="1000" alt="스쿨보드 성취수준(초등) 화면" loading="lazy" decoding="async"></button>
+        </figure>
+      </div>
+      <div class="feat-videos">
+        <button class="vchip" type="button" data-yt="QctssZB2pjw" data-short data-title="초등 성취수준으로 생기부 작성"><span class="vchip-play" aria-hidden="true"></span>성취수준으로 생기부 쓰기<small>쇼츠</small></button>
+      </div>
+    </section>
+
+    <section class="feat" id="consultations" aria-labelledby="consultations-t">
+      <header class="feat-head">
+        <p class="feat-kicker">학급관리</p>
+        <h2 id="consultations-t">상담 신청</h2>
+        <p class="feat-lede">상담 날짜 정하려고 단톡방 돌리지 마세요. QR로 신청받고 달력에서 관리해요.</p>
+      </header>
+      <div class="feat-body">
+        <ul class="points">
+          <li><b>QR로 신청</b>학생·학부모가 휴대폰으로 가능한 시간을 골라요. 학번·이름 확인 방식도 정하고, 게시 전에 학생 화면을 미리 봐요.</li>
+          <li><b>상담 시간 한 번에</b>상담 시간을 일괄로 만들고, 같은 시간 중복 선택을 허용할지 정해요.</li>
+          <li><b>알림과 기록</b>상담 몇 분 전에 소리·팝업으로 알려 주고, 결과와 교사 메모를 남겨요.</li>
+          <li><b>통계와 출력</b>미신청 학생과 신청·완료·불참 이력을 보고, 결과를 엑셀·PDF로 뽑아요. 상담 일정은 캘린더에도 떠요.</li>
+        </ul>
+        <figure class="feat-media">
+          <button class="shot" type="button" data-zoom="assets/shots/desktop/consultations-2160.webp" aria-label="상담 신청 화면 크게 보기"><img src="assets/shots/desktop/consultations-1080.webp" srcset="assets/shots/desktop/consultations-1080.webp 1080w, assets/shots/desktop/consultations-2160.webp 2160w" sizes="(max-width: 1100px) 92vw, 46vw" width="1600" height="1000" alt="스쿨보드 상담 신청 관리 화면" loading="lazy" decoding="async"></button>
+        </figure>
+      </div>
+    </section>
+
+    <section class="feat" id="activities" aria-labelledby="activities-t">
+      <header class="feat-head">
+        <p class="feat-kicker">학급관리</p>
+        <h2 id="activities-t">학급활동모음·OCR 스캔</h2>
+        <p class="feat-lede">학생 활동은 QR로 받고, 손글씨 보고서는 AI가 글자로 바꿔요. 둘 다 생기부 재료로 바로 이어져요.</p>
+      </header>
+      <div class="feat-body">
+        <ul class="points">
+          <li><b>QR로 제출받기</b>질문을 적고 게시하면 학생이 휴대폰으로 답을 내요. 여러 반에 동시에 게시하고 통계로 봐요.</li>
+          <li><b>일괄 업로드</b>다른 곳에서 모은 활동도 한 번에 올려 학생별로 쌓아요. 다른 반에 활동을 복사할 수도 있어요.</li>
+          <li><b>OCR 스캔</b>손으로 쓴 보고서·수행평가 스캔 파일을 한꺼번에 골라 AI로 읽고 학생별 글자로 바꿔요.</li>
+          <li><b>생기부 재료로</b>모은 활동과 OCR 결과는 생활기록부 정리에서 바로 불러와요.</li>
+        </ul>
+        <figure class="feat-media">
+          <button class="shot" type="button" data-zoom="assets/shots/desktop/activities-2160.webp" aria-label="학급활동모음 화면 크게 보기"><img src="assets/shots/desktop/activities-1080.webp" srcset="assets/shots/desktop/activities-1080.webp 1080w, assets/shots/desktop/activities-2160.webp 2160w" sizes="(max-width: 1100px) 92vw, 46vw" width="1600" height="1000" alt="스쿨보드 학급활동모음 화면" loading="lazy" decoding="async"></button>
+        </figure>
+      </div>
+    </section>
+
+    <section class="feat feat-compact" id="class-more" aria-labelledby="class-more-t">
+      <header class="feat-head">
+        <p class="feat-kicker">학급관리</p>
+        <h2 id="class-more-t">진도표와 학급 살림</h2>
+        <p class="feat-lede">담임과 교과 선생님의 자잘한 일까지 챙겨요.</p>
+      </header>
+      <ul class="mini-grid">
+        <li><h3>진도표</h3><p>반별 진도를 체크하고 엑셀로 정리해요. 반 사이로 끌어 옮기거나 복사하고, 대시보드에 진도 슬라이드로 띄워요.</p></li>
+        <li><h3>학급·교과 그룹</h3><p>담임반과 수업반을 그룹으로 묶어 관리하고, 지난 학급은 지우지 않고 숨겨 둬요.</p></li>
+        <li><h3>명단과 사진</h3><p>학생 명단을 엑셀로 불러오고 내보내요. 사진을 등록하고, 생일은 캘린더에 띄워요.</p></li>
+        <li><h3>학급메모</h3><p>학급마다 따로 쓰는 메모장이에요. 학급 일정은 D-Day로 등록해요.</p></li>
+      </ul>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- 03 업무 자동화 -->
+    <!-- =================================================================== -->
+    <div class="group-intro" id="g-auto">
+      <p class="group-no">03</p>
+      <h2>업무 자동화</h2>
+      <p>업무포털·나이스·에듀파인에서 반복하던 클릭을 스쿨보드가 대신해요. 선생님은 결과만 확인하면 돼요.</p>
+    </div>
+
+    <section class="feat" id="auto-login" aria-labelledby="auto-login-t">
+      <header class="feat-head">
+        <p class="feat-kicker">업무 자동화</p>
+        <h2 id="auto-login-t">자동 로그인</h2>
+        <p class="feat-lede">업무포털·나이스·K-에듀파인을 버튼 한 번으로. 인증서 로그인까지 스쿨보드가 해요.</p>
+      </header>
+      <div class="feat-body">
+        <ul class="points">
+          <li><b>원클릭 접속</b>Chrome이나 Edge로 업무포털에 들어가 인증서로 로그인하고 나이스·K-에듀파인까지 열어요.</li>
+          <li><b>우리 교육청 그대로</b>교육청을 고르면 그 교육청 업무포털로 들어가요. 보안 프로그램이 준비될 때까지 기다렸다가 진행해요.</li>
+          <li><b>비밀번호는 내 PC에</b>인증서 비밀번호는 선생님 PC에 암호화해서 저장해요.</li>
+          <li><b>자동화의 출발점</b>나이스 출결 일괄입력, 복무 상신, 업무포털 현황, 원클릭 품의가 모두 자동 로그인 위에서 돌아가요.</li>
+        </ul>
+        <figure class="feat-media">
+          <button class="shot" type="button" data-zoom="assets/shots/desktop/auto-login-2160.webp" aria-label="자동 로그인 화면 크게 보기"><img src="assets/shots/desktop/auto-login-1080.webp" srcset="assets/shots/desktop/auto-login-1080.webp 1080w, assets/shots/desktop/auto-login-2160.webp 2160w" sizes="(max-width: 1100px) 92vw, 46vw" width="1600" height="1000" alt="스쿨보드 자동 로그인 메뉴. Chrome·나이스, Chrome·K-에듀파인, Edge·나이스, 근무 및 초근상신 항목이 있어요." loading="lazy" decoding="async"></button>
+        </figure>
+      </div>
+      <div class="feat-videos">
+        <button class="vchip" type="button" data-yt="KojPG1aL8AI" data-title="자동 로그인 사용법"><span class="vchip-play" aria-hidden="true"></span>자동 로그인 사용법<small>2:13</small></button>
+      </div>
+    </section>
+
+    <section class="feat" id="portal-status" aria-labelledby="portal-status-t">
+      <header class="feat-head">
+        <p class="feat-kicker">업무 자동화 <em class="tag tag-new">NEW</em></p>
+        <h2 id="portal-status-t">업무포털 현황</h2>
+        <p class="feat-lede">체험학습 신청서, 학생이 말해 줘서 아셨나요? 나이스·에듀파인 알림을 위젯이 먼저 알려 줘요.</p>
+      </header>
+      <div class="feat-body">
+        <ul class="points">
+          <li><b>나이스 알림 종</b>나이스 ‘나의 할일’ 알림을 1분마다 확인해 빨간 숫자로 알려 줘요. 누르면 나이스의 그 화면이 바로 열려요.</li>
+          <li><b>세 시스템을 한 위젯에</b>나이스 승인사항, K-에듀파인 전자결재, 교육행정데이터통합관리(교데통) 알림 숫자를 한곳에서 봐요.</li>
+          <li><b>숫자를 누르면 그 목록으로</b>공람대기·결재함 숫자를 누르면 해당 목록이 바로 열려요.</li>
+          <li><b>로그인 유지</b>앱이 켜져 있는 동안 업무포털 로그인을 자동으로 연장해요.</li>
+          <li><b>연결 테스트</b>잘 안 되면 어느 단계에서 막히는지 한 단계씩 확인해요.</li>
+        </ul>
+        <figure class="feat-media">
+          <button class="vcard" type="button" data-yt="XVn_eqO1kcY" data-title="실시간 업무포털 현황 및 알림"><img src="https://i.ytimg.com/vi/XVn_eqO1kcY/maxresdefault.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async"><span class="vcard-play" aria-hidden="true"></span><span class="vcard-tag">시연 영상 0:55</span><span class="sr-only">업무포털 현황 영상 보기</span></button>
+        </figure>
+      </div>
+    </section>
+
+    <section class="feat" id="duty" aria-labelledby="duty-t">
+      <header class="feat-head">
+        <p class="feat-kicker">업무 자동화</p>
+        <h2 id="duty-t">복무·초과근무 상신</h2>
+        <p class="feat-lede">육아시간·연가·병가·초과근무 상신, 클릭 한 번이면 나이스에 올라가요.</p>
+      </header>
+      <div class="feat-body">
+        <ul class="points">
+          <li><b>복무상신</b>특별휴가(육아시간), 연가(연가·조퇴·외출·지각), 병가 종류를 고르고 사유를 적으면 끝이에요.</li>
+          <li><b>초과근무</b>날짜·시간·할 일을 적으면 초과근무를 상신해요. 여러 날짜를 한 번에 올릴 수도 있어요.</li>
+          <li><b>결재선은 처음 한 번만</b>‘스쿨보드1~8’ 개인결재선을 자동으로 등록해 두면 다음부터 알아서 골라요.</li>
+          <li><b>멈추면 알려 줘요</b>중간에 멈추면 어느 단계에서 멈췄는지 알려 줘요.</li>
+        </ul>
+        <figure class="feat-media">
+          <button class="vcard" type="button" data-yt="LU8Jan7oh2M" data-title="복무 및 초과근무 상신 자동화"><img src="https://i.ytimg.com/vi/LU8Jan7oh2M/maxresdefault.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async"><span class="vcard-play" aria-hidden="true"></span><span class="vcard-tag">시연 영상 1:11</span><span class="sr-only">복무 및 초과근무 상신 영상 보기</span></button>
+        </figure>
+      </div>
+    </section>
+
+    <section class="feat" id="pumui" aria-labelledby="pumui-t">
+      <header class="feat-head">
+        <p class="feat-kicker">업무 자동화 <em class="tag tag-new">NEW</em> <em class="tag tag-beta">BETA</em></p>
+        <h2 id="pumui-t">원클릭 품의</h2>
+        <p class="feat-lede">장바구니 캡처나 견적서만 있으면, 에듀파인 품목내역 엑셀과 품의 등록이 한 번에.</p>
+      </header>
+      <div class="feat-body">
+        <ul class="points">
+          <li><b>AI가 읽어요</b>장바구니 캡처·견적서·품의 요구서를 AI가 읽어 품목 내역으로 정리해요.</li>
+          <li><b>품목내역 엑셀</b>에듀파인에 올릴 품목내역 엑셀 파일을 만들어 줘요.</li>
+          <li><b>제목·개요 자동 입력</b>에듀파인 품의등록 화면에 제목과 개요를 자동으로 넣어요.</li>
+        </ul>
+        <figure class="feat-media">
+          <button class="shot" type="button" data-zoom="assets/shots/desktop/one-click-pumui-2160.webp" aria-label="원클릭 품의 화면 크게 보기"><img src="assets/shots/desktop/one-click-pumui-1080.webp" srcset="assets/shots/desktop/one-click-pumui-1080.webp 1080w, assets/shots/desktop/one-click-pumui-2160.webp 2160w" sizes="(max-width: 1100px) 92vw, 46vw" width="1600" height="1000" alt="스쿨보드 원클릭 품의 화면" loading="lazy" decoding="async"></button>
+        </figure>
+      </div>
+    </section>
+
+    <section class="feat" id="office" aria-labelledby="office-t">
+      <header class="feat-head">
+        <p class="feat-kicker">업무 자동화</p>
+        <h2 id="office-t">온라인 교무실</h2>
+        <p class="feat-lede">개인정보 없이 닉네임과 학교 코드로 모이는 우리 학교 교무실이에요.</p>
+      </header>
+      <div class="feat-body">
+        <ul class="points">
+          <li><b>확성기</b>공지를 보내면 구성원 스쿨보드에 바로 떠요. 교무실을 열지 않고 타이틀바 종에서 바로 보내요.</li>
+          <li><b>학교일정·주간일정</b>부서별로 지난 주·이번 주·다음 주를 한 표에 보고, 엑셀·PDF로 뽑아요. 일괄 입력도 돼요.</li>
+          <li><b>일일 알림</b>“1학년 야자” 같은 항목을 만들어 매일·매주 반복으로 등록해요.</li>
+          <li><b>권한과 승인</b>구성원별로 확성기·일정 편집 권한을 주고, 가입은 한 번에 승인해요. 휴대폰에서도 관리해요.</li>
+        </ul>
+        <figure class="feat-media">
+          <button class="shot" type="button" data-zoom="assets/shots/desktop/office-2160.webp" aria-label="온라인 교무실 화면 크게 보기"><img src="assets/shots/desktop/office-1080.webp" srcset="assets/shots/desktop/office-1080.webp 1080w, assets/shots/desktop/office-2160.webp 2160w" sizes="(max-width: 1100px) 92vw, 46vw" width="1600" height="1000" alt="스쿨보드 온라인 교무실 화면" loading="lazy" decoding="async"></button>
+        </figure>
+      </div>
+    </section>
+
+    <section class="feat" id="resources" aria-labelledby="resources-t">
+      <header class="feat-head">
+        <p class="feat-kicker">업무 자동화</p>
+        <h2 id="resources-t">업무관리·즐겨찾기</h2>
+        <p class="feat-lede">넘쳐나는 업무용 구글 시트와 자주 가는 사이트를 한곳에 모아요.</p>
+      </header>
+      <div class="feat-body">
+        <ul class="points">
+          <li><b>업무자료</b>업무 관련 구글 시트·문서 주소를 모아 두고 앱 안에서 바로 열어요.</li>
+          <li><b>즐겨찾기</b>자주 가는 사이트와 PC 속 파일·폴더를 바로가기로 모아요. 주소 여러 줄을 한 번에 넣어요.</li>
+          <li><b>대시보드 위젯</b>파일·폴더 즐겨찾기를 대시보드에 띄워 바로 열어요.</li>
+        </ul>
+        <figure class="feat-media">
+          <button class="shot" type="button" data-zoom="assets/shots/desktop/resources-2160.webp" aria-label="업무관리 화면 크게 보기"><img src="assets/shots/desktop/resources-1080.webp" srcset="assets/shots/desktop/resources-1080.webp 1080w, assets/shots/desktop/resources-2160.webp 2160w" sizes="(max-width: 1100px) 92vw, 46vw" width="1600" height="1000" alt="스쿨보드 업무관리 화면" loading="lazy" decoding="async"></button>
+        </figure>
+      </div>
+      <div class="feat-videos">
+        <button class="vchip" type="button" data-yt="2lET0uqIXts" data-title="업무자료 사용법"><span class="vchip-play" aria-hidden="true"></span>업무자료 사용법<small>1:29</small></button>
+        <button class="vchip" type="button" data-yt="rvMVEByeRTY" data-title="즐겨찾기 사용법"><span class="vchip-play" aria-hidden="true"></span>즐겨찾기 사용법<small>1:15</small></button>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- 04 문서·AI 도구 -->
+    <!-- =================================================================== -->
+    <div class="group-intro" id="g-docs">
+      <p class="group-no">04</p>
+      <h2>문서·AI 도구</h2>
+      <p>한글·PDF·이미지 작업을 앱 안에서 끝내요. 도구상자에서 바로 열고, 대시보드에 바로가기로 꺼내 둘 수도 있어요.</p>
+    </div>
+
+    <section class="feat" id="geulkkakki" aria-labelledby="geulkkakki-t">
+      <header class="feat-head">
+        <p class="feat-kicker">문서·AI 도구 <em class="tag tag-beta">BETA</em></p>
+        <h2 id="geulkkakki-t">글깎이</h2>
+        <p class="feat-lede">열어 둔 한/글 문서를 대화로 고치고, 양식 채우기와 시험지 옮기기까지 AI가 도와요.</p>
+      </header>
+      <div class="feat-body">
+        <ul class="points">
+          <li><b>실시간 AI 편집</b>열어 둔 한/글 문서에 “마지막 문단에 연락처 안내 넣어 줘”처럼 부탁하면 고칠 내용을 먼저 보여 주고, 승인하면 적용해요.</li>
+          <li><b>AI 자동완성</b>양식 전체를 이해해 작업 사본에 내용을 채워요. 원본은 그대로 둬요.</li>
+          <li><b>양식 채우기</b>양식과 참고 자료를 합쳐 새 문서를 만들어요.</li>
+          <li><b>시험지 옮기기</b>PDF나 이미지 시험지를 편집할 수 있는 HWPX 문서로 바꿔요.</li>
+        </ul>
+        <figure class="feat-media">
+          <button class="shot" type="button" data-zoom="assets/shots/desktop/geulkkakki-2160.webp" aria-label="글깎이 화면 크게 보기"><img src="assets/shots/desktop/geulkkakki-1080.webp" srcset="assets/shots/desktop/geulkkakki-1080.webp 1080w, assets/shots/desktop/geulkkakki-2160.webp 2160w" sizes="(max-width: 1100px) 92vw, 46vw" width="1600" height="1000" alt="스쿨보드 글깎이 화면" loading="lazy" decoding="async"></button>
+        </figure>
+      </div>
+      <div class="feat-videos">
+        <button class="vchip vchip-strong" type="button" data-yt="9W2cXIyPfiY" data-title="글깎이 실시간 AI 편집"><span class="vchip-play" aria-hidden="true"></span>실시간 AI 편집 시연<small>1:20</small></button>
+        <button class="vchip" type="button" data-yt="1tgI-nGXCsM" data-short data-title="글깎이 시험지 옮기기"><span class="vchip-play" aria-hidden="true"></span>시험지 옮기기<small>쇼츠</small></button>
+      </div>
+    </section>
+
+    <section class="feat" id="pdf-editor" aria-labelledby="pdf-editor-t">
+      <header class="feat-head">
+        <p class="feat-kicker">문서·AI 도구</p>
+        <h2 id="pdf-editor-t">PDF 편집기</h2>
+        <p class="feat-lede">나누기·합치기·추출·회전·압축과 한글·이미지 변환까지 한곳에서.</p>
+      </header>
+      <div class="feat-body">
+        <ul class="points">
+          <li><b>나누고 고르고 합치기</b>한꺼번에 스캔한 활동지를 일정한 쪽수로 나누고, 필요한 쪽만 뽑고, 원하는 순서로 합쳐요.</li>
+          <li><b>자르기·회전·대칭</b>여백은 잘라 내고, 돌아간 페이지는 바로잡아요.</li>
+          <li><b>용량 줄이기</b>첨부 용량이 클 때 PDF를 줄여요.</li>
+          <li><b>변환</b>PDF↔이미지, 한글 문서→PDF·이미지를 한 번에 바꿔요.</li>
+        </ul>
+        <figure class="feat-media">
+          <button class="shot" type="button" data-zoom="assets/shots/desktop/pdf-editor-2160.webp" aria-label="PDF 편집기 화면 크게 보기"><img src="assets/shots/desktop/pdf-editor-1080.webp" srcset="assets/shots/desktop/pdf-editor-1080.webp 1080w, assets/shots/desktop/pdf-editor-2160.webp 2160w" sizes="(max-width: 1100px) 92vw, 46vw" width="1600" height="1000" alt="스쿨보드 PDF 편집기 화면" loading="lazy" decoding="async"></button>
+        </figure>
+      </div>
+    </section>
+
+    <section class="feat" id="html-editor" aria-labelledby="html-editor-t">
+      <header class="feat-head">
+        <p class="feat-kicker">문서·AI 도구 <em class="tag tag-beta">BETA</em></p>
+        <h2 id="html-editor-t">HTML 편집기</h2>
+        <p class="feat-lede">AI로 만든 HTML 문서를 파워포인트처럼 고치고 PDF·이미지로 내보내요.</p>
+      </header>
+      <div class="feat-body">
+        <ul class="points">
+          <li><b>예시 양식 23종</b>수업 슬라이드, 인쇄용 문서, 카드뉴스, 학급 홈페이지 같은 웹 화면으로 바로 시작해요.</li>
+          <li><b>PPT처럼 편집</b>글·도형·이미지를 하나씩 골라 옮기고 고쳐요. 서식 복사·붙여넣기도 돼요.</li>
+          <li><b>AI에게 부탁하기</b>제작 프롬프트를 복사해 AI로 만들고, 고칠 개체를 골라 수정 요청문을 만들어요.</li>
+          <li><b>발표와 내보내기</b>한 장씩 화면 가득 발표하고, 고해상도 PNG와 글자가 선택되는 PDF로 내보내요.</li>
+        </ul>
+        <figure class="feat-media">
+          <button class="shot" type="button" data-zoom="assets/shots/desktop/html-editor-2160.webp" aria-label="HTML 편집기 화면 크게 보기"><img src="assets/shots/desktop/html-editor-1080.webp" srcset="assets/shots/desktop/html-editor-1080.webp 1080w, assets/shots/desktop/html-editor-2160.webp 2160w" sizes="(max-width: 1100px) 92vw, 46vw" width="1600" height="1000" alt="스쿨보드 HTML 편집기 화면" loading="lazy" decoding="async"></button>
+        </figure>
+      </div>
+    </section>
+
+    <section class="feat" id="image-editor" aria-labelledby="image-editor-t">
+      <header class="feat-head">
+        <p class="feat-kicker">문서·AI 도구</p>
+        <h2 id="image-editor-t">이미지 편집기</h2>
+        <p class="feat-lede">사진 100장도 용량 맞춰 한 번에 줄이고, 학생 얼굴은 모자이크로 가려요.</p>
+      </header>
+      <div class="feat-body">
+        <ul class="points">
+          <li><b>목표 용량 맞춤</b>500KB처럼 원하는 용량을 넣으면 품질을 알아서 맞춰요.</li>
+          <li><b>일괄 처리</b>최대 100장을 크기·형식·품질을 바꿔 ZIP으로 저장하고, 전후 용량을 보여 줘요.</li>
+          <li><b>모아 배치</b>최대 18장을 격자로 놓아 행사 사진 보고용 한 장을 만들어요.</li>
+          <li><b>모자이크·번호 도장</b>학생 얼굴을 가리고, 설명 자료용 번호를 찍어요. 흰 배경을 투명하게 바꿀 수도 있어요.</li>
+        </ul>
+        <figure class="feat-media">
+          <button class="shot" type="button" data-zoom="assets/shots/desktop/image-editor-2160.webp" aria-label="이미지 편집기 화면 크게 보기"><img src="assets/shots/desktop/image-editor-1080.webp" srcset="assets/shots/desktop/image-editor-1080.webp 1080w, assets/shots/desktop/image-editor-2160.webp 2160w" sizes="(max-width: 1100px) 92vw, 46vw" width="1600" height="1000" alt="스쿨보드 이미지 편집기 화면" loading="lazy" decoding="async"></button>
+        </figure>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- 05 수업 도구 -->
+    <!-- =================================================================== -->
+    <div class="group-intro" id="g-lesson">
+      <p class="group-no">05</p>
+      <h2>수업 도구</h2>
+      <p>교실 화면에 바로 띄우는 도구예요. 학급 명단을 그대로 써서 준비할 게 없어요.</p>
+    </div>
+
+    <section class="feat" id="class-timer" aria-labelledby="class-timer-t">
+      <header class="feat-head">
+        <p class="feat-kicker">수업 도구</p>
+        <h2 id="class-timer-t">수업 타이머</h2>
+        <p class="feat-lede">안내 문구와 큰 타이머를 교실 화면에 함께 띄워요.</p>
+      </header>
+      <div class="feat-body">
+        <ul class="points">
+          <li><b>큰 화면 타이머</b>전체화면으로 띄우고, 진행 막대를 끌어 남은 시간을 바로 바꿔요. +30초부터 +1시간까지 버튼으로 늘려요.</li>
+          <li><b>안내 문구</b>활동 안내를 글꼴 10종과 색으로 꾸며 타이머와 함께 보여 줘요.</li>
+          <li><b>색과 소리</b>남은 시간이 50%·20%가 되면 주황·빨강으로 바뀌고, 마지막 3초는 소리로 알려요.</li>
+          <li><b>수업 남은 시간</b>지금 수업이 끝날 때까지 남은 시간도 바로 세어요.</li>
+        </ul>
+        <figure class="feat-media">
+          <button class="shot" type="button" data-zoom="assets/shots/desktop/class-timer-2160.webp" aria-label="수업 타이머 화면 크게 보기"><img src="assets/shots/desktop/class-timer-1080.webp" srcset="assets/shots/desktop/class-timer-1080.webp 1080w, assets/shots/desktop/class-timer-2160.webp 2160w" sizes="(max-width: 1100px) 92vw, 46vw" width="1600" height="1000" alt="스쿨보드 수업 타이머 화면" loading="lazy" decoding="async"></button>
+        </figure>
+      </div>
+    </section>
+
+    <section class="feat" id="random-pick" aria-labelledby="random-pick-t">
+      <header class="feat-head">
+        <p class="feat-kicker">수업 도구</p>
+        <h2 id="random-pick-t">랜덤 뽑기·모둠 편성</h2>
+        <p class="feat-lede">발표자 뽑기와 모둠 편성을 두근두근하게.</p>
+      </header>
+      <div class="feat-body">
+        <ul class="points">
+          <li><b>뽑는 순간이 재미있게</b>점점 느려지다 ‘당첨!’과 함께 색종이가 터져요.</li>
+          <li><b>몰래 제외</b>제외한 학생도 연출에는 그대로 나와서 누가 빠졌는지 학생들은 몰라요.</li>
+          <li><b>여러 명, 중복 없이</b>여러 명을 한 번에 뽑고, 뽑힌 학생은 다시 안 나오게 해요. 회차별 당첨 기록도 남아요.</li>
+          <li><b>모둠 편성</b>“4명씩”만 정하면 모둠 수를 알아서 나누고 결과를 복사해요.</li>
+        </ul>
+        <figure class="feat-media">
+          <button class="shot" type="button" data-zoom="assets/shots/desktop/random-pick-2160.webp" aria-label="랜덤 뽑기 화면 크게 보기"><img src="assets/shots/desktop/random-pick-1080.webp" srcset="assets/shots/desktop/random-pick-1080.webp 1080w, assets/shots/desktop/random-pick-2160.webp 2160w" sizes="(max-width: 1100px) 92vw, 46vw" width="1600" height="1000" alt="스쿨보드 랜덤 뽑기 화면" loading="lazy" decoding="async"></button>
+        </figure>
+      </div>
+    </section>
+
+    <section class="feat" id="vote" aria-labelledby="vote-t">
+      <header class="feat-head">
+        <p class="feat-kicker">수업 도구</p>
+        <h2 id="vote-t">투표 및 설문</h2>
+        <p class="feat-lede">객관식·주관식 질문을 QR로 게시하고 결과를 실시간으로 봐요.</p>
+      </header>
+      <div class="feat-body">
+        <ul class="points">
+          <li><b>발표 모드</b>전체화면에 큰 QR을 띄워 참여를 받고, 결과는 가려 뒀다가 ‘결과 공개’로 보여 줘요.</li>
+          <li><b>조건부 질문</b>앞 답에 따라 다음 질문이나 선택지를 바꿔요. 주관식 답의 낱말이나 숫자로도 나눠요.</li>
+          <li><b>기명 투표</b>학급 명단으로 한 사람당 한 번만 받고, 아직 안 한 학생도 확인해요. 중복 참여는 자동으로 막아요.</li>
+          <li><b>예약과 자동 마감</b>게시 시각과 마감을 정하고, 고정 QR 주소로 다시 써요.</li>
+        </ul>
+        <figure class="feat-media">
+          <button class="shot" type="button" data-zoom="assets/shots/desktop/vote-2160.webp" aria-label="투표 및 설문 화면 크게 보기"><img src="assets/shots/desktop/vote-1080.webp" srcset="assets/shots/desktop/vote-1080.webp 1080w, assets/shots/desktop/vote-2160.webp 2160w" sizes="(max-width: 1100px) 92vw, 46vw" width="1600" height="1000" alt="스쿨보드 투표 및 설문 화면" loading="lazy" decoding="async"></button>
+        </figure>
+      </div>
+    </section>
+
+    <section class="feat" id="name-game" aria-labelledby="name-game-t">
+      <header class="feat-head">
+        <p class="feat-kicker">수업 도구</p>
+        <h2 id="name-game-t">학생이름외우기</h2>
+        <p class="feat-lede">학기 초, 학생 이름을 게임하듯 외워요.</p>
+      </header>
+      <div class="feat-body">
+        <ul class="points">
+          <li><b>사진·이름 퀴즈</b>학생 사진을 보고 이름을 맞혀요. 서술형 퀴즈도 있어요.</li>
+          <li><b>연습 카드와 짝맞추기</b>카드를 넘기며 익히고, 짝맞추기 게임으로 복습해요.</li>
+          <li><b>학급 명단 그대로</b>학급관리에 등록한 명단과 사진을 바로 써요.</li>
+        </ul>
+        <figure class="feat-media">
+          <button class="shot" type="button" data-zoom="assets/shots/desktop/name-game-2160.webp" aria-label="학생이름외우기 화면 크게 보기"><img src="assets/shots/desktop/name-game-1080.webp" srcset="assets/shots/desktop/name-game-1080.webp 1080w, assets/shots/desktop/name-game-2160.webp 2160w" sizes="(max-width: 1100px) 92vw, 46vw" width="1600" height="1000" alt="스쿨보드 학생이름외우기 퀴즈 화면" loading="lazy" decoding="async"></button>
+        </figure>
+      </div>
+      <div class="feat-videos">
+        <button class="vchip" type="button" data-yt="epRXIXQBGuA" data-short data-title="학생 이름 외우기 게임"><span class="vchip-play" aria-hidden="true"></span>이름 외우기 게임<small>쇼츠</small></button>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- 06 평가·교육과정 -->
+    <!-- =================================================================== -->
+    <div class="group-intro" id="g-exam">
+      <p class="group-no">06</p>
+      <h2>평가·교육과정</h2>
+      <p>시험과 성적, 선택교과 업무를 계산부터 출력까지. 담당자 한 사람이 며칠 걸리던 일을 줄여요.</p>
+    </div>
+
+    <section class="feat" id="exam-schedule" aria-labelledby="exam-schedule-t">
+      <header class="feat-head">
+        <p class="feat-kicker">평가·교육과정</p>
+        <h2 id="exam-schedule-t">시험시간표·감독 배정</h2>
+        <p class="feat-lede">시험 날짜 짜기부터 고사실·감독 배정, 좌석표·감독표 출력까지 지필평가를 한곳에서.</p>
+      </header>
+      <div class="feat-body">
+        <ul class="points">
+          <li><b>날짜 자동 배치</b>고사실이 모자라지 않게, 학생 하루 시험 수와 학년별 빈 교시까지 따져 과목을 배치해요.</li>
+          <li><b>고사실 학생 배정</b>교실별 인원을 정하면 학생을 버튼 한 번으로 배정해요. 학생은 엑셀로 한 번에 등록해요.</li>
+          <li><b>감독 조합 추천</b>교사 명단을 붙여 넣으면 정·부감독 조합을 추천받아 공평하게 배정해요.</li>
+          <li><b>출력물 한 번에</b>좌석 배치도, 고사실 명단, 학반별 배정표, 학생 안내표, 교사별 감독 시간표를 일괄 출력해요.</li>
+          <li><b>감독만 배정</b>시간표와 고사실이 정해져 있다면 감독 배정만 할 수도 있어요.</li>
+        </ul>
+        <figure class="feat-media">
+          <button class="shot" type="button" data-zoom="assets/shots/desktop/exam-schedule-2160.webp" aria-label="시험시간표 화면 크게 보기"><img src="assets/shots/desktop/exam-schedule-1080.webp" srcset="assets/shots/desktop/exam-schedule-1080.webp 1080w, assets/shots/desktop/exam-schedule-2160.webp 2160w" sizes="(max-width: 1100px) 92vw, 46vw" width="1600" height="1000" alt="스쿨보드 시험시간표 감독 배정 화면" loading="lazy" decoding="async"></button>
+        </figure>
+      </div>
+      <div class="feat-videos">
+        <button class="vchip" type="button" data-yt="U4XCQURrKfw" data-short data-title="시험 시간표 작성과 감독 배정"><span class="vchip-play" aria-hidden="true"></span>시험시간표·감독 배정<small>쇼츠</small></button>
+      </div>
+    </section>
+
+    <section class="feat" id="cut-score" aria-labelledby="cut-score-t">
+      <header class="feat-head">
+        <p class="feat-kicker">평가·교육과정 <em class="tag tag-new">NEW 학기말 예측</em></p>
+        <h2 id="cut-score-t">추정 분할점수·학기말 성취도 예측</h2>
+        <p class="feat-lede">예상정답률로 분할점수를 계산하고, 목표 점수에 맞는 값을 거꾸로 찾아요. 학기말 성취도까지 미리 봐요.</p>
+      </header>
+      <div class="feat-body">
+        <ul class="points">
+          <li><b>분할점수 산출</b>문항별 예상정답률을 넣으면 성취도별 분할점수를 계산해요.</li>
+          <li><b>역산기</b>원하는 분할점수가 나오려면 어떤 값을 넣어야 하는지 거꾸로 계산해요.</li>
+          <li><b>학기말 성취도 예측</b>지금까지의 점수로 학기말 성취도를 예측해 최소 성취수준 보장지도 대상 학생을 미리 찾아요.</li>
+        </ul>
+        <figure class="feat-media">
+          <button class="shot" type="button" data-zoom="assets/shots/desktop/cut-score-2160.webp" aria-label="학기말 성취도 예측 화면 크게 보기"><img src="assets/shots/desktop/cut-score-1080.webp" srcset="assets/shots/desktop/cut-score-1080.webp 1080w, assets/shots/desktop/cut-score-2160.webp 2160w" sizes="(max-width: 1100px) 92vw, 46vw" width="1600" height="1000" alt="스쿨보드 추정 분할점수 산출기의 학기말 성취도 예측 화면" loading="lazy" decoding="async"></button>
+        </figure>
+      </div>
+      <div class="feat-videos">
+        <button class="vchip vchip-strong" type="button" data-yt="8w4G-LPZG-g" data-title="추정 분할점수 산출과 역산기"><span class="vchip-play" aria-hidden="true"></span>분할점수 산출·역산 시연<small>1:31</small></button>
+      </div>
+    </section>
+
+    <section class="feat" id="course-scheduler" aria-labelledby="course-scheduler-t">
+      <header class="feat-head">
+        <p class="feat-kicker">평가·교육과정 <em class="tag tag-beta">BETA</em></p>
+        <h2 id="course-scheduler-t">선택교과 그룹편성·반편성</h2>
+        <p class="feat-lede">학생 수강 표를 붙여 넣으면 선택 그룹 편성부터 성적 기반 반배정, 수강자 명단까지 이어서 해요.</p>
+      </header>
+      <div class="feat-body">
+        <ul class="points">
+          <li><b>붙여넣고 점검</b>학생·수강 표를 붙여 넣으면 오류부터 찾아 줘요.</li>
+          <li><b>그룹 편성</b>함께 듣기·피하기·배정 가능 반 조건을 넣고 선택 그룹을 편성해요. 여러 그룹을 동시에 피할 수도 있어요.</li>
+          <li><b>반배정</b>나이스 성적표로 남녀 성적순 반배정을 하고, 두 학생을 눌러 서로 바꿔요.</li>
+          <li><b>결과 출력</b>원본 양식에 맞춘 결과 엑셀과 교과별 수강자 명단을 뽑아요.</li>
+        </ul>
+        <figure class="feat-media">
+          <button class="shot" type="button" data-zoom="assets/shots/desktop/course-scheduler-2160.webp" aria-label="선택교과 편성 화면 크게 보기"><img src="assets/shots/desktop/course-scheduler-1080.webp" srcset="assets/shots/desktop/course-scheduler-1080.webp 1080w, assets/shots/desktop/course-scheduler-2160.webp 2160w" sizes="(max-width: 1100px) 92vw, 46vw" width="1600" height="1000" alt="스쿨보드 선택교과 그룹편성 및 반편성 화면" loading="lazy" decoding="async"></button>
+        </figure>
+      </div>
+    </section>
+
+    <section class="feat" id="online-signature" aria-labelledby="online-signature-t">
+      <header class="feat-head">
+        <p class="feat-kicker">평가·교육과정 <em class="tag tag-best">BEST</em></p>
+        <h2 id="online-signature-t">온라인 등록부</h2>
+        <p class="feat-lede">종이 등록부 대신 QR 한 장. 서명은 휴대폰으로 받고 현황은 바로 봐요.</p>
+      </header>
+      <div class="feat-body">
+        <ul class="points">
+          <li><b>1분 완성</b>교사 명단을 붙여 넣고 QR을 게시하면 끝이에요. 엑셀 제목과 명단을 한 번에 붙여 넣어도 돼요.</li>
+          <li><b>서명 현황</b>서명 완료·미서명을 실시간으로 보고, 미서명자 명단을 복사해 메신저로 보내요.</li>
+          <li><b>양식 4종</b>기본 등록부, 연수 참석부, 물품 수령 확인, 의견 수렴 중에서 골라요. 명단 없는 등록부도 돼요.</li>
+          <li><b>출력</b>서명 그림까지 엑셀로 내보내고, 1~3단으로 인쇄해요.</li>
+        </ul>
+        <figure class="feat-media">
+          <button class="shot" type="button" data-zoom="assets/shots/desktop/online-signature-2160.webp" aria-label="온라인 등록부 화면 크게 보기"><img src="assets/shots/desktop/online-signature-1080.webp" srcset="assets/shots/desktop/online-signature-1080.webp 1080w, assets/shots/desktop/online-signature-2160.webp 2160w" sizes="(max-width: 1100px) 92vw, 46vw" width="1600" height="1000" alt="스쿨보드 온라인 등록부 화면" loading="lazy" decoding="async"></button>
+        </figure>
+      </div>
+    </section>
+
+    <section class="feat feat-compact" id="small-tools" aria-labelledby="small-tools-t">
+      <header class="feat-head">
+        <p class="feat-kicker">평가·교육과정</p>
+        <h2 id="small-tools-t">자주 쓰는 작은 도구</h2>
+        <p class="feat-lede">작지만 한 번 쓰면 계속 찾게 되는 도구들이에요. 모두 도구상자에 있어요.</p>
+      </header>
+      <ul class="mini-grid">
+        <li><h3>시험문제 배점산출기</h3><p>총점과 문제 수에 맞춰 문항별 배점을 자동으로 나눠요. 배점만 따로 복사할 수 있어요.</p></li>
+        <li><h3>등급별 인원 예측</h3><p>총 인원과 등급제를 넣으면 등급별 인원과 누적 석차를 알려 줘요.</p></li>
+        <li><h3>수행평가 점수 점검</h3><p>배점표로 나올 수 있는 총점을 만들어 학생 점수의 입력 오류를 찾아요.</p></li>
+        <li><h3>수강신청확인서 출력</h3><p>신청 내역을 점검하고 서명란을 넣어 학생별 확인서를 인쇄하거나 PDF로 저장해요.</p></li>
+        <li><h3>QR 생성기</h3><p>주소나 글을 QR로 만들어 이미지로 저장하거나 복사해 한글·PPT에 바로 붙여요.</p></li>
+        <li><h3>계산기</h3><p>사칙연산과 계산 기록, 날짜 계산, 양력·음력 변환, 단위 변환까지 한곳에서 해요. <button class="text-link" type="button" data-yt="0TYcH3OUKHo" data-title="계산기 사용법">영상 보기</button></p></li>
+      </ul>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- 07 어디서나·안심 -->
+    <!-- =================================================================== -->
+    <div class="group-intro" id="g-anywhere">
+      <p class="group-no">07</p>
+      <h2>어디서나·안심</h2>
+      <p>집 PC, 학교 PC, 휴대폰이 같은 스쿨보드예요. 데이터는 선생님 PC와 선생님 Google Drive에 있어요.</p>
+    </div>
+
+    <section class="feat feat-mobile" id="mobile" aria-labelledby="mobile-t">
+      <header class="feat-head">
+        <p class="feat-kicker">어디서나·안심</p>
+        <h2 id="mobile-t">스쿨보드 모바일</h2>
+        <p class="feat-lede">휴대폰은 설치 없이 m.schoolboard.cc. 같은 Google 계정으로 로그인하면 PC의 데이터가 그대로 보여요.</p>
+      </header>
+      <div class="feat-body">
+        <div>
+          <ul class="points">
+            <li><b>교실에서 바로 기록</b>출결, 누가기록, 자리배치, 상담을 폰에서 확인하고 남겨요.</li>
+            <li><b>앱처럼</b>홈 화면에 추가하면 앱처럼 열려요. 홈 위젯 순서와 메뉴도 바꿔요.</li>
+            <li><b>폰에서도 QR 게시</b>온라인 등록부와 학급활동모음을 폰에서 바로 열고, QR 출결 스캐너로도 써요.</li>
+            <li><b>바로 전화·문자</b>연락처에서 바로 전화하고 문자를 보내요.</li>
+          </ul>
+          <div class="qr-card">
+            <img src="assets/img/qr-mobile.svg" alt="m.schoolboard.cc로 연결되는 QR 코드" width="96" height="96" loading="lazy">
+            <p>휴대폰 카메라로 찍으면<br><a href="https://m.schoolboard.cc" target="_blank" rel="noopener noreferrer">m.schoolboard.cc</a>가 열려요.</p>
+          </div>
+        </div>
+        <figure class="feat-media phones" aria-label="스쿨보드 모바일 화면">
+          <div class="phone"><img src="assets/shots/mobile/attendance-780.webp" width="390" height="844" alt="모바일 출결 화면" loading="lazy" decoding="async"></div>
+          <div class="phone"><img src="assets/shots/mobile/home-780.webp" width="390" height="844" alt="모바일 홈 화면" loading="lazy" decoding="async"></div>
+          <div class="phone"><img src="assets/shots/mobile/seating-780.webp" width="390" height="844" alt="모바일 자리배치 화면" loading="lazy" decoding="async"></div>
+        </figure>
+      </div>
+      <div class="feat-videos">
+        <button class="vchip" type="button" data-yt="auNe6Kkds6s" data-short data-title="스쿨보드 모바일"><span class="vchip-play" aria-hidden="true"></span>스쿨보드 모바일<small>쇼츠</small></button>
+      </div>
+    </section>
+
+    <section class="feat feat-compact" id="sync" aria-labelledby="sync-t">
+      <header class="feat-head">
+        <p class="feat-kicker">어디서나·안심</p>
+        <h2 id="sync-t">동기화·백업·잠금</h2>
+        <p class="feat-lede">기기를 오가도 같은 데이터, 날릴 걱정 없는 안전장치까지.</p>
+      </header>
+      <ul class="mini-grid">
+        <li><h3>내 Google Drive 동기화</h3><p>같은 Google 계정을 연결하면 기기끼리 자동으로 맞춰져요. 서로 다른 항목을 고치면 알아서 합치고, 같은 항목을 양쪽에서 고쳤을 때만 최근 수정으로 맞춰요. 밀려난 내용은 30일 동안 되살릴 수 있어요.</p></li>
+        <li><h3>자동 백업</h3><p>정한 주기마다 백업하고 며칠치를 보관해요. 비밀번호를 건 백업도 만들고, 연락처만·학급관리만 골라서 되살려요.</p></li>
+        <li><h3>PIN 잠금</h3><p>학급관리·연락처·설정처럼 고른 화면만 잠가요. 정한 시간이 지나면 다시 잠겨요.</p></li>
+        <li><h3>프로필</h3><p>한 PC를 여러 선생님이 써도 데이터·설정·Google 연결이 따로예요. .board 파일로 내 세팅을 동료에게 넘겨요.</p></li>
+        <li><h3>엑셀로 내보내기</h3><p>모든 데이터를 엑셀로 내보내고, 엑셀에서 고쳐 다시 불러와요.</p></li>
+      </ul>
+    </section>
+
+    <section class="feat trust" id="trust" aria-labelledby="trust-t">
+      <header class="feat-head">
+        <p class="feat-kicker">어디서나·안심</p>
+        <h2 id="trust-t">선생님 데이터는 선생님 곁에.</h2>
+        <p class="feat-lede">어디에 저장되고 언제 밖으로 나가는지 그대로 적었어요. 자세한 내용은 <a href="privacy.html">개인정보처리방침</a>에 있어요.</p>
+      </header>
+      <dl class="trust-list">
+        <div><dt>기본은 내 PC에 저장</dt><dd>시간표, 메모, 할 일, 연락처, 학급 기록은 선생님 컴퓨터에 저장돼요. 업무포털 로그인 정보는 암호화해서 보관해요.</dd></div>
+        <div><dt>동기화는 내 Google Drive로</dt><dd>동기화를 켜면 선생님 본인의 Google Drive에 저장돼요. 스쿨보드가 만든 파일만 다루고, 개발자는 볼 수 없어요.</dd></div>
+        <div><dt>생기부 PDF는 PC 안에서만</dt><dd>학교생활기록부 PDF 분석은 컴퓨터 안에서만 처리하고, 주민번호·주소 같은 민감한 항목은 읽지 않아요.</dd></div>
+        <div><dt>공유 기능만 인터넷을 거쳐요</dt><dd>QR 게시, 온라인 교무실처럼 함께 쓰는 기능과 선생님이 직접 실행한 AI 기능만 필요한 내용을 인터넷으로 보내요.</dd></div>
+      </dl>
+
+      <article class="review-notice" id="school-review" aria-labelledby="review-title">
+        <div class="review-copy">
+          <p class="review-label">학교 도입 안내</p>
+          <h3 id="review-title">스쿨보드는 학교운영위원회<br>심의 대상이 아니에요.</h3>
+          <p>에듀집의 ‘미등록 자료 요청’ 처리 결과, 스쿨보드는 <strong>학교운영위원회(학운위) 심의 대상이 아닌 ‘해당없음’</strong>으로 안내돼요.</p>
+          <p>비고에 적힌 사유는 <strong>‘교사용 및 행정업무 지원 서비스’</strong>예요. 아래 첨부 화면에서 처리 결과를 확인할 수 있어요.</p>
+          <p class="review-source">출처: <a href="https://www.edzip.kr/" target="_blank" rel="noopener noreferrer">에듀집</a> &gt; 학습지원 소프트웨어 &gt; 미등록 자료 요청<br>처리일: <time datetime="2026-09-22">2026.09.22</time> · 첨부 화면 기준</p>
+        </div>
+        <figure class="review-evidence">
+          <a href="assets/img/edzip-schoolboard-review-exempt.png" target="_blank" rel="noopener noreferrer" aria-label="에듀집 스쿨보드 학운위 심의 대상 아님 안내 원본 이미지 크게 보기 (새 탭)">
+            <img src="assets/img/edzip-schoolboard-review-exempt.png" alt="에듀집 미등록 자료 요청 조회 화면. 스쿨보드(schoolBoard)의 처리현황은 해당없음, 비고는 교사용 및 행정업무 지원 서비스, 처리일은 2026년 9월 22일. 해당없음은 학운위 심의 대상이 아닌 경우를 뜻한다고 안내되어 있어요." width="1526" height="1077" loading="lazy" decoding="async">
+          </a>
+          <figcaption>에듀집 처리 결과 · 이미지를 누르면 원본을 크게 볼 수 있어요.</figcaption>
+        </figure>
+      </article>
+    </section>
+
+    <section class="feat feat-compact" id="settings" aria-labelledby="settings-t">
+      <header class="feat-head">
+        <p class="feat-kicker">어디서나·안심</p>
+        <h2 id="settings-t">내 맘대로 설정</h2>
+        <p class="feat-lede">학교 이름만 검색하면 시작이에요. 테마부터 단축키까지 손에 맞게 바꿔요.</p>
+      </header>
+      <ul class="mini-grid">
+        <li><h3>1분 시작</h3><p>처음 켜면 학교를 검색하고 테마를 고르는 안내가 나와요. 나머지는 쓰면서 채우면 돼요.</p></li>
+        <li><h3>테마와 글꼴</h3><p>테마 19종과 내 색 테마, 글꼴 7종, 12·24시간 표시 중에서 골라요.</p></li>
+        <li><h3>메뉴 정리</h3><p>안 쓰는 메뉴는 숨기고 순서를 바꿔 나만의 사이드바를 만들어요.</p></li>
+        <li><h3>단축키와 창</h3><p>단축키를 바꾸거나 끄고, 창 투명도·항상 위·위치 잠금을 정해요.</p></li>
+      </ul>
+      <div class="feat-videos">
+        <button class="vchip" type="button" data-yt="W-58hdVUNBU" data-title="처음 설정하기"><span class="vchip-play" aria-hidden="true"></span>처음 설정하기<small>6:03</small></button>
+        <button class="vchip" type="button" data-yt="EolllxUrVM8" data-title="설정 사용법"><span class="vchip-play" aria-hidden="true"></span>설정 사용법<small>6:08</small></button>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- 소식·도움 -->
+    <!-- =================================================================== -->
+    <section class="block updates" id="updates" aria-labelledby="updates-title">
+      <div class="block-head">
+        <h2 id="updates-title">매달 새로워져요.</h2>
+        <p>선생님들이 보내 주신 의견으로 계속 고치고 더하고 있어요. 앱은 자동으로 업데이트돼요.</p>
+      </div>
+      <ol class="update-list" id="update-list"></ol>
+      <p class="block-more"><a href="https://github.com/jyh1541/school-board-releases/releases" target="_blank" rel="noopener noreferrer">지난 업데이트 전체 보기</a></p>
+    </section>
+
+    <section class="block videos" id="videos" aria-labelledby="videos-title">
+      <div class="block-head">
+        <h2 id="videos-title">영상으로 보기.</h2>
+        <p>기능 시연부터 처음 설정하는 법까지 영상으로 정리했어요. 누르면 이 페이지에서 바로 재생돼요.</p>
+      </div>
+      <div id="video-groups"></div>
+      <p class="block-more"><a id="channel-link" href="https://www.youtube.com/@%EB%85%B9%EC%B0%A8%EB%9D%BC%EB%96%BC-i5l" target="_blank" rel="noopener noreferrer">유튜브 채널에서 더 보기</a></p>
+    </section>
+
+    <section class="download" id="download" aria-labelledby="download-title">
+      <img class="download-mascot" src="assets/img/mascot/ddokddok.webp" alt="" width="313" height="332" loading="lazy">
+      <h2 id="download-title">지금 무료로<br>시작하세요.</h2>
+      <p class="lede">Windows에 설치하고 학교 이름만 검색하면 준비 끝이에요. 새 버전은 자동으로 업데이트돼요.</p>
+      <div class="download-actions">
+        <a class="btn btn-paper btn-lg js-download" href="https://github.com/jyh1541/school-board-releases/releases/latest">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 5.5 10.5 4.4v7.2H3V5.5Zm0 13 7.5 1.1v-7.1H3v6Zm8.4 1.2L21 21v-8.5h-9.6v7.2Zm0-15.4v7.3H21V3l-9.6 1.3Z"/></svg>
+          <span class="js-download-label">Windows 설치 파일 받기</span>
+        </a>
+        <a class="btn btn-ghost btn-lg" href="https://1drv.ms/u/c/63cbfdc50072c77f/IQC18bH-VmK_SqrRXRLf01zeARKmy62N34aZtbJG5SjbeRk?e=44nNzh" target="_blank" rel="noopener noreferrer">GitHub가 느리면 클라우드에서 받기</a>
+        <a class="btn btn-ghost btn-lg" href="https://m.schoolboard.cc" target="_blank" rel="noopener noreferrer">휴대폰에서 열기</a>
+      </div>
+      <p class="download-meta"><span id="latest-version"></span>Windows 10, 11에서 쓸 수 있어요. 설치 중 경고 창이 뜨면 바로 아래 안내를 따라 주세요.</p>
+    </section>
+
+    <section class="block help" id="help" aria-labelledby="help-title">
+      <div class="block-head">
+        <h2 id="help-title">설치가 막힐 때.</h2>
+        <p>아직 코드 서명 전이라 브라우저와 Windows가 경고를 띄울 수 있어요. 보안에는 문제가 없으니 아래 순서대로 진행해 주세요.</p>
+      </div>
+
+      <div class="help-steps">
+        <article class="help-step">
+          <h3><span class="step-no">1</span>다운로드할 때 경고가 뜨면</h3>
+          <div class="seg" role="tablist" aria-label="브라우저 선택">
+            <button type="button" role="tab" id="tab-chrome" aria-controls="panel-chrome" aria-selected="true">Chrome</button>
+            <button type="button" role="tab" id="tab-edge" aria-controls="panel-edge" aria-selected="false" tabindex="-1">Edge</button>
+          </div>
+          <div class="seg-panel" role="tabpanel" id="panel-chrome" aria-labelledby="tab-chrome">
+            <p>‘확인되지 않은 파일 다운로드’ 창이 뜨면 <strong>[확인되지 않은 파일 다운로드]</strong>를 눌러 주세요.</p>
+            <div class="help-imgs">
+              <img src="assets/img/install/chrome-1.webp" alt="Chrome 다운로드 목록에 뜬 경고" width="334" height="86" loading="lazy">
+              <img src="assets/img/install/chrome-2.webp" alt="확인되지 않은 파일 다운로드 버튼" width="462" height="240" loading="lazy">
+            </div>
+          </div>
+          <div class="seg-panel" role="tabpanel" id="panel-edge" aria-labelledby="tab-edge" hidden>
+            <p>‘파일을 안전하게 다운로드하시겠습니까?’ 창이 뜨면 <strong>[저장]</strong>을 눌러 주세요.</p>
+            <div class="help-imgs">
+              <img src="assets/img/install/edge-1.webp" alt="Edge 다운로드 경고" width="360" height="168" loading="lazy">
+              <img src="assets/img/install/edge-2.webp" alt="Edge 추가 메뉴의 저장" width="373" height="278" loading="lazy">
+              <img src="assets/img/install/edge-3.webp" alt="Edge 계속 저장 확인" width="360" height="634" loading="lazy">
+            </div>
+          </div>
+        </article>
+
+        <article class="help-step">
+          <h3><span class="step-no">2</span>설치할 때 ‘Windows의 PC 보호’가 뜨면</h3>
+          <p><strong>[추가 정보]</strong>를 누른 뒤 아래에 나타나는 <strong>[실행]</strong>을 누르면 설치가 시작돼요.</p>
+          <div class="help-imgs">
+            <img src="assets/img/install/smartscreen-1.webp" alt="Windows의 PC 보호 창에서 추가 정보 누르기" width="532" height="498" loading="lazy">
+            <img src="assets/img/install/smartscreen-2.webp" alt="실행 버튼 누르기" width="532" height="498" loading="lazy">
+          </div>
+          <p class="help-video"><button class="text-link" type="button" data-yt="FHEegIWDF6Q" data-title="설치 방법">설치 과정을 영상으로 보기 (2:07)</button></p>
+        </article>
+        <article class="help-step">
+          <h3><span class="step-no">3</span>‘스마트 앱 컨트롤’이 설치를 막으면</h3>
+          <p>설치 파일이 실행되지 않고 스마트 앱 컨트롤이 막았다는 안내가 뜨면, 작업 표시줄의 검색이나 시작 메뉴에서 <strong>스마트 앱 컨트롤</strong>을 검색해 열어 주세요. 띄어쓰기까지 똑같이 입력해야 찾을 수 있어요.</p>
+          <p>‘앱 및 브라우저 컨트롤 &gt; 스마트 앱 컨트롤’ 화면에서 <strong>[끄기]</strong>를 고른 뒤 설치 파일을 다시 실행하면 돼요.</p>
+          <div class="help-imgs is-wide">
+            <a class="help-zoom" href="assets/img/install/smart-app-control-1.webp" data-zoom="assets/img/install/smart-app-control-1.webp" aria-label="스마트 앱 컨트롤 검색 화면 크게 보기"><img src="assets/img/install/smart-app-control-1.webp" alt="Windows 검색창에 스마트 앱 컨트롤을 입력하고 최고의 일치 항목인 스마트 앱 컨트롤 시스템 설정을 누르는 화면" width="1040" height="603" loading="lazy"></a>
+            <a class="help-zoom" href="assets/img/install/smart-app-control-2.webp" data-zoom="assets/img/install/smart-app-control-2.webp" aria-label="스마트 앱 컨트롤 끄기 화면 크게 보기"><img src="assets/img/install/smart-app-control-2.webp" alt="Windows 보안의 앱 및 브라우저 컨트롤 아래 스마트 앱 컨트롤 화면에서 끄기를 선택한 모습" width="1198" height="931" loading="lazy"></a>
+          </div>
+        </article>
+      </div>
+
+      <div class="faq">
+        <h3>그 밖에 자주 묻는 문제</h3>
+        <details>
+          <summary>학교운영위원회(학운위) 심의를 받아야 하나요?</summary>
+          <p>스쿨보드는 학운위 심의 대상이 아니에요. 에듀집 ‘미등록 자료 요청’에서 ‘교사용 및 행정업무 지원 서비스’로 분류되어 처리현황이 ‘해당없음’으로 안내돼요. <a href="#school-review">처리 결과와 첨부 화면 확인하기</a></p>
+        </details>
+        <details>
+          <summary>설치 파일을 눌러도 아무것도 실행되지 않아요</summary>
+          <p>Windows 11의 <strong>스마트 앱 컨트롤</strong>이 막고 있을 수 있어요. 시작 메뉴에서 ‘스마트 앱 컨트롤’을 검색해 <strong>[끄기]</strong>를 고른 뒤 다시 실행해 주세요. <a href="#help">그림으로 보기</a></p>
+        </details>
+        <details>
+          <summary>실행했는데 창이 안 보이거나 투명하게 보여요</summary>
+          <p>화면 오른쪽 아래 트레이에서 스쿨보드 아이콘을 오른쪽 클릭하고 <strong>불투명 안전 모드</strong>를 켜 주세요. 흰 배경의 일반 창으로 다시 열려요.</p>
+        </details>
+        <details>
+          <summary>급식이나 학사일정이 안 보여요</summary>
+          <p>설정 &gt; 일반에서 학교가 제대로 선택돼 있는지, 인터넷이 연결돼 있는지 확인해 주세요. 그래도 안 되면 새로고침(↻) 버튼을 눌러 보세요.</p>
+        </details>
+        <details>
+          <summary>집 컴퓨터와 학교 컴퓨터에서 같이 쓰고 싶어요</summary>
+          <p>설정 &gt; 데이터 관리 &gt; Google 동기화에서 같은 Google 계정을 연결하면 자동으로 맞춰져요. 인터넷 없이 옮기려면 .board 파일로 내보낸 뒤 다른 컴퓨터에서 불러오세요.</p>
+        </details>
+        <details>
+          <summary>한 컴퓨터를 여러 선생님이 함께 써요</summary>
+          <p>사이드바에서 프로필을 추가하세요. 프로필마다 데이터, 설정, Google 연결이 따로 저장돼요.</p>
+        </details>
+        <details>
+          <summary>업데이트는 어떻게 하나요?</summary>
+          <p>새 버전이 나오면 앱이 알아서 받아 설치해요. 설치 파일을 다시 받을 필요는 없어요.</p>
+        </details>
+        <details>
+          <summary>그래도 문제가 생겼어요</summary>
+          <p>설정 &gt; 정보 &gt; 오류 보고에서 로그 파일을 확인할 수 있어요. 사이드바의 고객센터에 문의를 남겨 주시면 빠르게 도와드릴게요.</p>
+        </details>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <div class="foot-top">
+        <a class="foot-brand" href="#overview">
+          <img src="icon-192.png" alt="" width="36" height="36">
+          <span>스쿨보드 <small>made by 호똑쌤</small></span>
+        </a>
+        <nav class="foot-links" aria-label="정책과 링크">
+          <a href="privacy.html">개인정보처리방침</a>
+          <a href="terms.html">이용약관</a>
+          <a href="https://github.com/jyh1541/school-board-releases/releases" target="_blank" rel="noopener noreferrer">릴리스</a>
+          <a href="https://www.youtube.com/@%EB%85%B9%EC%B0%A8%EB%9D%BC%EB%96%BC-i5l" target="_blank" rel="noopener noreferrer">유튜브</a>
+        </nav>
+      </div>
+      <p class="foot-legal">저작권 등록번호 C-2026-018961호, 컴퓨터프로그램저작물(응용프로그램 &gt; 사무관리), 저작자 지연호, 등록일 2026년 4월 15일, 한국저작권위원회</p>
+      <p class="foot-copy">&copy; 2026 호똑쌤</p>
+    </footer>
+  </main>
+
+  <!-- 영상·화면 크게 보기 -->
+  <dialog class="viewer" id="viewer" aria-label="크게 보기">
+    <div class="viewer-box" id="viewer-box"></div>
+    <div class="viewer-bar">
+      <span class="viewer-title" id="viewer-title"></span>
+      <a class="viewer-out" id="viewer-out" href="#" target="_blank" rel="noopener noreferrer" hidden>유튜브에서 보기</a>
+      <button class="viewer-close" type="button" id="viewer-close">닫기</button>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>

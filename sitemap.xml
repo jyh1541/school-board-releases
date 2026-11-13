@@ -4,7 +4,7 @@
   xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://schoolboard.cc/</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -27,6 +27,12 @@
       <image:loc>https://schoolboard.cc/assets/shots/desktop/geulkkakki-2160.webp</image:loc>
       <image:title>스쿨보드 글깎이 한글 문서 AI 편집 화면</image:title>
     </image:image>
+  </url>
+  <url>
+    <loc>https://schoolboard.cc/features</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://schoolboard.cc/privacy</loc>
